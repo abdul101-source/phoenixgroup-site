@@ -1,209 +1,313 @@
-Perfect—here’s a **finished, executive landing page** (one file) that puts *you + your MRICS mentor/arbitrator* front and centre, with the figures you gave (30+ years combined, £500m+ directly managed, £2bn+ programme exposure).
-
-Copy everything below into your repo as **`index.html`** → Commit → then enable **Settings → Pages** (main / root).
-
-```html
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Phoenix Group — Sets the Standard They Trust</title>
-  <meta name="description" content="Phoenix Group: MRICS-led advisory, developments, academy, and governance for governments, investors, universities, and NGOs — delivering precision, integrity, and trust." />
+  <meta name="description" content="Phoenix Group: MRICS-led advisory, developments, academy and governance for executives, investors, universities and NGOs."/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0f1113; --bg2:#15181c; --text:#E9ECEF; --muted:#B6BEC9;
-      --bronze:#b97a3c; --bronze-2:#d19a64; --border:#262a2f; --card:#12161a;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Roboto,system-ui,Arial,sans-serif;line-height:1.6}
-    a{color:var(--bronze-2);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1200px;margin:auto;padding:0 22px}
-    header{position:sticky;top:0;z-index:50;background:rgba(15,17,19,.75);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-    nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.3px}
-    .logo{width:28px;height:28px;border-radius:6px;background:
-      radial-gradient(60% 60% at 50% 30%,var(--bronze-2),transparent 70%),
-      conic-gradient(from 200deg,var(--bronze-2),var(--bronze),#6f4b28,#2a1a0f);
-      box-shadow:0 0 0 1px rgba(209,154,100,.35), 0 10px 26px rgba(0,0,0,.35)}
-    .navlinks a{margin-left:18px;color:var(--muted)}
-    .navlinks a:hover{color:var(--text)}
-    .btn{display:inline-block;padding:10px 16px;border:1px solid var(--bronze);border-radius:12px;color:var(--text);
-         background:linear-gradient(180deg,rgba(185,122,60,.18),rgba(185,122,60,.06));box-shadow:0 8px 24px rgba(185,122,60,.12)}
-    .btn:hover{filter:brightness(1.08)}
-    .hero{padding:110px 0 90px;background:
-      radial-gradient(70% 100% at 80% 0%, rgba(185,122,60,.18), transparent 70%),
-      radial-gradient(50% 120% at 0% 0%, rgba(209,154,100,.10), transparent 70%)}
-    .eyebrow{color:var(--bronze-2);letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;margin-bottom:12px}
-    h1{font-size:clamp(30px,4.6vw,48px);margin:0 0 10px}
-    .sub{max-width:920px;color:var(--muted);font-size:1.08rem}
-    .cta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
-    section{padding:80px 0;border-top:1px solid var(--border)}
-    h2{font-size:clamp(24px,3.2vw,32px);margin:0 0 16px}
-    .grid{display:grid;gap:16px}
-    .cards{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));border:1px solid var(--border);border-radius:16px;padding:20px}
-    .card h3{margin:6px 0 6px;font-size:1.08rem}
-    .card p{margin:0;color:var(--muted)}
-    .pill{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:6px 10px;color:var(--muted);font-size:.86rem}
-    .twocol{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
-    @media(max-width:960px){.twocol{grid-template-columns:1fr;}}
-    .list{margin:0;padding-left:18px;color:var(--muted)}
-    .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:8px}
-    .kpi .card{padding:14px;text-align:center}
-    .kpi b{color:var(--bronze-2);font-size:1.1rem}
-    .muted{color:var(--muted)}
-    footer{padding:46px 0;color:#97a2ae;font-size:.95rem}
-    html{scroll-behavior:smooth}
-    input,textarea{background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:12px;width:100%}
-    form{display:grid;gap:12px;max-width:520px}
-    .bio{display:grid;grid-template-columns:1fr;gap:8px}
+  :root{
+    --color-deep-black:#111111; --color-graphite-dark:#1b1b1b; --color-graphite-medium:#262626;
+    --color-bronze-rich:#a07a3d; --color-bronze-light:#c29d67; --color-walnut-warm:#4d3f37;
+    --color-text-light:#f0f0f0; --color-text-medium:#b0b0b0; --border:#2e2e2e;
+    --radius:12px; --shadow:0 8px 24px rgba(0,0,0,.35)
+  }
+  html{scroll-behavior:smooth}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--color-deep-black);color:var(--color-text-light);font-family:'Open Sans',system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.7}
+  h1,h2,h3,.tagline{font-family:'Montserrat',Avenir,Arial,sans-serif;font-weight:700;color:var(--color-text-light);margin:0 0 .35em}
+  h2{text-align:center;color:var(--color-bronze-light);letter-spacing:.2px}
+  .wrap{max-width:1200px;margin:auto;padding:0 5%}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:1000;background:rgba(17,17,17,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Montserrat';font-weight:700;color:var(--color-bronze-light);text-decoration:none;font-size:1.15rem}
+  .brand-logo{width:28px;height:28px;border-radius:8px;background:
+    radial-gradient(65% 60% at 50% 32%, var(--color-bronze-light), transparent 70%),
+    conic-gradient(from 210deg, var(--color-bronze-light), var(--color-bronze-rich), #6f4b28, #2a1a0f);
+    box-shadow:0 0 0 1px rgba(194,157,103,.35), 0 12px 30px rgba(0,0,0,.45)}
+  .links a{margin-left:18px;color:var(--color-text-medium);text-decoration:none;font-weight:600}
+  .links a:hover{color:var(--color-text-light)}
+  .btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid var(--color-bronze-rich);color:var(--color-text-light);background:linear-gradient(180deg,rgba(160,122,61,.18),rgba(160,122,61,.08));box-shadow:0 6px 18px rgba(160,122,61,.18);text-decoration:none;font-weight:700}
+  .btn:hover{filter:brightness(1.06)}
+
+  /* SECTIONS */
+  section{position:relative;overflow:hidden;padding:80px 0;border-top:1px solid var(--border);background:var(--color-graphite-dark)}
+  section.alt{background:var(--color-graphite-medium)}
+  section.texture::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><rect width="120" height="120" fill="%231b1b1b"/><circle cx="60" cy="60" r="1" fill="%23262626" opacity="0.12"/></svg>');opacity:.75}
+  section>*{position:relative;z-index:1}
+
+  /* HERO */
+  .hero{background:var(--color-deep-black);min-height:86vh;display:flex;align-items:center;text-align:center;background-image:
+    radial-gradient(60% 100% at 80% 0%, rgba(160,122,61,.18), transparent 70%),
+    radial-gradient(50% 120% at 0% 0%, rgba(194,157,103,.10), transparent 70%)}
+  .phoenix-logo{width:120px;height:120px;margin:0 auto 18px;border-radius:20px;background:
+    radial-gradient(60% 60% at 50% 20%, var(--color-bronze-light), transparent 70%),
+    conic-gradient(from 215deg, var(--color-bronze-light), var(--color-bronze-rich), #6f4b28, #2a1a0f);box-shadow:0 0 42px rgba(160,122,61,.35)}
+  .tagline{font-size:clamp(28px,4.4vw,46px);text-shadow:0 0 12px rgba(160,122,61,.35),0 0 26px rgba(194,157,103,.18)}
+  .sub{max-width:900px;margin:12px auto 22px;color:var(--color-text-medium);font-size:1.08rem}
+  .cta{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  /* GRIDS / CARDS */
+  .grid{display:grid;gap:18px}
+  .cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:6px 10px;color:var(--color-text-medium);font-size:.86rem;margin-bottom:6px}
+  .ecosystem .card{position:relative;overflow:hidden}
+  .ecosystem .card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--color-bronze-rich),transparent,var(--color-bronze-rich));opacity:.65}
+
+  .twocol{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+  @media (max-width:960px){.twocol{grid-template-columns:1fr}}
+  .list{margin:0;padding-left:18px;color:var(--color-text-medium)}
+  .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:10px}
+  .kpi .card{text-align:center}
+  .kpi b{color:var(--color-bronze-light);font-size:1.1rem}
+
+  /* FORMS & FOOTER */
+  form{display:grid;gap:12px;max-width:520px}
+  input,textarea{background:var(--color-graphite-medium);border:1px solid var(--border);color:var(--color-text-light);padding:12px 14px;border-radius:12px;width:100%}
+  input::placeholder,textarea::placeholder{color:#8b8b8b}
+  footer{background:var(--color-deep-black);border-top:1px solid var(--border);padding:44px 0;color:#a2aab4;font-size:.95rem}
   </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <nav>
-      <div class="brand"><div class="logo" aria-hidden="true"></div> Phoenix Group</div>
-      <div class="navlinks" role="navigation" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#leadership">Leadership</a>
-        <a href="#divisions">Divisions</a>
-        <a href="#sectors">Sectors</a>
-        <a href="#credentials">Credentials</a>
-        <a href="#contact" class="btn">Contact</a>
-      </div>
-    </nav>
-  </div>
-</header>
 
-<main>
+<!-- NAV -->
+<div class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#home"><span class="brand-logo" aria-hidden="true"></span> Phoenix Group</a>
+    <div class="links" role="navigation" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#team">Team</a>
+      <a href="#divisions">Divisions</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#capital">Capital</a>
+      <a href="security.html">Security</a>
+      <a href="privacy.html">Privacy</a>
+      <a class="btn" href="#contact">Contact</a>
+    </div>
+  </div>
+</div>
+
+<main id="home">
   <!-- HERO -->
-  <section class="hero" id="home">
+  <section class="hero">
     <div class="wrap">
-      <div class="eyebrow">Rising Above Standards</div>
-      <h1>For those who build nations, finance growth, and deliver stability — <span style="color:var(--bronze-2)">Phoenix sets the standard they trust.</span></h1>
-      <p class="sub">MRICS-led commercial advisory, programme delivery, professional education and governance — serving governments, investors, universities and NGOs with integrity, precision and secure systems.</p>
+      <div class="phoenix-logo" aria-hidden="true"></div>
+      <h1 class="tagline">For those who build nations, finance growth, and deliver stability — Phoenix sets the standard they trust.</h1>
+      <p class="sub">MRICS-led commercial advisory, programme delivery, professional education and governance — serving executives, investors, universities and NGOs with integrity, precision and secure systems.</p>
       <div class="cta">
         <a class="btn" href="#divisions">Explore Divisions</a>
-        <a class="btn" href="#leadership">Meet Leadership</a>
+        <a class="btn" href="academy.html">Join the Academy</a>
         <a class="btn" href="#contact">Start a Conversation</a>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" class="texture">
     <div class="wrap">
       <h2>About Phoenix Group</h2>
-      <p class="muted" style="max-width:920px">
-        Phoenix Group provides trusted commercial and technical leadership for complex programmes. We combine cost consulting,
-        procurement, project delivery, legal governance and professional education to raise the benchmark for how projects are planned,
-        financed and delivered — aligning global standards with local execution across the UK, Africa and the Middle East.
-      </p>
-      <div class="kpi">
-        <div class="card"><b>30+ years</b><br/><span class="muted">Combined MRICS leadership experience</span></div>
-        <div class="card"><b>£500m+ </b><br/><span class="muted">Direct commercial management to date</span></div>
-        <div class="card"><b>£2bn+ </b><br/><span class="muted">Programme exposure & advisory to date</span></div>
-        <div class="card"><b>UN / NGO</b><br/><span class="muted">Vendor-ready fiduciary governance</span></div>
+      <p class="sub" style="text-align:center">We raise the benchmark for how projects are planned, financed and delivered — aligning global standards with local execution across the UK, Africa and the Middle East.</p>
+      <div class="twocol" style="margin-top:24px">
+        <div>
+          <div class="card">
+            <span class="pill">Who we are</span>
+            <p class="list">Phoenix Group combines cost consulting, procurement, project delivery, legal governance and professional education to provide trusted leadership on complex programmes.</p>
+          </div>
+          <div class="kpi">
+            <div class="card"><b>30+ years</b><br/><span class="muted">Combined MRICS leadership</span></div>
+            <div class="card"><b>£500m+</b><br/><span class="muted">Direct commercial management</span></div>
+            <div class="card"><b>£2bn+</b><br/><span class="muted">Programme exposure & advisory</span></div>
+            <div class="card"><b>UN / NGO</b><br/><span class="muted">Vendor-ready governance</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">Who we serve</span>
+          <h3 style="margin:.2em 0 .4em 0">Executives • Investors • Universities • NGOs • Graduates</h3>
+          <ul class="list">
+            <li><b>Executives:</b> transparent CVRs, risk & opportunity control, margin protection.</li>
+            <li><b>Investors:</b> fiduciary governance, cost verification, independent due diligence.</li>
+            <li><b>Universities:</b> CPD & Associate RICS cohorts; curriculum alignment and employability clinics.</li>
+            <li><b>NGOs / UN:</b> procurement accountability and capacity building.</li>
+            <li><b>Graduates:</b> mentorship, ethics, APC/AssocRICS preparation.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- LEADERSHIP -->
-  <section id="leadership">
+  <section id="leadership" class="alt">
     <div class="wrap twocol">
       <div class="card">
         <span class="pill">Leadership</span>
         <h3>Abdul Khadir Abdullahi, MRICS — Founder & Commercial Lead</h3>
-        <div class="bio">
-          <p class="muted">Chartered Quantity Surveyor with a decade across developer, contractor and consultancy roles (Berkeley Group, Churchill, NHS energy schemes, hyperscale data centres). Track record in procurement strategy, value engineering, change control and board-level reporting.</p>
-          <ul class="list">
-            <li>Commercial governance across regeneration, hotels, and mission-critical programmes.</li>
-            <li>Forensic cost auditing and CVR reporting; supply-chain control over £100m+.</li>
-            <li>Mentorship and professional standards training (CPD, Associate RICS cohorts).</li>
-          </ul>
-        </div>
+        <ul class="list">
+          <li>Regeneration, hotels and hyperscale data centres; NHS energy programmes.</li>
+          <li>Procurement strategy, value engineering, change control and board reporting.</li>
+          <li>Forensic cost auditing; supply-chain control over £100m+.</li>
+        </ul>
       </div>
       <div class="card">
         <span class="pill">Advisory & Arbitration</span>
         <h3>Senior MRICS Mentor — Arbitrator & Governance Advisor</h3>
-        <p class="muted">Phoenix is advised by a senior MRICS arbitrator (mentor to the founder), strengthening contract strategy, dispute avoidance and fiduciary compliance on high-value programmes.</p>
         <ul class="list">
-          <li>Arbitration-informed contract setup and risk management.</li>
+          <li>Arbitration-informed contracts and dispute avoidance.</li>
           <li>Independent assurance for investors, donors and public bodies.</li>
-          <li>Curriculum oversight for ethics & governance modules in the Academy.</li>
+          <li>Ethics & governance module oversight within the Academy.</li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- TEAM (100+ years) -->
+  <section id="team" class="texture">
+    <div class="wrap">
+      <h2>Team & Delivery Capability</h2>
+      <p class="sub" style="text-align:center">Senior Cost Consultants • Project Managers • Programme Planners • Commercial Trainers</p>
+
+      <div class="twocol" style="margin-top:22px">
+        <div>
+          <div class="card">
+            <span class="pill">Experience</span>
+            <h3 style="margin:.2em 0 .6em 0">100+ Years Combined Delivery</h3>
+            <ul class="list">
+              <li>End-to-end cost planning, procurement and commercial management on complex programmes.</li>
+              <li>Programme controls & planning (P6/MSP), risk & opportunity management, change governance.</li>
+              <li>Operational readiness and close-out discipline with verifiable audit trails.</li>
+              <li>In-house training: CPD, Associate RICS, commercial bootcamps for graduates and site teams.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <span class="pill">Engagement Models</span>
+          <h3 style="margin:.2em 0 .6em 0">Advisory • Delivery • Train-the-Team</h3>
+          <ul class="list">
+            <li><b>Advisory:</b> independent cost assurance, procurement strategy, board-ready reporting.</li>
+            <li><b>Delivery:</b> embedded commercial/PMO teams with measurable KPIs and CVR cadence.</li>
+            <li><b>Training:</b> targeted upskilling aligned to your live project risks and milestones.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kpi">
+        <div class="card"><b>100+ yrs</b><br/><span class="muted">Combined senior experience</span></div>
+        <div class="card"><b>£500m+</b><br/><span class="muted">Direct commercial management</span></div>
+        <div class="card"><b>£2bn+</b><br/><span class="muted">Programme exposure</span></div>
+        <div class="card"><b>Multi-sector</b><br/><span class="muted">Energy, data, regeneration, public</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- DIVISIONS -->
-  <section id="divisions">
+  <section id="divisions" class="texture">
     <div class="wrap">
       <h2>The Phoenix Ecosystem</h2>
-      <div class="grid cards">
-        <div class="card" id="advisory">
-          <span class="pill">Advisory</span>
-          <h3>Built on Integrity. Driven by Precision.</h3>
-          <p>Cost planning, procurement, value engineering, change control, CVR reporting and commercial governance for complex programmes.</p>
-        </div>
-        <div class="card" id="developments">
-          <span class="pill">Developments</span>
-          <h3>Turning Vision into Value.</h3>
-          <p>In-house and JV delivery across energy, housing and infrastructure — from feasibility to close-out with measurable KPIs.</p>
-        </div>
-        <div class="card" id="academy">
-          <span class="pill">Academy</span>
-          <h3>Building Those Who Build Nations.</h3>
-          <p>RICS CPD, Associate RICS cohorts, university partnerships and professional standards programmes (e.g., University of Nairobi pilot).</p>
-        </div>
-        <div class="card">
-          <span class="pill">Legal & Governance</span>
-          <h3>Protecting Value. Preserving Trust.</h3>
-          <p>Contracts and arbitration guidance with senior MRICS advisors; robust procedures, audit trails and risk management.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Impact / Foundation</span>
-          <h3>Where Knowledge Creates Change.</h3>
-          <p>NGO-aligned capacity building, scholarships and public-sector upskilling that align to SDGs and local needs.</p>
-        </div>
+      <div class="grid cards ecosystem" style="margin-top:22px">
+        <div class="card"><span class="pill">Advisory</span><h3>Built on Integrity. Driven by Precision.</h3><p>Cost planning, procurement, value engineering, change control, CVR reporting and commercial governance.</p></div>
+        <div class="card"><span class="pill">Developments</span><h3>Turning Vision into Value.</h3><p>In-house and JV delivery across energy, housing and infrastructure — from feasibility to close-out.</p></div>
+        <div class="card"><span class="pill">Academy</span><h3>Building Those Who Build Nations.</h3><p>RICS CPD & Associate cohorts; university partnerships and professional standards programmes.</p></div>
+        <div class="card"><span class="pill">Legal & Governance</span><h3>Protecting Value. Preserving Trust.</h3><p>Contracts, arbitration guidance, audit trails and risk management with senior MRICS advisors.</p></div>
+        <div class="card"><span class="pill">Impact / Foundation</span><h3>Where Knowledge Creates Change.</h3><p>NGO-aligned capacity building, scholarships and public-sector upskilling.</p></div>
       </div>
     </div>
   </section>
 
   <!-- SECTORS -->
-  <section id="sectors">
+  <section id="sectors" class="alt">
     <div class="wrap">
       <h2>Key Sectors & Highlights</h2>
-      <div class="grid cards">
-        <div class="card">
-          <span class="pill">Energy & NHS Upgrades</span>
-          <h3>Decarbonisation & Performance Contracts</h3>
-          <p>Solar PV, HVAC, BMS and LED retrofits with dual dashboards for margin and CO₂ impact; compliant with NHS governance.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Data Centres</span>
-          <h3>Mission-Critical Delivery</h3>
-          <p>Commercial assurance and change control on hyperscale builds; rigorous vendor evaluation and close-out discipline.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Regeneration</span>
-          <h3>Major Residential & Mixed-Use</h3>
-          <p>£300m+ strategic procurement experience; robust reporting to board-level stakeholders and investors.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Public & Donor-Funded</span>
-          <h3>UN & NGO Vendor-Ready</h3>
-          <p>Forensic cost auditing, transparent procurement and capacity-building aligned to fiduciary standards.</p>
-        </div>
+      <div class="grid cards" style="margin-top:22px">
+        <div class="card"><span class="pill">Energy & NHS Upgrades</span><h3>Decarbonisation & Performance Contracts</h3><p>Solar PV, HVAC, BMS and LED retrofits with dual dashboards for margin and CO₂ impact; NHS governance compliant.</p></div>
+        <div class="card"><span class="pill">Data Centres</span><h3>Mission-Critical Delivery</h3><p>Commercial assurance and change control on hyperscale builds; rigorous vendor evaluation and close-out discipline.</p></div>
+        <div class="card"><span class="pill">Regeneration</span><h3>Major Residential & Mixed-Use</h3><p>£300m+ strategic procurement experience; robust reporting to board-level stakeholders and investors.</p></div>
+        <div class="card"><span class="pill">Public & Donor-Funded</span><h3>UN & NGO Vendor-Ready</h3><p>Forensic cost auditing, transparent procurement and capacity-building aligned to fiduciary standards.</p></div>
       </div>
     </div>
   </section>
 
+  <!-- VENTURES & ASSETS -->
+  <section id="ventures" class="alt">
+    <div class="wrap">
+      <h2>Ventures & Assets</h2>
+      <p class="sub" style="text-align:center">A growing portfolio of property and operating businesses that demonstrate disciplined capital deployment and operational excellence.</p>
+
+      <div class="grid cards" style="margin-top:22px">
+        <div class="card">
+          <span class="pill">Property Portfolio</span>
+          <h3>Residential & Mixed-Use</h3>
+          <p>Selective acquisitions with active value-add: capex planning, cost-managed refurbishments, and cash-flow positive operations.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Hospitality Operations</span>
+          <h3>Short-Stay / Airbnb</h3>
+          <p>Professionalised short-stay units with data-driven pricing, SOPs and audit-ready P&L; quality and safety compliance embedded.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Development Pipeline</span>
+          <h3>Targeted In-Fill & Energy Upgrades</h3>
+          <p>Small-to-medium in-fill and retrofit schemes leveraging Phoenix advisory capabilities for cost certainty and programme control.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Human Capital</span>
+          <h3>Training as an Asset</h3>
+          <p>Graduate and supervisor upskilling increases portfolio resilience: fewer defects, faster turns, stronger net yields.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:22px">
+        <span class="pill">Approach</span>
+        <h3>Conservative, Cash-Flow Led, Governance First</h3>
+        <ul class="list">
+          <li>Disciplined deal screens: location, unit economics, downside protection.</li>
+          <li>Central cost control & vendor frameworks; transparent monthly performance packs.</li>
+          <li>Compliance: insurance, licensing, HMO/short-let rules and safety certifications.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVITATION-ONLY CAPITAL -->
+  <section id="capital" class="texture">
+    <div class="wrap">
+      <h2>Invitation-Only Capital</h2>
+      <p class="sub" style="text-align:center">From time to time, Phoenix may invite a small group of qualified partners to co-invest alongside our team on specific opportunities.</p>
+
+      <div class="twocol" style="margin-top:22px">
+        <div class="card">
+          <span class="pill">Principles</span>
+          <ul class="list">
+            <li>Alignment: Phoenix invests its own capital and operates the programme controls.</li>
+            <li>Governance: MRICS-led oversight, independent reporting, and risk-first underwriting.</li>
+            <li>Selectivity: limited opportunities; invite-only based on fit and value-add.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="pill">How It Works</span>
+          <ul class="list">
+            <li>Opportunities discussed privately under NDA with qualified parties.</li>
+            <li>Full information packs with cost plans, risks, and programme methodology.</li>
+            <li>Strict compliance with applicable securities/financial promotion rules.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="sub" style="text-align:center;margin-top:18px">
+        To express interest for future private briefings, contact <a href="#contact">the Phoenix team</a>.<br/>
+        <span style="display:block;color:#b0b0b0;font-size:.95rem;margin-top:6px">
+          This is not an offer to the public or a solicitation to invest. Information is provided for awareness only.
+        </span>
+      </p>
+    </div>
+  </section>
+
   <!-- CREDENTIALS -->
-  <section id="credentials">
+  <section id="credentials" class="texture">
     <div class="wrap twocol">
       <div>
         <h2>Credentials & Assurance</h2>
@@ -216,24 +320,24 @@ Copy everything below into your repo as **`index.html`** → Commit → then ena
         </ul>
       </div>
       <div class="card">
-        <span class="pill">Executive Summary (download)</span>
+        <span class="pill">Executive Summary</span>
         <h3>Phoenix Group Overview</h3>
-        <p class="muted">Request our two-page company profile with divisional scope, case snapshots and engagement models.</p>
+        <p class="sub" style="text-align:left;margin:0 0 12px 0">Request our two-page profile with divisional scope, case snapshots and engagement models.</p>
         <a class="btn" href="#contact">Request Profile</a>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="alt">
     <div class="wrap twocol">
       <div>
         <h2>Start a Conversation</h2>
-        <p class="muted">Tell us about your programme or cohort. We’ll respond with a clear proposal, scope and timeline.</p>
+        <p class="sub" style="text-align:left">Tell us about your programme or cohort. We’ll respond with a clear proposal, scope and timeline.</p>
         <form onsubmit="event.preventDefault(); alert('Thanks — we\\'ll be in touch.');">
-          <input type="text" placeholder="Your name" required />
-          <input type="email" placeholder="Work email" required />
-          <input type="text" placeholder="Organisation (Gov/University/NGO/Investor)" />
+          <input type="text" placeholder="Your name" required>
+          <input type="email" placeholder="Work email" required>
+          <input type="text" placeholder="Organisation (Gov/University/NGO/Investor)">
           <textarea rows="6" placeholder="What do you need help with?"></textarea>
           <button class="btn" type="submit">Send Secure Message</button>
         </form>
@@ -241,22 +345,21 @@ Copy everything below into your repo as **`index.html`** → Commit → then ena
       <div class="card">
         <span class="pill">Presence</span>
         <h3>Global Offices</h3>
-        <p class="muted">London • Nairobi • Mogadishu • Addis Ababa • Dubai</p>
-        <p class="muted">Email: info@phoenixgroup.co.uk<br/>Partnerships: partnerships@phoenixgroup.co.uk</p>
-        <p class="muted">We can operate under NGO, advisory or JV structures depending on project requirements.</p>
+        <p>London • Nairobi • Mogadishu • Addis Ababa • Dubai</p>
+        <p>Email: info@phoenixgroup.co.uk<br>Partnerships: partnerships@phoenixgroup.co.uk</p>
+        <p>We can operate under NGO, advisory or JV structures depending on project requirements.</p>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap" style="border-top:1px solid var(--border);padding-top:18px">
+  <div class="wrap">
     <div>© 2025 Phoenix Group — Rising Above Standards.</div>
-    <div class="muted">Privacy & Data Security Policy available on request. Offline-first architecture; no client data exposed to public clouds.</div>
+    <div style="color:#a2aab4">
+      <a href="privacy.html">Privacy</a> • <a href="security.html">Security</a>
+    </div>
   </div>
 </footer>
 </body>
 </html>
-```
-
-If you want a separate **academy.html** with detailed modules, dates, and pricing, say “academy page” and I’ll generate a matching file you can upload as the second page.
