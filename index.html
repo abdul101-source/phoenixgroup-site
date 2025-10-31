@@ -1,635 +1,906 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ZIADA • Kenya's #1 Cashback App | Scan, Shop, Get M-Pesa Cashback</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Ziada is Kenya's trusted cashback app - scan QR codes, shop at Jumia, Carrefour, Naivas & get instant M-Pesa cashback. Save on groceries, electronics & more!" />
-  <meta name="keywords" content="cashback Kenya, M-Pesa cashback, shopping Kenya, Jumia cashback, Carrefour Kenya, Naivas deals, save money Kenya" />
-  <!-- Open Graph tags for social sharing -->
-  <meta property="og:title" content="ZIADA • Kenya's #1 Cashback App" />
-  <meta property="og:description" content="Scan QR codes, shop at your favorite stores & get instant M-Pesa cashback. Save on Jumia, Carrefour, Naivas & more!" />
-  <meta property="og:type" content="website" />
-  <!-- Add your actual domain here -->
-  <meta property="og:url" content="https://ziada.ke" />
-  <!-- Add your actual image URL here -->
-  <meta property="og:image" content="https://ziada.ke/images/og-image.jpg" />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0f172a;
-      --panel: #0f192b;
-      --surface: #ffffff;
-      --ink: #0f172a;
-      --muted: #6b7280;
-      --accent: #10b981; /* emerald */
-      --accent-soft: rgba(16,185,129,.12);
-      --radius: 18px;
-      --max: 1180px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111827 0%, #020617 40%);
-      color: #fff;
-      line-height: 1.5;
-    }
-    a { text-decoration: none; color: inherit; }
-    .page { max-width: var(--max); margin: 0 auto; padding: 0 1.4rem 4.5rem; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZIADA • Kenya's #1 Cashback & Rewards Platform</title>
+    <meta name="description" content="Get cashback on everyday shopping in Kenya. Shop at Jumia, Naivas, Carrefour & more. Instant M-Pesa payments.">
+    <style>
+        /* Modern color scheme inspired by top cashback sites */
+        :root {
+            --primary: #2E8B57; /* Sea Green - trustworthy & fresh */
+            --primary-dark: #267349;
+            --primary-light: #3CA56B;
+            --secondary: #FF6B35; /* Energetic orange for CTAs */
+            --accent: #1A5276; /* Professional blue accent */
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+            --gray-light: #E9ECEF;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
 
-    /* header */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.1rem 0;
-      position: sticky;
-      top: 0;
-      background: rgba(2,6,23,.85);
-      backdrop-filter: blur(12px);
-      z-index: 50;
-      border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-    .brand {
-      display: flex;
-      gap: 0.7rem;
-      align-items: center;
-    }
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 16px;
-      background: linear-gradient(140deg, #10b981 0%, #059669 60%, #22c55e 100%);
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      letter-spacing: .01em;
-      font-size: .85rem;
-      color: #fff;
-    }
-    .brand-txt {
-      display: flex;
-      flex-direction: column;
-    }
-    .brand-name { font-weight: 700; font-size: 1rem; }
-    .brand-sub { font-size: .65rem; opacity: .8; }
+        /* Modern font stack */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 1.35rem;
-    }
-    nav a {
-      font-size: .85rem;
-      opacity: .8;
-      transition: opacity 0.2s;
-    }
-    nav a:hover { opacity: 1; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .btn {
-      background: #10b981;
-      color: #fff;
-      border-radius: 999px;
-      padding: .48rem 1.05rem;
-      font-size: .74rem;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .btn:hover {
-      background: #0da271;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(16,185,129,.3);
-    }
-    .btn.outline {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.15);
-    }
-    .btn.outline:hover {
-      background: rgba(255,255,255,.1);
-    }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
 
-    /* hero */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 2.8rem;
-      margin-top: 2.4rem;
-      align-items: center;
-    }
-    .hero-title {
-      font-size: clamp(2.05rem, 3.15vw, 2.65rem);
-      font-weight: 700;
-      letter-spacing: -.02em;
-      line-height: 1.2;
-    }
-    .hero-sub {
-      margin-top: 1rem;
-      color: rgba(255,255,255,.75);
-      max-width: 32rem;
-      font-size: 1rem;
-    }
-    .hero-badge {
-      display: inline-flex;
-      gap: .35rem;
-      background: rgba(16,185,129,.12);
-      padding: .35rem .8rem .3rem;
-      border-radius: 999px;
-      font-size: .67rem;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      color: #ecfdf3;
-      margin-bottom: 1.1rem;
-      border: 1px solid rgba(16,185,129,.3);
-    }
-    .hero-actions { 
-      margin-top: 1.8rem; 
-      display: flex; 
-      gap: .8rem; 
-      flex-wrap: wrap; 
-      align-items: center;
-    }
-    .app-badges {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-    .app-badge {
-      height: 40px;
-      transition: transform 0.2s;
-    }
-    .app-badge:hover {
-      transform: scale(1.05);
-    }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .hero-panel {
-      background: rgba(8,12,21,.6);
-      border: 1px solid rgba(255,255,255,.04);
-      border-radius: 18px;
-      padding: 1.1rem 1.1rem 1.3rem;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 25px 45px rgba(0,0,0,.12);
-      transition: transform 0.3s;
-    }
-    .hero-panel:hover {
-      transform: translateY(-5px);
-    }
-    .panel-title { font-weight: 600; margin-bottom: .55rem; }
-    .partner-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(115px,1fr));
-      gap: .6rem;
-      margin-top: .7rem;
-    }
-    .partner {
-      background: rgba(15,23,42,.3);
-      border: 1px solid rgba(148,163,184,.09);
-      border-radius: 14px;
-      padding: .4rem .55rem .55rem;
-      transition: all 0.2s;
-    }
-    .partner:hover {
-      background: rgba(15,23,42,.5);
-      transform: translateY(-2px);
-    }
-    .partner strong { display: block; font-size: 0.75rem; }
-    .partner small { display: block; font-size: .6rem; opacity: .48; margin-top: 2px; }
-    .rate { font-weight: 700; color: #22c55e; font-size: 1.15rem; margin-top: 4px; }
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* categories */
-    section { margin-top: 3.4rem; }
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 1.1rem;
-    }
-    .cats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
-      gap: 1rem;
-    }
-    .cat {
-      background: rgba(15,23,42,.25);
-      border: 1px solid rgba(148,163,184,.04);
-      border-radius: 16px;
-      padding: .9rem .95rem;
-      transition: all 0.2s;
-    }
-    .cat:hover {
-      background: rgba(15,23,42,.4);
-      transform: translateY(-3px);
-    }
-    .cat h3 { margin: 0 0 .25rem; font-size: .88rem; }
-    .cat p { margin: 0; font-size: .7rem; opacity: .65; }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
 
-    /* how it works */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 1.25rem;
-    }
-    .step {
-      background: rgba(15,23,42,.1);
-      border: 1px solid rgba(148,163,184,.05);
-      border-radius: 16px;
-      padding: .85rem .9rem 1rem;
-      transition: all 0.2s;
-    }
-    .step:hover {
-      background: rgba(15,23,42,.25);
-      transform: translateY(-3px);
-    }
-    .step-num {
-      width: 30px;
-      height: 30px;
-      border-radius: 999px;
-      background: rgba(34,197,94,.13);
-      display: grid;
-      place-items: center;
-      font-size: .7rem;
-      margin-bottom: .45rem;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    /* trust / MRICS */
-    .trust-box {
-      background: linear-gradient(135deg, rgba(15,23,42,1) 0%, rgba(16,185,129,.25) 100%);
-      border: 1px solid rgba(255,255,255,.02);
-      border-radius: 18px;
-      padding: 1rem 1.3rem 1.2rem;
-    }
-    .trust-box h3 { margin-top: 0; }
-    .trust-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 1.2rem;
-    }
-    .logos-line {
-      display: flex;
-      gap: .6rem;
-      flex-wrap: wrap;
-      opacity: .85;
-      font-size: .7rem;
-    }
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
 
-    /* testimonials */
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1.5rem;
-    }
-    .testimonial {
-      background: rgba(15,23,42,.25);
-      border: 1px solid rgba(148,163,184,.04);
-      border-radius: 16px;
-      padding: 1.2rem;
-    }
-    .testimonial-text {
-      font-size: 0.85rem;
-      font-style: italic;
-      margin-bottom: 0.8rem;
-    }
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .author-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(16,185,129,.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: bold;
-    }
-    .author-info {
-      font-size: 0.75rem;
-    }
-    .author-name {
-      font-weight: 600;
-    }
-    .author-location {
-      opacity: 0.7;
-      font-size: 0.65rem;
-    }
+        .logo-text {
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--primary);
+        }
 
-    /* FAQ */
-    .faq-item {
-      margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(255,255,255,.05);
-      padding-bottom: 1rem;
-    }
-    .faq-question {
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .faq-answer {
-      font-size: 0.8rem;
-      opacity: 0.8;
-      line-height: 1.5;
-    }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
 
-    /* footer */
-    footer {
-      margin-top: 3.5rem;
-      padding: 1.8rem 0 2.5rem;
-      text-align: center;
-      font-size: .67rem;
-      opacity: .4;
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
 
-    @media (max-width: 880px) {
-      header { flex-direction: column; align-items: flex-start; gap: .9rem; }
-      nav { width: 100%; justify-content: space-between; }
-      .hero { grid-template-columns: 1fr; }
-      .trust-grid { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #E55A2B;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(46, 139, 87, 0.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .app-badges {
+            display: flex;
+            gap: 12px;
+        }
+
+        .app-badge {
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .app-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .stats-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            position: absolute;
+            bottom: -40px;
+            right: 0;
+            width: 280px;
+        }
+
+        .stats-card h3 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* Partners Section */
+        .partners {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .partner-card {
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--gray-light);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .partner-logo {
+            height: 40px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .partner-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .partner-cashback {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .step-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            margin: 0 auto 20px;
+        }
+
+        .step-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .step-description {
+            color: var(--gray);
+        }
+
+        /* Ziada Plus */
+        .ziada-plus {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .plus-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .plus-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .plus-content p {
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+
+        .plus-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .plus-features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .plus-features li:before {
+            content: "✓";
+            background-color: rgba(255,255,255,0.2);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .plus-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            color: var(--dark);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .plus-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .plus-badge {
+            background-color: var(--secondary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .plus-price {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .plus-price span {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--gray);
+        }
+
+        .plus-card p {
+            margin-bottom: 24px;
+            color: var(--gray);
+        }
+
+        /* Founders Section */
+        .founders {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .founder-card {
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            display: flex;
+            gap: 20px;
+            transition: var(--transition);
+        }
+
+        .founder-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .founder-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .founder-info h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .founder-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .founder-education {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .founder-bio {
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background-color: var(--light);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-container, .plus-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps, .founders-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-actions {
+                flex-direction: column;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="page">
+    <!-- Header -->
     <header>
-      <div class="brand">
-        <div class="brand-logo">ZD</div>
-        <div class="brand-txt">
-          <span class="brand-name">ZIADA</span>
-          <span class="brand-sub">Cashback • Kenya • MRICS-grade</span>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">Z</div>
+                <div class="logo-text">ZIADA</div>
+            </div>
+            <nav class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#partners">Stores</a>
+                <a href="#ziada-plus">Ziada Plus</a>
+                <a href="#about">About</a>
+            </nav>
+            <div class="header-buttons">
+                <a href="#" class="btn btn-outline">Sign In</a>
+                <a href="#" class="btn btn-primary">Join Free</a>
+            </div>
         </div>
-      </div>
-      <nav>
-        <a href="#deals">Deals</a>
-        <a href="#how">How it works</a>
-        <a href="#testimonials">Success Stories</a>
-        <a href="#join">Join merchants</a>
-        <button class="btn" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">Start earning</button>
-      </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- Hero Section -->
     <section class="hero">
-      <div>
-        <div class="hero-badge">Instant M-Pesa cashback • Nairobi • 2026 rollout</div>
-        <h1 class="hero-title">Scan QR Codes. Shop. Get M-Pesa Cashback Instantly.</h1>
-        <p class="hero-sub">
-          Ziada connects Kenyan shoppers to verified retailers, e-commerce sites and local cafés — and pays instant M-Pesa cashback on every qualifying purchase.
-          Built by <strong>Abdul Khadir Abdullahi, MRICS</strong> to bring professional transparency to everyday spending.
-        </p>
-        <div class="hero-actions">
-          <button class="btn" onclick="document.getElementById('deals').scrollIntoView({behavior:'smooth'})">View top deals</button>
-          <button class="btn outline" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">Become a partner →</button>
-        </div>
-        <div class="app-badges">
-          <!-- Replace with actual app store badge images -->
-          <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=Google+Play" alt="Get on Google Play" class="app-badge">
-          <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=App+Store" alt="Download on App Store" class="app-badge">
-        </div>
-      </div>
-      <div class="hero-panel">
-        <div class="panel-title">Today's Featured Partners</div>
-        <p style="font-size:.7rem; opacity:.65;">Tap / scan via Ziada to unlock the rates below.</p>
-        <div class="partner-grid">
-          <div class="partner">
-            <strong>JUMIA Kenya</strong>
-            <small>Electronics & home</small>
-            <div class="rate">Up to 6% back</div>
-          </div>
-          <div class="partner">
-            <strong>Carrefour</strong>
-            <small>Groceries</small>
-            <div class="rate">3-4% back</div>
-          </div>
-          <div class="partner">
-            <strong>Naivas</strong>
-            <small>Essentials</small>
-            <div class="rate">3% back</div>
-          </div>
-          <div class="partner">
-            <strong>Local cafés</strong>
-            <small>ArtCaffé • Java</small>
-            <div class="rate">5% back</div>
-          </div>
-          <div class="partner">
-            <strong>Travel / Flights</strong>
-            <small>Aggregator</small>
-            <div class="rate">Up to 4% back</div>
-          </div>
-          <div class="partner">
-            <strong>Construction / Home</strong>
-            <small>Verified suppliers</small>
-            <div class="rate">Custom</div>
-          </div>
-        </div>
-        <p style="margin-top:.7rem; font-size:.65rem; opacity:.6;">
-          Coming: QR-to-site links for malls, billboards and UGC – scan outside, buy online, still get Ziada.
-        </p>
-      </div>
-    </section>
-
-    <!-- TOP CATEGORIES -->
-    <section id="deals">
-      <h2 class="section-title">Top categories for instant cashback</h2>
-      <div class="cats">
-        <div class="cat">
-          <h3>Groceries & Home</h3>
-          <p>Carrefour, Naivas, Quickmart – up to 4%</p>
-        </div>
-        <div class="cat">
-          <h3>Phones & Electronics</h3>
-          <p>Jumia, Avechi, Apple resellers – 2-6%</p>
-        </div>
-        <div class="cat">
-          <h3>Cafés & Food</h3>
-          <p>Java, ArtCaffé, popular local eateries – 5%+</p>
-        </div>
-        <div class="cat">
-          <h3>Travel & Tickets</h3>
-          <p>Local flights, SGR, hotels – 2-4%</p>
-        </div>
-        <div class="cat">
-          <h3>Learning & CPD</h3>
-          <p>MRICS/CPD & training – up to 10% back</p>
-        </div>
-        <div class="cat">
-          <h3>Construction & QS</h3>
-          <p>Owner-rep, BoQ templates, site tech – custom</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="how">
-      <h2 class="section-title">How Ziada works</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Browse or scan</h3>
-          <p>Visit ziada.ke (web), or scan a public QR in a mall, estate or campus. Each QR is AI-linked to the merchant.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Shop as normal</h3>
-          <p>You are redirected to the official merchant site (Jumia, Naivas, travel, CPD) and complete purchase like normal.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Get M-Pesa cashback</h3>
-          <p>We receive the commission from the merchant. We split it with you, instantly or weekly — transparent, MRICS-style.</p>
-        </div>
-      </div>
-      <p style="margin-top:1rem; font-size:.7rem; opacity:.6;">
-        Ziada never inflates prices. Cashback is generated from approved merchant commissions or negotiated discounts.
-      </p>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials">
-      <h2 class="section-title">What Kenyans are saying about Ziada</h2>
-      <div class="testimonials">
-        <div class="testimonial">
-          <div class="testimonial-text">
-            "I saved KSh 1,200 on my Jumia order last week! The M-Pesa cashback came instantly. This is a game-changer for Kenyan shoppers."
-          </div>
-          <div class="testimonial-author">
-            <div class="author-avatar">WK</div>
-            <div class="author-info">
-              <div class="author-name">Wanjiku K.</div>
-              <div class="author-location">Nairobi</div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>💰</span> Get paid to shop in Kenya
+                </div>
+                <h1>Earn Cashback on Everyday Shopping</h1>
+                <p>Shop at your favorite Kenyan stores like Jumia, Naivas, and Carrefour. Get real cash back paid directly to your M-Pesa account.</p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary">Join Free Now</a>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="app-badges">
+                    <img src="https://via.placeholder.com/135x40/2E8B57/ffffff?text=Google+Play" alt="Get on Google Play" class="app-badge">
+                    <img src="https://via.placeholder.com/135x40/2E8B57/ffffff?text=App+Store" alt="Download on App Store" class="app-badge">
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial-text">
-            "As a student, every shilling counts. Ziada has helped me save on groceries and data bundles. The QR codes around campus make it so easy."
-          </div>
-          <div class="testimonial-author">
-            <div class="author-avatar">JM</div>
-            <div class="author-info">
-              <div class="author-name">John M.</div>
-              <div class="author-location">Kenyatta University</div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/500x400/f8f9fa/2E8B57?text=ZIADA+App+Showcase" alt="Ziada App" style="width: 100%; border-radius: 12px;">
+                <div class="stats-card">
+                    <h3>Kenyans are earning with Ziada</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">45K+</div>
+                            <div class="stat-label">Active Users</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">KSh 12M+</div>
+                            <div class="stat-label">Paid Out</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="testimonial">
-          <div class="testimonial-text">
-            "I was skeptical at first, but the transparency and instant M-Pesa payments won me over. Now I check Ziada before every online purchase."
-          </div>
-          <div class="testimonial-author">
-            <div class="author-avatar">AO</div>
-            <div class="author-info">
-              <div class="author-name">Amina O.</div>
-              <div class="author-location">Mombasa</div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Shop at 100+ Kenyan Stores</h2>
+                <p class="section-subtitle">Earn cashback at your favorite retailers across categories</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRUST / MRICS BLOCK -->
-    <section>
-      <div class="trust-box">
-        <div class="trust-grid">
-          <div>
-            <h3>Built by chartered professionals for everyday buyers.</h3>
-            <p style="opacity:.85; font-size:.83rem;">
-              Founded by <strong>Abdul Khadir Abdullahi, MRICS</strong>, Ziada borrows governance from the built-environment sector: evidence, audit trails, no hidden charges.
-              Our promise: <em>"If we earn, you earn."</em>
-            </p>
-            <div class="logos-line">
-              <span>MRICS</span>
-              <span>QS • Owner-Rep</span>
-              <span>AI-linked QR Network</span>
-              <span>Kenya / Somalia / UK diaspora</span>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">JUMIA</div>
+                    <div class="partner-name">Jumia Kenya</div>
+                    <div class="partner-cashback">Up to 8% back</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">Naivas</div>
+                    <div class="partner-name">Naivas Supermarket</div>
+                    <div class="partner-cashback">3% back</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">Carrefour</div>
+                    <div class="partner-name">Carrefour Kenya</div>
+                    <div class="partner-cashback">3-4% back</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">ADIDAS</div>
+                    <div class="partner-name">Adidas Kenya</div>
+                    <div class="partner-cashback">Up to 10% back</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">Java</div>
+                    <div class="partner-name">Java House</div>
+                    <div class="partner-cashback">5% back</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">ArtCaffé</div>
+                    <div class="partner-name">ArtCaffé</div>
+                    <div class="partner-cashback">5% back</div>
+                </div>
             </div>
-          </div>
-          <div>
-            <p style="font-size:.78rem; opacity:.9;">
-              Why this matters: in Kenya many cashback / promo schemes disappear or delay payouts.  
-              Ziada's model is **transparent** — merchant-validated sales + automatic share-back to the shopper.  
-              This is cashback with <strong>fiduciary integrity</strong>.
-            </p>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- FAQ -->
-    <section>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <div class="faq">
-        <div class="faq-item">
-          <div class="faq-question">How quickly do I receive my cashback?</div>
-          <div class="faq-answer">Most cashback is processed instantly to your M-Pesa account. In some cases, it may take up to 7 days depending on the merchant's confirmation process.</div>
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How Ziada Works</h2>
+                <p class="section-subtitle">Start earning cashback in just three simple steps</p>
+            </div>
+            <div class="steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Find & Activate</h3>
+                    <p class="step-description">Browse the Ziada app or website to find deals from your favorite stores. Activate the cashback offer with one click.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Shop As Normal</h3>
+                    <p class="step-description">Shop directly through Ziada or use our unique codes. No changes to your shopping experience.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Get Paid</h3>
+                    <p class="step-description">We track your purchase and send your cashback directly to your M-Pesa account. No waiting, no hassle.</p>
+                </div>
+            </div>
         </div>
-        <div class="faq-item">
-          <div class="faq-question">Is there a fee to use Ziada?</div>
-          <div class="faq-answer">No, Ziada is completely free for shoppers. We earn a commission from merchants when you make a purchase, and we share a portion of that with you.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Which stores work with Ziada?</div>
-          <div class="faq-answer">We partner with major retailers like Jumia, Carrefour, Naivas, as well as local cafés, travel agencies, and more. The list is constantly growing!</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Do I need to install an app?</div>
-          <div class="faq-answer">You can use Ziada through our mobile-friendly website, but we recommend downloading our app for the best experience and push notifications about new deals.</div>
-        </div>
-      </div>
     </section>
 
-    <!-- MERCHANT / FRANCHISE -->
-    <section id="join">
-      <h2 class="section-title">For brands, landlords & influencers</h2>
-      <p style="opacity:.75;">Plug your products into Ziada and we drive verified, trackable sales from TikTok, estates, campuses and QR posters — and we only charge on success.</p>
-      <form action="https://formspree.io/f/your-form-id" method="POST" style="margin-top:1.2rem; background:rgba(15,23,42,.25); border:1px solid rgba(255,255,255,.03); border-radius:16px; padding:1rem 1rem 1.3rem; max-width:650px;">
-        <label for="name" style="font-size:.72rem;">Your name / company</label>
-        <input id="name" name="name" required style="width:100%; padding:.5rem .55rem; border-radius:10px; border:1px solid rgba(148,163,184,.35); margin-bottom:.7rem; background:rgba(15,23,42,.35); color:#fff;">
-        <label for="email" style="font-size:.72rem;">Email / M-Pesa number</label>
-        <input id="email" name="email" required style="width:100%; padding:.5rem .55rem; border-radius:10px; border:1px solid rgba(148,163,184,.35); margin-bottom:.7rem; background:rgba(15,23,42,.35); color:#fff;">
-        <label for="type" style="font-size:.72rem;">I want to:</label>
-        <select id="type" name="type" style="width:100%; padding:.5rem .55rem; border-radius:10px; margin-bottom:.7rem; background:rgba(15,23,42,.35); color:#fff; border:1px solid rgba(148,163,384,.35);">
-          <option value="merchant">List my store / brand</option>
-          <option value="influencer">Promote Ziada (influencer)</option>
-          <option value="franchise">Run a QR pod / city franchise</option>
-        </select>
-        <label for="msg" style="font-size:.72rem;">Tell us what you sell / your audience</label>
-        <textarea id="msg" name="message" rows="3" style="width:100%; padding:.5rem .55rem; border-radius:10px; border:1px solid rgba(148,163,184,.35); background:rgba(15,23,42,.35); color:#fff;"></textarea>
-        <button type="submit" class="btn" style="margin-top:.65rem;">Request partner access →</button>
-      </form>
+    <!-- Ziada Plus -->
+    <section class="ziada-plus" id="ziada-plus">
+        <div class="container plus-container">
+            <div class="plus-content">
+                <h2>Upgrade to Ziada Plus</h2>
+                <p>Get exclusive higher cashback rates, early access to deals, and premium features with our Ziada Plus membership.</p>
+                <ul class="plus-features">
+                    <li>Up to 2X higher cashback rates</li>
+                    <li>Early access to flash sales</li>
+                    <li>Instant M-Pesa payments</li>
+                    <li>Personalized deal recommendations</li>
+                    <li>Priority customer support</li>
+                    <li>Exclusive partner offers</li>
+                </ul>
+                <a href="#" class="btn btn-secondary">Try Ziada Plus Free for 30 Days</a>
+            </div>
+            <div class="plus-card">
+                <div class="plus-card-header">
+                    <h3>Ziada Plus</h3>
+                    <div class="plus-badge">Most Popular</div>
+                </div>
+                <div class="plus-price">KSh 199 <span>/month</span></div>
+                <p>Cancel anytime. First month free for new members.</p>
+                <a href="#" class="btn btn-primary" style="width: 100%;">Start Free Trial</a>
+            </div>
+        </div>
     </section>
 
+    <!-- Founders Section -->
+    <section class="founders" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our Founders</h2>
+                <p class="section-subtitle">A team with global expertise, dedicated to Kenya's shopping experience</p>
+            </div>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <div class="founder-avatar">AK</div>
+                    <div class="founder-info">
+                        <h3>Abdul Khadir Abdullahi</h3>
+                        <div class="founder-role">Co-Founder & CEO</div>
+                        <div class="founder-education">Built Environment Professional</div>
+                        <p class="founder-bio">With extensive experience in projects across East Africa and the Middle East, Abdul brings a commitment to transparency and integrity to the shopping experience.</p>
+                    </div>
+                </div>
+                <div class="founder-card">
+                    <div class="founder-avatar">HM</div>
+                    <div class="founder-info">
+                        <h3>Hamza Musa</h3>
+                        <div class="founder-role">Co-Founder & CTO</div>
+                        <div class="founder-education">MSc Machine Learning, University College London</div>
+                        <p class="founder-bio">A machine learning expert from UCL, Hamza leads our AI-powered platform that generates unique transaction codes and creates personalized shopping experiences for Kenyan consumers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Earning Cashback?</h2>
+            <p>Join thousands of Kenyans who are already saving money on their everyday purchases.</p>
+            <a href="#" class="btn btn-primary" style="padding: 12px 30px; font-size: 16px;">Sign Up Free</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      © <span id="year"></span> ZIADA Cashback Network. "Every spend, a little back."
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <div class="logo-icon">Z</div>
+                        <div class="logo-text" style="color: white;">ZIADA</div>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Kenya's favorite cashback and rewards platform. Shop smart, save money.</p>
+                    <div class="app-badges">
+                        <img src="https://via.placeholder.com/120x35/ffffff/2E8B57?text=Google+Play" alt="Get on Google Play" class="app-badge">
+                        <img src="https://via.placeholder.com/120x35/ffffff/2E8B57?text=App+Store" alt="Download on App Store" class="app-badge">
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Store Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Ziada Cashback Network. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
-  </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    
-    // Simple FAQ toggle functionality
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-      });
-    });
-    
-    // Initially hide FAQ answers
-    document.querySelectorAll('.faq-answer').forEach(answer => {
-      answer.style.display = 'none';
-    });
-  </script>
+    <script>
+        // Simple script for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add animation to cards when they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for animation
+            document.querySelectorAll('.partner-card, .step-card, .founder-card').forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
