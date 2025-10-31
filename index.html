@@ -325,6 +325,125 @@
             50% { transform: translateY(-10px); }
         }
 
+        /* Partners Section */
+        .partners {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .partner-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--gray-light);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .partner-logo {
+            height: 50px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1.5rem;
+        }
+
+        .partner-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .partner-cashback {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--viral) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin: 0 auto 25px;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .step-description {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
         /* Viral Moments Section */
         .viral-moments {
             padding: 100px 0;
@@ -341,26 +460,6 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        .section-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .viral-grid {
@@ -400,39 +499,43 @@
         .viral-card p {
             opacity: 0.9;
             margin-bottom: 20px;
+            font-size: 1.1rem;
         }
 
-        /* Community Growth */
-        .community-growth {
+        /* Transparent Pricing */
+        .transparent-pricing {
             padding: 100px 0;
             background: white;
         }
 
-        .growth-steps {
+        .transparency-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
             margin: 50px 0;
         }
 
-        .growth-step {
-            text-align: center;
-            padding: 30px 20px;
-            background: var(--light);
+        .money-flow {
+            background: white;
+            padding: 40px;
             border-radius: var(--border-radius);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .growth-step:hover {
-            transform: translateY(-5px);
+            border: 2px solid var(--primary);
             box-shadow: var(--shadow);
         }
 
-        .step-number {
+        .flow-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 12px;
+        }
+
+        .flow-number {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--viral) 100%);
+            background: var(--primary);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -440,69 +543,215 @@
             justify-content: center;
             font-weight: 800;
             font-size: 1.25rem;
-            margin: 0 auto 20px;
+            margin-right: 20px;
+            flex-shrink: 0;
         }
 
-        .step-connector {
-            position: absolute;
-            top: 70px;
-            right: -25px;
-            width: 50px;
-            height: 2px;
-            background: var(--primary);
-            opacity: 0.3;
-        }
-
-        /* Viral Distribution */
-        .viral-distribution {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--light) 0%, white 100%);
-        }
-
-        .distribution-visual {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            margin: 50px 0;
-        }
-
-        .distribution-chart {
+        .split-visual {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
             background: white;
-            padding: 40px;
+            padding: 25px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
 
-        .distribution-item {
+        .split-box {
+            text-align: center;
+            padding: 25px;
+            border-radius: 12px;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .user-split {
+            background: rgba(46, 139, 87, 0.1);
+            border: 2px solid var(--primary);
+        }
+
+        .fees-split {
+            background: rgba(108, 117, 125, 0.1);
+            border: 2px solid var(--gray);
+        }
+
+        .platform-split {
+            background: rgba(255, 107, 53, 0.1);
+            border: 2px solid var(--secondary);
+        }
+
+        .split-value {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .user-split .split-value { color: var(--primary); }
+        .fees-split .split-value { color: var(--gray); }
+        .platform-split .split-value { color: var(--secondary); }
+
+        /* Messaging Integration */
+        .messaging-integration {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .messaging-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .messaging-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .messaging-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .messaging-icon {
+            font-size: 3rem;
+            margin-bottom: 25px;
+        }
+
+        .messaging-cta {
+            margin-top: 25px;
+        }
+
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            background: #f8f9fa;
+            border: 2px dashed var(--gray-light);
+            border-radius: 12px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--gray-light);
+            justify-content: center;
+            margin: 25px auto;
+            font-size: 14px;
+            color: var(--gray);
         }
 
-        .distribution-item:last-child {
-            border-bottom: none;
+        /* Social Impact & Ambassador Program */
+        .social-impact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            color: white;
         }
 
-        .distribution-bar {
-            height: 8px;
-            background: var(--gray-light);
-            border-radius: 4px;
-            margin: 10px 0;
-            overflow: hidden;
+        .impact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin: 50px 0;
         }
 
-        .distribution-fill {
-            height: 100%;
-            border-radius: 4px;
+        .ambassador-program {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .fill-viral { background: linear-gradient(90deg, var(--viral), #FFA726); width: 25%; }
-        .fill-users { background: linear-gradient(90deg, var(--primary), var(--primary-light)); width: 45%; }
-        .fill-platform { background: linear-gradient(90deg, var(--accent), #2980b9); width: 20%; }
-        .fill-fees { background: linear-gradient(90deg, var(--gray), #95a5a6); width: 10%; }
+        .commission-structure {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .commission-tier {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+
+        .commission-value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--viral);
+            margin-bottom: 5px;
+        }
+
+        .commission-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Founders Section */
+        .founders {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .founder-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            display: flex;
+            gap: 25px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .founder-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .founder-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .founder-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .founder-role {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .founder-education {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .founder-bio {
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
 
         /* CTA Section */
         .cta {
@@ -624,12 +873,12 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-container, .distribution-visual {
+            .hero-container, .transparency-grid, .impact-grid {
                 grid-template-columns: 1fr;
             }
             
-            .growth-steps {
-                grid-template-columns: repeat(2, 1fr);
+            .steps, .founders-grid {
+                grid-template-columns: 1fr;
             }
             
             .footer-container {
@@ -653,12 +902,12 @@
                 flex-direction: column;
             }
             
-            .growth-steps {
-                grid-template-columns: 1fr;
+            .split-visual {
+                flex-direction: column;
             }
             
-            .step-connector {
-                display: none;
+            .split-box {
+                margin: 10px 0;
             }
             
             .footer-container {
@@ -684,10 +933,11 @@
                 <div class="logo-text">ZIADA</div>
             </div>
             <nav class="nav-links">
+                <a href="#how-it-works">How It Works</a>
                 <a href="#viral-moments">Viral Moments</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#ambassadors">Ambassadors</a>
                 <a href="#community">Community</a>
-                <a href="#distribution">Earnings</a>
-                <a href="#impact">Impact</a>
             </nav>
             <div class="header-buttons">
                 <a href="#" class="btn btn-outline">Sign In</a>
@@ -745,6 +995,75 @@
         </div>
     </section>
 
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Shop at 100+ Kenyan Stores</h2>
+                <p class="section-subtitle">Earn cashback at your favorite retailers across all categories</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">JUMIA</div>
+                    <div class="partner-name">Jumia Kenya</div>
+                    <div class="partner-cashback">Up to 8% back</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">Naivas</div>
+                    <div class="partner-name">Naivas Supermarket</div>
+                    <div class="partner-cashback">3% back</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">Carrefour</div>
+                    <div class="partner-name">Carrefour Kenya</div>
+                    <div class="partner-cashback">3-4% back</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">ADIDAS</div>
+                    <div class="partner-name">Adidas Kenya</div>
+                    <div class="partner-cashback">Up to 10% back</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">Java</div>
+                    <div class="partner-name">Java House</div>
+                    <div class="partner-cashback">5% back</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">ArtCaffé</div>
+                    <div class="partner-name">ArtCaffé</div>
+                    <div class="partner-cashback">5% back</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How Ziada Works</h2>
+                <p class="section-subtitle">Start earning cashback in just three simple steps</p>
+            </div>
+            <div class="steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Find & Activate</h3>
+                    <p class="step-description">Browse the Ziada app or website to find deals from your favorite stores. Activate the cashback offer with one click.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Shop As Normal</h3>
+                    <p class="step-description">Shop directly through Ziada or use our unique codes. No changes to your shopping experience.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Get Paid + Bonuses</h3>
+                    <p class="step-description">We track your purchase and send cashback plus viral bonuses directly to your M-Pesa account.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Viral Moments Section -->
     <section class="viral-moments" id="viral-moments">
         <div class="container">
@@ -778,100 +1097,213 @@
         </div>
     </section>
 
-    <!-- Community Growth -->
-    <section class="community-growth" id="community">
+    <!-- Transparent Pricing -->
+    <section class="transparent-pricing" id="pricing">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" style="color: var(--dark);">Grow Together, Earn Together</h2>
-                <p class="section-subtitle" style="color: var(--gray);">Our community-driven model ensures everyone benefits from collective growth</p>
+                <h2 class="section-title">Our Transparent 50/50 Model</h2>
+                <p class="section-subtitle">Complete honesty about how your cashback works</p>
             </div>
             
-            <div class="growth-steps">
-                <div class="growth-step">
-                    <div class="step-number">1</div>
-                    <h3>Join Free</h3>
-                    <p>Sign up and immediately qualify for all viral bonus distributions</p>
-                    <div class="step-connector"></div>
+            <div class="transparency-grid">
+                <div class="money-flow">
+                    <h3 style="margin-bottom: 30px; color: var(--dark);">How Your Cashback Flows</h3>
+                    <div class="flow-step">
+                        <div class="flow-number">1</div>
+                        <div>
+                            <strong>You Make a Purchase</strong><br>
+                            Shop through Ziada at partner stores
+                        </div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-number">2</div>
+                        <div>
+                            <strong>We Earn Commission</strong><br>
+                            Store pays us a marketing commission
+                        </div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-number">3</div>
+                        <div>
+                            <strong>We Cover Essential Costs</strong><br>
+                            M-Pesa fees, banking, operations
+                        </div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-number">4</div>
+                        <div>
+                            <strong>We Split What's Left 50/50</strong><br>
+                            Equal shares for you and our platform growth
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="growth-step">
-                    <div class="step-number">2</div>
-                    <h3>Shop Normally</h3>
-                    <p>Use Ziada for your everyday shopping across 100+ Kenyan stores</p>
-                    <div class="step-connector"></div>
-                </div>
-                
-                <div class="growth-step">
-                    <div class="step-number">3</div>
-                    <h3>Earn Cashback</h3>
-                    <p>Get standard cashback on every purchase plus viral bonuses</p>
-                    <div class="step-connector"></div>
-                </div>
-                
-                <div class="growth-step">
-                    <div class="step-number">4</div>
-                    <h3>Share Bonuses</h3>
-                    <p>When Ziada hits milestones, every active user gets equal bonus</p>
+                <div>
+                    <h3 style="margin-bottom: 30px; color: var(--dark);">Real Example: KSh 1,000 Purchase</h3>
+                    <div class="split-visual">
+                        <div class="split-box user-split">
+                            <div class="split-value">KSh 45</div>
+                            <div>Your Cashback</div>
+                            <small>45% of commission</small>
+                        </div>
+                        <div class="split-box fees-split">
+                            <div class="split-value">KSh 10</div>
+                            <div>Essential Fees</div>
+                            <small>M-Pesa, banking, operations</small>
+                        </div>
+                        <div class="split-box platform-split">
+                            <div class="split-value">KSh 45</div>
+                            <div>Platform Growth</div>
+                            <small>Improving your experience</small>
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; padding: 25px; border-radius: var(--border-radius); margin-top: 30px; box-shadow: var(--shadow);">
+                        <h4 style="margin-bottom: 15px; color: var(--dark);">Why This Model Works</h4>
+                        <ul style="margin-left: 20px; color: var(--gray);">
+                            <li style="margin-bottom: 10px;"><strong>Sustainable:</strong> We can keep serving you long-term</li>
+                            <li style="margin-bottom: 10px;"><strong>Transparent:</strong> You see exactly where money goes</li>
+                            <li><strong>Fair:</strong> Equal sharing after essential costs</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Viral Distribution -->
-    <section class="viral-distribution" id="distribution">
+    <!-- Messaging Integration -->
+    <section class="messaging-integration" id="community">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" style="color: var(--dark);">Transparent Equal Distribution</h2>
-                <p class="section-subtitle" style="color: var(--gray);">See exactly how every shilling is shared among our community</p>
+                <h2 class="section-title">Join Our Cashback Community</h2>
+                <p class="section-subtitle">Get real-time deals, cashback alerts, and exclusive offers through your favorite messaging apps</p>
             </div>
             
-            <div class="distribution-visual">
-                <div>
-                    <h3 style="margin-bottom: 20px; color: var(--dark);">Where Every KSh 100 Goes</h3>
-                    <p style="color: var(--gray); margin-bottom: 30px;">Our revolutionary model ensures maximum community benefit while maintaining sustainability</p>
-                    
-                    <div style="background: white; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--shadow);">
-                        <h4 style="margin-bottom: 15px; color: var(--dark);">Viral Bonus Example</h4>
-                        <p style="color: var(--gray); font-size: 0.9rem;">
-                            <strong>KSh 100,000 bonus pool ÷ 45,821 active users = KSh 2.18 each</strong><br>
-                            Every user gets exactly the same amount, regardless of spending level
-                        </p>
+            <div class="messaging-grid">
+                <div class="messaging-card">
+                    <div class="messaging-icon">💬</div>
+                    <h3>WhatsApp Community</h3>
+                    <p>Join 10,000+ Kenyans getting daily cashback deals, flash sales, and shopping tips directly on WhatsApp.</p>
+                    <div class="qr-code">
+                        Scan to Join WhatsApp
+                    </div>
+                    <div class="messaging-cta">
+                        <a href="#" class="btn btn-primary">Join WhatsApp Group</a>
                     </div>
                 </div>
                 
-                <div class="distribution-chart">
-                    <h4 style="margin-bottom: 25px; text-align: center; color: var(--dark);">Revenue Distribution</h4>
+                <div class="messaging-card">
+                    <div class="messaging-icon">📱</div>
+                    <h3>Telegram Channel</h3>
+                    <p>Get instant notifications for limited-time offers and exclusive partner deals. Perfect for power shoppers.</p>
+                    <div class="qr-code">
+                        Scan for Telegram
+                    </div>
+                    <div class="messaging-cta">
+                        <a href="#" class="btn btn-primary">Join Telegram Channel</a>
+                    </div>
+                </div>
+                
+                <div class="messaging-card">
+                    <div class="messaging-icon">🔔</div>
+                    <h3>SMS Alerts</h3>
+                    <p>Never miss a deal with instant SMS notifications for cashback opportunities matching your shopping habits.</p>
+                    <div class="messaging-cta">
+                        <a href="#" class="btn btn-outline">Enable SMS Alerts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Impact & Ambassador Program -->
+    <section class="social-impact" id="ambassadors">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Building More Than Cashback</h2>
+                <p class="section-subtitle">Creating economic opportunities while revolutionizing Kenyan shopping</p>
+            </div>
+
+            <div class="impact-grid">
+                <div>
+                    <h3 style="margin-bottom: 25px; font-size: 2rem;">Funding Social Mobility</h3>
+                    <p style="margin-bottom: 30px; opacity: 0.9; font-size: 1.1rem;">
+                        We're raising additional funds to expand our social impact initiatives, creating economic opportunities 
+                        for students, young entrepreneurs, and underserved communities across Kenya.
+                    </p>
                     
-                    <div class="distribution-item">
-                        <span>Viral Bonus Pool</span>
-                        <strong>25%</strong>
+                    <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: var(--border-radius); margin-bottom: 30px;">
+                        <h4 style="margin-bottom: 20px;">Our Impact Goals:</h4>
+                        <ul style="margin-left: 20px; opacity: 0.9;">
+                            <li style="margin-bottom: 10px;">Create 1,000+ student ambassador opportunities</li>
+                            <li style="margin-bottom: 10px;">Launch campus cashback programs in 10+ universities</li>
+                            <li style="margin-bottom: 10px;">Support 500+ micro-influencers with earning potential</li>
+                            <li>Develop franchise models for local entrepreneurs</li>
+                        </ul>
                     </div>
-                    <div class="distribution-bar">
-                        <div class="distribution-fill fill-viral"></div>
+                </div>
+
+                <div class="ambassador-program">
+                    <h3 style="margin-bottom: 25px;">Join Our Ambassador Program</h3>
+                    <p style="margin-bottom: 25px; opacity: 0.9;">
+                        Become a Ziada Brand Ambassador and earn while helping your community save money.
+                    </p>
+
+                    <div class="commission-structure">
+                        <div class="commission-tier">
+                            <div class="commission-value">5%</div>
+                            <div class="commission-label">First-level referrals</div>
+                        </div>
+                        <div class="commission-tier">
+                            <div class="commission-value">2%</div>
+                            <div class="commission-label">Second-level referrals</div>
+                        </div>
+                        <div class="commission-tier">
+                            <div class="commission-value">1%</div>
+                            <div class="commission-label">Third-level referrals</div>
+                        </div>
+                        <div class="commission-tier">
+                            <div class="commission-value">∞</div>
+                            <div class="commission-label">Residual income</div>
+                        </div>
                     </div>
-                    
-                    <div class="distribution-item">
-                        <span>User Cashback</span>
-                        <strong>45%</strong>
+
+                    <p style="font-size: 0.9rem; opacity: 0.8; text-align: center; margin-top: 20px;">
+                        Diminishing returns model ensures fair distribution while creating long-term value
+                    </p>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="#" class="btn btn-viral">Become an Ambassador</a>
                     </div>
-                    <div class="distribution-bar">
-                        <div class="distribution-fill fill-users"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section class="founders">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Built by Experts, Made for Kenya</h2>
+                <p class="section-subtitle">A team with global expertise, dedicated to Kenya's shopping experience</p>
+            </div>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <div class="founder-avatar">AK</div>
+                    <div class="founder-info">
+                        <h3>Abdul Khadir Abdullahi</h3>
+                        <div class="founder-role">Co-Founder & CEO</div>
+                        <div class="founder-education">Built Environment Professional</div>
+                        <p class="founder-bio">With extensive experience in projects across East Africa and the Middle East, Abdul brings a commitment to transparency and integrity to the shopping experience.</p>
                     </div>
-                    
-                    <div class="distribution-item">
-                        <span>Platform Growth</span>
-                        <strong>20%</strong>
-                    </div>
-                    <div class="distribution-bar">
-                        <div class="distribution-fill fill-platform"></div>
-                    </div>
-                    
-                    <div class="distribution-item">
-                        <span>Essential Fees</span>
-                        <strong>10%</strong>
-                    </div>
-                    <div class="distribution-bar">
-                        <div class="distribution-fill fill-fees"></div>
+                </div>
+                <div class="founder-card">
+                    <div class="founder-avatar">HM</div>
+                    <div class="founder-info">
+                        <h3>Hamza Musa</h3>
+                        <div class="founder-role">Co-Founder & CTO</div>
+                        <div class="founder-education">MSc Machine Learning, University College London</div>
+                        <p class="founder-bio">A machine learning expert from UCL, Hamza leads our AI-powered platform that generates unique transaction codes and creates personalized shopping experiences for Kenyan consumers.</p>
                     </div>
                 </div>
             </div>
@@ -879,7 +1311,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta" id="impact">
+    <section class="cta">
         <div class="container">
             <h2>Ready to Join the Viral Revolution?</h2>
             <p>Be part of Kenya's first cashback platform where success means everyone wins together</p>
@@ -912,19 +1344,19 @@
                 <div class="footer-col">
                     <h3>Platform</h3>
                     <ul class="footer-links">
-                        <li><a href="#">How It Works</a></li>
-                        <li><a href="#">Viral Moments</a></li>
-                        <li><a href="#">Store Partners</a></li>
-                        <li><a href="#">Cashback Rates</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#viral-moments">Viral Moments</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#ambassadors">Ambassadors</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Community</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Join WhatsApp</a></li>
-                        <li><a href="#">Telegram Alerts</a></li>
+                        <li><a href="#community">Join WhatsApp</a></li>
+                        <li><a href="#community">Telegram Alerts</a></li>
                         <li><a href="#">Success Stories</a></li>
-                        <li><a href="#">Ambassador Program</a></li>
+                        <li><a href="#ambassadors">Ambassador Program</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -953,7 +1385,7 @@
                     if (!startTimestamp) startTimestamp = timestamp;
                     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                     const value = Math.floor(progress * (end - start) + start);
-                    element.textContent = value.toLocaleString();
+                    element.textContent = value === 250000 ? 'KSh 250K' : value.toLocaleString();
                     if (progress < 1) {
                         window.requestAnimationFrame(step);
                     }
@@ -966,10 +1398,14 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const viralValue = entry.target.querySelector('.viral-value');
-                        if (viralValue && viralValue.textContent.includes('KSh')) {
-                            animateValue(viralValue, 0, 250000, 2000);
-                        } else if (viralValue) {
-                            animateValue(viralValue, 0, 45821, 1500);
+                        if (viralValue) {
+                            if (viralValue.textContent.includes('KSh')) {
+                                animateValue(viralValue, 0, 250000, 2000);
+                            } else if (viralValue.textContent === '45,821') {
+                                animateValue(viralValue, 0, 45821, 1500);
+                            } else {
+                                animateValue(viralValue, 0, 546, 1000);
+                            }
                         }
                     }
                 });
@@ -994,7 +1430,7 @@
             });
 
             // Add floating animation to cards
-            const cards = document.querySelectorAll('.viral-card, .growth-step');
+            const cards = document.querySelectorAll('.viral-card, .step-card, .partner-card, .messaging-card, .founder-card');
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
