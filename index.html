@@ -3,278 +3,292 @@
 <head>
   <meta charset="UTF-8" />
   <title>Ziada — Every Shilling Works Harder</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Ziada is a Kenyan cashback network built on chartered, transparent standards — helping everyday buyers earn real money back from the brands they already use.">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Ziada is Kenya’s cashback layer — scan a QR outdoors, shop with partner brands, and get real M-Pesa cashback. Built by MRICS for transparency.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --emerald: #12b76a;
-      --emerald-dark: #0f9f59;
-      --gold: #f5c76c;
-      --bg: #f6f8f9;
-      --ivory: #fafafa;
-      --card: #ffffff;
-      --text: #0b0e11;
-      --muted: #6b7280;
-      --radius: 14px;
-      --maxw: 1100px;
+    :root{
+      --emerald:#12b76a;
+      --emerald-dark:#0f9f59;
+      --gold:#f5c76c;
+      --bg:#f6f8f9;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --text:#0b0e11;
+      --radius:14px;
+      --maxw:1100px;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: var(--bg);
-      color: var(--text);
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px 50px;}
+    header{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+    .logo{display:flex;gap:10px;align-items:center;}
+    .logo-mark{
+      width:46px;height:46px;border-radius:12px;
+      background:linear-gradient(135deg,var(--emerald),var(--gold));
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:800;letter-spacing:.03em;
     }
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 18px 50px;
+    .nav a{margin-left:16px;text-decoration:none;font-weight:600;color:var(--muted);font-size:.9rem;}
+    .nav a:hover{color:var(--emerald);}
+    .hero{
+      display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:30px;align-items:center;
     }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 0;
+    .card{
+      background:var(--card);border-radius:var(--radius);padding:24px;
+      box-shadow:0 8px 26px rgba(0,0,0,.03);
     }
-    .logo {
-      display: flex;
-      gap: 10px;
-      align-items: center;
+    h1{font-size:2.4rem;margin:0 0 .6rem;}
+    p.lead{color:var(--muted);font-size:1.02rem;margin-bottom:1.2rem;}
+    .btn{
+      background:var(--emerald);color:#fff;border:none;
+      padding:10px 20px;border-radius:999px;text-decoration:none;
+      font-weight:700;display:inline-block;cursor:pointer;
     }
-    .logo-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--emerald), var(--gold));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 800;
-      letter-spacing: 0.03em;
+    .btn:hover{background:var(--emerald-dark);}
+    .btn.ghost{background:transparent;border:1px solid rgba(18,183,106,.35);color:var(--emerald);}
+    .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-top:14px;}
+    .tile{background:#fff;border:1px solid #edf0f2;border-radius:10px;padding:9px 11px;text-align:center;font-weight:600;color:#1f2933;}
+    section{margin-top:2.4rem;}
+    h2{margin:0 0 1rem;}
+    .muted{color:var(--muted);}
+    input,select,textarea{
+      width:100%;padding:.6rem .65rem;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:.6rem;font-family:inherit;
     }
-    .nav a {
-      margin-left: 18px;
-      text-decoration: none;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-    .nav a:hover {
-      color: var(--emerald);
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 28px;
-      margin-top: 30px;
-      align-items: center;
-    }
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.03);
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin: 0 0 0.4rem;
-      letter-spacing: -0.01em;
-    }
-    p.lead {
-      color: var(--muted);
-      font-size: 1.02rem;
-      margin-bottom: 1.2rem;
-    }
-    .btn {
-      display: inline-block;
-      background: var(--emerald);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: background 0.15s ease-out;
-    }
-    .btn:hover { background: var(--emerald-dark); }
-    .btn.ghost {
-      background: transparent;
-      border: 1px solid rgba(18,183,106,0.35);
-      color: var(--emerald);
-    }
-    .tiles {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-    .tile {
-      background: #fff;
-      border: 1px solid #edf0f2;
-      border-radius: 11px;
-      padding: 10px 12px;
-      font-weight: 600;
-      text-align: center;
-      color: #1f2933;
-    }
-    section { margin-top: 2.6rem; }
-    h2 { margin: 0 0 1rem; }
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.1rem;
-    }
-    .muted { color: var(--muted); }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.6rem 0.65rem;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      font-family: inherit;
-      margin-bottom: 0.6rem;
-    }
-    footer {
-      text-align: center;
-      color: #9ca3af;
-      font-size: 0.78rem;
-      padding: 32px 0 12px;
-    }
-    @media (max-width: 880px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: left;
-      }
-      header { flex-direction: column; align-items: flex-start; }
-      .nav { margin-top: 1rem; }
+    .flex{display:flex;gap:1rem;flex-wrap:wrap;}
+    .table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;}
+    .table th,.table td{padding:.65rem .75rem;border-bottom:1px solid #edf0f2;font-size:.85rem;text-align:left;}
+    .table th{background:#f9fafb;font-weight:600;}
+    footer{text-align:center;color:#9ca3af;font-size:.75rem;padding:34px 0 10px;}
+    @media(max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      header{flex-direction:column;align-items:flex-start;}
+      .nav{margin-top:1rem;}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <!-- TOP -->
     <header>
       <div class="logo">
         <div class="logo-mark">ZI</div>
         <div>
           <div style="font-weight:800;">Ziada</div>
-          <div style="font-size:0.75rem; color:var(--muted);">Every Shilling Works Harder</div>
+          <div style="font-size:.74rem;color:var(--muted);">Every Shilling Works Harder</div>
         </div>
       </div>
       <nav class="nav">
-        <a href="#impact">Impact</a>
-        <a href="#about">About</a>
+        <a href="#how">How it works</a>
+        <a href="#payouts">Payouts</a>
+        <a href="#categories">Deals</a>
         <a href="#join" class="btn" style="padding:6px 14px;">Join</a>
       </nav>
     </header>
 
-    <section class="hero">
+    <!-- HERO -->
+    <section class="hero" id="top">
       <div class="card">
-        <h1>Cashback that actually reaches people.</h1>
+        <h1>Cashback with real Kenyan reach.</h1>
         <p class="lead">
-          Ziada helps Kenyan buyers get money back from the brands they already use — simple, transparent, and built by a Chartered (MRICS) professional.
+          Scan a Ziada QR in town, shop at a partner brand, get M-Pesa back. We’re building the outdoor cashback network for Kenya — transparent, ethical, MRICS-backed.
         </p>
-        <a href="#join" class="btn">Get Early Access →</a>
-        <a href="#brands" class="btn ghost" style="margin-left:6px;">For Brands</a>
-
+        <a href="#join" class="btn">Get early access →</a>
+        <a href="#categories" class="btn ghost" style="margin-left:6px;">View partner rates</a>
         <div class="tiles">
           <div class="tile">Groceries</div>
-          <div class="tile">Bills & Utilities</div>
-          <div class="tile">Travel & Tech</div>
+          <div class="tile">Health</div>
+          <div class="tile">Fashion</div>
+          <div class="tile">Travel</div>
         </div>
       </div>
-
       <aside class="card" id="impact">
-        <h2>Your 5-Year Gain</h2>
-        <p class="muted" style="font-size:.85rem;">Enter how much your household spends monthly.</p>
-        <input type="number" id="monthly" placeholder="e.g. 25000 KES">
+        <h2>5-year savings</h2>
+        <p class="muted" style="font-size:.8rem;">Enter monthly spend to see your potential cashback.</p>
+        <input type="number" id="monthly" placeholder="e.g. 25000 KES" />
         <select id="rate">
-          <option value="0.03">3% average cashback</option>
-          <option value="0.05">5% boosted (Plus)</option>
+          <option value="0.03">3% avg. cashback</option>
+          <option value="0.05">5% boosted (Ziada Plus)</option>
         </select>
-        <button class="btn" onclick="calcZiada()" style="width:100%; margin-bottom:0.6rem;">Calculate →</button>
-        <div id="result" class="muted" style="font-weight:600; margin-top:.3rem;">
-          5-year potential: — 
-        </div>
-        <p class="muted" style="font-size:.75rem;margin-top:.6rem;">
-          This is an estimate — real partners and promos can increase this.
-        </p>
+        <button class="btn" onclick="calcZiada()" style="width:100%;margin-bottom:.4rem;">Calculate →</button>
+        <div id="result" class="muted" style="font-weight:600;">5-year potential: —</div>
+        <p class="muted" style="font-size:.7rem;margin-top:.5rem;">Actual payout depends on brand % and your usage.</p>
       </aside>
     </section>
 
-    <section id="about">
+    <!-- TARGET NETWORK -->
+    <section style="margin-top:1.8rem;">
+      <div class="card" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        <span style="font-weight:600;">Target network (Kenya):</span>
+        <span style="background:#fff;border:1px solid #edf0f2;border-radius:999px;padding:4px 12px;font-size:.75rem;">Naivas</span>
+        <span style="background:#fff;border:1px solid #edf0f2;border-radius:999px;padding:4px 12px;font-size:.75rem;">Carrefour</span>
+        <span style="background:#fff;border:1px solid #edf0f2;border-radius:999px;padding:4px 12px;font-size:.75rem;">Jumia</span>
+        <span style="background:#fff;border:1px solid #edf0f2;border-radius:999px;padding:4px 12px;font-size:.75rem;">Goodlife</span>
+        <span style="background:#fff;border:1px solid #edf0f2;border-radius:999px;padding:4px 12px;font-size:.75rem;">Text Book Centre</span>
+        <span style="background:rgba(18,183,106,.08);border-radius:999px;padding:4px 12px;font-size:.72rem;color:#0f766e;">+ cafés, salons, local shops</span>
+      </div>
+      <p style="color:#9ca3af;font-size:.68rem;margin-top:.3rem;">*Shown as intended partners/verticals — live list will update.</p>
+    </section>
+
+    <!-- AI QR NETWORK -->
+    <section id="how">
       <div class="card">
-        <h2>Built on chartered standards</h2>
+        <h2>AI-powered QR network</h2>
         <p class="muted">
-          Ziada was founded by <strong>Abdul Khadir Abdullahi MRICS</strong>, a Chartered Quantity Surveyor who has managed major projects in the UK, Europe, and East Africa.
-          After years of delivering for big clients, he wanted a way to return value to ordinary people — without noise, without tricks, and without exploiting anyone.
+          Ziada prints & deploys smart QRs (posters, pods, mall stands, even “human pods”). Each QR is AI-routed:
         </p>
-        <p class="muted">
-          That’s why Ziada is designed as a transparent cashback layer for Kenya — you spend, we verify, you get money back. Brands grow, people save.
-        </p>
-        <p style="border-left:4px solid var(--emerald); padding-left:1rem; margin-top:1rem;">
-          “I’ve made money building projects. Now I’m building something that gives it back.”
+        <ul class="muted" style="line-height:1.6;">
+          <li><strong>On mobile:</strong> user sees the right local deal or partner (e.g. Naivas, ArtCaffé, Goodlife).</li>
+          <li><strong>On desktop:</strong> user can be sent straight to the official partner site or affiliate link — still tracked to you.</li>
+          <li><strong>Per location:</strong> QRs can prioritise nearby merchants or higher-paying partners.</li>
+          <li><strong>Per influencer:</strong> each influencer gets their own QR → all sales tracked → weekly M-Pesa payouts.</li>
+        </ul>
+        <p class="muted" style="font-size:.78rem;">
+          That’s how we take Rakuten-style affiliate and make it visible outdoors in Kenya.
         </p>
       </div>
     </section>
 
-    <section id="brands">
+    <!-- PAYOUTS -->
+    <section id="payouts">
       <div class="card">
-        <h2>For brands, retailers & cafés</h2>
-        <p class="muted">
-          Join the Ziada network and offer 3–10% cashback only on verified sales. We handle the tracking and payouts. You get repeat customers, real data, and a brand that looks generous.
+        <h2>How the money flows</h2>
+        <p class="muted">We keep it transparent so both customers and businesses see the value.</p>
+        <div class="flex">
+          <div style="flex:1;min-width:240px;">
+            <h3>1. Brand pays Ziada</h3>
+            <p class="muted" style="font-size:.85rem;">
+              Typical brand commission in Kenya: <strong>6–12%</strong> of the purchase (online or via QR).
+            </p>
+          </div>
+          <div style="flex:1;min-width:240px;">
+            <h3>2. We pay customer</h3>
+            <p class="muted" style="font-size:.85rem;">
+              We plan to pay out <strong>50–70%</strong> of that to the customer’s M-Pesa.  
+              Example: brand pays 10% → customer gets 5–7%.
+            </p>
+          </div>
+          <div style="flex:1;min-width:240px;">
+            <h3>3. We keep the rest</h3>
+            <p class="muted" style="font-size:.85rem;">
+              Remaining <strong>30–50%</strong> is Ziada revenue + share for the local franchise/pod who deployed the QR.
+            </p>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:1rem;">
+          📌 For businesses: if your average basket is 3,000 KES and Ziada brings 300 extra orders a month, that’s **900,000 KES** extra revenue — paid only on success.
         </p>
-        <div class="grid-3">
-          <div>
-            <h3>Why join?</h3>
-            <p class="muted">Instant customer trust — MRICS-backed and payout-first.</p>
-          </div>
-          <div>
-            <h3>What you pay</h3>
-            <p class="muted">Only on real sales. No setup fee.</p>
-          </div>
-          <div>
-            <h3>What you get</h3>
-            <p class="muted">Traffic from TikTok Lives, QR campaigns, and local pods.</p>
-          </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id="categories">
+      <h2>Deals by category</h2>
+      <p class="muted">Sample cashback rates — you can change these as you sign real partners.</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Example partner</th>
+            <th>Cashback offered</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Groceries</td>
+            <td>Naivas / Carrefour</td>
+            <td><strong>2% – 4%</strong></td>
+            <td>Small but frequent. Good for mass customers.</td>
+          </tr>
+          <tr>
+            <td>Health & Pharmacy</td>
+            <td>Goodlife / Pharmacies</td>
+            <td><strong>4% – 6%</strong></td>
+            <td>Families, NGO staff, expats.</td>
+          </tr>
+          <tr>
+            <td>Fashion & Lifestyle</td>
+            <td>LC Waikiki / Mr Price / Miniso</td>
+            <td><strong>5% – 10%</strong></td>
+            <td>Great for TikTok promos.</td>
+          </tr>
+          <tr>
+            <td>Travel & Hotels</td>
+            <td>Local agents / booking affiliates</td>
+            <td><strong>6% – 12%</strong></td>
+            <td>High value → show in Lives.</td>
+          </tr>
+          <tr>
+            <td>Tech & Devices</td>
+            <td>Samsung / Oppo distributors</td>
+            <td><strong>3% – 6%</strong></td>
+            <td>Use as hero offer.</td>
+          </tr>
+          <tr>
+            <td>Food & Cafés</td>
+            <td>ArtCaffé / Java / Local</td>
+            <td><strong>5% fixed</strong></td>
+            <td>Perfect for QR in the mall.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section>
+      <h2>Why people will use Ziada</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;">
+        <div class="card">
+          <p style="color:#374151;">“Most of my spend is food, school and airtime. If I can get even KES 1,000 back monthly, I’m in.”</p>
+          <p style="color:#9ca3af;font-size:.78rem;">— Mary, Nairobi</p>
+        </div>
+        <div class="card">
+          <p style="color:#374151;">“If Ziada brings us tracked buyers, 5% cashback is fine. We need repeat, not random.”</p>
+          <p style="color:#9ca3af;font-size:.78rem;">— Café owner, Kilimani</p>
+        </div>
+        <div class="card">
+          <p style="color:#374151;">“Because it’s MRICS-led, we can offer this to our staff as a benefit and trust the reporting.”</p>
+          <p style="color:#9ca3af;font-size:.78rem;">— HR Lead, Nairobi SME</p>
         </div>
       </div>
     </section>
 
+    <!-- JOIN -->
     <section id="join">
       <div class="card">
-        <h2>Join the pilot list</h2>
-        <p class="muted">Buyers, creators, and business owners — tell us where you are. We'll send your QR and onboarding kit.</p>
-        <!-- Replace this action with your Formspree / Google Form when ready -->
+        <h2>Join the pilot</h2>
+        <p class="muted">Buyers, creators, and businesses — tell us where you are. We’ll send your onboarding kit and QR.</p>
         <form action="https://formspree.io/f/your-form-id" method="POST">
           <input name="name" placeholder="Full name" required />
           <input name="contact" placeholder="Email or M-Pesa number" required />
           <select name="role">
             <option value="buyer">I want cashback</option>
-            <option value="business">I own / manage a business</option>
-            <option value="creator">I’m a creator (TikTok/IG)</option>
+            <option value="merchant">I’m a business / retailer</option>
+            <option value="creator">I’m a creator (TikTok / IG)</option>
           </select>
-          <textarea name="message" placeholder="City / brand you want on Ziada" rows="3"></textarea>
+          <textarea name="message" placeholder="City + brand you want added (e.g. Naivas Ongata, Goodlife Lavington)" rows="3"></textarea>
           <button type="submit" class="btn" style="width:100%;">Submit →</button>
         </form>
       </div>
     </section>
 
     <footer>
-      © <span id="year"></span> Ziada. Every Shilling Works Harder. Founder: Abdul Khadir Abdullahi MRICS.
+      © <span id="year"></span> Ziada Ltd • Every Shilling Works Harder • Founder: Abdul Khadir Abdullahi MRICS
     </footer>
   </div>
 
   <script>
-    function calcZiada() {
-      var monthly = parseFloat(document.getElementById('monthly').value || 0);
-      var rate = parseFloat(document.getElementById('rate').value || 0.03);
-      if (monthly <= 0) {
+    function calcZiada(){
+      var m = parseFloat(document.getElementById('monthly').value || 0);
+      var r = parseFloat(document.getElementById('rate').value || 0.03);
+      if(m <= 0){
         document.getElementById('result').textContent = '5-year potential: —';
         return;
       }
-      var yearlyCashback = monthly * rate * 12;
-      var fiveYear = yearlyCashback * 5;
-      document.getElementById('result').textContent = '5-year potential: KES ' + fiveYear.toLocaleString();
+      var yearly = m * r * 12;
+      var five = yearly * 5;
+      document.getElementById('result').textContent = '5-year potential: KES ' + five.toLocaleString();
     }
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
