@@ -1,499 +1,67 @@
-Got you. Here’s your updated full landing page code with:
-	•	the new hero copy (“Built with global precision. Priced for Kenya. Powered by local intelligence.”),
-	•	a dedicated “Why major brands partner with QR Mart” section,
-	•	the affiliate vs franchise blocks,
-	•	your earnings table,
-	•	and the application form.
-
-I removed the markdown **bold** bits and kept everything sleek, techy, not shouty.
-
-You can paste this straight into index.html on GitHub Pages.
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>QR Mart Intelligence | Partner & Franchise</title>
+  <title>QR Mart Deals | Save Money Every Day</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Become a QR Mart partner in Kenya. Promote verified online and local deals, run pods, onboard merchants, and earn weekly M-Pesa payouts." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #f7f7f7;
-      --white: #ffffff;
-      --text: #1f2933;
-      --muted: #6b7280;
-      --accent: #12b76a;
-      --accent-hover: #0f9f59;
-      --accent-soft: rgba(18,183,106,0.08);
-      --border: #e5e7eb;
-      --radius: 14px;
-      --max-width: 1080px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .page {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.5rem 5rem;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 0 0.75rem;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
-    .logo-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 14px;
-      background: linear-gradient(150deg, #12b76a 0%, #0f766e 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      font-size: 0.9rem;
-      color: #3f4755;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-    nav a:hover { color: var(--accent); }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: var(--accent);
-      color: #fff;
-      padding: 0.6rem 1.1rem;
-      border-radius: 999px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 0.88rem;
-      transition: background-color 0.2s ease;
-    }
-    .btn:hover { background: var(--accent-hover); }
-
-    /* hero */
-    .hero {
-      margin-top: 2rem;
-      background: radial-gradient(circle at top, #ffffff 0%, #f7f7f7 60%);
-      border-radius: 18px;
-      padding: 3.2rem 2.8rem 3rem;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 2.4rem;
-      align-items: center;
-    }
-    .hero h1 {
-      font-size: clamp(2.15rem, 3vw, 2.7rem);
-      margin: 0 0 1.1rem;
-      letter-spacing: -0.01em;
-    }
-    .hero p {
-      margin-bottom: 1.25rem;
-      color: var(--muted);
-      max-width: 36rem;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: rgba(18,183,106,0.09);
-      padding: 0.25rem 0.8rem;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #065f46;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .hero-panel {
-      background: #fff;
-      border: 1px solid rgba(18,183,106,0.12);
-      border-radius: 16px;
-      padding: 1.3rem 1.4rem;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.04);
-    }
-    .hero-panel h3 {
-      margin-top: 0;
-      color: #d35400;
-      font-weight: 700;
-    }
-    .hero-points {
-      margin-top: 1.1rem;
-      display: grid;
-      gap: 0.5rem;
-    }
-    .hero-point {
-      display: flex;
-      gap: 0.5rem;
-      align-items: flex-start;
-    }
-    .hero-point-icon {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background: rgba(18,183,106,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      color: #065f46;
-      flex: 0 0 26px;
-    }
-
-    section { margin-top: 3.3rem; }
-    .section-title { font-size: 1.5rem; margin-bottom: 1.3rem; }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.4rem;
-    }
-    .card {
-      background: #fff;
-      border: 1px solid rgba(11,15,20,0.03);
-      border-radius: 14px;
-      padding: 1.1rem 1.05rem;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.01);
-    }
-    .card h3 { margin-top: 0.1rem; margin-bottom: 0.4rem; }
-    .muted { color: var(--muted); font-size: 0.87rem; }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.4rem;
-    }
-
-    .earn-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      border-radius: 14px;
-      overflow: hidden;
-    }
-    .earn-table th, .earn-table td {
-      padding: 0.75rem 0.85rem;
-      border-bottom: 1px solid #edf0f2;
-      font-size: 0.86rem;
-      text-align: left;
-    }
-    .earn-table th {
-      background: #f9fafb;
-      font-weight: 600;
-    }
-    .badge-soft {
-      background: rgba(18,183,106,0.13);
-      color: #065f46;
-      font-size: 0.64rem;
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      display: inline-block;
-    }
-
-    .form-box {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1.4rem 1.4rem 1.7rem;
-      border: 1px solid rgba(0,0,0,0.02);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.03);
-      max-width: 650px;
-    }
-    .form-row { display: flex; gap: 1rem; }
-    label { display: block; font-size: 0.78rem; font-weight: 500; margin-bottom: 0.3rem; }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.6rem 0.65rem;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      font-family: inherit;
-      font-size: 0.85rem;
-    }
-    textarea { min-height: 110px; resize: vertical; }
-
-    footer {
-      margin-top: 3.5rem;
-      padding: 1.5rem 0 2.5rem;
-      text-align: center;
-      color: #9ca3af;
-      font-size: 0.78rem;
-    }
-
-    @media (max-width: 880px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 2.4rem 1.5rem 2.3rem;
-      }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-      }
-      nav a { margin-left: 0; }
-      .form-row { flex-direction: column; }
-    }
+    body { font-family: 'Inter', sans-serif; margin: 0; background:#f8f8f8; color:#222; }
+    header { background:#12b76a; color:white; padding:1.2rem 2rem; text-align:center; font-weight:700; }
+    h1 { margin:0; font-size:1.6rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; padding:2rem; max-width:1100px; margin:auto; }
+    .card { background:white; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.05); padding:1rem; display:flex; flex-direction:column; }
+    .card img { width:100%; border-radius:8px; }
+    .card h3 { margin:0.7rem 0 0.3rem; font-size:1rem; }
+    .card p { font-size:0.9rem; color:#666; flex:1; }
+    a.btn { background:#12b76a; color:white; text-decoration:none; padding:0.6rem 1rem; border-radius:6px; text-align:center; font-weight:600; }
+    a.btn:hover { background:#0f9f59; }
+    footer { text-align:center; padding:1.5rem; font-size:0.8rem; color:#888; }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="logo">
-        <div class="logo-mark">QR</div>
-        <span>QR Mart</span>
-      </div>
-      <nav>
-        <a href="#why">Value</a>
-        <a href="#brands">For Brands</a>
-        <a href="#models">Models</a>
-        <a href="#earn">Earnings</a>
-        <a href="#apply" class="btn">Apply</a>
-      </nav>
-    </header>
+  <header>
+    <h1>QR Mart • Live Deals & Cashback</h1>
+    <p>Built with global precision • Priced for Kenya • Powered by local intelligence</p>
+  </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <div class="hero-badge">Smart Commerce • Kenya</div>
-        <h1>QR Mart Intelligence.</h1>
-        <p>
-          Built with global precision. Priced for Kenya. Powered by local intelligence.
-          Promote verified deals, run local pods, and earn weekly M-Pesa payouts.
-        </p>
-        <a href="#apply" class="btn">Become a Partner →</a>
-        <p class="tagline">No stock • No delay • Guaranteed repeat sales.</p>
-      </div>
-      <div class="hero-panel">
-        <h3>Why brands choose QR Mart</h3>
-        <div class="hero-points">
-          <div class="hero-point">
-            <div class="hero-point-icon">⚡</div>
-            <div>
-              <strong>4-Hour fulfilment:</strong> fast, city-wide deliveries through our pod/franchise network.
-            </div>
-          </div>
-          <div class="hero-point">
-            <div class="hero-point-icon">🔁</div>
-            <div>
-              <strong>Repeat sales:</strong> we retarget customers so your discount becomes a loyal buyer.
-            </div>
-          </div>
-          <div class="hero-point">
-            <div class="hero-point-icon">🧠</div>
-            <div>
-              <strong>Market intelligence:</strong> we see which products move in Nairobi, Mombasa & diaspora — and push those first.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section class="grid">
+    <div class="card">
+      <img src="https://cdn.jumia.co.ke/product-image/phones.jpg" alt="Smartphones" />
+      <h3>🔥 Smartphone Deals</h3>
+      <p>Up to 20% off latest Samsung & Infinix models. Verified prices updated hourly.</p>
+      <a href="https://www.jumia.co.ke/phones/?affiliate_id=QRMART123" class="btn" target="_blank">Shop on Jumia →</a>
+    </div>
 
-    <!-- WHY -->
-    <section id="why">
-      <h2 class="section-title">Why QR Mart is the future of deals in Kenya</h2>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Local + Online</h3>
-          <p class="muted">
-            We merge e-commerce (Jumia, Kilimall, Amazon) with local cafés, salons, and services —
-            so your audience has one place to shop and save.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Cashback that pays</h3>
-          <p class="muted">
-            Users get real M-Pesa cashback — you get recurring income for every subscriber or local member you onboard.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Creator-friendly</h3>
-          <p class="muted">
-            Influencers, SMEs, and pods can all earn from the same network — with weekly payouts and transparent tracking.
-          </p>
-        </div>
-      </div>
-    </section>
+    <div class="card">
+      <img src="https://cdn.jumia.co.ke/product-image/laptops.jpg" alt="Laptops" />
+      <h3>💻 Work-from-anywhere Laptops</h3>
+      <p>Top HP and Lenovo picks under KES 50,000. Cashback available for Plus members.</p>
+      <a href="https://www.jumia.co.ke/laptops/?affiliate_id=QRMART123" class="btn" target="_blank">View Offers →</a>
+    </div>
 
-    <!-- BRANDS -->
-    <section id="brands">
-      <h2 class="section-title">Why major brands partner with QR Mart</h2>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Controlled discounts</h3>
-          <p class="muted">
-            Deals are targeted by location and audience — so you don’t destroy your national pricing or brand value.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Guaranteed traffic</h3>
-          <p class="muted">
-            Every mall pod, campus kiosk, Telegram channel, and influencer link pushes customers back to your product pages.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Revenue-first</h3>
-          <p class="muted">
-            Even with deeper discounts, we generate more total sales volume — so your profit grows over time.
-          </p>
-        </div>
-      </div>
-      <div class="card" style="margin-top:1.4rem;">
-        <h3>Direct-negotiated deals</h3>
-        <p class="muted">
-          As founder (Abdul Khadir Abdullahi MRICS), I can negotiate directly with owner-managed chains, distributors,
-          and FMCG suppliers to secure real trade prices. That lets us pass some savings to members — while keeping your margin.
-        </p>
-        <p class="muted">
-          Result: better prices for customers, stronger margins and repeat sales for brands.
-        </p>
-      </div>
-    </section>
+    <div class="card">
+      <img src="https://cdn.jumia.co.ke/product-image/food.jpg" alt="Food" />
+      <h3>🍔 Eat Smart – Food Delivery Offers</h3>
+      <p>Save up to 30% on Glovo & Uber Eats partner restaurants when ordering via QR Mart.</p>
+      <a href="https://glovoapp.com/ke/en/?ref=QRMART123" class="btn" target="_blank">Order Now →</a>
+    </div>
 
-    <!-- MODELS -->
-    <section id="models">
-      <h2 class="section-title">Choose how you want to earn</h2>
-      <div class="two-col">
-        <div class="card">
-          <span class="badge-soft">Affiliate</span>
-          <h3>Creators & online sellers</h3>
-          <p class="muted">
-            Get a branded mini-page, promote daily deals (online + local), and earn on every tracked order.
-            Weekly M-Pesa. Ideal for influencers and WhatsApp resellers.
-          </p>
-          <ul class="muted">
-            <li>✔ Branded link / QR code</li>
-            <li>✔ Access to high-value local offers</li>
-            <li>✔ Weekly payouts</li>
-          </ul>
-        </div>
-        <div class="card">
-          <span class="badge-soft">Franchise</span>
-          <h3>Mall / campus / city operators</h3>
-          <p class="muted">
-            Run an official QR Mart pod or team (“human pods”), onboard merchants, and keep up to 80% of local subscriptions.
-            Ideal for people with access to estates, universities, or malls.
-          </p>
-          <ul class="muted">
-            <li>✔ Manage 1–4 hr fulfilment</li>
-            <li>✔ Earn on QR Mart Plus subs</li>
-            <li>✔ National deal feed</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <div class="card">
+      <img src="https://cdn.jumia.co.ke/product-image/beauty.jpg" alt="Beauty" />
+      <h3>💅 Beauty & Wellness</h3>
+      <p>Exclusive Art Caffé, Java, and salon vouchers. Redeem instantly with QR Mart Plus.</p>
+      <a href="https://www.kilimall.co.ke/new/beauty/?affiliate_id=QRMART123" class="btn" target="_blank">Explore Deals →</a>
+    </div>
+  </section>
 
-    <!-- EARNINGS -->
-    <section id="earn">
-      <h2 class="section-title">What partners typically earn</h2>
-      <table class="earn-table">
-        <thead>
-          <tr>
-            <th>Activity</th>
-            <th>Volume (month)</th>
-            <th>Est. earnings (KES)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Affiliate sales (online / local)</td>
-            <td>100 orders</td>
-            <td>25,000 – 50,000</td>
-          </tr>
-          <tr>
-            <td>Local merchant sign-ups (franchise)</td>
-            <td>10 merchants</td>
-            <td>10,000 – 30,000</td>
-          </tr>
-          <tr>
-            <td>QR Mart Plus subscriptions</td>
-            <td>300 members</td>
-            <td>200,000 +</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="muted" style="margin-top:0.6rem;">* Earnings vary by city, audience size, and campaign effort.</p>
-    </section>
-
-    <!-- APPLY -->
-    <section id="apply">
-      <h2 class="section-title">Apply to become a QR Mart partner</h2>
-      <p class="muted">Fill this in — we’ll send you your onboarding link and media kit.</p>
-      <div class="form-box">
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-          <div class="form-row">
-            <div style="flex:1;">
-              <label for="name">Full name</label>
-              <input id="name" name="name" required />
-            </div>
-            <div style="flex:1;">
-              <label for="contact">Email / M-Pesa Number</label>
-              <input id="contact" name="contact" required placeholder="07XX XXX XXX or email@example.com" />
-            </div>
-          </div>
-          <div class="form-row" style="margin-top:1rem;">
-            <div style="flex:1;">
-              <label for="role">I want to join as</label>
-              <select id="role" name="role">
-                <option value="affiliate">Affiliate (online / influencer)</option>
-                <option value="franchise">Franchise (mall / campus pod)</option>
-                <option value="both">Both</option>
-              </select>
-            </div>
-            <div style="flex:1;">
-              <label for="city">City / Area</label>
-              <input id="city" name="city" placeholder="Nairobi, Mombasa, Eldoret..." />
-            </div>
-          </div>
-          <div style="margin-top:1rem;">
-            <label for="message">Tell us about your audience / location</label>
-            <textarea id="message" name="message" placeholder="e.g. I run a 15k IG page / I manage 2 estates / I have access to a mall."></textarea>
-          </div>
-          <button type="submit" class="btn" style="margin-top:1.1rem; width: 100%;">Submit application →</button>
-        </form>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> QR Mart. Scan • Shop • Save Today.
-    </footer>
-  </div>
+  <footer>
+    © <span id="year"></span> QR Mart. All deals verified. Prices may change.  
+    <br>Join <strong>QR Mart Plus</strong> for boosted cashback and 4-hour delivery.
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
-Drop that into your repo as index.html, make sure GitHub Pages is set to serve from the same branch/folder, and view it in an incognito tab so you don’t see the cached old version.
