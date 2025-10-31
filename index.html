@@ -1,67 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>QR Mart Deals | Save Money Every Day</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; background:#f8f8f8; color:#222; }
-    header { background:#12b76a; color:white; padding:1.2rem 2rem; text-align:center; font-weight:700; }
-    h1 { margin:0; font-size:1.6rem; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; padding:2rem; max-width:1100px; margin:auto; }
-    .card { background:white; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.05); padding:1rem; display:flex; flex-direction:column; }
-    .card img { width:100%; border-radius:8px; }
-    .card h3 { margin:0.7rem 0 0.3rem; font-size:1rem; }
-    .card p { font-size:0.9rem; color:#666; flex:1; }
-    a.btn { background:#12b76a; color:white; text-decoration:none; padding:0.6rem 1rem; border-radius:6px; text-align:center; font-weight:600; }
-    a.btn:hover { background:#0f9f59; }
-    footer { text-align:center; padding:1.5rem; font-size:0.8rem; color:#888; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ziada — Every Shilling Works Harder</title>
+<meta name="description" content="Ziada is a MRICS-backed cashback network that gives back to everyday Kenyan buyers through transparent, halal, and ethical rewards.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f8f9; --card:#fff;
+  --accent:#12b76a; --accent2:#0f766e;
+  --muted:#6b7280; --radius:12px;
+  --maxw:1100px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:'Inter',sans-serif;
+  background:var(--bg); color:#0b1220;
+}
+.wrap{
+  max-width:var(--maxw); margin:0 auto;
+  padding:24px 18px;
+}
+header{
+  display:flex; justify-content:space-between; align-items:center;
+}
+.brand{display:flex; gap:10px; align-items:center;}
+.mark{
+  width:46px; height:46px; border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-weight:800; font-size:1rem;
+}
+.nav a{
+  margin-left:16px; color:var(--muted);
+  text-decoration:none; font-weight:600;
+  font-size:.9rem;
+}
+.nav a:hover{color:var(--accent2);}
+.hero{
+  display:grid; grid-template-columns:1fr 380px;
+  gap:24px; margin-top:28px;
+}
+.card{
+  background:var(--card); border-radius:var(--radius);
+  padding:24px; box-shadow:0 10px 28px rgba(0,0,0,.03);
+}
+h1{font-size:2.2rem; margin:0 0 .6rem;}
+p.lead{color:var(--muted); margin-bottom:1.1rem;}
+.btn{
+  background:var(--accent); color:#fff;
+  padding:10px 16px; border-radius:999px;
+  text-decoration:none; font-weight:600;
+  display:inline-block; transition:background .2s;
+}
+.btn:hover{background:#0f9f59;}
+.btn.ghost{
+  background:transparent; border:1px solid rgba(18,183,106,.15);
+  color:var(--accent2);
+}
+.tiles{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:10px; margin-top:1rem;
+}
+.tile{
+  background:#fff; border:1px solid #e5e7eb;
+  border-radius:10px; padding:10px 12px;
+  font-weight:600; color:#1f2933; text-align:center;
+}
+.merchant-strip{
+  display:flex; gap:10px; flex-wrap:wrap;
+  margin-top:1.1rem;
+}
+.merchant{
+  background:#fff; border:1px solid #edf0f2;
+  border-radius:8px; padding:6px 12px;
+  font-size:.8rem; font-weight:600; color:#6b7280;
+}
+input,select,textarea{
+  width:100%; padding:.55rem .6rem;
+  border:1px solid #e2e8f0; border-radius:8px;
+  font-size:.9rem; margin-bottom:.6rem;
+}
+footer{
+  text-align:center; color:#9ca3af; font-size:.75rem;
+  margin:2.5rem 0;
+}
+@media(max-width:880px){
+  .hero{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
+<div class="wrap">
   <header>
-    <h1>QR Mart • Live Deals & Cashback</h1>
-    <p>Built with global precision • Priced for Kenya • Powered by local intelligence</p>
+    <div class="brand">
+      <div class="mark">ZI</div>
+      <div>
+        <div style="font-weight:800;">Ziada</div>
+        <div style="font-size:.7rem;color:var(--muted)">Every Shilling Works Harder</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#how">How It Works</a>
+      <a href="#about">About</a>
+      <a href="#join" class="btn" style="padding:6px 14px;">Join</a>
+    </nav>
   </header>
 
-  <section class="grid">
+  <section class="hero">
     <div class="card">
-      <img src="https://cdn.jumia.co.ke/product-image/phones.jpg" alt="Smartphones" />
-      <h3>🔥 Smartphone Deals</h3>
-      <p>Up to 20% off latest Samsung & Infinix models. Verified prices updated hourly.</p>
-      <a href="https://www.jumia.co.ke/phones/?affiliate_id=QRMART123" class="btn" target="_blank">Shop on Jumia →</a>
+      <h1>Cashback with Integrity.</h1>
+      <p class="lead">Founded by an MRICS Chartered Surveyor, Ziada gives everyday Kenyans cashback from the brands they love — transparent, halal, and trustworthy.</p>
+      <a href="#join" class="btn">Start Saving →</a>
+      <a href="#brands" class="btn ghost" style="margin-left:6px;">For Brands</a>
+
+      <div class="tiles">
+        <div class="tile">Groceries</div>
+        <div class="tile">Bills & Utilities</div>
+        <div class="tile">Travel & Tech</div>
+      </div>
+
+      <div style="margin-top:1rem;font-weight:600;">Pilot Partners</div>
+      <div class="merchant-strip">
+        <div class="merchant">Naivas</div>
+        <div class="merchant">Goodlife</div>
+        <div class="merchant">Jumia</div>
+        <div class="merchant">Local Cafés</div>
+        <div class="merchant">Schools</div>
+      </div>
     </div>
 
-    <div class="card">
-      <img src="https://cdn.jumia.co.ke/product-image/laptops.jpg" alt="Laptops" />
-      <h3>💻 Work-from-anywhere Laptops</h3>
-      <p>Top HP and Lenovo picks under KES 50,000. Cashback available for Plus members.</p>
-      <a href="https://www.jumia.co.ke/laptops/?affiliate_id=QRMART123" class="btn" target="_blank">View Offers →</a>
-    </div>
+    <aside class="card" id="join">
+      <h2>Join the Pilot</h2>
+      <p style="color:var(--muted);font-size:.85rem;">Be part of Ziada's launch group — buyers, brands, and creators welcome.</p>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input name="name" placeholder="Your Name" required>
+        <input name="contact" placeholder="Phone / Email" required>
+        <select name="role">
+          <option value="buyer">I want cashback</option>
+          <option value="brand">I'm a merchant / retailer</option>
+          <option value="creator">I'm a creator / promoter</option>
+        </select>
+        <textarea name="notes" placeholder="Your area or brand suggestion..."></textarea>
+        <button class="btn" type="submit" style="width:100%;">Submit →</button>
+      </form>
+    </aside>
+  </section>
 
+  <section id="about" style="margin-top:2.4rem;">
     <div class="card">
-      <img src="https://cdn.jumia.co.ke/product-image/food.jpg" alt="Food" />
-      <h3>🍔 Eat Smart – Food Delivery Offers</h3>
-      <p>Save up to 30% on Glovo & Uber Eats partner restaurants when ordering via QR Mart.</p>
-      <a href="https://glovoapp.com/ke/en/?ref=QRMART123" class="btn" target="_blank">Order Now →</a>
+      <h2>Why Ziada Exists</h2>
+      <p style="color:var(--muted);">
+        Ziada was founded by <strong>Abdul Khadir Abdullahi, MRICS</strong> — a Chartered Quantity Surveyor who has managed major projects in the UK, Europe, and East Africa.  
+        After years of success in the built environment, Abdul wanted to create something that gives back — a system where people earn fairly, merchants grow honestly, and communities benefit together.
+      </p>
+      <p style="color:var(--muted);">
+        Guided by MRICS ethics of transparency and fiduciary care, Ziada is more than a cashback platform — it’s a bridge for social mobility, designed so everyday buyers gain from the value they create.
+      </p>
+      <p style="border-left:4px solid #12b76a;padding-left:1rem;color:#374151;">
+        “I’ve made money building projects. Now I’m building something that gives it back.”<br>
+        — Abdul Khadir Abdullahi MRICS, Founder
+      </p>
     </div>
+  </section>
 
+  <section id="brands" style="margin-top:2rem;">
     <div class="card">
-      <img src="https://cdn.jumia.co.ke/product-image/beauty.jpg" alt="Beauty" />
-      <h3>💅 Beauty & Wellness</h3>
-      <p>Exclusive Art Caffé, Java, and salon vouchers. Redeem instantly with QR Mart Plus.</p>
-      <a href="https://www.kilimall.co.ke/new/beauty/?affiliate_id=QRMART123" class="btn" target="_blank">Explore Deals →</a>
+      <h2>For Brands & Retailers</h2>
+      <p style="color:var(--muted);">
+        Partner with Ziada to offer verified cashback to customers. We manage the tech, tracking, and payouts — you only pay on confirmed sales.  
+        Build customer loyalty through transparency, not gimmicks.
+      </p>
+      <ul style="color:var(--muted);line-height:1.5;">
+        <li>CSR-ready: your sales directly empower communities.</li>
+        <li>Zero upfront cost; commission-based model.</li>
+        <li>Clear audit trail with MRICS-backed governance.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="how" style="margin-top:2rem;">
+    <div class="card">
+      <h2>How It Works</h2>
+      <ol style="color:var(--muted);line-height:1.6;">
+        <li>You shop at a partner store or brand.</li>
+        <li>The transaction is verified via Ziada tracking.</li>
+        <li>Ziada sends cashback directly to your M-Pesa wallet.</li>
+      </ol>
+      <p style="color:var(--muted);font-size:.85rem;">
+        Transparent. Simple. Designed to make every shilling count.
+      </p>
     </div>
   </section>
 
   <footer>
-    © <span id="year"></span> QR Mart. All deals verified. Prices may change.  
-    <br>Join <strong>QR Mart Plus</strong> for boosted cashback and 4-hour delivery.
+    © <span id="year"></span> Ziada Ltd • Halal & Transparent • MRICS-backed
   </footer>
+</div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
