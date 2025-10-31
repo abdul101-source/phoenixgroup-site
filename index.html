@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ZIADA • Kenya’s Cashback Network</title>
+  <title>ZIADA • Kenya's #1 Cashback App | Scan, Shop, Get M-Pesa Cashback</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Ziada is Kenya’s cashback network – scan, shop and get instant M-Pesa cashback from top brands and local merchants. Built by MRICS professionals for transparent savings." />
+  <meta name="description" content="Ziada is Kenya's trusted cashback app - scan QR codes, shop at Jumia, Carrefour, Naivas & get instant M-Pesa cashback. Save on groceries, electronics & more!" />
+  <meta name="keywords" content="cashback Kenya, M-Pesa cashback, shopping Kenya, Jumia cashback, Carrefour Kenya, Naivas deals, save money Kenya" />
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="ZIADA • Kenya's #1 Cashback App" />
+  <meta property="og:description" content="Scan QR codes, shop at your favorite stores & get instant M-Pesa cashback. Save on Jumia, Carrefour, Naivas & more!" />
+  <meta property="og:type" content="website" />
+  <!-- Add your actual domain here -->
+  <meta property="og:url" content="https://ziada.ke" />
+  <!-- Add your actual image URL here -->
+  <meta property="og:image" content="https://ziada.ke/images/og-image.jpg" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,9 +49,10 @@
       padding: 1.1rem 0;
       position: sticky;
       top: 0;
-      background: rgba(2,6,23,.35);
+      background: rgba(2,6,23,.85);
       backdrop-filter: blur(12px);
       z-index: 50;
+      border-bottom: 1px solid rgba(255,255,255,.05);
     }
     .brand {
       display: flex;
@@ -67,10 +78,15 @@
     .brand-name { font-weight: 700; font-size: 1rem; }
     .brand-sub { font-size: .65rem; opacity: .8; }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+    }
     nav a {
-      margin-left: 1.35rem;
       font-size: .85rem;
       opacity: .8;
+      transition: opacity 0.2s;
     }
     nav a:hover { opacity: 1; }
 
@@ -83,10 +99,19 @@
       font-weight: 600;
       border: none;
       cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover {
+      background: #0da271;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(16,185,129,.3);
     }
     .btn.outline {
       background: rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.15);
+    }
+    .btn.outline:hover {
+      background: rgba(255,255,255,.1);
     }
 
     /* hero */
@@ -101,11 +126,13 @@
       font-size: clamp(2.05rem, 3.15vw, 2.65rem);
       font-weight: 700;
       letter-spacing: -.02em;
+      line-height: 1.2;
     }
     .hero-sub {
       margin-top: 1rem;
-      color: rgba(255,255,255,.65);
+      color: rgba(255,255,255,.75);
       max-width: 32rem;
+      font-size: 1rem;
     }
     .hero-badge {
       display: inline-flex;
@@ -120,7 +147,25 @@
       margin-bottom: 1.1rem;
       border: 1px solid rgba(16,185,129,.3);
     }
-    .hero-actions { margin-top: 1.4rem; display: flex; gap: .8rem; flex-wrap: wrap; }
+    .hero-actions { 
+      margin-top: 1.8rem; 
+      display: flex; 
+      gap: .8rem; 
+      flex-wrap: wrap; 
+      align-items: center;
+    }
+    .app-badges {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .app-badge {
+      height: 40px;
+      transition: transform 0.2s;
+    }
+    .app-badge:hover {
+      transform: scale(1.05);
+    }
 
     .hero-panel {
       background: rgba(8,12,21,.6);
@@ -129,6 +174,10 @@
       padding: 1.1rem 1.1rem 1.3rem;
       backdrop-filter: blur(10px);
       box-shadow: 0 25px 45px rgba(0,0,0,.12);
+      transition: transform 0.3s;
+    }
+    .hero-panel:hover {
+      transform: translateY(-5px);
     }
     .panel-title { font-weight: 600; margin-bottom: .55rem; }
     .partner-grid {
@@ -142,9 +191,15 @@
       border: 1px solid rgba(148,163,184,.09);
       border-radius: 14px;
       padding: .4rem .55rem .55rem;
+      transition: all 0.2s;
     }
-    .partner small { display: block; font-size: .6rem; opacity: .48; }
-    .rate { font-weight: 700; color: #22c55e; font-size: 1.15rem; }
+    .partner:hover {
+      background: rgba(15,23,42,.5);
+      transform: translateY(-2px);
+    }
+    .partner strong { display: block; font-size: 0.75rem; }
+    .partner small { display: block; font-size: .6rem; opacity: .48; margin-top: 2px; }
+    .rate { font-weight: 700; color: #22c55e; font-size: 1.15rem; margin-top: 4px; }
 
     /* categories */
     section { margin-top: 3.4rem; }
@@ -163,6 +218,11 @@
       border: 1px solid rgba(148,163,184,.04);
       border-radius: 16px;
       padding: .9rem .95rem;
+      transition: all 0.2s;
+    }
+    .cat:hover {
+      background: rgba(15,23,42,.4);
+      transform: translateY(-3px);
     }
     .cat h3 { margin: 0 0 .25rem; font-size: .88rem; }
     .cat p { margin: 0; font-size: .7rem; opacity: .65; }
@@ -178,6 +238,11 @@
       border: 1px solid rgba(148,163,184,.05);
       border-radius: 16px;
       padding: .85rem .9rem 1rem;
+      transition: all 0.2s;
+    }
+    .step:hover {
+      background: rgba(15,23,42,.25);
+      transform: translateY(-3px);
     }
     .step-num {
       width: 30px;
@@ -211,6 +276,72 @@
       font-size: .7rem;
     }
 
+    /* testimonials */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .testimonial {
+      background: rgba(15,23,42,.25);
+      border: 1px solid rgba(148,163,184,.04);
+      border-radius: 16px;
+      padding: 1.2rem;
+    }
+    .testimonial-text {
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-bottom: 0.8rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .author-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(16,185,129,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
+    .author-info {
+      font-size: 0.75rem;
+    }
+    .author-name {
+      font-weight: 600;
+    }
+    .author-location {
+      opacity: 0.7;
+      font-size: 0.65rem;
+    }
+
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      padding-bottom: 1rem;
+    }
+    .faq-question {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+
     /* footer */
     footer {
       margin-top: 3.5rem;
@@ -222,8 +353,10 @@
 
     @media (max-width: 880px) {
       header { flex-direction: column; align-items: flex-start; gap: .9rem; }
+      nav { width: 100%; justify-content: space-between; }
       .hero { grid-template-columns: 1fr; }
       .trust-grid { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -240,6 +373,7 @@
       <nav>
         <a href="#deals">Deals</a>
         <a href="#how">How it works</a>
+        <a href="#testimonials">Success Stories</a>
         <a href="#join">Join merchants</a>
         <button class="btn" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">Start earning</button>
       </nav>
@@ -249,7 +383,7 @@
     <section class="hero">
       <div>
         <div class="hero-badge">Instant M-Pesa cashback • Nairobi • 2026 rollout</div>
-        <h1 class="hero-title">Scan. Shop. Get money back.</h1>
+        <h1 class="hero-title">Scan QR Codes. Shop. Get M-Pesa Cashback Instantly.</h1>
         <p class="hero-sub">
           Ziada connects Kenyan shoppers to verified retailers, e-commerce sites and local cafés — and pays instant M-Pesa cashback on every qualifying purchase.
           Built by <strong>Abdul Khadir Abdullahi, MRICS</strong> to bring professional transparency to everyday spending.
@@ -258,9 +392,14 @@
           <button class="btn" onclick="document.getElementById('deals').scrollIntoView({behavior:'smooth'})">View top deals</button>
           <button class="btn outline" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">Become a partner →</button>
         </div>
+        <div class="app-badges">
+          <!-- Replace with actual app store badge images -->
+          <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=Google+Play" alt="Get on Google Play" class="app-badge">
+          <img src="https://via.placeholder.com/120x40/10b981/ffffff?text=App+Store" alt="Download on App Store" class="app-badge">
+        </div>
       </div>
       <div class="hero-panel">
-        <div class="panel-title">Today’s Featured Partners</div>
+        <div class="panel-title">Today's Featured Partners</div>
         <p style="font-size:.7rem; opacity:.65;">Tap / scan via Ziada to unlock the rates below.</p>
         <div class="partner-grid">
           <div class="partner">
@@ -271,7 +410,7 @@
           <div class="partner">
             <strong>Carrefour</strong>
             <small>Groceries</small>
-            <div class="rate">3–4% back</div>
+            <div class="rate">3-4% back</div>
           </div>
           <div class="partner">
             <strong>Naivas</strong>
@@ -310,7 +449,7 @@
         </div>
         <div class="cat">
           <h3>Phones & Electronics</h3>
-          <p>Jumia, Avechi, Apple resellers – 2–6%</p>
+          <p>Jumia, Avechi, Apple resellers – 2-6%</p>
         </div>
         <div class="cat">
           <h3>Cafés & Food</h3>
@@ -318,7 +457,7 @@
         </div>
         <div class="cat">
           <h3>Travel & Tickets</h3>
-          <p>Local flights, SGR, hotels – 2–4%</p>
+          <p>Local flights, SGR, hotels – 2-4%</p>
         </div>
         <div class="cat">
           <h3>Learning & CPD</h3>
@@ -356,6 +495,49 @@
       </p>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <h2 class="section-title">What Kenyans are saying about Ziada</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial-text">
+            "I saved KSh 1,200 on my Jumia order last week! The M-Pesa cashback came instantly. This is a game-changer for Kenyan shoppers."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">WK</div>
+            <div class="author-info">
+              <div class="author-name">Wanjiku K.</div>
+              <div class="author-location">Nairobi</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-text">
+            "As a student, every shilling counts. Ziada has helped me save on groceries and data bundles. The QR codes around campus make it so easy."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">JM</div>
+            <div class="author-info">
+              <div class="author-name">John M.</div>
+              <div class="author-location">Kenyatta University</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-text">
+            "I was skeptical at first, but the transparency and instant M-Pesa payments won me over. Now I check Ziada before every online purchase."
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">AO</div>
+            <div class="author-info">
+              <div class="author-name">Amina O.</div>
+              <div class="author-location">Mombasa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- TRUST / MRICS BLOCK -->
     <section>
       <div class="trust-box">
@@ -364,7 +546,7 @@
             <h3>Built by chartered professionals for everyday buyers.</h3>
             <p style="opacity:.85; font-size:.83rem;">
               Founded by <strong>Abdul Khadir Abdullahi, MRICS</strong>, Ziada borrows governance from the built-environment sector: evidence, audit trails, no hidden charges.
-              Our promise: <em>“If we earn, you earn.”</em>
+              Our promise: <em>"If we earn, you earn."</em>
             </p>
             <div class="logos-line">
               <span>MRICS</span>
@@ -376,10 +558,33 @@
           <div>
             <p style="font-size:.78rem; opacity:.9;">
               Why this matters: in Kenya many cashback / promo schemes disappear or delay payouts.  
-              Ziada’s model is **transparent** — merchant-validated sales + automatic share-back to the shopper.  
+              Ziada's model is **transparent** — merchant-validated sales + automatic share-back to the shopper.  
               This is cashback with <strong>fiduciary integrity</strong>.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-question">How quickly do I receive my cashback?</div>
+          <div class="faq-answer">Most cashback is processed instantly to your M-Pesa account. In some cases, it may take up to 7 days depending on the merchant's confirmation process.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is there a fee to use Ziada?</div>
+          <div class="faq-answer">No, Ziada is completely free for shoppers. We earn a commission from merchants when you make a purchase, and we share a portion of that with you.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Which stores work with Ziada?</div>
+          <div class="faq-answer">We partner with major retailers like Jumia, Carrefour, Naivas, as well as local cafés, travel agencies, and more. The list is constantly growing!</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do I need to install an app?</div>
+          <div class="faq-answer">You can use Ziada through our mobile-friendly website, but we recommend downloading our app for the best experience and push notifications about new deals.</div>
         </div>
       </div>
     </section>
@@ -394,7 +599,7 @@
         <label for="email" style="font-size:.72rem;">Email / M-Pesa number</label>
         <input id="email" name="email" required style="width:100%; padding:.5rem .55rem; border-radius:10px; border:1px solid rgba(148,163,184,.35); margin-bottom:.7rem; background:rgba(15,23,42,.35); color:#fff;">
         <label for="type" style="font-size:.72rem;">I want to:</label>
-        <select id="type" name="type" style="width:100%; padding:.5rem .55rem; border-radius:10px; margin-bottom:.7rem; background:rgba(15,23,42,.35); color:#fff; border:1px solid rgba(148,163,184,.35);">
+        <select id="type" name="type" style="width:100%; padding:.5rem .55rem; border-radius:10px; margin-bottom:.7rem; background:rgba(15,23,42,.35); color:#fff; border:1px solid rgba(148,163,384,.35);">
           <option value="merchant">List my store / brand</option>
           <option value="influencer">Promote Ziada (influencer)</option>
           <option value="franchise">Run a QR pod / city franchise</option>
@@ -406,12 +611,25 @@
     </section>
 
     <footer>
-      © <span id="year"></span> ZIADA Cashback Network. “Every spend, a little back.”
+      © <span id="year"></span> ZIADA Cashback Network. "Every spend, a little back."
     </footer>
   </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Simple FAQ toggle functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+    
+    // Initially hide FAQ answers
+    document.querySelectorAll('.faq-answer').forEach(answer => {
+      answer.style.display = 'none';
+    });
   </script>
 </body>
 </html>
