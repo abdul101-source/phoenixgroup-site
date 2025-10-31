@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ziada — Every Shilling Works Harder</title>
+  <title>Ziada — Because You Deserve More</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Ziada is Kenya’s cashback layer — scan a QR outdoors, shop with partner brands, and get real M-Pesa cashback. Built by MRICS for transparency.">
+  <meta name="description" content="Ziada is Kenya’s AI-powered cashback network — scan a QR, shop at partner brands, and get M-Pesa back. Because you deserve more.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -22,13 +22,23 @@
     body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px 50px;}
     header{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
-    .logo{display:flex;gap:10px;align-items:center;}
-    .logo-mark{
-      width:46px;height:46px;border-radius:12px;
-      background:linear-gradient(135deg,var(--emerald),var(--gold));
-      display:flex;align-items:center;justify-content:center;
-      color:#fff;font-weight:800;letter-spacing:.03em;
+    .brand{
+      display:flex;align-items:center;gap:.85rem;
     }
+    .logo-mark{
+      width:44px;height:44px;border-radius:16px;
+      background:radial-gradient(circle at top, #15c47b 0%, #0f766e 80%);
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:800;font-size:.8rem;
+      box-shadow:0 10px 28px rgba(18,183,106,.35);
+    }
+    .brand-text small{
+      display:block;
+      font-size:.68rem;
+      color:var(--muted);
+      line-height:1.1;
+    }
+    .brand-text strong{font-size:1.05rem;}
     .nav a{margin-left:16px;text-decoration:none;font-weight:600;color:var(--muted);font-size:.9rem;}
     .nav a:hover{color:var(--emerald);}
     .hero{
@@ -69,13 +79,12 @@
 </head>
 <body>
   <div class="wrap">
-    <!-- TOP -->
     <header>
-      <div class="logo">
+      <div class="brand">
         <div class="logo-mark">ZI</div>
-        <div>
-          <div style="font-weight:800;">Ziada</div>
-          <div style="font-size:.74rem;color:var(--muted);">Every Shilling Works Harder</div>
+        <div class="brand-text">
+          <strong>Ziada</strong>
+          <small>Because You Deserve More · Pata kidogo kila mara</small>
         </div>
       </div>
       <nav class="nav">
@@ -91,10 +100,10 @@
       <div class="card">
         <h1>Cashback with real Kenyan reach.</h1>
         <p class="lead">
-          Scan a Ziada QR in town, shop at a partner brand, get M-Pesa back. We’re building the outdoor cashback network for Kenya — transparent, ethical, MRICS-backed.
+          Scan a Ziada QR in town, shop at a partner brand, and get M-Pesa back. Built by a Chartered QS (MRICS) so businesses and customers can trust the numbers.
         </p>
         <a href="#join" class="btn">Get early access →</a>
-        <a href="#categories" class="btn ghost" style="margin-left:6px;">View partner rates</a>
+        <a href="#categories" class="btn.ghost" style="margin-left:6px;">View partner rates</a>
         <div class="tiles">
           <div class="tile">Groceries</div>
           <div class="tile">Health</div>
@@ -104,22 +113,21 @@
       </div>
       <aside class="card" id="impact">
         <h2>5-year savings</h2>
-        <p class="muted" style="font-size:.8rem;">Enter monthly spend to see your potential cashback.</p>
-        <input type="number" id="monthly" placeholder="e.g. 25000 KES" />
+        <p class="muted" style="font-size:.8rem;">Estimate what Ziada could return to your M-Pesa.</p>
+        <input type="number" id="monthly" placeholder="Monthly spend e.g. 25000 KES" />
         <select id="rate">
           <option value="0.03">3% avg. cashback</option>
           <option value="0.05">5% boosted (Ziada Plus)</option>
         </select>
         <button class="btn" onclick="calcZiada()" style="width:100%;margin-bottom:.4rem;">Calculate →</button>
         <div id="result" class="muted" style="font-weight:600;">5-year potential: —</div>
-        <p class="muted" style="font-size:.7rem;margin-top:.5rem;">Actual payout depends on brand % and your usage.</p>
       </aside>
     </section>
 
     <!-- TARGET NETWORK -->
-    <section style="margin-top:1.8rem;">
+    <section>
       <div class="card" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
-        <span style="font-weight:600;">Target network (Kenya):</span>
+        <span style="font-weight:600;">Kenya partner stack:</span>
         <span style="background:#fff;border:1px solid #edf0f2;border-radius:999px;padding:4px 12px;font-size:.75rem;">Naivas</span>
         <span style="background:#fff;border:1px solid #edf0f2;border-radius:999px;padding:4px 12px;font-size:.75rem;">Carrefour</span>
         <span style="background:#fff;border:1px solid #edf0f2;border-radius:999px;padding:4px 12px;font-size:.75rem;">Jumia</span>
@@ -127,25 +135,20 @@
         <span style="background:#fff;border:1px solid #edf0f2;border-radius:999px;padding:4px 12px;font-size:.75rem;">Text Book Centre</span>
         <span style="background:rgba(18,183,106,.08);border-radius:999px;padding:4px 12px;font-size:.72rem;color:#0f766e;">+ cafés, salons, local shops</span>
       </div>
-      <p style="color:#9ca3af;font-size:.68rem;margin-top:.3rem;">*Shown as intended partners/verticals — live list will update.</p>
     </section>
 
     <!-- AI QR NETWORK -->
     <section id="how">
       <div class="card">
-        <h2>AI-powered QR network</h2>
+        <h2>AI QR network for Kenya</h2>
         <p class="muted">
-          Ziada prints & deploys smart QRs (posters, pods, mall stands, even “human pods”). Each QR is AI-routed:
+          Ziada deploys smart QRs in malls, offices, estates, and even with “human pods”. Each QR auto-routes to the right deal:
         </p>
         <ul class="muted" style="line-height:1.6;">
-          <li><strong>On mobile:</strong> user sees the right local deal or partner (e.g. Naivas, ArtCaffé, Goodlife).</li>
-          <li><strong>On desktop:</strong> user can be sent straight to the official partner site or affiliate link — still tracked to you.</li>
-          <li><strong>Per location:</strong> QRs can prioritise nearby merchants or higher-paying partners.</li>
-          <li><strong>Per influencer:</strong> each influencer gets their own QR → all sales tracked → weekly M-Pesa payouts.</li>
+          <li><strong>Mobile scan:</strong> show best local offer or highest-paying partner.</li>
+          <li><strong>Desktop scan:</strong> forward to official partner / affiliate site, still tracked.</li>
+          <li><strong>Per influencer:</strong> each creator gets a QR and link → all payouts logged → M-Pesa weekly.</li>
         </ul>
-        <p class="muted" style="font-size:.78rem;">
-          That’s how we take Rakuten-style affiliate and make it visible outdoors in Kenya.
-        </p>
       </div>
     </section>
 
@@ -153,45 +156,35 @@
     <section id="payouts">
       <div class="card">
         <h2>How the money flows</h2>
-        <p class="muted">We keep it transparent so both customers and businesses see the value.</p>
         <div class="flex">
           <div style="flex:1;min-width:240px;">
-            <h3>1. Brand pays Ziada</h3>
-            <p class="muted" style="font-size:.85rem;">
-              Typical brand commission in Kenya: <strong>6–12%</strong> of the purchase (online or via QR).
-            </p>
+            <h3>Brand to Ziada</h3>
+            <p class="muted">Typical commission: <strong>6–12%</strong> of the sale.</p>
           </div>
           <div style="flex:1;min-width:240px;">
-            <h3>2. We pay customer</h3>
-            <p class="muted" style="font-size:.85rem;">
-              We plan to pay out <strong>50–70%</strong> of that to the customer’s M-Pesa.  
-              Example: brand pays 10% → customer gets 5–7%.
-            </p>
+            <h3>Ziada to customer</h3>
+            <p class="muted">We pay out <strong>50–70%</strong> of that to the buyer’s M-Pesa. Example: brand pays 10% → buyer gets 5–7%.</p>
           </div>
           <div style="flex:1;min-width:240px;">
-            <h3>3. We keep the rest</h3>
-            <p class="muted" style="font-size:.85rem;">
-              Remaining <strong>30–50%</strong> is Ziada revenue + share for the local franchise/pod who deployed the QR.
-            </p>
+            <h3>Ziada + franchise</h3>
+            <p class="muted">The remaining <strong>30–50%</strong> is Ziada revenue, and a share goes to the operator who placed the QR.</p>
           </div>
         </div>
-        <p class="muted" style="margin-top:1rem;">
-          📌 For businesses: if your average basket is 3,000 KES and Ziada brings 300 extra orders a month, that’s **900,000 KES** extra revenue — paid only on success.
-        </p>
+        <p class="muted" style="margin-top:1rem;">Businesses see repeat revenue. Users see real cash. Nobody pays upfront.</p>
       </div>
     </section>
 
     <!-- CATEGORIES -->
     <section id="categories">
       <h2>Deals by category</h2>
-      <p class="muted">Sample cashback rates — you can change these as you sign real partners.</p>
+      <p class="muted">Example cashback rates — adjust as you sign real merchants.</p>
       <table class="table">
         <thead>
           <tr>
             <th>Category</th>
             <th>Example partner</th>
-            <th>Cashback offered</th>
-            <th>Notes</th>
+            <th>Cashback</th>
+            <th>Use case</th>
           </tr>
         </thead>
         <tbody>
@@ -199,37 +192,37 @@
             <td>Groceries</td>
             <td>Naivas / Carrefour</td>
             <td><strong>2% – 4%</strong></td>
-            <td>Small but frequent. Good for mass customers.</td>
+            <td>Daily spend, mass users.</td>
           </tr>
           <tr>
             <td>Health & Pharmacy</td>
-            <td>Goodlife / Pharmacies</td>
+            <td>Goodlife</td>
             <td><strong>4% – 6%</strong></td>
-            <td>Families, NGO staff, expats.</td>
+            <td>Families, NGO staff.</td>
           </tr>
           <tr>
-            <td>Fashion & Lifestyle</td>
-            <td>LC Waikiki / Mr Price / Miniso</td>
+            <td>Fashion</td>
+            <td>LC Waikiki / Mr Price</td>
             <td><strong>5% – 10%</strong></td>
-            <td>Great for TikTok promos.</td>
+            <td>Great for TikTok lives.</td>
           </tr>
           <tr>
             <td>Travel & Hotels</td>
             <td>Local agents / booking affiliates</td>
             <td><strong>6% – 12%</strong></td>
-            <td>High value → show in Lives.</td>
+            <td>High-ticket, high cashback.</td>
           </tr>
           <tr>
             <td>Tech & Devices</td>
-            <td>Samsung / Oppo distributors</td>
+            <td>Samsung / Oppo distros</td>
             <td><strong>3% – 6%</strong></td>
-            <td>Use as hero offer.</td>
+            <td>Promo-based hero items.</td>
           </tr>
           <tr>
-            <td>Food & Cafés</td>
-            <td>ArtCaffé / Java / Local</td>
+            <td>Cafés & Food</td>
+            <td>ArtCaffé / Java / local</td>
             <td><strong>5% fixed</strong></td>
-            <td>Perfect for QR in the mall.</td>
+            <td>Perfect for mall QRs.</td>
           </tr>
         </tbody>
       </table>
@@ -237,19 +230,19 @@
 
     <!-- TESTIMONIALS -->
     <section>
-      <h2>Why people will use Ziada</h2>
+      <h2>What people say</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;">
         <div class="card">
-          <p style="color:#374151;">“Most of my spend is food, school and airtime. If I can get even KES 1,000 back monthly, I’m in.”</p>
+          <p>“If I can get 1,000 bob back a month from normal shopping, I’ll use it.”</p>
           <p style="color:#9ca3af;font-size:.78rem;">— Mary, Nairobi</p>
         </div>
         <div class="card">
-          <p style="color:#374151;">“If Ziada brings us tracked buyers, 5% cashback is fine. We need repeat, not random.”</p>
+          <p>“We just want repeat customers. If Ziada tracks them, cashback is fine.”</p>
           <p style="color:#9ca3af;font-size:.78rem;">— Café owner, Kilimani</p>
         </div>
         <div class="card">
-          <p style="color:#374151;">“Because it’s MRICS-led, we can offer this to our staff as a benefit and trust the reporting.”</p>
-          <p style="color:#9ca3af;font-size:.78rem;">— HR Lead, Nairobi SME</p>
+          <p>“Because it’s chartered, I can offer it to staff and management will trust it.”</p>
+          <p style="color:#9ca3af;font-size:.78rem;">— HR Lead, Westlands</p>
         </div>
       </div>
     </section>
@@ -258,7 +251,7 @@
     <section id="join">
       <div class="card">
         <h2>Join the pilot</h2>
-        <p class="muted">Buyers, creators, and businesses — tell us where you are. We’ll send your onboarding kit and QR.</p>
+        <p class="muted">Tell us if you’re a buyer, brand, or creator and we’ll send you your QR and onboarding link.</p>
         <form action="https://formspree.io/f/your-form-id" method="POST">
           <input name="name" placeholder="Full name" required />
           <input name="contact" placeholder="Email or M-Pesa number" required />
@@ -267,14 +260,14 @@
             <option value="merchant">I’m a business / retailer</option>
             <option value="creator">I’m a creator (TikTok / IG)</option>
           </select>
-          <textarea name="message" placeholder="City + brand you want added (e.g. Naivas Ongata, Goodlife Lavington)" rows="3"></textarea>
+          <textarea name="message" placeholder="City + brand you want added" rows="3"></textarea>
           <button type="submit" class="btn" style="width:100%;">Submit →</button>
         </form>
       </div>
     </section>
 
     <footer>
-      © <span id="year"></span> Ziada Ltd • Every Shilling Works Harder • Founder: Abdul Khadir Abdullahi MRICS
+      © <span id="year"></span> Ziada · Because You Deserve More
     </footer>
   </div>
 
