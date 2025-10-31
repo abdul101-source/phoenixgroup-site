@@ -1,399 +1,473 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Phoenix Group — Sets the Standard They Trust</title>
-  <meta name="description" content="Phoenix Group: MRICS-led commercial advisory, developments, academy and governance across the UK, Europe and East Africa. Proven delivery, fiduciary control, secure systems."/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="Phoenix Group — Sets the Standard They Trust">
-  <meta property="og:description" content="MRICS-led advisory and programme delivery with secure, fiduciary governance.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://YOUR-USERNAME.github.io/phoenixgroup-site/">
-  <meta property="og:image" content="https://YOUR-USERNAME.github.io/phoenixgroup-site/og-image.jpg">
-  <meta name="theme-color" content="#111111">
+  <meta charset="UTF-8" />
+  <title>QR Mart | Partner & Franchise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Become a QR Mart affiliate or franchise partner. Share deals, onboard merchants, earn recurring income in Kenya." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-  :root{
-    --color-deep-black:#111111; --color-graphite-dark:#1b1b1b; --color-graphite-medium:#262626;
-    --color-bronze-rich:#a07a3d; --color-bronze-light:#c29d67; --color-text-light:#f0f0f0; --color-text-medium:#b0b0b0;
-    --border:#2e2e2e; --radius:12px; --shadow:0 8px 24px rgba(0,0,0,.35)
-  }
-  html{scroll-behavior:smooth}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--color-deep-black);color:var(--color-text-light);font-family:'Open Sans',system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.7}
-  h1,h2,h3,.tagline{font-family:'Montserrat',Avenir,Arial,sans-serif;font-weight:700;color:var(--color-text-light);margin:0 0 .35em}
-  h2{text-align:center;color:var(--color-bronze-light);letter-spacing:.2px}
-  .wrap{max-width:1200px;margin:auto;padding:0 5%}
+    :root {
+      --bg: #f7f7f7;
+      --white: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --accent: #12b76a; /* emerald */
+      --accent-soft: rgba(18,183,106,0.08);
+      --border: #e5e7eb;
+      --radius: 14px;
+      --max-width: 1080px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0 0.75rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 14px;
+      background: linear-gradient(150deg, #12b76a 0%, #0f766e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      color: #3f4755;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #0f766e;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.6rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+    .btn.secondary {
+      background: rgba(18,183,106,0.08);
+      color: #0f766e;
+    }
 
-  /* NAV */
-  .nav{position:sticky;top:0;z-index:1000;background:rgba(17,17,17,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--color-bronze-light);text-decoration:none;font-size:1.05rem}
-  .brand-logo{width:28px;height:28px;border-radius:8px;background:
-    radial-gradient(65% 60% at 50% 32%, var(--color-bronze-light), transparent 70%),
-    conic-gradient(from 210deg, var(--color-bronze-light), var(--color-bronze-rich), #6f4b28, #2a1a0f); box-shadow:0 0 0 1px rgba(194,157,103,.35), 0 12px 30px rgba(0,0,0,.45)}
-  .links a{margin-left:18px;color:var(--color-text-medium);text-decoration:none;font-weight:600}
-  .links a:hover{color:var(--color-text-light)}
-  .btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid var(--color-bronze-rich);color:var(--color-text-light);background:linear-gradient(180deg,rgba(160,122,61,.18),rgba(160,122,61,.08));box-shadow:0 6px 18px rgba(160,122,61,.18);text-decoration:none;font-weight:700}
-  .btn:hover{filter:brightness(1.06)}
-  /* Mobile nav */
-  .menu-toggle{display:none;border:1px solid var(--border);border-radius:10px;padding:8px 10px;color:var(--color-text-light);background:transparent}
-  @media (max-width:860px){
-    .links{display:none;position:absolute;right:5%;top:64px;background:#151515;border:1px solid var(--border);border-radius:12px;padding:10px 12px}
-    .links a{display:block;margin:8px 4px}
-    .menu-toggle{display:inline-block}
-    .links.open{display:block}
-  }
+    /* hero */
+    .hero {
+      margin-top: 2rem;
+      background: radial-gradient(circle at top, #ffffff 0%, #f7f7f7 60%);
+      border-radius: 18px;
+      padding: 3.2rem 2.8rem 3rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.4rem;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.15rem, 3vw, 2.7rem);
+      margin: 0 0 1.1rem;
+      letter-spacing: -0.01em;
+    }
+    .hero p {
+      margin-bottom: 1.25rem;
+      color: var(--muted);
+      max-width: 36rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(18,183,106,0.09);
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #065f46;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .hero-panel {
+      background: #fff;
+      border: 1px solid rgba(18,183,106,0.12);
+      border-radius: 16px;
+      padding: 1.3rem 1.4rem 1.3rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.04);
+    }
+    .hero-panel h3 {
+      margin-top: 0;
+    }
+    .tagline {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .hero-points {
+      margin-top: 1.1rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+    .hero-point {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+    .hero-point-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: rgba(18,183,106,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #065f46;
+      flex: 0 0 26px;
+    }
 
-  /* SECTIONS */
-  section{position:relative;overflow:hidden;padding:80px 0;border-top:1px solid var(--border);background:var(--color-graphite-dark)}
-  section.alt{background:var(--color-graphite-medium)}
-  section.texture::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><rect width="120" height="120" fill="%231b1b1b"/><circle cx="60" cy="60" r="1" fill="%23262626" opacity="0.12"/></svg>');opacity:.75}
-  section>*{position:relative;z-index:1}
+    /* sections */
+    section {
+      margin-top: 3.3rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.3rem;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.4rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid rgba(11,15,20,0.03);
+      border-radius: 14px;
+      padding: 1.1rem 1.05rem 1.1rem;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.01);
+    }
+    .card h3 {
+      margin-top: 0.1rem;
+      margin-bottom: 0.4rem;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.4rem;
+    }
 
-  /* HERO */
-  .hero{background:var(--color-deep-black);min-height:86vh;display:flex;align-items:center;text-align:center;background-image:
-    radial-gradient(60% 100% at 80% 0%, rgba(160,122,61,.18), transparent 70%),
-    radial-gradient(50% 120% at 0% 0%, rgba(194,157,103,.10), transparent 70%)}
-  .phoenix-logo{width:120px;height:120px;margin:0 auto 18px;border-radius:20px;background:
-    radial-gradient(60% 60% at 50% 20%, var(--color-bronze-light), transparent 70%),
-    conic-gradient(from 215deg, var(--color-bronze-light), var(--color-bronze-rich), #6f4b28, #2a1a0f);box-shadow:0 0 42px rgba(160,122,61,.35)}
-  .tagline{font-size:clamp(28px,4.4vw,46px);text-shadow:0 0 12px rgba(160,122,61,.35),0 0 26px rgba(194,157,103,.18)}
-  .sub{max-width:900px;margin:12px auto 22px;color:var(--color-text-medium);font-size:1.08rem}
-  .cta{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  /* sticky CTA on small screens */
-  @media (max-width:600px){.sticky-cta{position:fixed;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:10px;z-index:999}}
+    .earn-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .earn-table th,
+    .earn-table td {
+      padding: 0.75rem 0.85rem;
+      border-bottom: 1px solid #edf0f2;
+      font-size: 0.86rem;
+      text-align: left;
+    }
+    .earn-table th {
+      background: #f9fafb;
+      font-weight: 600;
+    }
+    .badge-soft {
+      background: rgba(18,183,106,0.13);
+      color: #065f46;
+      font-size: 0.64rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-block;
+    }
 
-  /* GRIDS / CARDS */
-  .grid{display:grid;gap:18px}
-  .cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-  .pill{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:6px 10px;color:var(--color-text-medium);font-size:.86rem;margin-bottom:6px}
-  .ecosystem .card{position:relative;overflow:hidden}
-  .ecosystem .card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--color-bronze-rich),transparent,var(--color-bronze-rich));opacity:.65}
-
-  .twocol{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
-  @media (max-width:960px){.twocol{grid-template-columns:1fr}}
-  .list{margin:0;padding-left:18px;color:var(--color-text-medium)}
-  .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:10px}
-  .kpi .card{text-align:center}
-  .kpi b{color:var(--color-bronze-light);font-size:1.1rem}
-
-  /* FORMS & FOOTER */
-  form{display:grid;gap:12px;max-width:520px}
-  input,textarea{background:var(--color-graphite-medium);border:1px solid var(--border);color:var(--color-text-light);padding:12px 14px;border-radius:12px;width:100%}
-  input::placeholder,textarea::placeholder{color:#8b8b8b}
-  footer{background:var(--color-deep-black);border-top:1px solid var(--border);padding:44px 0;color:#a2aab4;font-size:.95rem}
+    /* form */
+    .form-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.4rem 1.4rem 1.7rem;
+      border: 1px solid rgba(0,0,0,0.02);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.03);
+      max-width: 650px;
+    }
+    .form-row {
+      display: flex;
+      gap: 1rem;
+    }
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.6rem 0.65rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.85rem;
+    }
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+    footer {
+      margin-top: 3.5rem;
+      padding: 1.5rem 0 2.5rem;
+      text-align: center;
+      color: #9ca3af;
+      font-size: 0.78rem;
+    }
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 2.4rem 1.5rem 2.3rem;
+      }
+      header {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      nav {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .form-row {
+        flex-direction: column;
+      }
+    }
   </style>
-  <script>
-    // mobile menu toggle
-    function toggleMenu(){document.querySelector('.links').classList.toggle('open');}
-  </script>
-  <!-- Schema.org (Organization) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Phoenix Group",
-    "url":"https://YOUR-USERNAME.github.io/phoenixgroup-site/",
-    "logo":"https://YOUR-USERNAME.github.io/phoenixgroup-site/og-image.jpg",
-    "sameAs": [],
-    "founder": {"@type":"Person","name":"Abdul Khadir Abdullahi, MRICS"},
-    "address": [{"@type":"PostalAddress","addressCountry":"GB"},{"@type":"PostalAddress","addressCountry":"KE"}]
-  }
-  </script>
 </head>
 <body>
-
-<!-- NAV -->
-<div class="nav" role="navigation" aria-label="Primary">
-  <div class="wrap nav-inner">
-    <a class="brand" href="#home"><span class="brand-logo" aria-hidden="true"></span> Phoenix Group</a>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">Menu ▾</button>
-    <div class="links">
-      <a href="#about">About</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#team">Team</a>
-      <a href="#divisions">Divisions</a>
-      <a href="#sectors">Sectors</a>
-      <a href="#ventures">Ventures</a>
-      <a href="#capital">Capital</a>
-      <a href="security.html">Security</a>
-      <a href="privacy.html">Privacy</a>
-      <a class="btn" href="#contact">Contact</a>
-    </div>
-  </div>
-</div>
-
-<main id="home">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="phoenix-logo" aria-hidden="true"></div>
-      <h1 class="tagline">For those who build nations, finance growth, and deliver stability — Phoenix sets the standard they trust.</h1>
-      <p class="sub">MRICS-led commercial advisory, programme delivery, academy and governance across the UK, Europe and East Africa. We combine precision cost control, fiduciary reporting and secure systems to protect value end to end.</p>
-      <div class="cta">
-        <a class="btn" href="#divisions">Explore Divisions</a>
-        <a class="btn" href="academy.html">Join the Academy</a>
-        <a class="btn" href="#contact">Start a Conversation</a>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-mark">QR</div>
+        <span>QR Mart</span>
       </div>
-      <div class="sticky-cta">
-        <a class="btn" href="#contact">Talk to Phoenix</a>
-      </div>
-    </div>
-  </section>
+      <nav>
+        <a href="#why">Why Join</a>
+        <a href="#models">Affiliate vs Franchise</a>
+        <a href="#earn">Earnings</a>
+        <a href="#apply" class="btn">Apply</a>
+      </nav>
+    </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="texture">
-    <div class="wrap">
-      <h2>About Phoenix Group</h2>
-      <p class="sub" style="text-align:center">A boutique global firm built on delivered outcomes. We align board expectations with site reality through disciplined procurement, change control and auditable reporting.</p>
-      <div class="twocol" style="margin-top:24px">
-        <div>
-          <div class="card">
-            <span class="pill">Who we are</span>
-            <p class="list">Phoenix brings together cost consulting, procurement, programme delivery, legal governance and professional education. We raise capability on every assignment—ours and yours.</p>
-          </div>
-          <div class="kpi">
-            <div class="card"><b>30+ years</b><br/><span class="muted">Combined MRICS leadership</span></div>
-            <div class="card"><b>£500m+</b><br/><span class="muted">Direct commercial management</span></div>
-            <div class="card"><b>£2bn+</b><br/><span class="muted">Programme exposure & advisory</span></div>
-            <div class="card"><b>UN / NGO</b><br/><span class="muted">Vendor-ready governance</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <span class="pill">We serve</span>
-          <h3 style="margin:.2em 0 .4em 0">Executives • Investors • Universities • NGOs • Graduates</h3>
-          <ul class="list">
-            <li><strong>Executives:</strong> CVRs you can trust, clear risk/opportunity control, margin protection.</li>
-            <li><strong>Investors:</strong> fiduciary governance, cost verification and independent diligence.</li>
-            <li><strong>Universities:</strong> CPD & Associate RICS cohorts, employability clinics and pilots.</li>
-            <li><strong>NGOs/UN:</strong> accountable procurement with transparent audit trails and training.</li>
-            <li><strong>Graduates:</strong> standards, ethics, APC/AssocRICS preparation and mentoring.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADERSHIP -->
-  <section id="leadership" class="alt">
-    <div class="wrap twocol">
-      <div class="card">
-        <span class="pill">Founder & Commercial Lead</span>
-        <h3>Abdul Khadir Abdullahi, MRICS</h3>
-        <ul class="list">
-          <li>Regeneration, hotels and hyperscale data centres; NHS energy upgrades.</li>
-          <li>Procurement strategy, value engineering, change control and board reporting.</li>
-          <li>Forensic cost auditing; supply-chain control over £100m+.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <span class="pill">Advisory & Arbitration</span>
-        <h3>Senior MRICS Mentor — Governance Advisor</h3>
-        <ul class="list">
-          <li>Arbitration-informed contracts and dispute avoidance.</li>
-          <li>Independent assurance for investors, donors and public bodies.</li>
-          <li>Ethics and governance oversight within the Phoenix Academy.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEAM -->
-  <section id="team" class="texture">
-    <div class="wrap">
-      <h2>Team & Delivery Capability</h2>
-      <p class="sub" style="text-align:center">Senior cost consultants • project managers • programme planners • commercial trainers</p>
-
-      <div class="twocol" style="margin-top:22px">
-        <div>
-          <div class="card">
-            <span class="pill">Experience</span>
-            <h3 style="margin:.2em 0 .6em 0">100+ Years Combined Delivery</h3>
-            <ul class="list">
-              <li>End-to-end cost planning, procurement and commercial management on complex programmes.</li>
-              <li>Programme controls & planning, risk/opportunity management, change governance.</li>
-              <li>Operational readiness and disciplined close-out with verifiable audit trails.</li>
-              <li>In-house training: CPD, Associate RICS, graduate bootcamps and site team uplift.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card">
-          <span class="pill">Engagement models</span>
-          <h3 style="margin:.2em 0 .6em 0">Advisory • Delivery • Train-the-Team</h3>
-          <ul class="list">
-            <li><strong>Advisory:</strong> independent cost assurance, procurement strategy, board-ready reporting.</li>
-            <li><strong>Delivery:</strong> embedded commercial/PMO teams with measurable KPIs and CVR cadence.</li>
-            <li><strong>Training:</strong> targeted upskilling aligned to live project risks and milestones.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="kpi">
-        <div class="card"><b>100+ yrs</b><br/><span class="muted">Combined senior experience</span></div>
-        <div class="card"><b>£500m+</b><br/><span class="muted">Direct commercial management</span></div>
-        <div class="card"><b>£2bn+</b><br/><span class="muted">Programme exposure</span></div>
-        <div class="card"><b>Multi-sector</b><br/><span class="muted">Energy, data, regeneration, public</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIVISIONS -->
-  <section id="divisions" class="texture">
-    <div class="wrap">
-      <h2>The Phoenix Ecosystem</h2>
-      <div class="grid cards ecosystem" style="margin-top:22px">
-        <div class="card"><span class="pill">Advisory</span><h3>Built on Integrity. Driven by Precision.</h3><p>Cost planning, procurement, value engineering, change control, CVR reporting and commercial governance.</p></div>
-        <div class="card"><span class="pill">Developments</span><h3>Turning Vision into Value.</h3><p>In-house and JV delivery across energy, housing and infrastructure—from feasibility to close-out.</p></div>
-        <div class="card"><span class="pill">Academy</span><h3>Building Those Who Build Nations.</h3><p>RICS CPD & Associate cohorts; university partnerships and professional standards programmes.</p></div>
-        <div class="card"><span class="pill">Legal & Governance</span><h3>Protecting Value. Preserving Trust.</h3><p>Contracts, arbitration guidance, audit trails and risk management with senior MRICS advisors.</p></div>
-        <div class="card"><span class="pill">Impact / Foundation</span><h3>Where Knowledge Creates Change.</h3><p>NGO-aligned capacity building, scholarships and public-sector upskilling.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTORS -->
-  <section id="sectors" class="alt">
-    <div class="wrap">
-      <h2>Key Sectors & Highlights</h2>
-      <div class="grid cards" style="margin-top:22px">
-        <div class="card"><span class="pill">Energy & NHS Upgrades</span><h3>Decarbonisation & Performance Contracts</h3><p>Solar PV, HVAC, BMS and LED retrofits with dual dashboards for margin and CO₂ impact; NHS governance compliant.</p></div>
-        <div class="card"><span class="pill">Data Centres</span><h3>Mission-Critical Delivery</h3><p>Commercial assurance and change control on hyperscale builds; rigorous vendor evaluation and close-out discipline.</p></div>
-        <div class="card"><span class="pill">Regeneration</span><h3>Major Residential & Mixed-Use</h3><p>£300m+ strategic procurement experience; robust reporting to board-level stakeholders and investors.</p></div>
-        <div class="card"><span class="pill">Public & Donor-Funded</span><h3>UN & NGO Vendor-Ready</h3><p>Forensic cost auditing, transparent procurement and capacity-building aligned to fiduciary standards.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VENTURES & ASSETS -->
-  <section id="ventures" class="alt">
-    <div class="wrap">
-      <h2>Ventures & Assets</h2>
-      <p class="sub" style="text-align:center">Selective property and operating businesses that demonstrate disciplined capital deployment and operational excellence.</p>
-
-      <div class="grid cards" style="margin-top:22px">
-        <div class="card">
-          <span class="pill">Property Portfolio</span>
-          <h3>Residential & Mixed-Use</h3>
-          <p>Value-add acquisitions with cost-managed refurbishments and cash-flow positive operations.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Hospitality Operations</span>
-          <h3>Short-Stay / Serviced</h3>
-          <p>Professionalised units with data-driven pricing, SOPs and audit-ready P&L; full safety compliance.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Development Pipeline</span>
-          <h3>In-fill & Energy Upgrades</h3>
-          <p>Targeted retrofit and in-fill schemes leveraging Phoenix advisory for cost certainty and programme control.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Human Capital</span>
-          <h3>Training as an Asset</h3>
-          <p>Graduate and supervisor upskilling reduces defects, accelerates turns and strengthens net yields.</p>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top:22px">
-        <span class="pill">Approach</span>
-        <h3>Conservative, Cash-Flow Led, Governance First</h3>
-        <ul class="list">
-          <li>Disciplined screens: location, unit economics, downside protection.</li>
-          <li>Central cost control & vendor frameworks; transparent monthly performance packs.</li>
-          <li>Compliance: insurance, licensing, HMO/short-let rules and safety certifications.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- INVITATION-ONLY CAPITAL -->
-  <section id="capital" class="texture">
-    <div class="wrap">
-      <h2>Invitation-Only Capital</h2>
-      <p class="sub" style="text-align:center">Occasionally we invite a small group of qualified partners to co-invest alongside our team on specific opportunities.</p>
-
-      <div class="twocol" style="margin-top:22px">
-        <div class="card">
-          <span class="pill">Principles</span>
-          <ul class="list">
-            <li>Alignment: Phoenix invests its own capital and operates the programme controls.</li>
-            <li>Governance: MRICS-led oversight, independent reporting and risk-first underwriting.</li>
-            <li>Selectivity: limited opportunities; invite-only based on fit and value-add.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <span class="pill">How it works</span>
-          <ul class="list">
-            <li>Discussed privately under NDA with qualified parties.</li>
-            <li>Information packs with cost plans, risks and methodology.</li>
-            <li>Strict compliance with applicable financial-promotion rules.</li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="sub" style="text-align:center;margin-top:18px">
-        To express interest for future private briefings, contact <a href="#contact">the Phoenix team</a>.<br/>
-        <span style="display:block;color:#b0b0b0;font-size:.95rem;margin-top:6px">
-          This is not an offer to the public or a solicitation to invest. Information is for awareness only.
-        </span>
-      </p>
-    </div>
-  </section>
-
-  <!-- CREDENTIALS -->
-  <section id="credentials" class="texture">
-    <div class="wrap twocol">
+    <section class="hero">
       <div>
-        <h2>Credentials & Assurance</h2>
-        <ul class="list">
-          <li><strong>MRICS chartered</strong> leadership: ethics, measurement, governance.</li>
-          <li><strong>Forensic cost auditing</strong> and independent CVR reporting.</li>
-          <li><strong>Secure systems</strong>: offline-first document control; restricted access; breach-resistant architecture.</li>
-          <li><strong>Compliance</strong>: GDPR-aligned data policy; ISO-style procedures; transparent audit trails.</li>
-          <li>Advisory network including senior MRICS arbitrators and legal practitioners.</li>
-        </ul>
+        <div class="hero-badge">New • Kenya’s smart deals network</div>
+        <h1>Become a QR Mart Partner.</h1>
+        <p>Share verified online and local offers, onboard merchants, and earn weekly M-Pesa payouts. One brand, multiple income streams.</p>
+        <a href="#apply" class="btn">Get Partner Access →</a>
+        <p class="tagline">No inventory • No shipping • We manage the tech.</p>
       </div>
-      <div class="card">
-        <span class="pill">Executive Summary</span>
-        <h3>Phoenix Group Overview</h3>
-        <p class="sub" style="text-align:left;margin:0 0 12px 0">Request our two-page profile with divisional scope, case snapshots and engagement models.</p>
-        <a class="btn" href="#contact">Request Profile</a>
+      <div class="hero-panel">
+        <h3>What you get</h3>
+        <div class="hero-points">
+          <div class="hero-point">
+            <div class="hero-point-icon">✓</div>
+            <div>
+              Personal affiliate page (yourname.qrmart.co.ke)
+            </div>
+          </div>
+          <div class="hero-point">
+            <div class="hero-point-icon">✓</div>
+            <div>
+              Access to Jumia, Kilimall, travel & local restaurant deals
+            </div>
+          </div>
+          <div class="hero-point">
+            <div class="hero-point-icon">✓</div>
+            <div>
+              Real-time dashboard + weekly M-Pesa payouts
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="alt">
-    <div class="wrap twocol">
-      <div>
-        <h2>Start a Conversation</h2>
-        <p class="sub" style="text-align:left">Tell us about your programme or cohort. We’ll respond with a clear proposal, scope and timeline.</p>
-        <form onsubmit="event.preventDefault(); alert('Thanks — we’ll be in touch.');">
-          <input type="text" placeholder="Your name" required>
-          <input type="email" placeholder="Work email" required>
-          <input type="text" placeholder="Organisation (Gov/University/NGO/Investor)">
-          <textarea rows="6" placeholder="What do you need help with?"></textarea>
-          <button class="btn" type="submit">Send Secure Message</button>
+    <section id="why">
+      <h2 class="section-title">Why QR Mart is different</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Multi-source deals</h3>
+          <p class="muted">We aggregate e-commerce (Jumia, Kilimall), plus local cafés, salons and experiences. Your audience gets everything in one place.</p>
+        </div>
+        <div class="card">
+          <h3>Local payouts</h3>
+          <p class="muted">Earn in KES. We pay weekly via M-Pesa so you don’t have to chase invoices or wait 60 days.</p>
+        </div>
+        <div class="card">
+          <h3>Brand-safe & sleek</h3>
+          <p class="muted">Clean, modern design — not spammy or “too salesy”. You can show this to corporates, influencers, even restaurants.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="models">
+      <h2 class="section-title">Choose how you want to earn</h2>
+      <div class="two-col">
+        <div class="card">
+          <span class="badge-soft">Affiliate</span>
+          <h3>Content creators & WhatsApp sellers</h3>
+          <p class="muted">Get a unique QR Mart link, promote daily deals, and earn a cut on every purchase — including flights and restaurant offers.</p>
+          <ul class="muted">
+            <li>✔ Branded mini-page</li>
+            <li>✔ Track clicks & sales</li>
+            <li>✔ M-Pesa weekly</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="badge-soft">Franchise</span>
+          <h3>Mall / campus / city operators</h3>
+          <p class="muted">Run an official QR Mart pod or “human pod” team, sell local subscriptions, and earn merchant ad revenue in your area.</p>
+          <ul class="muted">
+            <li>✔ 80% of local subs</li>
+            <li>✔ Use our brand kit</li>
+            <li>✔ National deal feed</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="earn">
+      <h2 class="section-title">What partners typically earn</h2>
+      <table class="earn-table">
+        <thead>
+          <tr>
+            <th>Activity</th>
+            <th>Volume (month)</th>
+            <th>Est. earnings (KES)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Affiliate sales via links</td>
+            <td>100 orders</td>
+            <td>20,000 – 40,000</td>
+          </tr>
+          <tr>
+            <td>QR Mart Plus subscriptions (franchise)</td>
+            <td>300 members</td>
+            <td>200,000 +</td>
+          </tr>
+          <tr>
+            <td>Local merchant placements</td>
+            <td>10 merchants</td>
+            <td>10,000 – 30,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="muted" style="margin-top:0.6rem;">* Earnings vary by city, audience size, and campaign effort.</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">How it works</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. Apply</h3>
+          <p class="muted">Tell us if you want affiliate, franchise, or both.</p>
+        </div>
+        <div class="card">
+          <h3>2. Get your links</h3>
+          <p class="muted">We generate your mini-page + tracking IDs.</p>
+        </div>
+        <div class="card">
+          <h3>3. Share & earn</h3>
+          <p class="muted">Promote deals. Get paid weekly in KES.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply">
+      <h2 class="section-title">Apply to become a QR Mart partner</h2>
+      <p class="muted">Fill this in — we’ll send you your onboarding link and media kit.</p>
+      <div class="form-box">
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <div class="form-row">
+            <div style="flex:1;">
+              <label for="name">Full name</label>
+              <input id="name" name="name" required />
+            </div>
+            <div style="flex:1;">
+              <label for="email">Email / M-Pesa number</label>
+              <input id="email" name="email" required />
+            </div>
+          </div>
+          <div class="form-row" style="margin-top:1rem;">
+            <div style="flex:1;">
+              <label for="role">I want to join as</label>
+              <select id="role" name="role">
+                <option value="affiliate">Affiliate (online / influencer)</option>
+                <option value="franchise">Franchise (mall / campus pod)</option>
+                <option value="both">Both</option>
+              </select>
+            </div>
+            <div style="flex:1;">
+              <label for="city">City / Area</label>
+              <input id="city" name="city" placeholder="Nairobi, Mombasa, Mogadishu..." />
+            </div>
+          </div>
+          <div style="margin-top:1rem;">
+            <label for="message">Tell us about your audience / location</label>
+            <textarea id="message" name="message" placeholder="e.g. I run a 15k Instagram page on food & Nairobi life."></textarea>
+          </div>
+          <button type="submit" class="btn" style="margin-top:1.1rem;">Submit application →</button>
         </form>
       </div>
-      <div class="card">
-        <span class="pill">Presence</span>
-        <h3>UK • Europe • East Africa</h3>
-        <p>London • Nairobi • Mogadishu • Addis Ababa • Dubai</p>
-        <p>Email: info@phoenixgroup.co.uk<br>Partnerships: partnerships@phoenixgroup.co.uk</p>
-        <p>We operate under advisory, JV or NGO structures as required by programme needs.</p>
-      </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer>
-  <div class="wrap">
-    <div>© 2025 Phoenix Group — Rising Above Standards.</div>
-    <div style="color:#a2aab4"><a href="privacy.html">Privacy</a> • <a href="security.html">Security</a></div>
+    <footer>
+      © <span id="year"></span> QR Mart. Scan • Shop • Save Today.
+    </footer>
   </div>
-</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
