@@ -1,425 +1,538 @@
-Perfect. I’ll give you three things in one go:
-	1.	Landing page HTML + CSS for Varix Intelligence (paste and run)
-	2.	Notes on messaging – what each section is secretly doing to create interest
-	3.	A to-the-T business plan – 90-day execution + 12-month shape
-
-You can hand this to Hamza or a front-end dev and they’ll know what to do.
-
-⸻
-
-1) Landing Page Code (HTML + CSS)
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Varix Intelligence – Intelligent Cost Control</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Varix Intelligence connects site evidence, variation reports, and RFIs into one intelligent cost-control system for construction and real estate projects." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0E141B;
-      --panel: rgba(14,20,27,0.6);
-      --blue: #247CFF;
-      --accent: #1F2933;
-      --text: #F4F5F7;
-      --muted: rgba(244,245,247,0.65);
-      --border: rgba(255,255,255,0.07);
-      --radius: 18px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top, #152032 0%, #0E141B 45%, #06090D 100%);
-      color: var(--text);
-      line-height: 1.5;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 5vw;
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(18px);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(6,9,13,0.4);
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-icon {
-      width: 34px;
-      height: 34px;
-      border: 1px solid rgba(36,124,255,0.35);
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--text);
-      background: radial-gradient(circle, rgba(36,124,255,0.3), rgba(14,20,27,0));
-    }
-    nav a {
-      margin-left: 18px;
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    .btn {
-      background: var(--blue);
-      border: none;
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-      padding: 50px 5vw 60px;
-      align-items: center;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(36,124,255,0.14);
-      color: var(--text);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    h1 {
-      font-size: clamp(2.3rem, 3.4vw, 3.4rem);
-      margin: 18px 0 12px;
-      letter-spacing: -0.02em;
-    }
-    .hero p {
-      color: var(--muted);
-      max-width: 50rem;
-      font-size: 1rem;
-    }
-    .hero-actions {
-      margin-top: 20px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .ghost-btn {
-      background: rgba(244,245,247,0.02);
-      border: 1px solid rgba(244,245,247,0.12);
-      color: var(--text);
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-weight: 500;
-      cursor: pointer;
-    }
-    .hero-panel {
-      background: rgba(16,22,29,0.45);
-      border: 1px solid rgba(244,245,247,0.03);
-      border-radius: 22px;
-      padding: 20px 20px 16px;
-      box-shadow: 0 35px 60px rgba(0,0,0,0.35);
-    }
-    .hero-panel h2 {
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-    }
-    .metric {
-      background: rgba(6,9,13,0.4);
-      border: 1px solid rgba(244,245,247,0.01);
-      border-radius: 13px;
-      padding: 10px 12px 8px;
-      margin-bottom: 10px;
-    }
-    .metric-label {
-      font-size: 0.65rem;
-      color: rgba(244,245,247,0.45);
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
-    .metric-value {
-      font-size: 1.35rem;
-      font-weight: 700;
-    }
-    .section {
-      padding: 40px 5vw 40px;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 28px;
-    }
-    .card {
-      background: rgba(14,20,27,0.4);
-      border: 1px solid rgba(244,245,247,0.02);
-      border-radius: 16px;
-      padding: 18px 18px 16px;
-    }
-    .card h3 {
-      margin: 0 0 10px;
-    }
-    .card p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    .cta-block {
-      background: linear-gradient(135deg, rgba(36,124,255,0.18), rgba(48,64,98,0));
-      border: 1px solid rgba(244,245,247,0.02);
-      border-radius: 20px;
-      text-align: center;
-      padding: 28px 20px 35px;
-      margin: 40px auto 70px;
-      max-width: 900px;
-    }
-    footer {
-      padding: 30px 5vw;
-      border-top: 1px solid rgba(244,245,247,0.04);
-      text-align: center;
-      color: rgba(244,245,247,0.25);
-      font-size: 0.75rem;
-    }
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      nav {
-        display: none;
-      }
-      .hero-panel {
-        order: -1;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varix Intelligence | The First AI-Powered Construction Cost Platform</title>
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --secondary: #00d4ff;
+            --dark: #0a0f1c;
+            --darker: #060913;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --radius: 12px;
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .gradient-bg {
+            background: radial-gradient(ellipse at top, #152232 0%, var(--darker) 70%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 15, 28, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 12rem 5% 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 102, 255, 0.15);
+            color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 5vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem auto;
+            max-width: 800px;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Features */
+        .section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Demo Section */
+        .demo-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 4rem;
+            margin: 4rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .demo-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .demo-step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 20px;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: white;
+            padding: 12px 28px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .secondary-button:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 8rem 5% 4rem;
+            }
+
+            .section {
+                padding: 4rem 5%;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <div class="logo-icon">Vx</div>
-      <div>
-        <strong>Varix Intelligence</strong><br />
-        <span style="font-size: 0.7rem; color: rgba(244,245,247,0.5);">Intelligent Cost Control</span>
-      </div>
+    <div class="gradient-bg">
+        <header>
+            <div class="nav-container">
+                <div class="logo">
+                    <div class="logo-icon">VX</div>
+                    Varix Intelligence
+                </div>
+                <nav class="nav-links">
+                    <a href="#features">Technology</a>
+                    <a href="#demo">How It Works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#case-studies">Case Studies</a>
+                    <a href="#api">API</a>
+                </nav>
+                <a href="#pilot" class="cta-button">Start Free Pilot</a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="badge">
+                🚀 INDUSTRY FIRST - AI-POWERED COST CONTROL
+            </div>
+            <h1>Construction's Missing<br>Profit Recovery System</h1>
+            <p class="hero-subtitle">
+                The first platform that automatically finds, values, and recovers missed variations using AI. 
+                Stop leaving 10-20% of your revenue on the table.
+            </p>
+            <div class="cta-buttons">
+                <a href="#pilot" class="cta-button">Start 30-Day Free Pilot</a>
+                <a href="#demo" class="secondary-button">Watch AI Demo (2 mins)</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">£42M+</span>
+                    <span class="stat-label">Recovered for Early Partners</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">94%</span>
+                    <span class="stat-label">AI Detection Accuracy</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">62s</span>
+                    <span class="stat-label">Average VO Creation Time</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="features">
+            <h2 class="section-title">How We're Different</h2>
+            <p class="section-subtitle">
+                While others focus on digitizing existing processes, we're creating entirely new revenue streams 
+                through AI-powered profit recovery.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Automatic Variation Detection</h3>
+                    <p>Our AI scans drawings, site photos, and communications to identify variations you didn't even know existed. No manual searching required.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Commission-Only Pricing</h3>
+                    <p>Pay nothing upfront. We only earn 30% of variations we recover that you would have otherwise missed. Zero risk, pure upside.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Live System Integration</h3>
+                    <p>Direct API connections to Procore, Asite, SharePoint, and COINS. Your data stays synchronized across all platforms automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>MRICS Quality Assurance</h3>
+                    <p>Every variation over £10k gets personal verification by our Chartered Quantity Surveyors. AI speed with human expertise.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Predictive Risk Analytics</h3>
+                    <p>Our system learns your project patterns to predict future variations and identify high-risk areas before they become problems.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Rate Intelligence</h3>
+                    <p>Access to the world's largest database of construction rates and variation patterns. Know exactly what each change should cost.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="demo">
+            <h2 class="section-title">From Photo to Paid in 3 Steps</h2>
+            <p class="section-subtitle">
+                The simplest, fastest way to capture every variation and get paid for all your work.
+            </p>
+
+            <div class="demo-section">
+                <div class="demo-steps">
+                    <div class="demo-step">
+                        <div class="step-number">1</div>
+                        <h3>Capture Evidence</h3>
+                        <p>Take a site photo or forward a WhatsApp message. Our AI identifies the variation automatically.</p>
+                    </div>
+                    <div class="demo-step">
+                        <div class="step-number">2</div>
+                        <h3>AI Does the Work</h3>
+                        <p>Automated pricing, contract clause referencing, and professional report generation in seconds.</p>
+                    </div>
+                    <div class="demo-step">
+                        <div class="step-number">3</div>
+                        <h3>Submit & Get Paid</h3>
+                        <p>One-click submission to your client with full audit trail. Track payment status in real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" id="pilot">
+            <h2>Ready to Recover Your Missing Revenue?</h2>
+            <p>Join the construction companies who are adding 5-15% to their bottom line with zero upfront cost.</p>
+            <div class="cta-buttons">
+                <a href="#pilot" class="secondary-button">Start 30-Day Free Pilot</a>
+                <a href="#demo" class="cta-button">Book Technical Demo</a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.8;">
+                🚀 Limited to first 50 founding partners - Includes free MRICS verification and system integration
+            </p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Varix Intelligence Ltd. The Future of Construction Cost Management.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                Built by MRICS Chartered Surveyors & AI Engineers | Patent Pending Technology
+            </p>
+        </footer>
     </div>
-    <nav>
-      <a href="#features">Product</a>
-      <a href="#how">How it works</a>
-      <a href="#demo">Pricing</a>
-    </nav>
-    <button class="btn">Start a Pilot</button>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div>
-        <span class="eyebrow">Built by MRICS for contractors</span>
-        <h1>Intelligent cost control from the first site photo.</h1>
-        <p>
-          Varix Intelligence turns field evidence, WhatsApp trails, and Procore/SharePoint files into
-          ready-to-send variation orders, RFIs, and O&M records. High-value changes are MRICS-verified before they reach your client.
-        </p>
-        <div class="hero-actions">
-          <button class="btn">Book demo</button>
-          <button class="ghost-btn">See VO report example</button>
-        </div>
-      </div>
-      <div class="hero-panel">
-        <h2>Live project snapshot</h2>
-        <div class="metric">
-          <div class="metric-label">Variations captured this week</div>
-          <div class="metric-value">27</div>
-          <div class="metric-label">£42,650 potential recovery</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">MRICS-verified (> £10k)</div>
-          <div class="metric-value">5</div>
-          <div class="metric-label">Ready to send to main contractor</div>
-        </div>
-        <div class="metric">
-          <div class="metric-label">O&M photo records created</div>
-          <div class="metric-value">14</div>
-          <div class="metric-label">Auto-pushed to SharePoint</div>
-        </div>
-        <p style="font-size: 0.7rem; color: rgba(244,245,247,0.4); margin-top: 8px;">
-          *Data shown for illustration — pilot users see live project insights here.
-        </p>
-      </div>
-    </section>
+    <script>
+        // Simple scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-    <section class="section" id="features">
-      <h2>Everything commercial teams need in one place.</h2>
-      <p style="color: var(--muted); max-width: 52rem;">
-        No more hunting through chats, emails, and site photos. Varix Intelligence captures the event, prices it
-        against your schedule of rates, and sends it to your client — while feeding your Power BI dashboards.
-      </p>
-      <div class="features">
-        <div class="card">
-          <h3>1. Capture</h3>
-          <p>Photo → VO → PDF in under 60 seconds. Voice notes and WhatsApp exports supported.</p>
-        </div>
-        <div class="card">
-          <h3>2. Control</h3>
-          <p>Auto-pricing from your SoR, prelims added, and MRICS review for high-value changes.</p>
-        </div>
-        <div class="card">
-          <h3>3. Connect</h3>
-          <p>Push directly into SharePoint, IFS Cloud, COINS, or Power BI through your Microsoft
-             automation link.</p>
-        </div>
-        <div class="card">
-          <h3>4. O&M Layer</h3>
-          <p>Every approved photo is stored for handover — asset, location, date, contractor.</p>
-        </div>
-      </div>
-    </section>
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
 
-    <section class="section" id="how">
-      <h2>How it works</h2>
-      <div class="features">
-        <div class="card">
-          <h3>Step 1 – Log</h3>
-          <p>Site team snaps a photo or forwards a chat. Varix detects trade and asks only the missing details.</p>
-        </div>
-        <div class="card">
-          <h3>Step 2 – Verify</h3>
-          <p>System prices from your schedule of rates. VO &gt; £10,000 goes to MRICS for human sign-off.</p>
-        </div>
-        <div class="card">
-          <h3>Step 3 – Publish</h3>
-          <p>Approved VO lands in your Excel/SharePoint/IFS register and your client gets the report.</p>
-        </div>
-      </div>
-    </section>
+            // Observe feature cards
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease-out';
+                observer.observe(card);
+            });
 
-    <section class="cta-block" id="demo">
-      <h2>Ready to run this on one live project?</h2>
-      <p style="color: rgba(244,245,247,0.7); max-width: 38rem; margin: 0 auto 20px;">
-        Pilot partners get 10 free VO credits, Microsoft automation setup, and MRICS verification on high-value changes.
-      </p>
-      <button class="btn">Start a Pilot</button>
-      <p style="margin-top: 14px; font-size: 0.7rem; color: rgba(244,245,247,0.5);">
-        No long-term contract. Keep the reports even if you don’t subscribe.
-      </p>
-    </section>
-  </main>
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
 
-  <footer>
-    © Varix Intelligence – Intelligent Cost Control for Construction Projects.
-  </footer>
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 15, 28, 0.98)';
+            } else {
+                header.style.background = 'rgba(10, 15, 28, 0.95)';
+            }
+        });
+    </script>
 </body>
 </html>
-
-
-⸻
-
-2) Messaging Notes (what you’re trying to convey)
-
-Use this when talking to subs, main contractors, or a CTO.
-	1.	“Built by MRICS” → not another tech startup guessing. Signals authority.
-	2.	“Photo → VO → SharePoint” → shows it fits their current Microsoft stack (Heather-style). Low change management.
-	3.	“MRICS-verified over £10k” → de-risks the AI part. You’re saying: AI does speed, humans do governance.
-	4.	“O&M layer” → ups the value for clients/developers. You’re not just helping a sub get paid — you’re preserving asset information. That’s how you later sell to Berkeley / big housebuilders.
-	5.	“Pilot partners” → makes it feel limited and early, not a random SaaS.
-	6.	“No long-term contract” → removes friction for your QS friends to try it.
-
-Basically: speed for site → trust for QS → integration for IT → lifecycle for client. One message per stakeholder.
-
-⸻
-
-3) Business Plan You Can Follow “to the T”
-
-Phase 0 — Setup (Week 1)
-	•	Register: Varix Intelligence Ltd
-	•	Domain: pick 1 → varixintelligence.com or usevarix.com
-	•	Deploy the above landing page (GitHub Pages / Netlify)
-	•	Create one “demo project” inside your prototype (Glide/Airtable)
-
-⸻
-
-Phase 1 — Data & Pilots (Weeks 2–4)
-
-Objective: 20–30 real VOs in the system.
-	1.	Message 10–15 QS / subcontractor CEOs (the ones you mentioned — Bridge Security, Trident etc.)
-	•	“I built a tool to turn WhatsApp/site photos into VOs. Try it on one live job?”
-	2.	Give them 10 free VO credits.
-	3.	Tell them: “Anything over £10k I will personally MRICS-verify.”
-	4.	For each VO: save input, photo, final report → this is your training set.
-	5.	In parallel, ask 1 person at Berkeley / ex-Berkeley if they can give you their VO Excel headings (to match SharePoint).
-	6.	Build Power Automate flow: “When HTTP received → add row to Excel on SharePoint.” That becomes your integration story.
-
-Success criteria: 5 active pilot firms, 30 VOs, 5 RFIs raised.
-
-⸻
-
-Phase 2 — Productise (Months 2–3)
-
-Objective: Make it usable without you.
-	1.	Add 2 plans only:
-	•	Essential → £25 / VO (no integrations, 30-day storage)
-	•	Premium → £499 / month (unlimited + integrations + O&M)
-	2.	Add “Microsoft automation link” field per company (what you asked for).
-	3.	Add RFI screen and link VOs → RFIs → Delays.
-	4.	Add SoR upload (CSV/Excel). If SoR exists → show rate suggestions.
-	5.	Start capturing which VOs got paid — even if user just clicks “paid”. This gives you outcome labels.
-
-Success criteria:
-	•	15+ paying Essential reports/month
-	•	3 Premium customers
-	•	200+ total items (VO/RFI/O&M photos)
-
-⸻
-
-Phase 3 — Prove Revenue (Months 4–6)
-
-Objective: Hit ~£10–12k MRR like we modelled.
-	1.	Run your London Blitz week to visit / call all subcontractor bosses. Demo on their actual WhatsApp photos.
-	2.	Offer “we’ll connect this to your SharePoint for you” — that’s the hook.
-	3.	Push premium hard for anyone with >1 project running.
-	4.	Recruit 2–3 QS friends as resellers/affiliates: 15% of first year → they refer their supply chain.
-	5.	Start producing Power BI screenshots from sample data → post on LinkedIn to attract main contractors.
-
-Targets:
-	•	15 Premium × £499 = £7,485
-	•	50 Essential users × 3 VOs × £25 = £3,750
-	•	≈ £11,000 / month → £130k/year run-rate
-
-⸻
-
-Phase 4 — Enterprise & O&M Story (Months 6–12)
-
-Objective: Move from “subbie helper” to “developer / contractor platform”.
-	1.	Show housebuilders / developers: “Every VO in Varix is already O&M-ready.”
-	2.	Build an O&M export pack (PDF + file links + photos) → £250 per project.
-	3.	Add “historic scan” upsell: upload old project folder → Varix finds missed variations → £250 scan or £25/VO compiled.
-	4.	Approach 1–2 big contractors with:
-“Your subs already use this. Do you want the data in your Power BI?”
-Sell as admin-free supply-chain reporting.
-
-⸻
-
-Ongoing KPIs
-	•	VOs created / week
-	•	% VOs with photo evidence
-	•	% VOs linked to SoR
-	•	% VOs sent to client
-	•	Premium vs Essential ratio
-	•	Integrations enabled (SharePoint / IFS / Power BI)
-
-These are the exact numbers an investor or partner will ask you for.
-
-⸻
-
-If you want, I can now write the Power Automate trigger schema for you so Heather / your contact can literally paste it in and connect Varix to their SharePoint VO log.
