@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Commercial Health Scan | Varix Intelligence</title>
+  <title>Varix Intelligence | Commercial Memory for Construction</title>
   <style>
-    /* Reuse your existing CSS variables and base styles */
     :root {
       --primary: #2563eb;
       --primary-dark: #1d4ed8;
@@ -37,7 +36,7 @@
       min-height: 100vh;
     }
 
-    /* Header - matching your existing site */
+    /* Header */
     header {
       padding: 1.25rem 5%;
       position: fixed;
@@ -128,28 +127,7 @@
       transform: translateY(-1px);
     }
 
-    /* New Health Scan specific styles */
-    .section {
-      padding: 6rem 5%;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: var(--gray);
-      font-size: 1.05rem;
-      max-width: 700px;
-      margin: 0 auto 4rem;
-    }
-
+    /* Hero */
     .hero {
       padding: 12rem 5% 5rem;
       max-width: 1400px;
@@ -189,26 +167,76 @@
       line-height: 1.6;
     }
 
-    .health-scan-container {
+    .stats-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
       margin-top: 3rem;
-      align-items: start;
+      text-align: center;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem 1rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-danger { color: #ef4444; }
+    .stat-success { color: #22c55e; }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .section {
+      padding: 6rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+
+    /* Commercial Memory Section */
+    .memory-section {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+      border-radius: 20px;
+      padding: 4rem 2rem;
     }
 
     .scan-features {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
     .feature-card {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: var(--radius);
-      padding: 2rem;
+      padding: 2.5rem 2rem;
       transition: all 0.3s;
+      text-align: center;
     }
 
     .feature-card:hover {
@@ -217,20 +245,100 @@
     }
 
     .feature-icon {
-      width: 50px;
-      height: 50px;
+      width: 70px;
+      height: 70px;
       background: rgba(37, 99, 235, 0.15);
-      border-radius: 12px;
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
+      margin: 0 auto 1.5rem;
+      font-size: 1.5rem;
     }
 
     .feature-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Health Scan vs Guardian */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .comparison-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .comparison-card.featured {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+      border: 1px solid var(--primary);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .comparison-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .icon-scan {
+      background: rgba(37, 99, 235, 0.2);
+      color: var(--primary);
+    }
+
+    .icon-guardian {
+      background: rgba(124, 58, 237, 0.2);
+      color: var(--accent);
+    }
+
+    .benefits-list {
+      list-style: none;
+      margin: 2rem 0;
+    }
+
+    .benefits-list li {
+      padding: 0.5rem 0;
+      color: var(--gray);
+    }
+
+    .benefits-list li:before {
+      content: "✓";
+      color: var(--secondary);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    /* Pricing */
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
     .pricing-card {
@@ -240,8 +348,7 @@
       padding: 3rem 2rem;
       text-align: center;
       transition: all 0.3s;
-      position: sticky;
-      top: 120px;
+      position: relative;
     }
 
     .pricing-card.featured {
@@ -274,11 +381,11 @@
 
     .plan-features {
       list-style: none;
-      margin: 1.5rem 0 0;
+      margin: 2rem 0;
     }
 
     .plan-features li {
-      padding: 0.4rem 0;
+      padding: 0.5rem 0;
       color: var(--gray);
     }
 
@@ -289,17 +396,16 @@
       margin-right: 0.5rem;
     }
 
-    .guarantee-badge {
-      display: inline-block;
-      background: rgba(5, 150, 105, 0.15);
-      color: var(--secondary);
-      padding: 8px 16px;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin: 1rem 0;
+    .credit-note {
+      background: rgba(5, 150, 105, 0.1);
+      border: 1px solid rgba(5, 150, 105, 0.2);
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
     }
 
+    /* Report Preview */
     .report-preview {
       background: rgba(15, 23, 42, 0.35);
       border: 1px solid rgba(255, 255, 255, 0.04);
@@ -331,9 +437,7 @@
       margin-bottom: 0.5rem;
     }
 
-    .score-low { color: #ef4444; }
     .score-medium { color: #f97316; }
-    .score-high { color: #22c55e; }
 
     .score-label {
       font-size: 0.9rem;
@@ -368,80 +472,39 @@
 
     .status-high { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
     .status-medium { background: rgba(249, 115, 22, 0.15); color: #f97316; }
-    .status-low { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
 
-    .autopilot-upsell {
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-      border: 1px solid rgba(124, 58, 237, 0.2);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      margin-top: 3rem;
+    /* CTA Section */
+    .cta-section {
       text-align: center;
+      padding: 6rem 5%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      border-radius: 20px;
+      margin: 4rem 0;
+      position: relative;
+      overflow: hidden;
     }
 
-    .autopilot-upsell h3 {
-      font-size: 1.8rem;
+    .cta-section h2 {
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
 
-    .tier-comparison {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .tier-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+    .secondary-button {
+      background: transparent;
+      color: white;
+      padding: 12px 28px;
       border-radius: var(--radius);
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .tier-card.featured {
-      border-color: var(--accent);
-      background: rgba(124, 58, 237, 0.03);
-    }
-
-    .tier-name {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .tier-price {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .tier-features {
-      list-style: none;
-      margin: 1.5rem 0;
-    }
-
-    .tier-features li {
-      padding: 0.3rem 0;
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-
-    .tier-features li:before {
-      content: "✓";
-      color: var(--secondary);
-      font-weight: bold;
-      margin-right: 0.5rem;
-    }
-
-    .credit-note {
-      background: rgba(5, 150, 105, 0.1);
-      border: 1px solid rgba(5, 150, 105, 0.2);
-      border-radius: var(--radius);
-      padding: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: 2px solid white;
+      display: inline-block;
       margin-top: 1rem;
-      font-size: 0.9rem;
+    }
+
+    .secondary-button:hover {
+      background: white;
+      color: var(--primary);
     }
 
     footer {
@@ -452,19 +515,22 @@
     }
 
     @media (max-width: 768px) {
-      .health-scan-container {
-        grid-template-columns: 1fr;
-      }
-      
       .nav-links {
         display: none;
       }
-      
       .hero {
         padding: 8rem 5% 4rem;
       }
-      
-      .tier-comparison {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-cards {
+        grid-template-columns: 1fr;
+      }
+      .scan-features {
         grid-template-columns: 1fr;
       }
     }
@@ -476,92 +542,145 @@
     <!-- HEADER -->
     <header id="mainHeader">
       <div class="nav-container">
-        <a href="index.html" class="logo">
+        <a href="#" class="logo">
           <div class="logo-icon">VX</div>
           Varix Intelligence
         </a>
         <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="index.html#what-we-do">How It Works</a>
-          <a href="index.html#pricing">Plans</a>
-          <a href="index.html#case-studies">Case Studies</a>
+          <a href="#commercial-memory">Commercial Memory</a>
+          <a href="#health-scan">Health Scan</a>
+          <a href="#pricing">Plans</a>
+          <a href="#how-it-works">How It Works</a>
         </nav>
-        <a href="#purchase" class="cta-button">Get Health Scan</a>
+        <a href="#health-scan" class="cta-button">Start Free Assessment</a>
       </div>
     </header>
 
     <!-- HERO -->
     <section class="hero">
-      <div class="badge">🔍 MRICS-LED COMMERCIAL DIAGNOSTIC</div>
-      <h1>Find Your Hidden Project Revenue</h1>
+      <div class="badge">🧠 COMMERCIAL MEMORY TECHNOLOGY</div>
+      <h1>Your Commercial Intelligence Shouldn't Reset When Staff Leave</h1>
       <p class="hero-subtitle">
-        Our 48-Hour Commercial Health Scan identifies exactly how much money your projects are leaking through missed variations and poor documentation. Get a clear diagnosis with actionable recovery opportunities.
+        The average subcontractor loses £142,000 in commercial intelligence every time a senior QS moves on. 
+        Varix becomes your permanent institutional memory, capturing client behaviors and successful strategies forever.
       </p>
-      <a href="#purchase" class="cta-button">Start Your Health Scan - £299</a>
+      <a href="#health-scan" class="cta-button">Assess Your Knowledge Risk - Free</a>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value stat-danger">18</div>
+          <div class="stat-label">Months of intelligence lost per QS departure</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value stat-danger">£142k</div>
+          <div class="stat-label">Average commercial value lost</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value stat-danger">6</div>
+          <div class="stat-label">Months for new hire to reach same effectiveness</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value stat-success">89%</div>
+          <div class="stat-label">Recovery rate with preserved intelligence</div>
+        </div>
+      </div>
     </section>
 
-    <!-- HEALTH SCAN DETAILS -->
-    <section class="section">
-      <h2 class="section-title">How The Commercial Health Scan Works</h2>
+    <!-- COMMERCIAL MEMORY -->
+    <section class="section memory-section" id="commercial-memory">
+      <h2 class="section-title">Never Lose Hard-Won Commercial Intelligence</h2>
       <p class="section-subtitle">
-        We combine AI-powered analysis with MRICS expertise to deliver a comprehensive diagnosis of your project's financial health in just 48 hours.
+        People leave, projects end, but your commercial intelligence shouldn't reset. 
+        Varix becomes your permanent institutional memory for what works.
       </p>
 
-      <div class="health-scan-container">
-        <div class="scan-features">
-          <div class="feature-card">
-            <div class="feature-icon">📋</div>
-            <h3>Project Documentation Review</h3>
-            <p>We analyze contracts, drawings, RFIs, applications for payment, and site communications to establish a baseline of your project's commercial position.</p>
-          </div>
+      <div class="scan-features">
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>Never Lose Hard-Won Knowledge</h3>
+          <p>When team members move on, their understanding of client behaviors and successful strategies goes with them. Varix captures and preserves this commercial intelligence.</p>
+        </div>
 
-          <div class="feature-card">
-            <div class="feature-icon">🔍</div>
-            <h3>AI-Powered VO Detection</h3>
-            <p>Our system scans all documentation to identify missed variation opportunities, linking instructions to contractual requirements and deadlines.</p>
-          </div>
+        <div class="feature-card">
+          <div class="feature-icon">📚</div>
+          <h3>Learn From Every Interaction</h3>
+          <p>Each variation submission - successful or challenged - teaches us something about your clients. We build a living database of commercial patterns and preferences.</p>
+        </div>
 
-          <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3>Compliance Score Analysis</h3>
-            <p>We evaluate your documentation against industry standards, scoring timeliness, evidence quality, and contractual alignment to pinpoint weaknesses.</p>
-          </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Accelerate New Team Members</h3>
+          <p>New QS or commercial staff can access years of client behavior insights instantly, avoiding costly learning curves and missed recovery opportunities.</p>
+        </div>
+      </div>
 
-          <div class="feature-card">
-            <div class="feature-icon">💡</div>
-            <h3>MRICS Expert Validation</h3>
-            <p>Every finding is reviewed by our chartered quantity surveyors to ensure accuracy and practical recoverability before being included in your report.</p>
+      <div style="text-align: center; margin-top: 3rem;">
+        <p style="color: var(--gray); font-style: italic;">
+          "The average subcontractor loses 18 months of commercial intelligence every time a senior QS leaves. We fix that."
+        </p>
+      </div>
+    </section>
+
+    <!-- HEALTH SCAN VS GUARDIAN -->
+    <section class="section" id="health-scan">
+      <h2 class="section-title">From Diagnosis to Permanent Protection</h2>
+      <p class="section-subtitle">
+        Start with our free Commercial Health Scan to see what you're missing, then upgrade to continuous protection.
+      </p>
+
+      <div class="comparison-grid">
+        <!-- Health Scan -->
+        <div class="comparison-card">
+          <div class="comparison-icon icon-scan">🔍</div>
+          <h3 style="text-align: center; margin-bottom: 1rem;">Commercial Health Scan</h3>
+          <p style="text-align: center; color: var(--gray); margin-bottom: 2rem;">Free diagnostic assessment</p>
+          
+          <ul class="benefits-list">
+            <li>Snapshot of current project health</li>
+            <li>Identifies past missed opportunities</li>
+            <li>Highlights immediate risks</li>
+            <li>One-time compliance score</li>
+            <li>3-5 validated recovery opportunities</li>
+            <li>MRICS-led analysis</li>
+          </ul>
+          
+          <div style="text-align: center;">
+            <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 1rem;">
+              <em>"Shows you what you've already lost"</em>
+            </p>
+            <a href="#purchase-scan" class="cta-button">Start Free Scan</a>
           </div>
         </div>
 
-        <div class="pricing-card featured" id="purchase">
-          <div class="plan-name">Commercial Health Scan</div>
-          <div class="plan-price">£299</div>
-          <div class="plan-period">One-Time Diagnostic</div>
+        <!-- Commercial Guardian -->
+        <div class="comparison-card featured">
+          <div class="featured-badge">RECOMMENDED</div>
+          <div class="comparison-icon icon-guardian">🛡️</div>
+          <h3 style="text-align: center; margin-bottom: 1rem;">Commercial Guardian</h3>
+          <p style="text-align: center; color: var(--gray); margin-bottom: 2rem;">Continuous protection + memory building</p>
           
-          <div class="guarantee-badge">✓ Credit Towards Autopilot</div>
-          
-          <ul class="plan-features">
-            <li>48-hour comprehensive review</li>
-            <li>Compliance Score with industry benchmark</li>
-            <li>3-5 validated recovery opportunities</li>
-            <li>Estimated recoverable value calculation</li>
-            <li>MRICS-led analysis and recommendations</li>
-            <li>Clear path to Autopilot subscription</li>
+          <ul class="benefits-list">
+            <li>Background widget monitoring all projects</li>
+            <li>Real-time commercial intelligence</li>
+            <li>Builds institutional memory automatically</li>
+            <li>Alerts before deadlines are missed</li>
+            <li>Live compliance dashboard</li>
+            <li>MRICS strategy sessions included</li>
           </ul>
           
-          <a href="#" class="cta-button" style="display: block; margin-top: 1.5rem;">Purchase Health Scan</a>
-          
-          <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--gray);">
-            Need multiple projects? <a href="#" style="color: var(--primary);">Contact us for portfolio pricing</a>
-          </p>
+          <div style="text-align: center;">
+            <p style="font-size: 0.9rem; color: var(--primary); margin-bottom: 1rem;">
+              <em>"Prevents future losses while building commercial memory"</em>
+            </p>
+            <a href="#subscription" class="cta-button">Start Building Memory</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- REPORT PREVIEW -->
     <section class="section">
-      <h2 class="section-title">What You'll Receive</h2>
+      <h2 class="section-title">See Exactly What You'll Receive</h2>
       <p class="section-subtitle">
         Your Commercial Health Report delivers clear, actionable insights into your project's financial health and recovery opportunities.
       </p>
@@ -627,112 +746,118 @@
       </div>
     </section>
 
-    <!-- AUTOPILOT UPSELL -->
-    <section class="section">
-      <div class="autopilot-upsell">
-        <h3>From Diagnosis to Cure</h3>
-        <p style="max-width: 700px; margin: 0 auto 1.5rem; color: var(--gray);">
-          The Health Scan identifies your leaks. Varix Autopilot prevents them from happening. Your £299 scan fee is credited toward your first month of continuous protection.
-        </p>
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+      <h2 class="section-title">Choose Your Commercial Memory Plan</h2>
+      <p class="section-subtitle">
+        Start with our free Health Scan, then upgrade to continuous protection that builds your commercial intelligence over time.
+      </p>
 
-        <div class="tier-comparison">
-          <div class="tier-card">
-            <div class="tier-name">Pilot</div>
-            <div class="tier-price">£299<span style="font-size: 1rem;">/month</span></div>
-            <ul class="tier-features">
-              <li>Continuous project monitoring</li>
-              <li>AI-powered VO detection</li>
-              <li>Contract deadline alerts</li>
-              <li>Basic compliance dashboard</li>
-              <li>Email support</li>
-            </ul>
-            <a href="#" class="cta-button" style="display: block;">Start Pilot</a>
-            <div class="credit-note">
-              Your £299 scan fee credited
-            </div>
+      <div class="pricing-cards">
+        <!-- Health Scan -->
+        <div class="pricing-card">
+          <div class="plan-name">Commercial Health Scan</div>
+          <div class="plan-price">Free</div>
+          <div class="plan-period">One-Time Assessment</div>
+          
+          <ul class="plan-features">
+            <li>48-hour comprehensive review</li>
+            <li>Compliance Score with industry benchmark</li>
+            <li>3-5 validated recovery opportunities</li>
+            <li>Estimated recoverable value calculation</li>
+            <li>MRICS-led analysis and recommendations</li>
+            <li>Clear path to Commercial Guardian</li>
+          </ul>
+          
+          <a href="#" class="cta-button" style="display: block; margin-top: 1.5rem;">Start Free Scan</a>
+        </div>
+
+        <!-- Commercial Guardian -->
+        <div class="pricing-card featured">
+          <div class="plan-name">Commercial Guardian</div>
+          <div class="plan-price">£499<span class="plan-period">/month</span></div>
+          <p style="color: var(--gray);">Continuous protection for growing teams</p>
+          
+          <ul class="plan-features">
+            <li>3 concurrent project monitoring</li>
+            <li>Background widget installation</li>
+            <li>Real-time variation alerts</li>
+            <li>Commercial memory building</li>
+            <li>Monthly intelligence reports</li>
+            <li>MRICS strategy sessions</li>
+          </ul>
+          
+          <a href="#" class="cta-button" style="display: block; margin-top: 1.5rem;">Start Guardian</a>
+          <div class="credit-note">
+            Includes setup and onboarding
           </div>
+        </div>
 
-          <div class="tier-card featured">
-            <div class="tier-name">Professional</div>
-            <div class="tier-price">£499<span style="font-size: 1rem;">/month</span></div>
-            <ul class="tier-features">
-              <li>Everything in Pilot</li>
-              <li>MRICS-led strategy sessions</li>
-              <li>Recoverability analysis</li>
-              <li>Advanced reporting</li>
-              <li>Priority support</li>
-              <li>Multi-project monitoring</li>
-            </ul>
-            <a href="#" class="cta-button" style="display: block;">Start Professional</a>
-            <div class="credit-note">
-              Your £299 scan fee credited
-            </div>
-          </div>
-
-          <div class="tier-card">
-            <div class="tier-name">Enterprise</div>
-            <div class="tier-price">£999<span style="font-size: 1rem;">/month</span></div>
-            <ul class="tier-features">
-              <li>Everything in Professional</li>
-              <li>Dedicated commercial lead</li>
-              <li>API integrations</li>
-              <li>Custom dashboards</li>
-              <li>Portfolio oversight</li>
-              <li>24/7 premium support</li>
-            </ul>
-            <a href="#" class="cta-button" style="display: block;">Contact Sales</a>
-            <div class="credit-note">
-              Your £299 scan fee credited
-            </div>
+        <!-- Portfolio Intelligence -->
+        <div class="pricing-card">
+          <div class="plan-name">Portfolio Intelligence</div>
+          <div class="plan-price">£899<span class="plan-period">/month</span></div>
+          <p style="color: var(--gray);">Complete commercial oversight</p>
+          
+          <ul class="plan-features">
+            <li>Unlimited project monitoring</li>
+            <li>Advanced API integrations</li>
+            <li>Custom commercial dashboards</li>
+            <li>Dedicated intelligence lead</li>
+            <li>Team training & onboarding</li>
+            <li>Priority 24/7 support</li>
+          </ul>
+          
+          <a href="#" class="cta-button" style="display: block; margin-top: 1.5rem;">Start Portfolio</a>
+          <div class="credit-note">
+            Includes setup and custom integration
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section class="section">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      
-      <div class="scan-features" style="max-width: 800px; margin: 0 auto;">
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
+      <h2 class="section-title">How Commercial Memory Works</h2>
+      <p class="section-subtitle">
+        Unlike traditional consulting that resets with each engagement, our system builds intelligence over time.
+      </p>
+
+      <div class="scan-features">
         <div class="feature-card">
-          <h3>What documents do I need to provide?</h3>
-          <p>We need your contract, original drawings, applications for payment, and site communications (WhatsApp, emails) from the last 3 months. The more complete your documentation, the more accurate our diagnosis.</p>
+          <div class="feature-icon">📥</div>
+          <h3>1. Data Integration</h3>
+          <p>Connect your project documentation, communications, and contracts. We work with WhatsApp, email, drawings, RFIs, and your existing systems.</p>
         </div>
 
         <div class="feature-card">
-          <h3>How do you ensure client confidentiality?</h3>
-          <p>We operate as a background service. Your client never sees our name. All data is encrypted and processed under strict NDAs. We can work in complete white-label mode if required.</p>
+          <div class="feature-icon">🔍</div>
+          <h3>2. Intelligent Analysis</h3>
+          <p>Our system scans for missed variations, compliance gaps, and recovery opportunities, learning from each interaction.</p>
         </div>
 
         <div class="feature-card">
-          <h3>What if you don't find any recoverable value?</h3>
-          <p>If our scan doesn't identify at least £5,000 in recoverable opportunities, we'll refund 50% of your fee. In practice, we consistently find significant leakage on every project we review.</p>
-        </div>
-
-        <div class="feature-card">
-          <h3>How is this different from a traditional QS audit?</h3>
-          <p>Traditional audits cost £1,200+ and take 2-3 weeks. Our AI-powered approach delivers results in 48 hours for £299, focusing specifically on identifying and quantifying missed variation opportunities.</p>
+          <div class="feature-icon">🧠</div>
+          <h3>3. Memory Building</h3>
+          <p>Every successful recovery, client interaction, and negotiation outcome builds your permanent commercial intelligence database.</p>
         </div>
       </div>
     </section>
 
     <!-- FINAL CTA -->
-    <section class="section">
-      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Find Your Missing Revenue?</h2>
-        <p style="color: var(--gray); margin-bottom: 2rem;">
-          Stop guessing how much your projects are leaking. Get a precise diagnosis and a clear path to recovery in just 48 hours.
-        </p>
-        <a href="#purchase" class="cta-button" style="font-size: 1.1rem; padding: 15px 30px;">Start Your Health Scan - £299</a>
-        <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--gray);">
-          Have multiple projects? <a href="#" style="color: var(--primary);">Contact us for portfolio assessment</a>
-        </p>
-      </div>
+    <section class="cta-section">
+      <h2>Start Building Your Commercial Memory Today</h2>
+      <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem;">
+        Stop the £142,000 knowledge drain. Preserve your hard-won commercial intelligence and make your entire team more effective.
+      </p>
+      <a href="#health-scan" class="cta-button" style="font-size: 1.1rem; padding: 15px 30px;">Start Free Commercial Health Scan</a>
+      <br>
+      <a href="#pricing" class="secondary-button">See Subscription Plans</a>
     </section>
 
     <!-- FOOTER -->
     <footer>
-      <p>© 2025 Varix Intelligence Ltd. AI-assisted variation and change recovery for construction.</p>
+      <p>© 2025 Varix Intelligence Ltd. Commercial Memory Technology for Construction.</p>
       <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.5;">
         Varix operates as a background commercial support service. All contractual notices and client-facing
         communications remain the responsibility of the appointing company.
