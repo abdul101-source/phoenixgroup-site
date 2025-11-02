@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Varix Intelligence | AI-Assisted Cost Recovery for Construction</title>
+  <title>Varix Intelligence | AI-Assisted Cost & Variation Recovery for Construction</title>
   <style>
     :root {
       --primary: #2563eb;
@@ -38,20 +38,20 @@
 
     /* Header */
     header {
-      padding: 1.5rem 5%;
+      padding: 1.25rem 5%;
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       transition: all 0.3s ease;
     }
 
     .header-scrolled {
       background: rgba(15, 23, 42, 0.98);
-      padding: 1rem 5%;
+      padding: 0.9rem 5%;
     }
 
     .nav-container {
@@ -60,6 +60,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1.5rem;
     }
 
     .logo {
@@ -70,24 +71,28 @@
       font-size: 1.5rem;
       color: var(--light);
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .logo-icon {
       width: 40px;
       height: 40px;
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
       color: white;
+      font-size: 0.9rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       align-items: center;
+      flex: 1;
+      justify-content: center;
     }
 
     .nav-links a {
@@ -95,7 +100,7 @@
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
     .nav-links a:hover {
@@ -103,27 +108,28 @@
     }
 
     .cta-button {
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%);
       color: white;
-      padding: 12px 28px;
-      border-radius: var(--radius);
+      padding: 11px 26px;
+      border-radius: 999px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s;
       border: none;
       cursor: pointer;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+      white-space: nowrap;
     }
 
     .cta-button:hover {
       background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+      transform: translateY(-1px);
     }
 
     /* Hero */
     .hero {
-      padding: 12rem 5% 6rem;
+      padding: 12rem 5% 5rem;
       max-width: 1400px;
       margin: 0 auto;
       text-align: center;
@@ -137,31 +143,89 @@
       color: var(--primary);
       padding: 8px 20px;
       border-radius: 50px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
       border: 1px solid rgba(37, 99, 235, 0.2);
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-size: clamp(3rem, 5vw, 4.3rem);
       font-weight: 800;
       line-height: 1.1;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.4rem;
       background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto 3rem;
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
       line-height: 1.6;
     }
 
-    /* Sections */
+    /* Demo / video block */
+    .demo-placeholder {
+      margin: 3rem auto 0;
+      max-width: 950px;
+      background: rgba(15, 23, 42, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1.5rem;
+      padding: 1.6rem 1.8rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .demo-left {
+      background: rgba(255, 255, 255, 0.01);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      padding: 1rem;
+    }
+
+    .demo-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .demo-line {
+      background: rgba(255, 255, 255, 0.03);
+      height: 35px;
+      border-radius: 8px;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .demo-dot {
+      width: 10px;
+      height: 10px;
+      background: #22c55e;
+      border-radius: 999px;
+    }
+
+    .demo-right {
+      border-left: 1px solid rgba(255, 255, 255, 0.02);
+      padding-left: 1.2rem;
+    }
+
+    .demo-badge {
+      font-size: 0.7rem;
+      background: rgba(124, 58, 237, 0.14);
+      display: inline-block;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.8rem;
+    }
+
     .section {
       padding: 6rem 5%;
       max-width: 1400px;
@@ -178,18 +242,16 @@
     .section-subtitle {
       text-align: center;
       color: var(--gray);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       max-width: 700px;
       margin: 0 auto 4rem;
     }
 
-    /* Plans / cards layout reused */
     .plans {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      margin: 4rem auto;
-      max-width: 1200px;
+      margin-top: 2rem;
     }
 
     .plan-card {
@@ -205,11 +267,6 @@
     .plan-card:hover {
       transform: translateY(-10px);
       border-color: var(--primary);
-    }
-
-    .plan-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
     }
 
     .plan-features {
@@ -229,7 +286,7 @@
       margin-right: 0.5rem;
     }
 
-    /* Pricing cards */
+    /* Pricing */
     .pricing-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -274,7 +331,6 @@
       color: var(--gray);
     }
 
-    /* CTA Section */
     .cta-section {
       text-align: center;
       padding: 6rem 5%;
@@ -314,12 +370,21 @@
       color: var(--primary);
     }
 
-    /* Footer */
     footer {
       padding: 4rem 5%;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       text-align: center;
       color: var(--gray);
+    }
+
+    @media (max-width: 950px) {
+      .demo-placeholder {
+        grid-template-columns: 1fr;
+      }
+      .demo-right {
+        border-left: none;
+        padding-left: 0;
+      }
     }
 
     @media (max-width: 768px) {
@@ -329,9 +394,7 @@
       .hero {
         padding: 8rem 5% 4rem;
       }
-      .pricing-cards {
-        grid-template-columns: 1fr;
-      }
+      .pricing-cards,
       .plans {
         grid-template-columns: 1fr;
       }
@@ -341,13 +404,11 @@
       }
     }
   </style>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div class="gradient-bg">
+    <!-- HEADER -->
     <header id="mainHeader">
       <div class="nav-container">
         <a href="#" class="logo">
@@ -358,7 +419,7 @@
           <a href="#what-we-do">What we do</a>
           <a href="#qs-friend">QS safety net</a>
           <a href="#pricing">Plans</a>
-          <a href="#community">Community</a>
+          <a href="#case-studies">Case studies</a>
         </nav>
         <a href="#early-access" class="cta-button">Join Early Access</a>
       </div>
@@ -366,27 +427,51 @@
 
     <!-- HERO -->
     <section class="hero">
-      <div class="badge">🛡️ AI-Assisted Commercial Protection</div>
+      <div class="badge">🛡️ Background commercial support for construction & specialist subcontractors</div>
       <h1>Recover the money your projects already earned.</h1>
       <p class="hero-subtitle">
-        Varix Intelligence sits in the background, scans drawings, WhatsApp threads, RFIs and site photos,
-        and flags variations your team didn’t have time to log — before the notice window closes.
-        Built for construction and specialist subcontractors. Governed by MRICS.
+        Varix runs in the background, scans drawings, RFIs, WhatsApp and site photos, and flags variations your team didn’t
+        have time to log — before they become non-notifiable. You stay the sender. We stay invisible.
       </p>
       <a href="#early-access" class="cta-button">Join the Early-Release Programme</a>
+
+      <!-- DEMO / PDF / VIDEO SLOT -->
+      <div class="demo-placeholder">
+        <div class="demo-left">
+          <p class="demo-title">📥 Incoming project data</p>
+          <div class="demo-line"><span class="demo-dot"></span> WhatsApp: “Can you add backing for 85” TV?”</div>
+          <div class="demo-line"><span class="demo-dot"></span> Drawing A-304 → Rev C (bulkhead change)</div>
+          <div class="demo-line"><span class="demo-dot"></span> RFI-122 replied 14/10 → scope change</div>
+          <div class="demo-line" style="opacity:0.6;">+ Photos from site (drylining, firestopping, carpentry)</div>
+        </div>
+        <div class="demo-right">
+          <span class="demo-badge">CREDENTIALS / CASE STUDY</span>
+          <!-- IMPORTANT: upload this PDF to /assets/ in your GitHub repo -->
+          <iframe
+            src="/assets/Varix_Professional_Credentials_Pack.pdf"
+            title="Varix Credentials"
+            width="100%"
+            height="190"
+            style="border:1px solid rgba(255,255,255,0.08); border-radius:10px; background:rgba(15,23,42,0.3);">
+          </iframe>
+          <p style="margin-top:0.8rem; color:#94a3b8; font-size:0.78rem;">
+            Anonymised MRICS-led background showing how Varix workflows were developed from real UK projects.
+            Replace this with a Loom / YouTube later if you like.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- WHAT WE DO -->
     <section class="section" id="what-we-do">
       <h2 class="section-title">What Varix Intelligence actually does</h2>
       <p class="section-subtitle">
-        We’re not here to replace your QS. We’re the extra set of commercial eyes
-        that turns site chatter into paid work.
+        We turn day-to-day site chatter and drawing changes into billable, evidenced variations — without stepping in front of your client.
       </p>
       <div class="plans">
         <div class="plan-card">
           <h3>1. Detect</h3>
-          <p>We watch for design changes, client instructions, “while you're here” work, and re-work after clashes.</p>
+          <p>We watch for design changes, client instructions, “while you're here” work, and rework.</p>
         </div>
         <div class="plan-card">
           <h3>2. Evidence</h3>
@@ -394,34 +479,34 @@
         </div>
         <div class="plan-card">
           <h3>3. Value</h3>
-          <p>We prefill a reason (design change / client instruction / rework) and estimate a recoverable value.</p>
+          <p>We prefill the reason (design change / client instruction / rework) and estimate recoverable value.</p>
         </div>
         <div class="plan-card">
           <h3>4. Hand back</h3>
-          <p>Your QS or business owner reviews and sends in your format (Berkeley, Wates, Ballymore, council, etc.).</p>
+          <p>Your QS or business owner reviews and sends in your format (developer, main contractor, housing, council).</p>
         </div>
       </div>
     </section>
 
     <!-- QS BEST FRIEND -->
     <section class="section" id="qs-friend">
-      <h2 class="section-title">Built to make your QS look good.</h2>
+      <h2 class="section-title">Made to make your QS look good.</h2>
       <p class="section-subtitle">
-        Internal QS teams stay in control. Varix only flags missed opportunities and builds the evidence pack.
+        Internal QS teams stay in control. Varix only flags missed opportunities and builds the evidence pack. We never contact your client without instruction.
       </p>
       <div class="plans" style="margin-top:3rem;">
         <div class="plan-card">
           <h3>Background monitoring</h3>
-          <p>Read-only connection to SharePoint / Procore / email, or simple “forward to Varix” for WhatsApp and photos.</p>
-          <p style="color:#059669;font-weight:600;margin-top:0.5rem;">We never contact your client.</p>
+          <p>Read-only connection to your folders or just forward WhatsApp / photos to a Varix inbox.</p>
+          <p style="color:#059669;font-weight:600;margin-top:0.5rem;">We appear nowhere on client-facing documents.</p>
         </div>
         <div class="plan-card">
           <h3>Deadline protection</h3>
-          <p>We check 7 / 14 / 28 day notice rules and warn you before a variation becomes non-notifiable under the contract.</p>
+          <p>We check 7 / 14 / 28 day notice rules and warn you before a VO becomes non-notifiable.</p>
         </div>
         <div class="plan-card">
           <h3>QS-controlled submissions</h3>
-          <p>Your own team stays the face to the main contractor. We just do the forensic legwork.</p>
+          <p>Your team stays the sender. We just do the forensic legwork and packaging.</p>
         </div>
       </div>
     </section>
@@ -430,8 +515,8 @@
     <section class="section" id="forensic">
       <h2 class="section-title">Forensic audit for lost project value.</h2>
       <p class="section-subtitle">
-        For projects already finished or in dispute, we rebuild the change history and produce a recovery schedule.
-        Reviewed by chartered quantity surveyors with UK major-project experience (£2bn+).
+        For completed or messy projects, Varix can reconstruct the change history and produce a recovery schedule.
+        Delivered as a background service — identities not disclosed publicly.
       </p>
       <div class="plan-card" style="max-width:900px; margin:3rem auto;">
         <h3 style="margin-bottom:1rem;">What’s included</h3>
@@ -440,11 +525,84 @@
           <li>Linking to site photos, WhatsApp and emails</li>
           <li>Variation packs with reason + evidence</li>
           <li>Recovery schedule by trade (firestopping, drylining, carpentry, M&E, fit-out)</li>
-          <li>Export to SharePoint / Power BI</li>
+          <li>Export to SharePoint / Power BI / IFS-style systems</li>
         </ul>
         <p style="margin-top:1.5rem; color:#94a3b8;">
-          Can also operate in silent / white-label mode if you don’t want to show a 3rd party.
+          Can operate in silent / white-label mode if you don’t want to show a 3rd party.
         </p>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES (ANONYMISED) -->
+    <section class="section" id="case-studies">
+      <h2 class="section-title">Proven on real UK projects</h2>
+      <p class="section-subtitle">
+        These are anonymised examples based on live residential, fit-out and firestopping projects. 
+        Full details available only on NDA / direct CEO calls.
+      </p>
+
+      <div class="plans" style="margin-top:3rem;">
+        <div class="plan-card">
+          <h3>High-rise resi (London)</h3>
+          <p>56-storey scheme. Multiple late client changes to apartments and lobby areas.</p>
+          <ul class="plan-features" style="margin-top:1rem;">
+            <li>Drylining package trending over allowance</li>
+            <li>Identified unclaimed room-by-room changes</li>
+            <li>Built variation log tied to drawings + emails</li>
+          </ul>
+          <p style="margin-top:0.6rem;color:#94a3b8;font-size:0.8rem;">
+            Result: PM/QS got a single source of truth for final account negotiation.
+          </p>
+        </div>
+
+        <div class="plan-card">
+          <h3>Firestopping & passive protection</h3>
+          <p>Scope creep from other trades, undocumented penetrations, late inspections.</p>
+          <ul class="plan-features" style="margin-top:1rem;">
+            <li>Pulled evidence from photos + WhatsApp + inspection sheets</li>
+            <li>Grouped into priced VO events</li>
+            <li>Flagged non-notified items before 28 days</li>
+          </ul>
+          <p style="margin-top:0.6rem;color:#94a3b8;font-size:0.8rem;">
+            Result: Contractor recovered work that would have been treated as “builder’s work”.
+          </p>
+        </div>
+
+        <div class="plan-card">
+          <h3>Fit-out & carpentry changes</h3>
+          <p>“While you're here” client instructions on site — never hit the QS inbox.</p>
+          <ul class="plan-features" style="margin-top:1rem;">
+            <li>Varix watched incoming site photos</li>
+            <li>Auto-drafted VO in client’s format</li>
+            <li>Handed back for QS to send under their name</li>
+          </ul>
+          <p style="margin-top:0.6rem;color:#94a3b8;font-size:0.8rem;">
+            Result: Site team didn’t need to learn new software; QS didn’t feel replaced.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MRICS ORIGIN SECTION -->
+    <section class="section" id="mrics-origin">
+      <h2 class="section-title">Built from real MRICS practice</h2>
+      <p class="section-subtitle">
+        Varix Intelligence was designed by a UK-chartered quantity surveyor with 11+ years’ experience across London high-rise, fit-out,
+        drylining and firestopping packages. The workflows mirror real change-control and variation processes used on major projects — we just automated the forensic part.
+      </p>
+      <div class="plans" style="margin-top:3rem;">
+        <div class="plan-card">
+          <h3>Commercially true</h3>
+          <p>VOs are drafted in the language main contractors actually accept (reason, evidence, impact, value).</p>
+        </div>
+        <div class="plan-card">
+          <h3>Anonymous by design</h3>
+          <p>We prepare and hand back. Your team stays the sender — ideal when you don’t want to show a third party.</p>
+        </div>
+        <div class="plan-card">
+          <h3>Regulated option</h3>
+          <p>Where needed, work can be reviewed under a separate RICS-regulated practice entity (not shown on the public site).</p>
+        </div>
       </div>
     </section>
 
@@ -452,8 +610,10 @@
     <section class="section" id="pricing">
       <h2 class="section-title">Simple plans for real projects.</h2>
       <p class="section-subtitle">
-        Start small on one project, or monitor your whole portfolio. No long-term risk.
+        Start with one site or monitor your whole portfolio. Early-access customers may qualify for up to
+        <strong>£50,000 fee-free recovery</strong>.
       </p>
+
       <div class="pricing-cards">
         <div class="pricing-card">
           <div class="plan-name">Essentials</div>
@@ -472,12 +632,15 @@
         <div class="pricing-card featured">
           <div class="plan-name">Professional</div>
           <div class="plan-price">Fee-based</div>
-          <p style="color:var(--gray);margin-top:1rem;">We detect it, draft it, and hand it back ready to send. Best for overstretched QS teams.</p>
+          <p style="color:var(--gray);margin-top:1rem;">
+            We detect it, draft it, and hand it back ready to send.
+            <strong>(Typically a % of verified recovery or a fixed monthly service.)</strong>
+          </p>
           <ul class="plan-features" style="margin-top:1.5rem;">
             <li>Everything in Essentials</li>
             <li>VO drafting in your client’s format</li>
             <li>Payment tracking</li>
-            <li>Higher-value items MRICS-reviewed</li>
+            <li>Higher-value items human-reviewed</li>
             <li>Priority support</li>
           </ul>
           <a href="#early-access" class="cta-button" style="margin-top:1.5rem;display:inline-block;">Start Professional</a>
@@ -499,29 +662,28 @@
       </div>
     </section>
 
-    <!-- EARLY ACCESS FEE-FREE -->
+    <!-- EARLY ACCESS -->
     <section class="cta-section" id="early-access">
       <h2>Early-Access Fee-Free Recovery</h2>
       <p>
-        Join the Varix Early-Release Programme and you could have your first £50,000 of verified recovery processed
-        completely fee-free. 1 in every 10 early subscribers will be selected.
+        We’re onboarding a limited number of contractors and specialist trades.
+        1 in every 10 early subscribers will have their first £50,000 of verified recovery processed with
+        <strong>no Varix service fee</strong>.
       </p>
       <div class="cta-buttons">
-        <a href="#"
-          class="cta-button">Apply for Early Access</a>
-        <a href="#pricing" class="secondary-button">See plans</a>
+        <a href="#" class="cta-button">Apply for Early Access</a>
+        <a href="#pricing" class="secondary-button">View plans</a>
       </div>
-      <p style="margin-top:1rem;font-size:0.85rem;opacity:0.8;">
-        Applies to work verified within 6 months of onboarding. Standard terms, confidentiality and MRICS oversight still apply.
+      <p style="margin-top:1rem;font-size:0.8rem;opacity:0.85;">
+        Applies to work verified within 6 months of onboarding. Non-transferable. Your team retains control of client-facing comms.
       </p>
     </section>
 
-    <!-- COMMUNITY -->
+    <!-- COMMUNITY / TESTIMONY -->
     <section class="section" id="community">
       <h2 class="section-title">Real contractors. Real recoveries.</h2>
       <p class="section-subtitle">
-        We’re building a community of dryliners, firestoppers, carpenters, M&E and fit-out contractors
-        who are tired of losing margin to missed variations.
+        Drylining, firestopping, carpentry, M&E, fit-out — everyone loses money to missed variations. Varix is the background safety net.
       </p>
       <div class="plans" style="margin-top:3rem;">
         <div class="plan-card">
@@ -540,16 +702,14 @@
           <p style="color:#94a3b8;margin-top:0.5rem;">— Carpentry & fit-out, Midlands</p>
         </div>
       </div>
-      <div style="text-align:center;margin-top:3rem;">
-        <a href="#early-access" class="cta-button">Join the community</a>
-      </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-      <p>© 2025 Varix Intelligence Ltd. AI-assisted, MRICS-governed variation recovery for construction.</p>
+      <p>© 2025 Varix Intelligence Ltd. AI-assisted variation and change recovery for construction.</p>
       <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.5;">
-        We help QS teams, we don’t replace them. All contractual notices remain the responsibility of the appointing party.
+        Varix operates as a background commercial support service. All contractual notices and client-facing
+        communications remain the responsibility of the appointing company.
       </p>
     </footer>
   </div>
