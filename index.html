@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varix Intelligence | The First AI-Powered Construction Cost Platform</title>
+    <title>Varix Intelligence | The QS Safety Net</title>
     <style>
         :root {
-            --primary: #0066ff;
-            --primary-dark: #0052cc;
-            --secondary: #00d4ff;
-            --dark: #0a0f1c;
-            --darker: #060913;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #059669;
+            --dark: #0f172a;
+            --darker: #0a0f1a;
             --light: #f8fafc;
             --gray: #64748b;
-            --success: #10b981;
-            --warning: #f59e0b;
+            --accent: #7c3aed;
             --radius: 12px;
             --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
@@ -30,31 +29,29 @@
             background: var(--darker);
             color: var(--light);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         .gradient-bg {
-            background: radial-gradient(ellipse at top, #152232 0%, var(--darker) 70%);
+            background: radial-gradient(ellipse at top, #1e293b 0%, var(--darker) 70%);
             min-height: 100vh;
         }
 
-        /* Header - FIXED */
+        /* Header */
         header {
             padding: 1.5rem 5%;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(10, 15, 28, 0.95);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
 
         .header-scrolled {
-            background: rgba(10, 15, 28, 0.98);
+            background: rgba(15, 23, 42, 0.98);
             padding: 1rem 5%;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
         .nav-container {
@@ -102,7 +99,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--secondary);
+            color: var(--primary);
         }
 
         .cta-button {
@@ -121,7 +118,7 @@
         .cta-button:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
         }
 
         /* Hero Section */
@@ -136,69 +133,106 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 102, 255, 0.15);
-            color: var(--secondary);
+            background: rgba(37, 99, 235, 0.15);
+            color: var(--primary);
             padding: 8px 20px;
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 2rem;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 1px solid rgba(37, 99, 235, 0.2);
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 5vw, 5rem);
+            font-size: clamp(3rem, 5vw, 4.5rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--gray);
             max-width: 600px;
             margin: 0 auto 3rem;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        .hero-stats {
+        /* Service Plans */
+        .plans {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 4rem auto;
-            max-width: 800px;
+            max-width: 1200px;
         }
 
-        .stat {
+        .plan-card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
+            padding: 3rem 2rem;
             border-radius: var(--radius);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            position: relative;
+            text-align: center;
         }
 
-        .stat:hover {
-            transform: translateY(-5px);
+        .plan-card.featured {
+            border-color: var(--accent);
+            transform: scale(1.05);
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
             border-color: var(--primary);
         }
 
-        .stat-number {
-            font-size: 2.5rem;
+        .plan-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .plan-price {
+            font-size: 3rem;
             font-weight: 800;
-            color: var(--secondary);
-            display: block;
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
 
-        .stat-label {
+        .plan-period {
             color: var(--gray);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+            font-size: 1rem;
         }
 
-        /* Features */
+        .plan-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .plan-features li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+        }
+
+        .plan-features li:before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Sections */
         .section {
             padding: 6rem 5%;
             max-width: 1400px;
@@ -218,134 +252,23 @@
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto 4rem;
-            line-height: 1.6;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 3rem 2rem;
-            border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.1), transparent);
-            transition: left 0.6s;
-        }
-
-        .feature-card:hover::before {
-            left: 100%;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card p {
-            color: var(--gray);
-            line-height: 1.6;
-        }
-
-        /* Demo Section */
-        .demo-section {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 20px;
-            padding: 4rem;
-            margin: 4rem 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .demo-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .demo-step {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-weight: bold;
-            color: white;
         }
 
         /* CTA Section */
         .cta-section {
             text-align: center;
             padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             border-radius: 20px;
             margin: 4rem 0;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
-            background-size: cover;
-        }
-
         .cta-section h2 {
             font-size: 3rem;
             margin-bottom: 1rem;
             position: relative;
-        }
-
-        .cta-section p {
-            position: relative;
-            font-size: 1.2rem;
         }
 
         .cta-buttons {
@@ -381,60 +304,30 @@
             color: var(--gray);
         }
 
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--light);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
         @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--dark);
-                flex-direction: column;
-                padding: 2rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
             }
 
             .hero {
                 padding: 8rem 5% 4rem;
             }
 
-            .section {
-                padding: 4rem 5%;
+            .plans {
+                grid-template-columns: 1fr;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
+            .plan-card.featured {
+                transform: none;
+            }
+
+            .plan-card.featured:hover {
+                transform: translateY(-10px);
             }
 
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
-            }
-
-            .demo-section {
-                padding: 2rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
             }
         }
     </style>
@@ -448,132 +341,82 @@
                     <div class="logo-icon">VX</div>
                     Varix Intelligence
                 </a>
-                <button class="mobile-menu-btn">☰</button>
                 <nav class="nav-links">
-                    <a href="#features">Technology</a>
-                    <a href="#demo">How It Works</a>
+                    <a href="#services">Services</a>
+                    <a href="#how-it-works">How It Works</a>
                     <a href="#pricing">Pricing</a>
                     <a href="#case-studies">Case Studies</a>
-                    <a href="#api">API</a>
                 </nav>
-                <a href="#pilot" class="cta-button">Start Free Pilot</a>
+                <a href="#get-started" class="cta-button">Start Free Trial</a>
             </div>
         </header>
 
         <section class="hero">
             <div class="badge">
-                🚀 INDUSTRY FIRST - AI-POWERED COST CONTROL
+                🛡️ THE QS SAFETY NET
             </div>
-            <h1>Construction's Missing<br>Profit Recovery System</h1>
+            <h1>Make Your QS Team<br>Bulletproof</h1>
             <p class="hero-subtitle">
-                The first platform that automatically finds, values, and recovers missed variations using AI. 
-                Stop leaving 10-20% of your revenue on the table.
+                The silent partner that helps your quantity surveyors catch every variation, 
+                meet every deadline, and capture all the revenue they deserve.
             </p>
+            <a href="#get-started" class="cta-button">Start 30-Day Free Trial</a>
+
+            <div class="plans">
+                <div class="plan-card">
+                    <div class="plan-name">Essentials</div>
+                    <div class="plan-price">£299<span class="plan-period">/month</span></div>
+                    <ul class="plan-features">
+                        <li>Weekly variation monitoring</li>
+                        <li>Evidence compilation</li>
+                        <li>Deadline tracking</li>
+                        <li>Professional report templates</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="#essentials" class="cta-button">Get Started</a>
+                </div>
+
+                <div class="plan-card featured">
+                    <div class="plan-name">Professional</div>
+                    <div class="plan-price">20%<span class="plan-period">commission</span></div>
+                    <ul class="plan-features">
+                        <li>Full variation preparation</li>
+                        <li>Submission management</li>
+                        <li>Payment tracking</li>
+                        <li>Dedicated account manager</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="#professional" class="cta-button">Start Recovery</a>
+                </div>
+
+                <div class="plan-card">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">£799<span class="plan-period">/month</span></div>
+                    <ul class="plan-features">
+                        <li>Multiple project monitoring</li>
+                        <li>Custom integrations</li>
+                        <li>Executive dashboards</li>
+                        <li>Training & onboarding</li>
+                        <li>24/7 premium support</li>
+                    </ul>
+                    <a href="#enterprise" class="cta-button">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Protect Your Profit?</h2>
+            <p>Join construction companies adding 5-15% to their bottom line with zero risk.</p>
             <div class="cta-buttons">
-                <a href="#pilot" class="cta-button">Start 30-Day Free Pilot</a>
-                <a href="#demo" class="secondary-button">Watch AI Demo (2 mins)</a>
+                <a href="#trial" class="secondary-button">Start 30-Day Free Trial</a>
+                <a href="#demo" class="cta-button">Book Strategy Call</a>
             </div>
-
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">£42M+</span>
-                    <span class="stat-label">Recovered for Early Partners</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">94%</span>
-                    <span class="stat-label">AI Detection Accuracy</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">62s</span>
-                    <span class="stat-label">Average VO Creation Time</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="features">
-            <h2 class="section-title">How We're Different</h2>
-            <p class="section-subtitle">
-                While others focus on digitizing existing processes, we're creating entirely new revenue streams 
-                through AI-powered profit recovery.
-            </p>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>Automatic Variation Detection</h3>
-                    <p>Our AI scans drawings, site photos, and communications to identify variations you didn't even know existed. No manual searching required.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Commission-Only Pricing</h3>
-                    <p>Pay nothing upfront. We only earn 30% of variations we recover that you would have otherwise missed. Zero risk, pure upside.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Live System Integration</h3>
-                    <p>Direct API connections to Procore, Asite, SharePoint, and COINS. Your data stays synchronized across all platforms automatically.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>MRICS Quality Assurance</h3>
-                    <p>Every variation over £10k gets personal verification by our Chartered Quantity Surveyors. AI speed with human expertise.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Predictive Risk Analytics</h3>
-                    <p>Our system learns your project patterns to predict future variations and identify high-risk areas before they become problems.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Global Rate Intelligence</h3>
-                    <p>Access to the world's largest database of construction rates and variation patterns. Know exactly what each change should cost.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="demo">
-            <h2 class="section-title">From Photo to Paid in 3 Steps</h2>
-            <p class="section-subtitle">
-                The simplest, fastest way to capture every variation and get paid for all your work.
-            </p>
-
-            <div class="demo-section">
-                <div class="demo-steps">
-                    <div class="demo-step">
-                        <div class="step-number">1</div>
-                        <h3>Capture Evidence</h3>
-                        <p>Take a site photo or forward a WhatsApp message. Our AI identifies the variation automatically.</p>
-                    </div>
-                    <div class="demo-step">
-                        <div class="step-number">2</div>
-                        <h3>AI Does the Work</h3>
-                        <p>Automated pricing, contract clause referencing, and professional report generation in seconds.</p>
-                    </div>
-                    <div class="demo-step">
-                        <div class="step-number">3</div>
-                        <h3>Submit & Get Paid</h3>
-                        <p>One-click submission to your client with full audit trail. Track payment status in real-time.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section" id="pilot">
-            <h2>Ready to Recover Your Missing Revenue?</h2>
-            <p>Join the construction companies who are adding 5-15% to their bottom line with zero upfront cost.</p>
-            <div class="cta-buttons">
-                <a href="#pilot" class="secondary-button">Start 30-Day Free Pilot</a>
-                <a href="#demo" class="cta-button">Book Technical Demo</a>
-            </div>
-            <p style="margin-top: 2rem; opacity: 0.8; position: relative;">
-                🚀 Limited to first 50 founding partners - Includes free MRICS verification and system integration
-            </p>
         </section>
 
         <footer>
-            <p>&copy; 2024 Varix Intelligence Ltd. The Future of Construction Cost Management.</p>
+            <p>&copy; 2024 Varix Intelligence Ltd. The QS Safety Net for Construction.</p>
             <p style="margin-top: 1rem; font-size: 0.9rem;">
-                Built by MRICS Chartered Surveyors & AI Engineers | Patent Pending Technology
+                Built by MRICS Chartered Surveyors | Making QS Teams Heroes
             </p>
         </footer>
     </div>
@@ -589,11 +432,6 @@
             }
         });
 
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -604,42 +442,7 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    // Close mobile menu if open
-                    document.querySelector('.nav-links').classList.remove('active');
                 }
-            });
-        });
-
-        // Feature card animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe feature cards
-            document.querySelectorAll('.feature-card').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'all 0.6s ease-out';
-                observer.observe(card);
-            });
-
-            // Observe stats
-            document.querySelectorAll('.stat').forEach(stat => {
-                stat.style.opacity = '0';
-                stat.style.transform = 'translateY(20px)';
-                stat.style.transition = 'all 0.6s ease-out 0.2s';
-                observer.observe(stat);
             });
         });
     </script>
