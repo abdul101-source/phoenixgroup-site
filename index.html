@@ -741,3 +741,446 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Varix Intelligence – Live Commercial Health Check</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-2: #111827;
+      --panel: rgba(15, 23, 42, 0.4);
+      --card: rgba(15, 23, 42, 0.65);
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #7c3aed;
+      --success: #22c55e;
+      --warning: #f97316;
+      --danger: #ef4444;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --radius: 14px;
+      --shadow: 0 20px 45px rgba(0,0,0,.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0%, #020617 55%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(2,6,23,.4);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .85rem 1rem;
+      gap: 1.5rem;
+    }
+    .brand {
+      display: flex;
+      gap: .7rem;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: -.01em;
+    }
+    .logo-box {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: .88rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: .6rem 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .15s ease-out;
+      text-decoration: none;
+      font-size: .85rem;
+    }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .page {
+      max-width: 1180px;
+      margin: 2.4rem auto 4rem;
+      padding: 0 1rem 4rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+    .hero {
+      background: radial-gradient(circle, rgba(37,99,235,.16) 0%, rgba(15,23,42,0) 55%), rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 1.5rem;
+      padding: 1.4rem 1.4rem 1.6rem;
+      box-shadow: var(--shadow);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: rgba(37,99,235,.15);
+      border: 1px solid rgba(37,99,235,.5);
+      border-radius: 999px;
+      padding: .25rem .75rem;
+      font-size: .7rem;
+      margin-bottom: .85rem;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 3.2vw, 2.75rem);
+      line-height: 1.05;
+      margin-bottom: .5rem;
+    }
+    .subhead {
+      color: var(--muted);
+      max-width: 58rem;
+      font-size: .95rem;
+      line-height: 1.5;
+    }
+    .hero-actions {
+      margin-top: 1rem;
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+    .hero-bottom {
+      margin-top: 1.35rem;
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .mini-card {
+      background: rgba(15,23,42,.4);
+      border: 1px solid rgba(255,255,255,.02);
+      border-radius: 1rem;
+      padding: .75rem 1rem;
+      min-width: 165px;
+    }
+    .stat-label { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .02em; }
+    .stat-value { font-size: 1.35rem; font-weight: 700; }
+    .danger { color: var(--danger); }
+    .warn { color: var(--warning); }
+    .ok { color: var(--success); }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.5rem;
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.28);
+      border: 1px solid rgba(255,255,255,.03);
+      border-radius: 1.2rem;
+      padding: 1rem 1.1rem 1.1rem;
+    }
+    .card-title {
+      font-weight: 600;
+      margin-bottom: .65rem;
+      font-size: .94rem;
+      display: flex;
+      justify-content: space-between;
+      gap: .5rem;
+      align-items: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .75rem;
+    }
+    th, td {
+      text-align: left;
+      padding: .4rem .35rem;
+      border-bottom: 1px solid rgba(148,163,184,.08);
+    }
+    th { color: var(--muted); font-weight: 500; font-size: .7rem; }
+    tr:last-child td { border-bottom: none; }
+    .tag {
+      padding: .2rem .45rem;
+      border-radius: 999px;
+      font-size: .65rem;
+      font-weight: 600;
+      display: inline-flex;
+      gap: .25rem;
+      align-items: center;
+    }
+    .tag-green { background: rgba(22,163,74,.15); color: #bbf7d0; }
+    .tag-orange { background: rgba(249,115,22,.13); color: #fed7aa; }
+    .tag-red { background: rgba(248,113,113,.12); color: #fecaca; }
+    .footer {
+      text-align: center;
+      color: rgba(255,255,255,.4);
+      font-size: .7rem;
+      margin-top: 2.5rem;
+    }
+    /* Responsive */
+    @media (max-width: 950px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .hero-bottom { flex-direction: column; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#">
+        <div class="logo-box">VX</div>
+        Varix Intelligence
+      </a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#variations">Variations</a>
+        <a href="#portfolio">Portfolio</a>
+      </div>
+      <a class="btn" href="#start">Join Early Access</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Hero / CEO pitch -->
+    <section class="hero" id="overview">
+      <div class="badge">🔒 Anonymous MRICS-led audit • Client never sees us</div>
+      <h1>Live Commercial Health Check</h1>
+      <p class="subhead">
+        We scan your live project traffic (drawings, RFIs, WhatsApp, photos) and surface
+        missed, late or under-valued variations <strong>before</strong> they expire — so you stop losing 1–3% margin.
+      </p>
+      <div class="hero-actions">
+        <a href="#start" class="btn">Start 48-Hour Audit</a>
+        <a href="#how" style="color:var(--muted);text-decoration:none;font-size:.8rem;">See how Varix stays in the background →</a>
+      </div>
+      <div class="hero-bottom">
+        <div class="mini-card">
+          <p class="stat-label">Commercial leakage rate</p>
+          <p class="stat-value danger">3.2%</p>
+          <p style="font-size:.65rem;color:var(--muted);">Target: &lt; 1%</p>
+        </div>
+        <div class="mini-card">
+          <p class="stat-label">Compliance score</p>
+          <p class="stat-value warn">68%</p>
+          <p style="font-size:.65rem;color:var(--muted);">7-day / 14-day notices</p>
+        </div>
+        <div class="mini-card">
+          <p class="stat-label">Likely recoverable</p>
+          <p class="stat-value ok">£45,000</p>
+          <p style="font-size:.65rem;color:var(--muted);">On this one package</p>
+        </div>
+        <div class="mini-card">
+          <p class="stat-label">Founder</p>
+          <p style="font-size:.7rem;color:var(--muted);line-height:1.4;">
+            MRICS chartered QS • £2bn+ projects  
+            <em>(identity withheld on site – disclosed in person)</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main dashboard -->
+    <section class="grid-2">
+      <!-- left -->
+      <div class="card" id="variations">
+        <div class="card-title">
+          Variation Risk Map
+          <span class="tag-orange">21 items</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Count</th>
+              <th>Est. Value</th>
+              <th>Recovery</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Design changes</td>
+              <td>9</td>
+              <td>£18,900</td>
+              <td><span class="tag-green">0.82</span></td>
+              <td>Submit now</td>
+            </tr>
+            <tr>
+              <td>Client instructions</td>
+              <td>6</td>
+              <td>£14,400</td>
+              <td><span class="tag-orange">0.74</span></td>
+              <td>Confirm WI</td>
+            </tr>
+            <tr>
+              <td>Site conditions</td>
+              <td>4</td>
+              <td>£8,600</td>
+              <td><span class="tag-orange">0.63</span></td>
+              <td>Notify 7 days</td>
+            </tr>
+            <tr>
+              <td>Rework / defects</td>
+              <td>2</td>
+              <td>£3,100</td>
+              <td><span class="tag-red">0.41</span></td>
+              <td>Need photos</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- right -->
+      <div class="card">
+        <div class="card-title">
+          Settlement / Negotiation Outlook
+          <span class="tag">AI assisted</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Range</th>
+              <th>Conf.</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Baseline submission</td>
+              <td>£45k</td>
+              <td>—</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>With Varix recovery</td>
+              <td>£39k–£43k</td>
+              <td><span class="tag-green">0.81</span></td>
+              <td><a style="color:var(--muted);font-size:.65rem;" href="#start">apply</a></td>
+            </tr>
+            <tr>
+              <td>Without action (&gt;14d)</td>
+              <td>£24k–£28k</td>
+              <td><span class="tag-orange">0.72</span></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><strong>Likely outcome</strong></td>
+              <td><strong>£41k</strong></td>
+              <td><span class="tag-green">high</span></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top:.75rem;font-size:.7rem;color:var(--muted);">
+          Varix models negotiate against your contract rules (JCT / NEC) and the client's past payment behaviour.
+        </p>
+      </div>
+    </section>
+
+    <!-- portfolio -->
+    <section class="card" id="portfolio">
+      <div class="card-title">
+        Portfolio Snapshot (for CEOs)
+        <span class="tag-orange">3.2% leakage</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Package</th>
+            <th>Leakage</th>
+            <th>Compliance</th>
+            <th>Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bermondsey Place B2</td>
+            <td>Drylining</td>
+            <td><span class="tag-red">3.2%</span></td>
+            <td>68%</td>
+            <td>🔴</td>
+          </tr>
+          <tr>
+            <td>SQP4</td>
+            <td>Façade</td>
+            <td>1.1%</td>
+            <td>84%</td>
+            <td>🟡</td>
+          </tr>
+          <tr>
+            <td>250 City Rd</td>
+            <td>MEP</td>
+            <td>0.7%</td>
+            <td>92%</td>
+            <td>🟢</td>
+          </tr>
+          <tr>
+            <td><strong>Portfolio average</strong></td>
+            <td>—</td>
+            <td><strong>1.6%</strong></td>
+            <td>81%</td>
+            <td>🟠</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:1rem;font-size:.7rem;color:var(--muted);">
+        We stay anonymous in your supply chain. We work behind your in-house QS/commercial team and only flag late/at-risk items. Your client never sees “Varix”.
+      </p>
+    </section>
+
+    <!-- how -->
+    <section class="card" id="how">
+      <div class="card-title">How it works (CEO version)</div>
+      <ol style="font-size:.78rem;line-height:1.5;color:var(--muted);padding-left:1rem;">
+        <li><strong>Data drop-in:</strong> you or your QS uploads drawings, site photos, RFIs, and WhatsApp exports.</li>
+        <li><strong>AI commercial audit:</strong> Varix links activity → clause → deadline → VO.</li>
+        <li><strong>Recovery likelihood:</strong> we score each VO (high / medium / low) and highlight the ones expiring in &lt; 14 days.</li>
+        <li><strong>Forensic track:</strong> for big accounts we run a background sweep to rebuild missing evidence.</li>
+        <li><strong>Rollout:</strong> we plug into your SharePoint / Power BI later — not required for the 48-hour check.</li>
+      </ol>
+    </section>
+
+    <!-- CTA -->
+    <section class="card" id="start" style="background:linear-gradient(135deg,rgba(37,99,235,.1),rgba(124,58,237,.1));border:1px solid rgba(124,58,237,.25);">
+      <div class="card-title">Start 48-Hour Audit (Founders Offer)</div>
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:.7rem;">
+        We will scan 1 live package for you, free. If we recover or protect more than £50,000 across all projects in 30 days, continue for 12 months on fixed SaaS. No “commission” wording.
+      </p>
+      <a class="btn" href="mailto:varix-intel@proton.me?subject=48hr%20Health%20Check&body=Company%20name%3A%0AProject%3A%0AContract%3A%0AData%20links%3A">Email to start audit</a>
+      <p style="margin-top:.55rem;font-size:.65rem;color:rgba(226,232,240,.4);">
+        MRICS practice and Varix Intelligence are operated separately. We can work white-label if you don’t want your client to know.
+      </p>
+    </section>
+
+    <p class="footer">© 2025 Varix Intelligence. Anonymous commercial recovery for construction. Built by a chartered quantity surveyor.</p>
+  </main>
+</body>
+</html>
