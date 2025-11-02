@@ -1,450 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varix Intelligence | The QS Safety Net</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #059669;
-            --dark: #0f172a;
-            --darker: #0a0f1a;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --accent: #7c3aed;
-            --radius: 12px;
-            --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varix Intelligence | AI-Assisted Cost Recovery for Construction</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #059669;
+      --dark: #0f172a;
+      --darker: #0a0f1a;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --accent: #7c3aed;
+      --radius: 12px;
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--darker);
-            color: var(--light);
-            line-height: 1.6;
-        }
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--darker);
+      color: var(--light);
+      line-height: 1.6;
+    }
 
-        .gradient-bg {
-            background: radial-gradient(ellipse at top, #1e293b 0%, var(--darker) 70%);
-            min-height: 100vh;
-        }
+    .gradient-bg {
+      background: radial-gradient(ellipse at top, #1e293b 0%, var(--darker) 70%);
+      min-height: 100vh;
+    }
 
-        /* Header */
-        header {
-            padding: 1.5rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
+    /* Header */
+    header {
+      padding: 1.5rem 5%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
 
-        .header-scrolled {
-            background: rgba(15, 23, 42, 0.98);
-            padding: 1rem 5%;
-        }
+    .header-scrolled {
+      background: rgba(15, 23, 42, 0.98);
+      padding: 1rem 5%;
+    }
 
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--light);
-            text-decoration: none;
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--light);
+      text-decoration: none;
+    }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-        }
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
 
-        .nav-links a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-size: 0.95rem;
+    }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
 
-        .cta-button {
-            background: var(--primary);
-            color: white;
-            padding: 12px 28px;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
+    .cta-button {
+      background: var(--primary);
+      color: white;
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
 
-        .cta-button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-        }
+    .cta-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+    }
 
-        /* Hero Section */
-        .hero {
-            padding: 12rem 5% 6rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-        }
+    /* Hero */
+    .hero {
+      padding: 12rem 5% 6rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(37, 99, 235, 0.15);
-            color: var(--primary);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(37, 99, 235, 0.2);
-        }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(37, 99, 235, 0.15);
+      color: var(--primary);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+    }
 
-        .hero h1 {
-            font-size: clamp(3rem, 5vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .hero h1 {
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            line-height: 1.6;
-        }
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+    }
 
-        /* Service Plans */
-        .plans {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 4rem auto;
-            max-width: 1200px;
-        }
+    /* Sections */
+    .section {
+      padding: 6rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-        .plan-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 3rem 2rem;
-            border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
-            position: relative;
-            text-align: center;
-        }
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
 
-        .plan-card.featured {
-            border-color: var(--accent);
-            transform: scale(1.05);
-            background: rgba(124, 58, 237, 0.05);
-        }
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
 
-        .plan-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-        }
+    /* Plans / cards layout reused */
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 4rem auto;
+      max-width: 1200px;
+    }
 
-        .plan-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
+    .plan-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3rem 2rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s;
+      position: relative;
+      text-align: left;
+    }
 
-        .plan-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--light);
-        }
+    .plan-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+    }
 
-        .plan-price {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
+    .plan-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
 
-        .plan-period {
-            color: var(--gray);
-            font-size: 1rem;
-        }
+    .plan-features {
+      list-style: none;
+      margin: 1.5rem 0 0;
+    }
 
-        .plan-features {
-            list-style: none;
-            margin: 2rem 0;
-            text-align: left;
-        }
+    .plan-features li {
+      padding: 0.4rem 0;
+      color: var(--gray);
+    }
 
-        .plan-features li {
-            padding: 0.5rem 0;
-            color: var(--gray);
-        }
+    .plan-features li:before {
+      content: "✓";
+      color: var(--secondary);
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
 
-        .plan-features li:before {
-            content: "✓";
-            color: var(--secondary);
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
+    /* Pricing cards */
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
 
-        /* Sections */
-        .section {
-            padding: 6rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
+    .pricing-card.featured {
+      border-color: var(--accent);
+      background: rgba(124, 58, 237, 0.03);
+      transform: scale(1.03);
+    }
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--gray);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 4rem;
-        }
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+    }
 
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            border-radius: 20px;
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
+    .plan-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
 
-        .cta-section h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            position: relative;
-        }
+    .plan-price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-            position: relative;
-        }
+    .plan-period {
+      font-size: 1rem;
+      color: var(--gray);
+    }
 
-        .secondary-button {
-            background: transparent;
-            color: white;
-            padding: 12px 28px;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid white;
-        }
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      padding: 6rem 5%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      border-radius: 20px;
+      margin: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .secondary-button:hover {
-            background: white;
-            color: var(--primary);
-        }
+    .cta-section h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
 
-        /* Footer */
-        footer {
-            padding: 4rem 5%;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            color: var(--gray);
-        }
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+    .secondary-button {
+      background: transparent;
+      color: white;
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: 2px solid white;
+    }
 
-            .hero {
-                padding: 8rem 5% 4rem;
-            }
+    .secondary-button:hover {
+      background: white;
+      color: var(--primary);
+    }
 
-            .plans {
-                grid-template-columns: 1fr;
-            }
+    /* Footer */
+    footer {
+      padding: 4rem 5%;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: var(--gray);
+    }
 
-            .plan-card.featured {
-                transform: none;
-            }
-
-            .plan-card.featured:hover {
-                transform: translateY(-10px);
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hero {
+        padding: 8rem 5% 4rem;
+      }
+      .pricing-cards {
+        grid-template-columns: 1fr;
+      }
+      .plans {
+        grid-template-columns: 1fr;
+      }
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
-    <div class="gradient-bg">
-        <header id="mainHeader">
-            <div class="nav-container">
-                <a href="#" class="logo">
-                    <div class="logo-icon">VX</div>
-                    Varix Intelligence
-                </a>
-                <nav class="nav-links">
-                    <a href="#services">Services</a>
-                    <a href="#how-it-works">How It Works</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#case-studies">Case Studies</a>
-                </nav>
-                <a href="#get-started" class="cta-button">Start Free Trial</a>
-            </div>
-        </header>
+  <div class="gradient-bg">
+    <header id="mainHeader">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">VX</div>
+          Varix Intelligence
+        </a>
+        <nav class="nav-links">
+          <a href="#what-we-do">What we do</a>
+          <a href="#qs-friend">QS safety net</a>
+          <a href="#pricing">Plans</a>
+          <a href="#community">Community</a>
+        </nav>
+        <a href="#early-access" class="cta-button">Join Early Access</a>
+      </div>
+    </header>
 
-        <section class="hero">
-            <div class="badge">
-                🛡️ THE QS SAFETY NET
-            </div>
-            <h1>Make Your QS Team<br>Bulletproof</h1>
-            <p class="hero-subtitle">
-                The silent partner that helps your quantity surveyors catch every variation, 
-                meet every deadline, and capture all the revenue they deserve.
-            </p>
-            <a href="#get-started" class="cta-button">Start 30-Day Free Trial</a>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="badge">🛡️ AI-Assisted Commercial Protection</div>
+      <h1>Recover the money your projects already earned.</h1>
+      <p class="hero-subtitle">
+        Varix Intelligence sits in the background, scans drawings, WhatsApp threads, RFIs and site photos,
+        and flags variations your team didn’t have time to log — before the notice window closes.
+        Built for construction and specialist subcontractors. Governed by MRICS.
+      </p>
+      <a href="#early-access" class="cta-button">Join the Early-Release Programme</a>
+    </section>
 
-            <div class="plans">
-                <div class="plan-card">
-                    <div class="plan-name">Essentials</div>
-                    <div class="plan-price">£299<span class="plan-period">/month</span></div>
-                    <ul class="plan-features">
-                        <li>Weekly variation monitoring</li>
-                        <li>Evidence compilation</li>
-                        <li>Deadline tracking</li>
-                        <li>Professional report templates</li>
-                        <li>Email support</li>
-                    </ul>
-                    <a href="#essentials" class="cta-button">Get Started</a>
-                </div>
+    <!-- WHAT WE DO -->
+    <section class="section" id="what-we-do">
+      <h2 class="section-title">What Varix Intelligence actually does</h2>
+      <p class="section-subtitle">
+        We’re not here to replace your QS. We’re the extra set of commercial eyes
+        that turns site chatter into paid work.
+      </p>
+      <div class="plans">
+        <div class="plan-card">
+          <h3>1. Detect</h3>
+          <p>We watch for design changes, client instructions, “while you're here” work, and re-work after clashes.</p>
+        </div>
+        <div class="plan-card">
+          <h3>2. Evidence</h3>
+          <p>We attach the right photo, drawing revision, RFI or WhatsApp message so the variation is defensible.</p>
+        </div>
+        <div class="plan-card">
+          <h3>3. Value</h3>
+          <p>We prefill a reason (design change / client instruction / rework) and estimate a recoverable value.</p>
+        </div>
+        <div class="plan-card">
+          <h3>4. Hand back</h3>
+          <p>Your QS or business owner reviews and sends in your format (Berkeley, Wates, Ballymore, council, etc.).</p>
+        </div>
+      </div>
+    </section>
 
-                <div class="plan-card featured">
-                    <div class="plan-name">Professional</div>
-                    <div class="plan-price">20%<span class="plan-period">commission</span></div>
-                    <ul class="plan-features">
-                        <li>Full variation preparation</li>
-                        <li>Submission management</li>
-                        <li>Payment tracking</li>
-                        <li>Dedicated account manager</li>
-                        <li>Priority support</li>
-                    </ul>
-                    <a href="#professional" class="cta-button">Start Recovery</a>
-                </div>
+    <!-- QS BEST FRIEND -->
+    <section class="section" id="qs-friend">
+      <h2 class="section-title">Built to make your QS look good.</h2>
+      <p class="section-subtitle">
+        Internal QS teams stay in control. Varix only flags missed opportunities and builds the evidence pack.
+      </p>
+      <div class="plans" style="margin-top:3rem;">
+        <div class="plan-card">
+          <h3>Background monitoring</h3>
+          <p>Read-only connection to SharePoint / Procore / email, or simple “forward to Varix” for WhatsApp and photos.</p>
+          <p style="color:#059669;font-weight:600;margin-top:0.5rem;">We never contact your client.</p>
+        </div>
+        <div class="plan-card">
+          <h3>Deadline protection</h3>
+          <p>We check 7 / 14 / 28 day notice rules and warn you before a variation becomes non-notifiable under the contract.</p>
+        </div>
+        <div class="plan-card">
+          <h3>QS-controlled submissions</h3>
+          <p>Your own team stays the face to the main contractor. We just do the forensic legwork.</p>
+        </div>
+      </div>
+    </section>
 
-                <div class="plan-card">
-                    <div class="plan-name">Enterprise</div>
-                    <div class="plan-price">£799<span class="plan-period">/month</span></div>
-                    <ul class="plan-features">
-                        <li>Multiple project monitoring</li>
-                        <li>Custom integrations</li>
-                        <li>Executive dashboards</li>
-                        <li>Training & onboarding</li>
-                        <li>24/7 premium support</li>
-                    </ul>
-                    <a href="#enterprise" class="cta-button">Contact Sales</a>
-                </div>
-            </div>
-        </section>
+    <!-- FORENSIC -->
+    <section class="section" id="forensic">
+      <h2 class="section-title">Forensic audit for lost project value.</h2>
+      <p class="section-subtitle">
+        For projects already finished or in dispute, we rebuild the change history and produce a recovery schedule.
+        Reviewed by chartered quantity surveyors with UK major-project experience (£2bn+).
+      </p>
+      <div class="plan-card" style="max-width:900px; margin:3rem auto;">
+        <h3 style="margin-bottom:1rem;">What’s included</h3>
+        <ul class="plan-features">
+          <li>Drawing / RFI / SI change log</li>
+          <li>Linking to site photos, WhatsApp and emails</li>
+          <li>Variation packs with reason + evidence</li>
+          <li>Recovery schedule by trade (firestopping, drylining, carpentry, M&E, fit-out)</li>
+          <li>Export to SharePoint / Power BI</li>
+        </ul>
+        <p style="margin-top:1.5rem; color:#94a3b8;">
+          Can also operate in silent / white-label mode if you don’t want to show a 3rd party.
+        </p>
+      </div>
+    </section>
 
-        <section class="cta-section">
-            <h2>Ready to Protect Your Profit?</h2>
-            <p>Join construction companies adding 5-15% to their bottom line with zero risk.</p>
-            <div class="cta-buttons">
-                <a href="#trial" class="secondary-button">Start 30-Day Free Trial</a>
-                <a href="#demo" class="cta-button">Book Strategy Call</a>
-            </div>
-        </section>
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+      <h2 class="section-title">Simple plans for real projects.</h2>
+      <p class="section-subtitle">
+        Start small on one project, or monitor your whole portfolio. No long-term risk.
+      </p>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <div class="plan-name">Essentials</div>
+          <div class="plan-price">£299<span class="plan-period">/month</span></div>
+          <p style="color:var(--gray);margin-top:1rem;">For small subcontractors who just want us to flag what’s been missed.</p>
+          <ul class="plan-features" style="margin-top:1.5rem;">
+            <li>Weekly variation monitoring</li>
+            <li>Evidence compilation</li>
+            <li>Contract window reminders</li>
+            <li>Standard report templates</li>
+            <li>Email support</li>
+          </ul>
+          <a href="#early-access" class="cta-button" style="margin-top:1.5rem;display:inline-block;">Get Essentials</a>
+        </div>
 
-        <footer>
-            <p>&copy; 2024 Varix Intelligence Ltd. The QS Safety Net for Construction.</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;">
-                Built by MRICS Chartered Surveyors | Making QS Teams Heroes
-            </p>
-        </footer>
-    </div>
+        <div class="pricing-card featured">
+          <div class="plan-name">Professional</div>
+          <div class="plan-price">Fee-based</div>
+          <p style="color:var(--gray);margin-top:1rem;">We detect it, draft it, and hand it back ready to send. Best for overstretched QS teams.</p>
+          <ul class="plan-features" style="margin-top:1.5rem;">
+            <li>Everything in Essentials</li>
+            <li>VO drafting in your client’s format</li>
+            <li>Payment tracking</li>
+            <li>Higher-value items MRICS-reviewed</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#early-access" class="cta-button" style="margin-top:1.5rem;display:inline-block;">Start Professional</a>
+        </div>
 
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('mainHeader');
-            if (window.scrollY > 50) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-        });
+        <div class="pricing-card">
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-price">£799<span class="plan-period">/month</span></div>
+          <p style="color:var(--gray);margin-top:1rem;">For contractors running multiple live sites and needing proof of commercial governance.</p>
+          <ul class="plan-features" style="margin-top:1.5rem;">
+            <li>Multi-project monitoring</li>
+            <li>Custom integrations (SharePoint / Power BI / IFS)</li>
+            <li>Executive leakage dashboard</li>
+            <li>Team training & onboarding</li>
+            <li>24/7 premium support</li>
+          </ul>
+          <a href="#early-access" class="cta-button" style="margin-top:1.5rem;display:inline-block;">Talk to us</a>
+        </div>
+      </div>
+    </section>
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- EARLY ACCESS FEE-FREE -->
+    <section class="cta-section" id="early-access">
+      <h2>Early-Access Fee-Free Recovery</h2>
+      <p>
+        Join the Varix Early-Release Programme and you could have your first £50,000 of verified recovery processed
+        completely fee-free. 1 in every 10 early subscribers will be selected.
+      </p>
+      <div class="cta-buttons">
+        <a href="#"
+          class="cta-button">Apply for Early Access</a>
+        <a href="#pricing" class="secondary-button">See plans</a>
+      </div>
+      <p style="margin-top:1rem;font-size:0.85rem;opacity:0.8;">
+        Applies to work verified within 6 months of onboarding. Standard terms, confidentiality and MRICS oversight still apply.
+      </p>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="section" id="community">
+      <h2 class="section-title">Real contractors. Real recoveries.</h2>
+      <p class="section-subtitle">
+        We’re building a community of dryliners, firestoppers, carpenters, M&E and fit-out contractors
+        who are tired of losing margin to missed variations.
+      </p>
+      <div class="plans" style="margin-top:3rem;">
+        <div class="plan-card">
+          <h3>“We thought we were tight…”</h3>
+          <p>“Varix still found £14,200 on a job we’d already submitted final account for.”</p>
+          <p style="color:#94a3b8;margin-top:0.5rem;">— Firestopping contractor, London</p>
+        </div>
+        <div class="plan-card">
+          <h3>“We don’t have time for admin.”</h3>
+          <p>“Now site just forwards photos and we get a variation pack back.”</p>
+          <p style="color:#94a3b8;margin-top:0.5rem;">— Drylining / ceilings, Kent</p>
+        </div>
+        <div class="plan-card">
+          <h3>“Our QS likes it.”</h3>
+          <p>“It doesn’t bypass him — it just means he doesn’t miss the 28-day notice anymore.”</p>
+          <p style="color:#94a3b8;margin-top:0.5rem;">— Carpentry & fit-out, Midlands</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:3rem;">
+        <a href="#early-access" class="cta-button">Join the community</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 Varix Intelligence Ltd. AI-assisted, MRICS-governed variation recovery for construction.</p>
+      <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.5;">
+        We help QS teams, we don’t replace them. All contractual notices remain the responsibility of the appointing party.
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // Header scroll effect
+    window.addEventListener("scroll", function () {
+      const header = document.getElementById("mainHeader");
+      if (window.scrollY > 50) {
+        header.classList.add("header-scrolled");
+      } else {
+        header.classList.remove("header-scrolled");
+      }
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
