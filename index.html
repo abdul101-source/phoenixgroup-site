@@ -1,785 +1,679 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Varix Intelligence | Commercial Foresight for the Built Environment</title>
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --primary: #1E40AF;
-      --primary-dark: #1e3a8a;
-      --accent: #7C3AED;
-      --teal: #14B8A6;
-      --dark: #0F172A;
-      --darker: #020617;
-      --highlight: #A3E635;
-      --light: #F8FAFC;
-      --gray: #64748b;
-      --radius: 16px;
-      --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      --glass: rgba(255, 255, 255, 0.05);
-      --font-heading: 'Space Grotesk', sans-serif;
-      --font-body: 'Inter', sans-serif;
-      --font-mono: 'DM Mono', monospace;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varix Intelligence | Commercial Foresight for Construction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E40AF;
+            --primary-dark: #1e3a8a;
+            --accent: #7C3AED;
+            --teal: #14B8A6;
+            --dark: #0F172A;
+            --darker: #020617;
+            --highlight: #A3E635;
+            --light: #F8FAFC;
+            --gray: #64748b;
+            --radius: 16px;
+            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --glass: rgba(255, 255, 255, 0.05);
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'DM Mono', monospace;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: var(--font-body);
-      background: var(--darker);
-      color: var(--light);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+        body {
+            font-family: var(--font-body);
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    /* Animated background */
-    .animated-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(20, 184, 166, 0.05) 0%, transparent 50%);
-      z-index: -1;
-    }
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(20, 184, 166, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
 
-    .pulse-dot {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: var(--highlight);
-      border-radius: 50%;
-      filter: blur(1px);
-      animation: pulseMove 8s infinite linear;
-    }
+        .pulse-dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--highlight);
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: pulseMove 8s infinite linear;
+        }
 
-    @keyframes pulseMove {
-      0% { transform: translate(0, 0); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translate(100px, -50px); opacity: 0; }
-    }
+        @keyframes pulseMove {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(100px, -50px); opacity: 0; }
+        }
 
-    /* Header */
-    header {
-      padding: 1.5rem 5%;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
+        /* Header */
+        header {
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
 
-    .nav-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: var(--light);
-      text-decoration: none;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--light);
+            text-decoration: none;
+        }
 
-    .logo-icon {
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: white;
-      font-size: 1rem;
-    }
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1rem;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
 
-    .nav-links a {
-      color: var(--light);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: all 0.3s;
-      position: relative;
-    }
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            position: relative;
+        }
 
-    .nav-links a:hover {
-      color: var(--teal);
-    }
+        .nav-links a:hover {
+            color: var(--teal);
+        }
 
-    .nav-links a:after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--teal), var(--accent));
-      transition: width 0.3s;
-    }
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--teal), var(--accent));
+            transition: width 0.3s;
+        }
 
-    .nav-links a:hover:after {
-      width: 100%;
-    }
+        .nav-links a:hover:after {
+            width: 100%;
+        }
 
-    .cta-button {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-      font-family: var(--font-heading);
-      box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
-    }
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
+        }
 
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 40px rgba(30, 64, 175, 0.4);
-    }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(30, 64, 175, 0.4);
+        }
 
-    /* Hero Section */
-    .hero {
-      padding: 15rem 5% 8rem;
-      max-width: 1400px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-    }
+        /* Hero Section */
+        .hero {
+            padding: 15rem 5% 8rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(30, 64, 175, 0.15);
-      color: var(--teal);
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      border: 1px solid rgba(20, 184, 166, 0.3);
-      font-family: var(--font-mono);
-      letter-spacing: 0.5px;
-    }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(30, 64, 175, 0.15);
+            color: var(--teal);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            font-family: var(--font-mono);
+            letter-spacing: 0.5px;
+        }
 
-    .hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(3.5rem, 6vw, 5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #fff 0%, var(--teal) 30%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(3.5rem, 6vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--teal) 30%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: var(--gray);
-      max-width: 800px;
-      margin: 0 auto 3rem;
-      line-height: 1.6;
-      font-weight: 400;
-    }
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
 
-    .tagline {
-      font-family: var(--font-mono);
-      font-size: 1.1rem;
-      color: var(--teal);
-      margin-bottom: 3rem;
-      letter-spacing: 1px;
-    }
+        .tagline {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: var(--teal);
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+        }
 
-    /* Dashboard Preview */
-    .dashboard-preview {
-      max-width: 1200px;
-      margin: 4rem auto 0;
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      padding: 2rem;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
+        /* Commercial Memory Section */
+        .memory-section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-    .dashboard-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, var(--teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .dashboard-title {
-      font-family: var(--font-heading);
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
 
-    .dashboard-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
 
-    .stat-card {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: all 0.3s;
-    }
+        .memory-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
 
-    .stat-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(20, 184, 166, 0.3);
-    }
+        .memory-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(20, 184, 166, 0.3);
+            box-shadow: var(--shadow);
+        }
 
-    .stat-value {
-      font-family: var(--font-mono);
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
+        .memory-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
 
-    .stat-value.positive { color: var(--teal); }
-    .stat-value.warning { color: var(--highlight); }
-    .stat-value.negative { color: #f87171; }
+        .memory-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
 
-    .stat-label {
-      font-size: 0.9rem;
-      color: var(--gray);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+        .memory-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
 
-    .activity-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2rem;
-    }
+        /* Health Scan Section */
+        .scan-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border-radius: 30px;
+            margin: 4rem 5%;
+        }
 
-    .activity-list {
-      background: rgba(15, 23, 42, 0.6);
-      border-radius: 16px;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
+        .scan-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
 
-    .activity-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
+        .scan-content h2 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .activity-item:last-child {
-      border-bottom: none;
-    }
+        .scan-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
 
-    .activity-icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(30, 64, 175, 0.2);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
+        .scan-features li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-    .activity-content h4 {
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-    }
+        .scan-features li:before {
+            content: "✓";
+            color: var(--teal);
+            font-weight: bold;
+        }
 
-    .activity-content p {
-      font-size: 0.85rem;
-      color: var(--gray);
-    }
+        .scan-pricing {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+        }
 
-    .risk-meter {
-      background: rgba(15, 23, 42, 0.6);
-      border-radius: 16px;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
+        .price {
+            font-family: var(--font-mono);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
 
-    .meter-title {
-      font-family: var(--font-heading);
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
+        .price-note {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
 
-    .meter-value {
-      font-family: var(--font-mono);
-      font-size: 3rem;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 1rem;
-      color: var(--teal);
-    }
+        /* Testimonials */
+        .testimonial-section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-    .meter-bar {
-      height: 12px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 1rem;
-    }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
 
-    .meter-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--teal), var(--accent));
-      border-radius: 10px;
-      width: 68%;
-    }
+        .testimonial-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s;
+        }
 
-    /* Testimonial Grid */
-    .testimonial-section {
-      padding: 6rem 5%;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(20, 184, 166, 0.3);
+        }
 
-    .section-title {
-      font-family: var(--font-heading);
-      font-size: 3.5rem;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, #fff 0%, var(--teal) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--teal);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+        }
 
-    .section-subtitle {
-      text-align: center;
-      color: var(--gray);
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 4rem;
-    }
+        .testimonial-quote {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            font-style: italic;
+        }
 
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-    }
+        .testimonial-author {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
 
-    .testimonial-card {
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      padding: 2.5rem;
-      position: relative;
-      transition: all 0.3s;
-    }
+        .testimonial-role {
+            color: var(--teal);
+            font-size: 0.9rem;
+        }
 
-    .testimonial-card:hover {
-      transform: translateY(-10px);
-      border-color: rgba(20, 184, 166, 0.3);
-      box-shadow: var(--shadow);
-    }
+        /* Final CTA */
+        .final-cta {
+            padding: 6rem 5%;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border-radius: 30px;
+            margin: 4rem 5%;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
 
-    .testimonial-avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-bottom: 1.5rem;
-      border: 3px solid var(--teal);
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-    }
+        .final-cta h2 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--teal) 50%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .testimonial-quote {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-      color: var(--light);
-      font-style: italic;
-    }
+        .final-cta p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
 
-    .testimonial-author {
-      font-family: var(--font-heading);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
+        footer {
+            padding: 4rem 5%;
+            text-align: center;
+            color: var(--gray);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-    .testimonial-role {
-      color: var(--teal);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .testimonial-stats {
-      display: flex;
-      gap: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .testimonial-stat {
-      text-align: center;
-    }
-
-    .stat-number {
-      font-family: var(--font-mono);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--highlight);
-    }
-
-    .stat-desc {
-      font-size: 0.8rem;
-      color: var(--gray);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* Final CTA */
-    .final-cta {
-      padding: 6rem 5%;
-      text-align: center;
-      background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-      border-radius: 30px;
-      margin: 4rem 5%;
-      border: 1px solid rgba(124, 58, 237, 0.2);
-    }
-
-    .final-cta h2 {
-      font-family: var(--font-heading);
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #fff 0%, var(--teal) 50%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .final-cta p {
-      font-size: 1.2rem;
-      color: var(--gray);
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
-    }
-
-    footer {
-      padding: 4rem 5%;
-      text-align: center;
-      color: var(--gray);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      
-      .hero {
-        padding: 12rem 5% 6rem;
-      }
-      
-      .activity-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .testimonial-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .dashboard-stats {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 12rem 5% 6rem;
+            }
+            
+            .scan-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .memory-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Animated Background -->
-  <div class="animated-bg" id="pulseContainer"></div>
+    <!-- Animated Background -->
+    <div class="animated-bg" id="pulseContainer"></div>
 
-  <!-- Header -->
-  <header>
-    <div class="nav-container">
-      <a href="#" class="logo">
-        <div class="logo-icon">VX</div>
-        Varix Intelligence
-      </a>
-      <nav class="nav-links">
-        <a href="#dashboard">Dashboard</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#testimonials">Results</a>
-        <a href="#pricing">Plans</a>
-      </nav>
-      <a href="#cta" class="cta-button">Start Free Assessment</a>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-badge">🧠 COMMERCIAL FORESIGHT FOR THE BUILT ENVIRONMENT</div>
-    <h1>See Risk Before It Costs You</h1>
-    <p class="hero-subtitle">
-      Varix Intelligence transforms your commercial operations from reactive cost-centers to proactive profit-centers. 
-      Predict variations, prevent leakage, and build institutional memory that never resets.
-    </p>
-    <div class="tagline">Commercial Intelligence. On Autopilot.</div>
-    <a href="#cta" class="cta-button">Start Building Commercial Memory</a>
-
-    <!-- Dashboard Preview -->
-    <div class="dashboard-preview">
-      <div class="dashboard-header">
-        <div class="dashboard-title">Commercial Control Tower</div>
-        <div style="color: var(--teal); font-family: var(--font-mono); font-size: 0.9rem;">LIVE • ANALYZING 3 PROJECTS</div>
-      </div>
-
-      <div class="dashboard-stats">
-        <div class="stat-card">
-          <div class="stat-value positive">£142k</div>
-          <div class="stat-label">Protected This Month</div>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">VX</div>
+                Varix Intelligence
+            </a>
+            <nav class="nav-links">
+                <a href="#memory">Commercial Memory</a>
+                <a href="#scan">Health Scan</a>
+                <a href="#results">Results</a>
+                <a href="#pricing">Plans</a>
+            </nav>
+            <a href="#cta" class="cta-button">Start Free Assessment</a>
         </div>
-        <div class="stat-card">
-          <div class="stat-value warning">12</div>
-          <div class="stat-label">Variations At Risk</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value negative">3.2%</div>
-          <div class="stat-label">Current Leakage Rate</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value positive">89%</div>
-          <div class="stat-label">Recovery Success Rate</div>
-        </div>
-      </div>
+    </header>
 
-      <div class="activity-grid">
-        <div class="activity-list">
-          <div class="activity-item">
-            <div class="activity-icon">🚨</div>
-            <div class="activity-content">
-              <h4>Deadline Alert: Variation #B4-228</h4>
-              <p>7-day notice period expires in 48 hours • £8,450 value</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">🧠 COMMERCIAL FORESIGHT FOR THE BUILT ENVIRONMENT</div>
+        <h1>Your Commercial Intelligence Shouldn't Reset When Staff Leave</h1>
+        <p class="hero-subtitle">
+            The average subcontractor loses £142,000 in commercial intelligence every time a senior QS moves on. 
+            Varix becomes your permanent institutional memory, capturing client behaviors and successful strategies forever.
+        </p>
+        <div class="tagline">Commercial Intelligence. On Autopilot.</div>
+        <a href="#scan" class="cta-button">Assess Your Knowledge Risk - £299</a>
+    </section>
+
+    <!-- Commercial Memory Section -->
+    <section class="memory-section" id="memory">
+        <h2 class="section-title">Never Lose Hard-Won Knowledge</h2>
+        <p class="section-subtitle">
+            People leave, projects end, but commercial intelligence shouldn't reset. Varix becomes your permanent institutional memory.
+        </p>
+
+        <div class="memory-grid">
+            <div class="memory-card">
+                <div class="memory-icon">🧠</div>
+                <h3>Institutional Memory</h3>
+                <p>Capture and preserve every successful strategy, client behavior pattern, and negotiation insight your team develops.</p>
             </div>
-          </div>
-          <div class="activity-item">
-            <div class="activity-icon">📈</div>
-            <div class="activity-content">
-              <h4>Pattern Detected: Client A Behavior</h4>
-              <p>83% acceptance rate for photo-backed claims vs 42% for email-only</p>
+            <div class="memory-card">
+                <div class="memory-icon">🚀</div>
+                <h3>Accelerate New Hires</h3>
+                <p>New team members access years of commercial intelligence from day one, avoiding costly learning curves.</p>
             </div>
-          </div>
-          <div class="activity-item">
-            <div class="activity-icon">💡</div>
-            <div class="activity-content">
-              <h4>Intelligence Updated: Main Contractor B</h4>
-              <p>Tuesday submissions processed 2.3x faster than Friday submissions</p>
+            <div class="memory-card">
+                <div class="memory-icon">📈</div>
+                <h3>Continuous Improvement</h3>
+                <p>Each project makes your commercial memory smarter. Recovery rates improve exponentially over time.</p>
             </div>
-          </div>
         </div>
+    </section>
 
-        <div class="risk-meter">
-          <div class="meter-title">Commercial Health Score</div>
-          <div class="meter-value">68%</div>
-          <div class="meter-bar">
-            <div class="meter-fill"></div>
-          </div>
-          <div style="text-align: center; color: var(--gray); font-size: 0.9rem;">
-            +12% improvement this month • Target: 85%
-          </div>
+    <!-- Health Scan Section -->
+    <section class="scan-section" id="scan">
+        <div class="scan-container">
+            <div class="scan-content">
+                <h2>Commercial Health Scan</h2>
+                <p style="color: var(--gray); margin-bottom: 2rem; font-size: 1.1rem;">
+                    Our 48-hour diagnostic identifies exactly how much your projects are leaking through missed variations and quantifies your commercial knowledge risk.
+                </p>
+                <ul class="scan-features">
+                    <li>Comprehensive project documentation review</li>
+                    <li>AI-powered variation opportunity detection</li>
+                    <li>Commercial compliance score with industry benchmark</li>
+                    <li>3-5 validated recovery opportunities with estimated values</li>
+                    <li>MRICS-led analysis and strategic recommendations</li>
+                    <li>Knowledge preservation risk assessment</li>
+                </ul>
+                <a href="#cta" class="cta-button">Start Your Health Scan</a>
+            </div>
+            <div class="scan-pricing">
+                <div class="price">£299</div>
+                <div class="price-note">One-Time Commercial Diagnostic</div>
+                <ul class="scan-features">
+                    <li>48-Hour Turnaround</li>
+                    <li>MRICS Validation</li>
+                    <li>Credit Towards Subscription</li>
+                    <li>No-Risk Assessment</li>
+                </ul>
+                <div style="background: rgba(20, 184, 166, 0.1); padding: 1rem; border-radius: 12px; margin-top: 2rem;">
+                    <p style="font-size: 0.9rem; color: var(--teal); margin: 0;">
+                        <strong>£299 credited</strong> towards your first month of Continuous Commercial Guardian monitoring
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Testimonial Grid -->
-  <section class="testimonial-section" id="testimonials">
-    <h2 class="section-title">Built For Those Who Build</h2>
-    <p class="section-subtitle">
-      Construction leaders using Varix to transform their commercial operations
-    </p>
+    <!-- Testimonials -->
+    <section class="testimonial-section" id="results">
+        <h2 class="section-title">Construction Leaders Using Varix</h2>
+        <p class="section-subtitle">
+            Real results from companies that have stopped the commercial knowledge drain
+        </p>
 
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-avatar"></div>
-        <div class="testimonial-quote">
-          "Before Varix, I'd spend hours chasing emails and lost variations. Now I get a weekly risk digest that tells me exactly where to focus. It's like having a senior QS working 24/7 in the background."
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-avatar"></div>
+                <div class="testimonial-quote">
+                    "When our senior QS left for a main contractor, we didn't panic. Varix had captured all his client insights and successful strategies. The new hire was billing effectively within weeks, not months."
+                </div>
+                <div class="testimonial-author">Sarah Johnson</div>
+                <div class="testimonial-role">Managing Director • M&E Contractor</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-avatar"></div>
+                <div class="testimonial-quote">
+                    "The Health Scan found £45,000 in missed variations we'd written off. But the real value is the Continuous Guardian - it's caught £18,000 in at-risk variations before we missed deadlines."
+                </div>
+                <div class="testimonial-author">Marcus Rodriguez</div>
+                <div class="testimonial-role">Head of Preconstruction • Fit-Out Specialist</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-avatar"></div>
+                <div class="testimonial-quote">
+                    "We thought we had tight processes until Varix showed us our 3.2% leakage rate. 12 months later, we're at 0.8% and our new commercial staff are effective from day one."
+                </div>
+                <div class="testimonial-author">Liam Chen</div>
+                <div class="testimonial-role">Commercial Director • Drylining Specialist</div>
+            </div>
         </div>
-        <div class="testimonial-author">Liam Chen</div>
-        <div class="testimonial-role">Commercial Director • Drylining Specialist</div>
-        <div class="testimonial-stats">
-          <div class="testimonial-stat">
-            <div class="stat-number">£18k</div>
-            <div class="stat-desc">Recovered</div>
-          </div>
-          <div class="testimonial-stat">
-            <div class="stat-number">3</div>
-            <div class="stat-desc">Deadlines Saved</div>
-          </div>
-          <div class="testimonial-stat">
-            <div class="stat-number">82%</div>
-            <div class="stat-desc">Leakage Reduced</div>
-          </div>
-        </div>
-      </div>
+    </section>
 
-      <div class="testimonial-card">
-        <div class="testimonial-avatar"></div>
-        <div class="testimonial-quote">
-          "The commercial memory feature is revolutionary. When our senior QS left, we didn't lose 18 months of client intelligence. The new hire was effective from day one with all the historical patterns and insights."
-        </div>
-        <div class="testimonial-author">Sarah Johnson</div>
-        <div class="testimonial-role">Managing Director • M&E Contractor</div>
-        <div class="testimonial-stats">
-          <div class="testimonial-stat">
-            <div class="stat-number">6</div>
-            <div class="stat-desc">Weeks Saved</div>
-          </div>
-          <div class="testimonial-stat">
-            <div class="stat-number">£142k</div>
-            <div class="stat-desc">Knowledge Preserved</div>
-          </div>
-          <div class="testimonial-stat">
-            <div class="stat-number">94%</div>
-            <div class="stat-desc">Retention Rate</div>
-          </div>
-        </div>
-      </div>
+    <!-- Final CTA -->
+    <section class="final-cta" id="cta">
+        <h2>Stop the Commercial Brain Drain</h2>
+        <p>
+            Don't let another £142,000 in commercial intelligence walk out the door with your next team member. 
+            Start building permanent institutional memory today.
+        </p>
+        <a href="#" class="cta-button" style="font-size: 1.1rem; padding: 15px 35px;">
+            Start Building Commercial Memory
+        </a>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray);">
+            No credit card required • 48-hour comprehensive review • MRICS-led analysis
+        </p>
+    </section>
 
-      <div class="testimonial-card">
-        <div class="testimonial-avatar"></div>
-        <div class="testimonial-quote">
-          "We thought we had tight processes until Varix found £45,000 in missed variations across 'completed' projects. The real value is preventing those losses from happening again through continuous monitoring."
-        </div>
-        <div class="testimonial-author">Marcus Rodriguez</div>
-        <div class="testimonial-role">Head of Preconstruction • Fit-Out Specialist</div>
-        <div class="testimonial-stats">
-          <div class="testimonial-stat">
-            <div class="stat-number">£45k</div>
-            <div class="stat-desc">Found</div>
-          </div>
-          <div class="testimonial-stat">
-            <div class="stat-number">27</div>
-            <div class="stat-desc">VOs Identified</div>
-          </div>
-          <div class="testimonial-stat">
-            <div class="stat-number">100%</div>
-            <div class="stat-desc">ROI in 30 days</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Varix Intelligence Ltd. Commercial Foresight for the Built Environment.</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">
+            Turning site data into commercial strategy • Built by quantity surveyors, powered by intelligence
+        </p>
+    </footer>
 
-  <!-- Final CTA -->
-  <section class="final-cta" id="cta">
-    <h2>Ready for Commercial Foresight?</h2>
-    <p>
-      Stop reacting to losses. Start predicting opportunities. Transform your commercial operations with intelligence that learns and improves over time.
-    </p>
-    <a href="#" class="cta-button" style="font-size: 1.1rem; padding: 15px 35px;">
-      Start Your Commercial Assessment
-    </a>
-    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray);">
-      No credit card required • 48-hour comprehensive review • MRICS-led analysis
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2024 Varix Intelligence Ltd. Commercial Foresight for the Built Environment.</p>
-    <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">
-      Turning site data into commercial strategy • Built by quantity surveyors, powered by intelligence
-    </p>
-  </footer>
-
-  <script>
-    // Create animated pulse dots
-    function createPulseDots() {
-      const container = document.getElementById('pulseContainer');
-      for (let i = 0; i < 15; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'pulse-dot';
-        dot.style.left = Math.random() * 100 + 'vw';
-        dot.style.top = Math.random() * 100 + 'vh';
-        dot.style.animationDelay = Math.random() * 8 + 's';
-        container.appendChild(dot);
-      }
-    }
-
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header');
-      if (window.scrollY > 50) {
-        header.style.background = 'rgba(15, 23, 42, 0.95)';
-        header.style.padding = '1rem 5%';
-      } else {
-        header.style.background = 'rgba(15, 23, 42, 0.8)';
-        header.style.padding = '1.5rem 5%';
-      }
-    });
-
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+    <script>
+        // Create animated pulse dots
+        function createPulseDots() {
+            const container = document.getElementById('pulseContainer');
+            for (let i = 0; i < 15; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'pulse-dot';
+                dot.style.left = Math.random() * 100 + 'vw';
+                dot.style.top = Math.random() * 100 + 'vh';
+                dot.style.animationDelay = Math.random() * 8 + 's';
+                container.appendChild(dot);
+            }
         }
-      });
-    });
 
-    // Initialize
-    document.addEventListener('DOMContentLoaded', function() {
-      createPulseDots();
-    });
-  </script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+                header.style.padding = '1rem 5%';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.8)';
+                header.style.padding = '1.5rem 5%';
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createPulseDots();
+        });
+    </script>
 </body>
 </html>
