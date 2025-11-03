@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varix Intelligence | Commercial Foresight for Construction</title>
+    <title>Varix Intelligence | Find £10,000+ in Missed Variations - Guaranteed</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -40,52 +40,25 @@
             overflow-x: hidden;
         }
 
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(20, 184, 166, 0.05) 0%, transparent 50%);
-            z-index: -1;
-        }
-
-        .pulse-dot {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: var(--highlight);
-            border-radius: 50%;
-            filter: blur(1px);
-            animation: pulseMove 8s infinite linear;
-        }
-
-        @keyframes pulseMove {
-            0% { transform: translate(0, 0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translate(100px, -50px); opacity: 0; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         /* Header */
         header {
-            padding: 1.5rem 5%;
+            padding: 1rem 5%;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
         }
 
         .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -127,26 +100,10 @@
             font-weight: 500;
             font-size: 0.95rem;
             transition: all 0.3s;
-            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--teal);
-        }
-
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--teal), var(--accent));
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover:after {
-            width: 100%;
         }
 
         .cta-button {
@@ -157,8 +114,6 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
-            border: none;
-            cursor: pointer;
             font-family: var(--font-heading);
             box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
         }
@@ -170,11 +125,9 @@
 
         /* Hero Section */
         .hero {
-            padding: 15rem 5% 8rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            padding: 12rem 5% 6rem;
             text-align: center;
-            position: relative;
+            background: radial-gradient(circle at 50% 50%, rgba(30, 64, 175, 0.1) 0%, transparent 50%);
         }
 
         .hero-badge {
@@ -190,12 +143,11 @@
             margin-bottom: 2rem;
             border: 1px solid rgba(20, 184, 166, 0.3);
             font-family: var(--font-mono);
-            letter-spacing: 0.5px;
         }
 
         .hero h1 {
             font-family: var(--font-heading);
-            font-size: clamp(3.5rem, 6vw, 5rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 1.5rem;
@@ -206,128 +158,147 @@
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--gray);
-            max-width: 800px;
-            margin: 0 auto 3rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
             line-height: 1.6;
-            font-weight: 400;
         }
 
-        .tagline {
-            font-family: var(--font-mono);
-            font-size: 1.1rem;
+        .guarantee-badge {
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid var(--teal);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 500px;
+        }
+
+        .guarantee-badge h3 {
             color: var(--teal);
-            margin-bottom: 3rem;
-            letter-spacing: 1px;
+            font-family: var(--font-heading);
+            margin-bottom: 0.5rem;
         }
 
-        /* Commercial Memory Section */
-        .memory-section {
+        /* Process Section */
+        .process-section {
             padding: 6rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
+            background: var(--darker);
         }
 
         .section-title {
             font-family: var(--font-heading);
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
             background: linear-gradient(135deg, #fff 0%, var(--teal) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--gray);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 4rem;
-        }
-
-        .memory-grid {
+        .process-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .memory-card {
+        .process-step {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* AI Analysis Section */
+        .analysis-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .analysis-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .analysis-card h4 {
+            color: var(--teal);
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 6rem 5%;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
             background: var(--glass);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 20px;
             padding: 2.5rem;
-            text-align: center;
-            transition: all 0.3s;
+            position: relative;
         }
 
-        .memory-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(20, 184, 166, 0.3);
-            box-shadow: var(--shadow);
+        .pricing-card.featured {
+            border-color: var(--teal);
+            transform: scale(1.05);
         }
 
-        .memory-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-        }
-
-        .memory-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
+        .price {
+            font-family: var(--font-mono);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--teal);
             margin-bottom: 1rem;
         }
 
-        .memory-card p {
+        .price-subtitle {
             color: var(--gray);
-            line-height: 1.6;
+            margin-bottom: 2rem;
         }
 
-        /* Health Scan Section */
-        .scan-section {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-            border-radius: 30px;
-            margin: 4rem 5%;
-        }
-
-        .scan-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .scan-content h2 {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, var(--teal) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .scan-features {
+        .features-list {
             list-style: none;
             margin: 2rem 0;
         }
 
-        .scan-features li {
+        .features-list li {
             padding: 0.5rem 0;
             color: var(--gray);
             display: flex;
@@ -335,120 +306,53 @@
             gap: 1rem;
         }
 
-        .scan-features li:before {
+        .features-list li:before {
             content: "✓";
             color: var(--teal);
             font-weight: bold;
         }
 
-        .scan-pricing {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 2.5rem;
+        /* Founders Section */
+        .founders-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .founder-card {
             text-align: center;
         }
 
-        .price {
-            font-family: var(--font-mono);
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--teal);
-            margin-bottom: 1rem;
-        }
-
-        .price-note {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Testimonials */
-        .testimonial-section {
-            padding: 6rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 2.5rem;
-            position: relative;
-            transition: all 0.3s;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(20, 184, 166, 0.3);
-        }
-
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
+        .founder-avatar {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            margin-bottom: 1.5rem;
-            border: 2px solid var(--teal);
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--teal);
             background: linear-gradient(135deg, var(--primary), var(--accent));
         }
 
-        .testimonial-quote {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            color: var(--light);
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .testimonial-role {
+        .founder-role {
             color: var(--teal);
-            font-size: 0.9rem;
+            font-family: var(--font-mono);
+            margin-bottom: 1rem;
         }
 
         /* Final CTA */
         .final-cta {
             padding: 6rem 5%;
             text-align: center;
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-            border-radius: 30px;
-            margin: 4rem 5%;
-            border: 1px solid rgba(124, 58, 237, 0.2);
-        }
-
-        .final-cta h2 {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, var(--teal) 50%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .final-cta p {
-            font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
+            background: var(--darker);
         }
 
         footer {
-            padding: 4rem 5%;
+            padding: 3rem 5%;
             text-align: center;
             color: var(--gray);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -460,202 +364,190 @@
             }
             
             .hero {
-                padding: 12rem 5% 6rem;
+                padding: 10rem 5% 4rem;
             }
             
-            .scan-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .memory-grid {
-                grid-template-columns: 1fr;
+            .pricing-card.featured {
+                transform: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="animated-bg" id="pulseContainer"></div>
-
     <!-- Header -->
     <header>
-        <div class="nav-container">
+        <div class="nav-container container">
             <a href="#" class="logo">
                 <div class="logo-icon">VX</div>
                 Varix Intelligence
             </a>
             <nav class="nav-links">
-                <a href="#memory">Commercial Memory</a>
-                <a href="#scan">Health Scan</a>
-                <a href="#results">Results</a>
-                <a href="#pricing">Plans</a>
+                <a href="#process">How It Works</a>
+                <a href="#analysis">AI Analysis</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#founders">Our Team</a>
             </nav>
-            <a href="#cta" class="cta-button">Start Free Assessment</a>
+            <a href="#pricing" class="cta-button">Start Your Audit</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-badge">🧠 COMMERCIAL FORESIGHT FOR THE BUILT ENVIRONMENT</div>
-        <h1>Your Commercial Intelligence Shouldn't Reset When Staff Leave</h1>
-        <p class="hero-subtitle">
-            The average subcontractor loses £142,000 in commercial intelligence every time a senior QS moves on. 
-            Varix becomes your permanent institutional memory, capturing client behaviors and successful strategies forever.
-        </p>
-        <div class="tagline">Commercial Intelligence. On Autopilot.</div>
-        <a href="#scan" class="cta-button">Assess Your Knowledge Risk - £299</a>
-    </section>
-
-    <!-- Commercial Memory Section -->
-    <section class="memory-section" id="memory">
-        <h2 class="section-title">Never Lose Hard-Won Knowledge</h2>
-        <p class="section-subtitle">
-            People leave, projects end, but commercial intelligence shouldn't reset. Varix becomes your permanent institutional memory.
-        </p>
-
-        <div class="memory-grid">
-            <div class="memory-card">
-                <div class="memory-icon">🧠</div>
-                <h3>Institutional Memory</h3>
-                <p>Capture and preserve every successful strategy, client behavior pattern, and negotiation insight your team develops.</p>
+        <div class="container">
+            <div class="hero-badge">🚀 FIND £10,000+ IN MISSED VARIATIONS - GUARANTEED</div>
+            <h1>Upload Your Project Files. Our AI Finds Your Missed Revenue</h1>
+            <p class="hero-subtitle">
+                The average subcontractor loses 5-15% of project value through missed variations. 
+                Our MRICS-trained AI finds what you've missed in 48 hours.
+            </p>
+            
+            <div class="guarantee-badge">
+                <h3>£10,000 Value Guarantee</h3>
+                <p>We commit to finding at least £10,000 in recoverable value or we keep working until we do.</p>
             </div>
-            <div class="memory-card">
-                <div class="memory-icon">🚀</div>
-                <h3>Accelerate New Hires</h3>
-                <p>New team members access years of commercial intelligence from day one, avoiding costly learning curves.</p>
-            </div>
-            <div class="memory-card">
-                <div class="memory-icon">📈</div>
-                <h3>Continuous Improvement</h3>
-                <p>Each project makes your commercial memory smarter. Recovery rates improve exponentially over time.</p>
-            </div>
+            
+            <a href="#pricing" class="cta-button">Start Your AI Audit - £1,497</a>
         </div>
     </section>
 
-    <!-- Health Scan Section -->
-    <section class="scan-section" id="scan">
-        <div class="scan-container">
-            <div class="scan-content">
-                <h2>Commercial Health Scan</h2>
-                <p style="color: var(--gray); margin-bottom: 2rem; font-size: 1.1rem;">
-                    Our 48-hour diagnostic identifies exactly how much your projects are leaking through missed variations and quantifies your commercial knowledge risk.
-                </p>
-                <ul class="scan-features">
-                    <li>Comprehensive project documentation review</li>
-                    <li>AI-powered variation opportunity detection</li>
-                    <li>Commercial compliance score with industry benchmark</li>
-                    <li>3-5 validated recovery opportunities with estimated values</li>
-                    <li>MRICS-led analysis and strategic recommendations</li>
-                    <li>Knowledge preservation risk assessment</li>
-                </ul>
-                <a href="#cta" class="cta-button">Start Your Health Scan</a>
-            </div>
-            <div class="scan-pricing">
-                <div class="price">£299</div>
-                <div class="price-note">One-Time Commercial Diagnostic</div>
-                <ul class="scan-features">
-                    <li>48-Hour Turnaround</li>
-                    <li>MRICS Validation</li>
-                    <li>Credit Towards Subscription</li>
-                    <li>No-Risk Assessment</li>
-                </ul>
-                <div style="background: rgba(20, 184, 166, 0.1); padding: 1rem; border-radius: 12px; margin-top: 2rem;">
-                    <p style="font-size: 0.9rem; color: var(--teal); margin: 0;">
-                        <strong>£299 credited</strong> towards your first month of Continuous Commercial Guardian monitoring
-                    </p>
+    <!-- Process Section -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <h2 class="section-title">How Our AI Commercial Audit Works</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Upload Your Documents</h3>
+                    <p>Send us contracts, drawings, emails, CVIs, and WhatsApp exports through our secure portal</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our MRICS-trained AI compares drawings, mines communications, and checks deadlines</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Get Your Report</h3>
+                    <p>Receive detailed findings with specific recovery opportunities and values in 48 hours</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonial-section" id="results">
-        <h2 class="section-title">Construction Leaders Using Varix</h2>
-        <p class="section-subtitle">
-            Real results from companies that have stopped the commercial knowledge drain
-        </p>
+    <!-- AI Analysis Section -->
+    <section class="analysis-section" id="analysis">
+        <div class="container">
+            <h2 class="section-title">What Our AI Finds That You Miss</h2>
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h4>Drawing Revision Changes</h4>
+                    <p>"10 doors added on Rev C, no CVI issued" - £12,000 value</p>
+                </div>
+                <div class="analysis-card">
+                    <h4>Informal Instructions</h4>
+                    <p>"PM WhatsApp: 'Add extract duct' - work done, never claimed" - £8,500 value</p>
+                </div>
+                <div class="analysis-card">
+                    <h4>Missed Deadlines</h4>
+                    <p>"CVI 023 received May 14th, submitted June 8th (25 days late)" - Recovery at risk</p>
+                </div>
+                <div class="analysis-card">
+                    <h4>Evidence Gaps</h4>
+                    <p>"£45K variation with no photos or daywork sheets" - Weakens position</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-avatar"></div>
-                <div class="testimonial-quote">
-                    "When our senior QS left for a main contractor, we didn't panic. Varix had captured all his client insights and successful strategies. The new hire was billing effectively within weeks, not months."
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Start Recovering Your Money Today</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>AI Commercial Audit</h3>
+                    <div class="price">£1,497</div>
+                    <div class="price-subtitle">One-Time Comprehensive Analysis</div>
+                    <ul class="features-list">
+                        <li>48-hour turnaround</li>
+                        <li>Full project document review</li>
+                        <li>AI-powered variation detection</li>
+                        <li>MRICS validation layer</li>
+                        <li>Detailed recovery report</li>
+                        <li>£10,000 value guarantee</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="display: block; text-align: center;">Start Your Audit</a>
                 </div>
-                <div class="testimonial-author">Sarah Johnson</div>
-                <div class="testimonial-role">Managing Director • M&E Contractor</div>
+                
+                <div class="pricing-card featured">
+                    <div style="background: var(--teal); color: var(--dark); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; margin-bottom: 1rem; font-weight: bold;">MOST POPULAR</div>
+                    <h3>Continuous Guardian</h3>
+                    <div class="price">£299<span style="font-size: 1rem; color: var(--gray);">/month</span></div>
+                    <div class="price-subtitle">Ongoing AI Monitoring</div>
+                    <ul class="features-list">
+                        <li>Everything in AI Audit</li>
+                        <li>Real-time document monitoring</li>
+                        <li>Deadline alerts via WhatsApp/email</li>
+                        <li>Monthly commercial health reports</li>
+                        <li>Unlimited project analysis</li>
+                        <li>Dedicated commercial lead</li>
+                    </ul>
+                    <div style="background: rgba(20, 184, 166, 0.1); padding: 1rem; border-radius: 12px; margin: 1rem 0;">
+                        <p style="font-size: 0.9rem; color: var(--teal); margin: 0;">
+                            <strong>£1,497 audit fee credited</strong> towards your first 5 months
+                        </p>
+                    </div>
+                    <a href="#" class="cta-button" style="display: block; text-align: center; background: var(--teal);">Start Continuous Monitoring</a>
+                </div>
             </div>
-            <div class="testimonial-card">
-                <div class="testimonial-avatar"></div>
-                <div class="testimonial-quote">
-                    "The Health Scan found £45,000 in missed variations we'd written off. But the real value is the Continuous Guardian - it's caught £18,000 in at-risk variations before we missed deadlines."
+        </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section class="founders-section" id="founders">
+        <div class="container">
+            <h2 class="section-title">Built by Construction Experts, Powered by AI</h2>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <div class="founder-avatar"></div>
+                    <h3>[Your Name]</h3>
+                    <div class="founder-role">MRICS Chartered QS</div>
+                    <p>11 years in construction commercial management, £2B+ projects managed. Built Varix to solve the problems I faced every day.</p>
                 </div>
-                <div class="testimonial-author">Marcus Rodriguez</div>
-                <div class="testimonial-role">Head of Preconstruction • Fit-Out Specialist</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-avatar"></div>
-                <div class="testimonial-quote">
-                    "We thought we had tight processes until Varix showed us our 3.2% leakage rate. 12 months later, we're at 0.8% and our new commercial staff are effective from day one."
+                <div class="founder-card">
+                    <div class="founder-avatar"></div>
+                    <h3>[Co-founder's Name]</h3>
+                    <div class="founder-role">UCL Machine Learning Expert</div>
+                    <p>MSc in Machine Learning from University College London. Architecting the AI that makes commercial recovery automatic.</p>
                 </div>
-                <div class="testimonial-author">Liam Chen</div>
-                <div class="testimonial-role">Commercial Director • Drylining Specialist</div>
             </div>
         </div>
     </section>
 
     <!-- Final CTA -->
-    <section class="final-cta" id="cta">
-        <h2>Stop the Commercial Brain Drain</h2>
-        <p>
-            Don't let another £142,000 in commercial intelligence walk out the door with your next team member. 
-            Start building permanent institutional memory today.
-        </p>
-        <a href="#" class="cta-button" style="font-size: 1.1rem; padding: 15px 35px;">
-            Start Building Commercial Memory
-        </a>
-        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray);">
-            No credit card required • 48-hour comprehensive review • MRICS-led analysis
-        </p>
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="section-title">Stop Leaving Money on Site</h2>
+            <p style="font-size: 1.2rem; color: var(--gray); max-width: 600px; margin: 0 auto 2.5rem;">
+                Upload your project files today and let our AI find the £10,000+ you've missed.
+            </p>
+            <a href="#pricing" class="cta-button" style="font-size: 1.1rem; padding: 15px 35px;">
+                Start Your Guaranteed Audit
+            </a>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 Varix Intelligence Ltd. Commercial Foresight for the Built Environment.</p>
-        <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">
-            Turning site data into commercial strategy • Built by quantity surveyors, powered by intelligence
-        </p>
+        <div class="container">
+            <p>© 2024 Varix Intelligence Ltd. Commercial Foresight for the Built Environment.</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">
+                Built by MRICS quantity surveyors • Powered by UCL machine learning • Delivering guaranteed results
+            </p>
+        </div>
     </footer>
 
     <script>
-        // Create animated pulse dots
-        function createPulseDots() {
-            const container = document.getElementById('pulseContainer');
-            for (let i = 0; i < 15; i++) {
-                const dot = document.createElement('div');
-                dot.className = 'pulse-dot';
-                dot.style.left = Math.random() * 100 + 'vw';
-                dot.style.top = Math.random() * 100 + 'vh';
-                dot.style.animationDelay = Math.random() * 8 + 's';
-                container.appendChild(dot);
-            }
-        }
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(15, 23, 42, 0.95)';
-                header.style.padding = '1rem 5%';
-            } else {
-                header.style.background = 'rgba(15, 23, 42, 0.8)';
-                header.style.padding = '1.5rem 5%';
-            }
-        });
-
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -670,9 +562,16 @@
             });
         });
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            createPulseDots();
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(15, 23, 42, 0.98)';
+                header.style.padding = '0.5rem 5%';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+                header.style.padding = '1rem 5%';
+            }
         });
     </script>
 </body>
