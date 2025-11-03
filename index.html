@@ -6,7 +6,6 @@
     <title>Varix Intelligence | Find £10,000+ in Missed Variations - Guaranteed</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1E40AF;
@@ -15,15 +14,12 @@
             --teal: #14B8A6;
             --dark: #0F172A;
             --darker: #020617;
-            --highlight: #A3E635;
             --light: #F8FAFC;
             --gray: #64748b;
-            --radius: 16px;
-            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            --glass: rgba(255, 255, 255, 0.05);
+            --radius: 12px;
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             --font-heading: 'Space Grotesk', sans-serif;
             --font-body: 'Inter', sans-serif;
-            --font-mono: 'DM Mono', monospace;
         }
 
         * {
@@ -48,14 +44,14 @@
 
         /* Header */
         header {
-            padding: 1rem 5%;
+            padding: 1.5rem 5%;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .nav-container {
@@ -90,7 +86,7 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
@@ -99,7 +95,7 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
-            transition: all 0.3s;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
@@ -109,188 +105,229 @@
         .cta-button {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
-            padding: 12px 28px;
-            border-radius: 999px;
+            padding: 12px 32px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
             font-family: var(--font-heading);
-            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(30, 64, 175, 0.4);
+            box-shadow: 0 12px 35px rgba(30, 64, 175, 0.4);
         }
 
         /* Hero Section */
         .hero {
-            padding: 12rem 5% 6rem;
+            padding: 15rem 5% 8rem;
             text-align: center;
-            background: radial-gradient(circle at 50% 50%, rgba(30, 64, 175, 0.1) 0%, transparent 50%);
+            background: radial-gradient(ellipse at 50% 50%, rgba(30, 64, 175, 0.15) 0%, transparent 60%);
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: rgba(30, 64, 175, 0.15);
+            gap: 8px;
+            background: rgba(20, 184, 166, 0.1);
             color: var(--teal);
-            padding: 10px 24px;
+            padding: 8px 20px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 2rem;
             border: 1px solid rgba(20, 184, 166, 0.3);
-            font-family: var(--font-mono);
+            letter-spacing: 0.5px;
         }
 
         .hero h1 {
             font-family: var(--font-heading);
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, var(--teal) 30%, var(--accent) 100%);
+            background: linear-gradient(135deg, #fff 0%, var(--teal) 50%, var(--accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
             line-height: 1.6;
         }
 
-        .guarantee-badge {
-            background: rgba(20, 184, 166, 0.1);
-            border: 1px solid var(--teal);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 2rem auto;
-            max-width: 500px;
+        /* Guarantee Section */
+        .guarantee-section {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem auto 4rem;
+            max-width: 800px;
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            text-align: center;
         }
 
-        .guarantee-badge h3 {
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(20, 184, 166, 0.2);
             color: var(--teal);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--teal);
+        }
+
+        .guarantee-amount {
             font-family: var(--font-heading);
-            margin-bottom: 0.5rem;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-text {
+            font-size: 1.1rem;
+            color: var(--light);
+            margin-bottom: 1.5rem;
+        }
+
+        .guarantee-note {
+            font-size: 0.9rem;
+            color: var(--gray);
         }
 
         /* Process Section */
         .process-section {
             padding: 6rem 5%;
-            background: var(--darker);
         }
 
         .section-title {
             font-family: var(--font-heading);
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             background: linear-gradient(135deg, #fff 0%, var(--teal) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .process-steps {
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .process-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .process-step {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .process-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 2.5rem;
             text-align: center;
+            transition: all 0.3s;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(20, 184, 166, 0.3);
+            box-shadow: var(--shadow);
         }
 
         .step-number {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.5rem;
             font-weight: bold;
             color: white;
+            font-size: 1.2rem;
         }
 
-        /* AI Analysis Section */
-        .analysis-section {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-        }
-
-        .analysis-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .analysis-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 2rem;
-        }
-
-        .analysis-card h4 {
-            color: var(--teal);
-            margin-bottom: 1rem;
+        .process-card h3 {
             font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-card p {
+            color: var(--gray);
+            line-height: 1.6;
         }
 
         /* Pricing Section */
         .pricing-section {
             padding: 6rem 5%;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
         .pricing-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 2.5rem;
+            padding: 3rem;
             position: relative;
         }
 
         .pricing-card.featured {
-            border-color: var(--teal);
+            border: 2px solid var(--teal);
             transform: scale(1.05);
         }
 
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--teal);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
         .price {
-            font-family: var(--font-mono);
-            font-size: 3rem;
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
             font-weight: 700;
             color: var(--teal);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .price-subtitle {
             color: var(--gray);
             margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
         .features-list {
@@ -299,56 +336,34 @@
         }
 
         .features-list li {
-            padding: 0.5rem 0;
-            color: var(--gray);
+            padding: 0.8rem 0;
+            color: var(--light);
             display: flex;
             align-items: center;
             gap: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .features-list li:before {
             content: "✓";
             color: var(--teal);
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
-        /* Founders Section */
-        .founders-section {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-        }
-
-        .founders-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .founder-card {
+        .credit-note {
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
             text-align: center;
-        }
-
-        .founder-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            border: 3px solid var(--teal);
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-        }
-
-        .founder-role {
-            color: var(--teal);
-            font-family: var(--font-mono);
-            margin-bottom: 1rem;
         }
 
         /* Final CTA */
         .final-cta {
             padding: 6rem 5%;
             text-align: center;
-            background: var(--darker);
         }
 
         footer {
@@ -364,11 +379,20 @@
             }
             
             .hero {
-                padding: 10rem 5% 4rem;
+                padding: 12rem 5% 6rem;
             }
             
             .pricing-card.featured {
                 transform: none;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .guarantee-section {
+                padding: 2rem;
+                margin: 2rem 1rem;
             }
         }
     </style>
@@ -383,9 +407,8 @@
             </a>
             <nav class="nav-links">
                 <a href="#process">How It Works</a>
-                <a href="#analysis">AI Analysis</a>
                 <a href="#pricing">Pricing</a>
-                <a href="#founders">Our Team</a>
+                <a href="#guarantee">Our Guarantee</a>
             </nav>
             <a href="#pricing" class="cta-button">Start Your Audit</a>
         </div>
@@ -394,66 +417,50 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">🚀 FIND £10,000+ IN MISSED VARIATIONS - GUARANTEED</div>
-            <h1>Upload Your Project Files. Our AI Finds Your Missed Revenue</h1>
+            <div class="hero-badge">🚀 AI-POWERED COMMERCIAL RECOVERY</div>
+            <h1>Find £10,000+ in Missed Variations Your Team Overlooked</h1>
             <p class="hero-subtitle">
-                The average subcontractor loses 5-15% of project value through missed variations. 
-                Our MRICS-trained AI finds what you've missed in 48 hours.
+                Upload your project files. Our MRICS-trained AI analyzes contracts, drawings, and communications to find the money you've left on site.
             </p>
             
-            <div class="guarantee-badge">
-                <h3>£10,000 Value Guarantee</h3>
-                <p>We commit to finding at least £10,000 in recoverable value or we keep working until we do.</p>
+            <!-- Guarantee Section -->
+            <div class="guarantee-section" id="guarantee">
+                <div class="guarantee-badge">💰 OUR GUARANTEE</div>
+                <div class="guarantee-amount">£10,000+</div>
+                <div class="guarantee-text">
+                    We commit to finding at least £10,000 in recoverable value<br>or we keep working until we do.
+                </div>
+                <a href="#pricing" class="cta-button">Start Your Guaranteed Audit</a>
+                <div class="guarantee-note">
+                    *To enable ongoing analysis, clients maintain £299/month Commercial Guardian subscription
+                </div>
             </div>
-            
-            <a href="#pricing" class="cta-button">Start Your AI Audit - £1,497</a>
         </div>
     </section>
 
     <!-- Process Section -->
     <section class="process-section" id="process">
         <div class="container">
-            <h2 class="section-title">How Our AI Commercial Audit Works</h2>
-            <div class="process-steps">
-                <div class="process-step">
+            <h2 class="section-title">How Our AI Finds Your Money</h2>
+            <p class="section-subtitle">
+                In 48 hours, we'll show you exactly where your projects are leaking value
+            </p>
+
+            <div class="process-grid">
+                <div class="process-card">
                     <div class="step-number">1</div>
-                    <h3>Upload Your Documents</h3>
-                    <p>Send us contracts, drawings, emails, CVIs, and WhatsApp exports through our secure portal</p>
+                    <h3>Upload Your Files</h3>
+                    <p>Send us contracts, all drawing revisions, CVIs, emails, and WhatsApp exports through our secure portal</p>
                 </div>
-                <div class="process-step">
+                <div class="process-card">
                     <div class="step-number">2</div>
                     <h3>AI Analysis</h3>
-                    <p>Our MRICS-trained AI compares drawings, mines communications, and checks deadlines</p>
+                    <p>Our MRICS-trained AI compares drawings, mines communications, checks deadlines, and identifies missed variations</p>
                 </div>
-                <div class="process-step">
+                <div class="process-card">
                     <div class="step-number">3</div>
                     <h3>Get Your Report</h3>
-                    <p>Receive detailed findings with specific recovery opportunities and values in 48 hours</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Analysis Section -->
-    <section class="analysis-section" id="analysis">
-        <div class="container">
-            <h2 class="section-title">What Our AI Finds That You Miss</h2>
-            <div class="analysis-grid">
-                <div class="analysis-card">
-                    <h4>Drawing Revision Changes</h4>
-                    <p>"10 doors added on Rev C, no CVI issued" - £12,000 value</p>
-                </div>
-                <div class="analysis-card">
-                    <h4>Informal Instructions</h4>
-                    <p>"PM WhatsApp: 'Add extract duct' - work done, never claimed" - £8,500 value</p>
-                </div>
-                <div class="analysis-card">
-                    <h4>Missed Deadlines</h4>
-                    <p>"CVI 023 received May 14th, submitted June 8th (25 days late)" - Recovery at risk</p>
-                </div>
-                <div class="analysis-card">
-                    <h4>Evidence Gaps</h4>
-                    <p>"£45K variation with no photos or daywork sheets" - Weakens position</p>
+                    <p>Receive a detailed Commercial Recovery Report with specific findings, values, and recovery actions</p>
                 </div>
             </div>
         </div>
@@ -462,63 +469,55 @@
     <!-- Pricing Section -->
     <section class="pricing-section" id="pricing">
         <div class="container">
-            <h2 class="section-title">Start Recovering Your Money Today</h2>
+            <h2 class="section-title">Start Recovering Your Money</h2>
+            <p class="section-subtitle">
+                Choose the option that works for your business
+            </p>
+
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>AI Commercial Audit</h3>
                     <div class="price">£1,497</div>
                     <div class="price-subtitle">One-Time Comprehensive Analysis</div>
+                    
                     <ul class="features-list">
-                        <li>48-hour turnaround</li>
+                        <li>48-hour turnaround guarantee</li>
                         <li>Full project document review</li>
                         <li>AI-powered variation detection</li>
+                        <li>Drawing revision comparison</li>
+                        <li>Communication mining (email/WhatsApp)</li>
+                        <li>Deadline compliance checking</li>
                         <li>MRICS validation layer</li>
-                        <li>Detailed recovery report</li>
-                        <li>£10,000 value guarantee</li>
+                        <li>Detailed recovery report with values</li>
+                        <li><strong>£10,000 value guarantee</strong></li>
                     </ul>
-                    <a href="#" class="cta-button" style="display: block; text-align: center;">Start Your Audit</a>
+                    
+                    <a href="#" class="cta-button" style="display: block; text-align: center; width: 100%;">Start Your Audit</a>
                 </div>
                 
                 <div class="pricing-card featured">
-                    <div style="background: var(--teal); color: var(--dark); padding: 0.5rem 1rem; border-radius: 20px; display: inline-block; margin-bottom: 1rem; font-weight: bold;">MOST POPULAR</div>
+                    <div class="featured-badge">MOST POPULAR</div>
                     <h3>Continuous Guardian</h3>
-                    <div class="price">£299<span style="font-size: 1rem; color: var(--gray);">/month</span></div>
-                    <div class="price-subtitle">Ongoing AI Monitoring</div>
+                    <div class="price">£299<span style="font-size: 1.2rem; color: var(--gray);">/month</span></div>
+                    <div class="price-subtitle">Ongoing AI Monitoring & Protection</div>
+                    
                     <ul class="features-list">
-                        <li>Everything in AI Audit</li>
+                        <li>Everything in AI Commercial Audit</li>
                         <li>Real-time document monitoring</li>
-                        <li>Deadline alerts via WhatsApp/email</li>
+                        <li>Instant deadline alerts via WhatsApp/email</li>
                         <li>Monthly commercial health reports</li>
                         <li>Unlimited project analysis</li>
+                        <li>Priority MRICS support</li>
                         <li>Dedicated commercial lead</li>
+                        <li>Continuous improvement insights</li>
+                        <li><strong>Ongoing £10,000+ value guarantee</strong></li>
                     </ul>
-                    <div style="background: rgba(20, 184, 166, 0.1); padding: 1rem; border-radius: 12px; margin: 1rem 0;">
-                        <p style="font-size: 0.9rem; color: var(--teal); margin: 0;">
-                            <strong>£1,497 audit fee credited</strong> towards your first 5 months
-                        </p>
-                    </div>
-                    <a href="#" class="cta-button" style="display: block; text-align: center; background: var(--teal);">Start Continuous Monitoring</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Founders Section -->
-    <section class="founders-section" id="founders">
-        <div class="container">
-            <h2 class="section-title">Built by Construction Experts, Powered by AI</h2>
-            <div class="founders-grid">
-                <div class="founder-card">
-                    <div class="founder-avatar"></div>
-                    <h3>[Your Name]</h3>
-                    <div class="founder-role">MRICS Chartered QS</div>
-                    <p>11 years in construction commercial management, £2B+ projects managed. Built Varix to solve the problems I faced every day.</p>
-                </div>
-                <div class="founder-card">
-                    <div class="founder-avatar"></div>
-                    <h3>[Co-founder's Name]</h3>
-                    <div class="founder-role">UCL Machine Learning Expert</div>
-                    <p>MSc in Machine Learning from University College London. Architecting the AI that makes commercial recovery automatic.</p>
+                    <div class="credit-note">
+                        <strong>£1,497 audit fee fully credited</strong> towards your first 5 months
+                    </div>
+                    
+                    <a href="#" class="cta-button" style="display: block; text-align: center; width: 100%; background: var(--teal);">Start Continuous Monitoring</a>
                 </div>
             </div>
         </div>
@@ -527,22 +526,25 @@
     <!-- Final CTA -->
     <section class="final-cta">
         <div class="container">
-            <h2 class="section-title">Stop Leaving Money on Site</h2>
-            <p style="font-size: 1.2rem; color: var(--gray); max-width: 600px; margin: 0 auto 2.5rem;">
-                Upload your project files today and let our AI find the £10,000+ you've missed.
+            <h2 class="section-title">Ready to Find Your Missing £10,000?</h2>
+            <p style="font-size: 1.2rem; color: var(--gray); max-width: 600px; margin: 0 auto 3rem;">
+                Stop leaving money on site. Upload your project files today and let our AI do the rest.
             </p>
-            <a href="#pricing" class="cta-button" style="font-size: 1.1rem; padding: 15px 35px;">
-                Start Your Guaranteed Audit
+            <a href="#pricing" class="cta-button" style="font-size: 1.1rem; padding: 16px 40px;">
+                Start Your Guaranteed Audit - £1,497
             </a>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray);">
+                No risk • 48-hour turnaround • MRICS-validated results
+            </p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2024 Varix Intelligence Ltd. Commercial Foresight for the Built Environment.</p>
+            <p>© 2024 Varix Intelligence Ltd. | Built by MRICS QS + UCL Machine Learning Expert</p>
             <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">
-                Built by MRICS quantity surveyors • Powered by UCL machine learning • Delivering guaranteed results
+                Commercial Foresight for the Built Environment
             </p>
         </div>
     </footer>
@@ -567,10 +569,10 @@
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.style.background = 'rgba(15, 23, 42, 0.98)';
-                header.style.padding = '0.5rem 5%';
+                header.style.padding = '1rem 5%';
             } else {
                 header.style.background = 'rgba(15, 23, 42, 0.95)';
-                header.style.padding = '1rem 5%';
+                header.style.padding = '1.5rem 5%';
             }
         });
     </script>
