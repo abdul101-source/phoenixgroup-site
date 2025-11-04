@@ -1,702 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varix Intelligence | The Commercial OS for Construction | Stop Margin Leakage</title>
-    <style>
-        /* --- 1. BASE & VARIABLES --- */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        
-        :root {
-            --primary: #0f2b46; /* Deep Navy/Dark Blue */
-            --secondary: #12b76a; /* Vibrant Green for Success/CTA */
-            --accent: #1e4a6b; /* Slightly lighter blue/accent */
-            --light-bg: #f5f7fa; /* Very Light Grey/Off-White */
-            --dark-text: #1f2937; /* Near Black for body text */
-            --red-alert: #dc2626; /* For problems */
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-text);
-            background: var(--white);
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* --- 2. HEADER --- */
-        header {
-            background: var(--primary);
-            color: var(--white);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--secondary);
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 2rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-
-        /* --- 3. HERO SECTION --- */
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: var(--white);
-            padding: 14rem 2rem 10rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 3rem;
-            opacity: 0.95;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            background: var(--secondary);
-            color: var(--white);
-            padding: 1.1rem 3rem;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(18, 183, 106, 0.4);
-        }
-
-        .cta-button:hover {
-            background: #0f9f59;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(18, 183, 106, 0.5);
-        }
-
-        /* --- 4. CLIENT LOGOS --- */
-        .clients {
-            padding: 4rem 2rem;
-            background: var(--white);
-            text-align: center;
-        }
-
-        .clients p {
-            margin-bottom: 2rem;
-            font-weight: 600;
-            color: var(--primary);
-            opacity: 0.8;
-            font-size: 1rem;
-        }
-
-        .client-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 4rem;
-            opacity: 0.65;
-            filter: grayscale(100%);
-        }
-
-        .client-logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            transition: opacity 0.3s;
-        }
-        
-        .client-logo:hover {
-            opacity: 1;
-            filter: grayscale(0);
-        }
-
-        /* --- 5. PROBLEM SECTION --- */
-        .problem {
-            padding: 6rem 2rem;
-            background: var(--light-bg);
-        }
-
-        .section-title {
-            font-size: 2.3rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 4rem;
-            color: var(--primary);
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .problem-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 5px solid var(--red-alert);
-        }
-
-        .problem-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .problem-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--red-alert);
-            margin-bottom: 1rem;
-        }
-
-        .problem-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.75rem;
-            color: var(--primary);
-        }
-        
-        .problem-card p {
-            font-size: 0.95rem;
-            color: #4b5563;
-        }
-
-        /* --- 6. SOLUTION SECTION --- */
-        .solution {
-            padding: 7rem 2rem;
-            background: var(--white);
-        }
-
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .solution-card {
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            border: 1px solid #e5e7eb;
-        }
-
-        .solution-card:hover {
-            background: var(--light-bg);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-color: var(--secondary);
-        }
-
-        .solution-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .solution-card h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-        
-        .solution-card p {
-            font-size: 0.9rem;
-        }
-
-        /* --- 7. PLATFORM VISUAL --- */
-        .platform {
-            padding: 7rem 2rem;
-            text-align: center;
-        }
-
-        .platform-mockup {
-            max-width: 950px;
-            margin: 4rem auto 0;
-            background: var(--primary);
-            border-radius: 15px;
-            padding: 4rem 3rem;
-            color: var(--white);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-            border: 10px solid var(--white);
-        }
-
-        .platform-mockup h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--secondary);
-        }
-        
-        .platform-mockup p {
-            font-size: 1.1rem;
-            opacity: 0.8;
-        }
-
-        /* --- 8. HOW IT WORKS --- */
-        .how-it-works {
-            padding: 7rem 2rem;
-            background: var(--white);
-        }
-
-        .steps {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .steps::before {
-            content: '';
-            position: absolute;
-            top: 45px;
-            left: 50px;
-            right: 50px;
-            height: 3px;
-            background: var(--secondary);
-            z-index: 1;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            flex: 1;
-        }
-
-        .step-number {
-            width: 90px;
-            height: 90px;
-            background: var(--secondary);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin: 0 auto 1.5rem;
-            border: 6px solid var(--white);
-            box-shadow: 0 0 0 3px var(--secondary);
-        }
-        
-        .step h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* --- 9. TESTIMONIAL --- */
-        .testimonial {
-            padding: 7rem 2rem;
-            background: var(--light-bg);
-            text-align: center;
-        }
-
-        .testimonial-content {
-            max-width: 850px;
-            margin: 0 auto;
-            font-style: italic;
-            font-size: 1.4rem;
-            line-height: 1.8;
-            color: var(--primary);
-        }
-
-        .testimonial-author-block {
-            margin-top: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #cbd5e1;
-            margin-right: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
-        
-        .testimonial-title {
-            font-size: 0.9rem;
-            color: #6b7280;
-            font-weight: 500;
-        }
-
-        /* --- 10. TRACTION --- */
-        .traction {
-            padding: 7rem 2rem;
-            background: var(--white);
-        }
-
-        .traction-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 3rem;
-            text-align: center;
-        }
-
-        .traction-number {
-            font-size: 4rem;
-            font-weight: 800;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .traction-item p {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-
-        /* --- 11. CTA SECTION --- */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: var(--white);
-            padding: 7rem 2rem;
-            text-align: center;
-            border-radius: 25px;
-            margin: 6rem auto 4rem;
-            max-width: 1100px;
-        }
-
-        .cta-section h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-        }
-        
-        .cta-section p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-        }
-
-        /* --- 12. FOOTER --- */
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        
-        footer .logo {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* --- 13. RESPONSIVE (Mobile Fixes) --- */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .hero {
-                padding: 10rem 2rem 7rem;
-            }
-            
-            /* Vertical layout for 'How It Works' steps */
-            .steps {
-                flex-direction: column;
-                gap: 4rem;
-            }
-            
-            /* Change line connector to vertical line for stacked steps */
-            .steps::before {
-                content: '';
-                position: absolute;
-                top: 100px;
-                bottom: 0;
-                left: 50%;
-                width: 3px;
-                height: auto;
-                transform: translateX(-50%);
-            }
-            
-            .step-number {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .client-logos {
-                gap: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .cta-button {
-                padding: 1rem 2.5rem;
-                font-size: 1rem;
-            }
-            
-            .problem-card {
-                padding: 2rem;
-            }
-            
-            .testimonial-content {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Varix Intelligence | The Commercial OS for Construction | Stop Margin Leakage</title>
+  <meta name="description" content="Varix Intelligence is the Commercial Operating System for construction—MRICS logic + UCL ML to stop margin leakage, capture variations, and protect profit."/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* --- 1. BASE & VARIABLES --- */
+    :root{
+      --primary:#0f2b46;      /* Deep Navy/Dark Blue */
+      --secondary:#12b76a;    /* Vibrant Green (CTA) */
+      --accent:#1e4a6b;       /* Lighter blue */
+      --light-bg:#f5f7fa;     /* Off-White */
+      --dark-text:#1f2937;    /* Body text */
+      --red-alert:#dc2626;    /* Problems */
+      --muted:#6b7280;
+      --white:#ffffff;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.6;color:var(--dark-text);
+      background:var(--white);overflow-x:hidden;
+    }
+    .container{max-width:1200px;margin:0 auto;padding:0 1rem}
+    /* --- 2. HEADER --- */
+    header{
+      background:var(--primary);color:var(--white);
+      padding:1rem 0;position:fixed;width:100%;top:0;z-index:1000;
+      box-shadow:0 4px 15px rgba(0,0,0,0.15)
+    }
+    .nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 2rem}
+    .logo{font-size:1.6rem;font-weight:800;color:var(--secondary);letter-spacing:.5px}
+    .nav-links a{
+      color:var(--white);text-decoration:none;margin-left:2rem;font-weight:500;transition:color .3s ease
+    }
+    .nav-links a:hover{color:var(--secondary)}
+    /* --- 3. HERO --- */
+    .hero{
+      background:linear-gradient(135deg,var(--primary) 0%,var(--accent) 100%);
+      color:var(--white);padding:14rem 2rem 10rem;text-align:center;position:relative;overflow:hidden
+    }
+    .hero h1{
+      font-size:3.6rem;font-weight:800;margin:0 auto 1.25rem;line-height:1.1;max-width:900px
+    }
+    .hero-subtitle{
+      font-size:1.25rem;margin:0 auto 2.5rem;opacity:.95;max-width:720px
+    }
+    .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .cta-button{
+      background:var(--secondary);color:var(--white);
+      padding:1.05rem 2.4rem;border:none;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;
+      transition:all .3s ease;box-shadow:0 8px 25px rgba(18,183,106,0.4)
+    }
+    .cta-button:hover{background:#0f9f59;transform:translateY(-3px);box-shadow:0 12px 30px rgba(18,183,106,0.5)}
+    .cta-ghost{
+      background:transparent;border:2px solid var(--white);color:var(--white)
+    }
+    .cta-ghost:hover{background:rgba(255,255,255,0.12)}
+    .trial-note{margin-top:1rem;font-size:.95rem;opacity:.9}
+    /* --- 4. CLIENT LOGOS --- */
+    .clients{padding:4rem 2rem;background:var(--white);text-align:center}
+    .clients p{margin-bottom:2rem;font-weight:600;color:var(--primary);opacity:.8;font-size:1rem}
+    .client-logos{
+      display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:4rem;opacity:.65;filter:grayscale(100%)
+    }
+    .client-logo{font-size:1.1rem;font-weight:700;letter-spacing:.5px}
+    .client-logo:hover{opacity:1;filter:grayscale(0)}
+    /* --- 5. PROBLEM --- */
+    .problem{padding:6rem 2rem;background:var(--light-bg)}
+    .section-title{
+      font-size:2.3rem;font-weight:700;text-align:center;margin-bottom:3.2rem;color:var(--primary)
+    }
+    .problem-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.5rem
+    }
+    .problem-card{
+      background:var(--white);padding:2.4rem;border-radius:12px;box-shadow:var(--shadow);
+      text-align:center;transition:transform .3s ease,box-shadow .3s ease;border-top:5px solid var(--red-alert)
+    }
+    .problem-card:hover{transform:translateY(-6px);box-shadow:0 15px 40px rgba(0,0,0,0.15)}
+    .problem-number{font-size:2.2rem;font-weight:800;color:var(--red-alert);margin-bottom:.4rem}
+    .problem-card h3{font-size:1.25rem;margin:.1rem 0 .5rem;color:var(--primary)}
+    .muted{color:#4b5563;font-size:.97rem}
+    /* --- 6. SOLUTION --- */
+    .solution{padding:7rem 2rem;background:var(--white)}
+    .solution-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2rem;margin-top:2.6rem
+    }
+    .solution-card{
+      text-align:center;padding:2.2rem 1.4rem;border-radius:12px;transition:all .3s ease;border:1px solid #e5e7eb
+    }
+    .solution-card:hover{background:var(--light-bg);box-shadow:0 10px 20px rgba(0,0,0,0.05);border-color:var(--secondary)}
+    .solution-icon{font-size:2rem;margin-bottom:.9rem}
+    .solution-card h3{margin-bottom:.3rem;font-size:1.15rem}
+    .solution-card p{font-size:.95rem}
+    /* --- 7. PLATFORM VISUAL --- */
+    .platform{padding:7rem 2rem;text-align:center}
+    .platform-mockup{
+      max-width:960px;margin:2.8rem auto 0;background:var(--primary);border-radius:15px;padding:3rem;color:var(--white);
+      box-shadow:0 30px 80px rgba(0,0,0,0.3);border:10px solid var(--white)
+    }
+    .platform-mockup h3{font-size:1.8rem;margin-bottom:1rem;color:var(--secondary)}
+    .platform-mockup p{font-size:1.05rem;opacity:.9}
+    /* --- 8. HOW IT WORKS --- */
+    .how-it-works{padding:7rem 2rem;background:var(--white)}
+    .steps{
+      display:flex;justify-content:space-between;max-width:1000px;margin:0 auto;position:relative;gap:1.2rem
+    }
+    .steps::before{
+      content:'';position:absolute;top:45px;left:50px;right:50px;height:3px;background:var(--secondary);z-index:1
+    }
+    .step{text-align:center;position:relative;z-index:2;flex:1}
+    .step-number{
+      width:90px;height:90px;background:var(--secondary);color:var(--white);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;margin:0 auto 1rem;
+      border:6px solid var(--white);box-shadow:0 0 0 3px var(--secondary)
+    }
+    .step h3{font-size:1.1rem;margin:.2rem 0 .35rem}
+    .step p{font-size:.95rem;color:#374151}
+    /* --- 9. TESTIMONIAL --- */
+    .testimonial{padding:7rem 2rem;background:var(--light-bg);text-align:center}
+    .testimonial-content{
+      max-width:880px;margin:0 auto;font-style:italic;font-size:1.25rem;line-height:1.8;color:var(--primary)
+    }
+    .testimonial-author-block{margin-top:2rem;display:flex;align-items:center;justify-content:center}
+    .testimonial-avatar{
+      width:56px;height:56px;border-radius:50%;background:#cbd5e1;margin-right:1rem;display:flex;align-items:center;justify-content:center;
+      font-size:1.2rem;font-weight:700;color:#0b2740
+    }
+    .testimonial-author{font-weight:700;color:var(--primary);font-size:1.05rem}
+    .testimonial-title{font-size:.9rem;color:#6b7280;font-weight:500}
+    /* --- 10. TRACTION --- */
+    .traction{padding:7rem 2rem;background:var(--white)}
+    .traction-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2.4rem;text-align:center
+    }
+    .traction-number{font-size:3rem;font-weight:800;color:var(--secondary);margin-bottom:.4rem}
+    .traction-item p{font-size:1rem;font-weight:600;color:var(--primary)}
+    /* --- 11. PRICING --- */
+    .pricing{padding:7rem 2rem;background:var(--light-bg)}
+    .pricing-header{text-align:center;margin-bottom:2rem}
+    .badge{display:inline-block;background:#e8f8ef;color:#0b7a46;border:1px solid #a7e3c7;border-radius:999px;padding:.25rem .75rem;font-size:.85rem;font-weight:700;margin-bottom:.75rem}
+    .pricing-title{font-size:2.2rem;color:var(--primary);margin:.25rem 0 1rem}
+    .pricing-sub{color:#374151;opacity:.9;max-width:760px;margin:0 auto}
+    .toggle{
+      display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.6rem auto 2.2rem
+    }
+    .toggle input{appearance:none;width:48px;height:28px;background:#d1d5db;border-radius:999px;position:relative;outline:none;cursor:pointer;transition:background .2s}
+    .toggle input:checked{background:var(--secondary)}
+    .toggle input::after{
+      content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;background:#fff;border-radius:50%;transition:transform .2s
+    }
+    .toggle input:checked::after{transform:translateX(20px)}
+    .pricing-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;max-width:1100px;margin:0 auto
+    }
+    .plan{
+      background:var(--white);border:1px solid #e5e7eb;border-radius:14px;padding:2rem 1.6rem;box-shadow:var(--shadow)
+    }
+    .plan h3{margin:0 0 .4rem;font-size:1.25rem;color:var(--primary)}
+    .price{font-size:2rem;font-weight:800;color:var(--primary);margin:.2rem 0 .2rem}
+    .per{color:var(--muted);font-size:.95rem}
+    .projects{margin:.3rem 0 1rem;font-weight:600;color:#0b2740}
+    .features{list-style:none;padding:0;margin:1rem 0 1.4rem}
+    .features li{margin:.35rem 0;color:#374151;font-size:.95rem}
+    .plan .btn{width:100%;padding:.9rem 1rem;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--secondary);color:#fff}
+    .btn-primary:hover{background:#0f9f59}
+    .btn-outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}
+    .btn-outline:hover{background:#eef2f7}
+    .ribbon{font-size:.78rem;font-weight:800;color:#0b7a46;background:#dff5ea;border:1px solid #a7e3c7;padding:.25rem .6rem;border-radius:6px;display:inline-block;margin-bottom:.6rem}
+    .small-note{font-size:.9rem;color:#374151;opacity:.9;margin-top:1rem}
+    /* --- 12. CTA SECTION --- */
+    .cta-section{
+      background:linear-gradient(135deg,var(--primary) 0%,var(--accent) 100%);
+      color:var(--white);padding:7rem 2rem;text-align:center;border-radius:25px;margin:6rem auto 4rem;max-width:1100px
+    }
+    .cta-section h2{font-size:2.4rem;margin-bottom:1rem;font-weight:800}
+    .cta-section p{font-size:1.15rem;margin-bottom:2rem;opacity:.95}
+    /* --- 13. FOOTER --- */
+    footer{background:var(--primary);color:var(--white);padding:4rem 2rem;text-align:center}
+    footer .logo{font-size:2rem;margin-bottom:1.1rem}
+    footer p{opacity:.9}
+    /* --- 14. RESPONSIVE --- */
+    @media(max-width:992px){
+      .hero{padding:10rem 2rem 7rem}
+      .hero h1{font-size:2.6rem}
+      .nav-links{display:none}
+      .steps{flex-direction:column;gap:3rem}
+      .steps::before{
+        top:100px;bottom:0;left:50%;right:auto;width:3px;height:auto;transform:translateX(-50%)
+      }
+      .step-number{width:80px;height:80px}
+      .client-logos{gap:2.5rem}
+    }
+    @media(max-width:600px){
+      .cta-button{padding:1rem 2rem;font-size:1rem}
+      .problem-card{padding:2rem}
+      .testimonial-content{font-size:1.05rem}
+      .price{font-size:1.7rem}
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="nav">
-            <div class="logo">VARIX INTELLIGENCE</div>
-            <div class="nav-links">
-                <a href="#solution">The OS</a>
-                <a href="#how-it-works">Process</a>
-                <a href="#traction">Impact</a>
-                <a href="#cta">Get Started</a>
-            </div>
-        </div>
-    </header>
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="logo">VARIX INTELLIGENCE</div>
+      <div class="nav-links">
+        <a href="#solution">The OS</a>
+        <a href="#how-it-works">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#traction">Impact</a>
+        <a href="#cta">Get Started</a>
+      </div>
+    </div>
+  </header>
 
-    <section class="hero">
-        <h1>**Stop Margin Leakage. Recover Lost Profit.**</h1>
-        <p class="hero-subtitle">Varix is the **Commercial Operating System** that automates variation recovery and eliminates costly leakage across your entire project portfolio.</p>
-        <button class="cta-button">Unlock Your Recovery Plan</button>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Stop Margin Leakage. Recover Lost Profit.</h1>
+    <p class="hero-subtitle">Varix is the Commercial Operating System that automates variation recovery and eliminates costly leakage across your entire project portfolio.</p>
+    <div class="cta-row">
+      <button class="cta-button" data-track="hero-primary">Unlock Your Recovery Plan</button>
+      <button class="cta-button cta-ghost" data-track="hero-secondary">View Pricing</button>
+    </div>
+    <div class="trial-note">Try free today: 2 scans per day • 3 files/day • 10 AI prompts/day — no card needed.</div>
+  </section>
 
-    <section class="clients">
-        <div class="container">
-            <p>TRUSTED BY INDUSTRY LEADERS</p>
-            <div class="client-logos">
-                <div class="client-logo">BOUYGUES</div>
-                <div class="client-logo">WILLMOTT DIXON</div>
-                <div class="client-logo">MACE</div>
-                <div class="client-logo">KIER</div>
-            </div>
-        </div>
-    </section>
+  <!-- CLIENTS -->
+  <section class="clients">
+    <div class="container">
+      <p>TRUSTED BY INDUSTRY LEADERS</p>
+      <div class="client-logos" aria-label="Client Logos (illustrative)">
+        <div class="client-logo">BOUYGUES</div>
+        <div class="client-logo">WILLMOTT DIXON</div>
+        <div class="client-logo">MACE</div>
+        <div class="client-logo">KIER</div>
+      </div>
+    </div>
+  </section>
 
-    <section class="problem" id="problem">
-        <div class="container">
-            <h2 class="section-title">The 3 Ways Construction Profit Disappears Daily</h2>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-number">£42M</div>
-                    <h3>Unclaimed Variations</h3>
-                    <p>Legitimate revenue disappears in siloed spreadsheets, email threads, and paper diaries.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">89%</div>
-                    <h3>Contractual Risk</h3>
-                    <p>Missed contractual notices and deadlines silently void your right to future payment.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">£142k</div>
-                    <h3>Knowledge Drain</h3>
-                    <p>Every senior QS that leaves takes years of hard-won commercial intelligence with them.</p>
-                </div>
-            </div>
+  <!-- PROBLEM -->
+  <section class="problem" id="problem">
+    <div class="container">
+      <h2 class="section-title">The 3 Ways Construction Profit Disappears Daily</h2>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-number">Unclaimed £</div>
+          <h3>Invisible Variations</h3>
+          <p class="muted">Legitimate revenue disappears in siloed spreadsheets, email threads, chats, and diaries.</p>
         </div>
-    </section>
+        <div class="problem-card">
+          <div class="problem-number">Missed</div>
+          <h3>Contractual Windows</h3>
+          <p class="muted">Late notices weaken entitlement. Time bars silently void your right to payment.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-number">£142k</div>
+          <h3>Knowledge Drain</h3>
+          <p class="muted">When senior QSs leave, years of client tactics and lessons walk out the door.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="solution" id="solution">
-        <div class="container">
-            <h2 class="section-title">The Varix OS: Your Single Source of Commercial Truth</h2>
-            <div class="solution-grid">
-                <div class="solution-card">
-                    <div class="solution-icon">💰</div>
-                    <h3>Guaranteed Revenue Recovery</h3>
-                    <p>Automatically spot every variation, delay, or change order that impacts your bottom line. Turn risk into **recovered cash, faster.**</p>
-                </div>
-                <div class="solution-card">
-                    <div class="solution-icon">🛡️</div>
-                    <h3>Ironclad Contract Defense</h3>
-                    <p>The system flags notice periods and compliance gaps *before* they cost you money. It’s your **always-on compliance officer** built into the platform.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="solution-icon">📈</div>
-                    <h3>Single-View Financial Control</h3>
-                    <p>Stop chasing data across spreadsheets. See the **real-time financial health** of your entire portfolio on one clear, intuitive dashboard.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="solution-icon">📚</div>
-                    <h3>Business Intelligence Lock-In</h3>
-                    <p>Capture the commercial knowledge from every project. Build a permanent, reusable asset that makes your **entire team smarter** next time.</p>
-                </div>
-            </div>
+  <!-- SOLUTION -->
+  <section class="solution" id="solution">
+    <div class="container">
+      <h2 class="section-title">The Varix OS: Your Single Source of Commercial Truth</h2>
+      <div class="solution-grid">
+        <div class="solution-card">
+          <div class="solution-icon">💰</div>
+          <h3>Guaranteed Revenue Recovery</h3>
+          <p>Automatically spot every variation, delay, or change order that impacts your bottom line—turn risk into recovered cash, faster.</p>
         </div>
-    </section>
-    
-    <section style="padding: 3rem 0; text-align: center; background: var(--light-bg);">
-        <div class="container">
-            This diagram shows how Varix transforms your existing, scattered data into decisive commercial action:
-            
+        <div class="solution-card">
+          <div class="solution-icon">🛡️</div>
+          <h3>Ironclad Contract Defense</h3>
+          <p>Flags notice periods and compliance gaps before they cost you money. It’s your always-on commercial guardian.</p>
         </div>
-    </section>
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <h2 class="section-title">From Data Chaos to Guaranteed Control in 4 Steps</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Connect Data</h3>
-                    <p>Integrate with your existing ERP, PM software, and communication channels in days.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>AI Finds Value</h3>
-                    <p>The engine automatically pinpoints recoverable variations and compliance gaps.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Actionable Alerts</h3>
-                    <p>Receive notifications with the necessary evidence, value calculation, and contract reference.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Recover & Retain</h3>
-                    <p>Convert opportunities to secured revenue and build a permanent, accessible knowledge base.</p>
-                </div>
-            </div>
+        <div class="solution-card">
+          <div class="solution-icon">📈</div>
+          <h3>Single-View Financial Control</h3>
+          <p>See the real-time commercial health of your portfolio—no more chasing data across spreadsheets.</p>
         </div>
-    </section>
+        <div class="solution-card">
+          <div class="solution-icon">📚</div>
+          <h3>Commercial Memory</h3>
+          <p>Capture knowledge from every project. Build a permanent asset that makes your entire team smarter next time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="testimonial">
-        <div class="container">
-            <div class="testimonial-content">
-                "Varix identified **£1.2M in genuine, missed variations** on a single project we thought was breaking even. It's not just software; it's a fundamental, profitable shift in commercial management."
-            </div>
-            <div class="testimonial-author-block">
-                <div class="testimonial-avatar">CD</div>
-                <div>
-                    <div class="testimonial-author">Commercial Director, Top 10 UK Contractor</div>
-                    <div class="testimonial-title">Project Value: £85M | Recovered in 6 Weeks</div>
-                </div>
-            </div>
+  <!-- PLATFORM VISUAL -->
+  <section class="platform">
+    <div class="container">
+      <h2 class="section-title">What Varix Actually Does (Under the Hood)</h2>
+      <div class="platform-mockup" role="img" aria-label="Platform mockup">
+        <h3>MRICS Logic × UCL Machine Learning</h3>
+        <p>We connect Outlook, Asite/Procore, and WhatsApp; detect scope changes; track contractual windows; and assemble evidence automatically into claim-ready packs. You get alerts with contract references, value calculations, and the supporting trail—ready to send.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">From Data Chaos to Control in 4 Steps</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Connect Data</h3>
+          <p>Integrate email, drawings, chats and folders in days—no platform rip-and-replace.</p>
         </div>
-    </section>
-
-    <section class="traction" id="traction">
-        <div class="container">
-            <h2 class="section-title">Proven Commercial Impact</h2>
-            <div class="traction-grid">
-                <div class="traction-item">
-                    <div class="traction-number">£4.2M+</div>
-                    <p>Total Recovered for Clients</p>
-                </div>
-                <div class="traction-item">
-                    <div class="traction-number">31%</div>
-                    <p>Avg. Budget Overrun Identified</p>
-                </div>
-                <div class="traction-item">
-                    <div class="traction-number">11</div>
-                    <p>Years of Domain Expertise Encoded</p>
-                </div>
-                <div class="traction-item">
-                    <div class="traction-number">100%</div>
-                    <p>Client Success Rate</p>
-                </div>
-            </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>AI Finds Value</h3>
+          <p>Varix pinpoints recoverable variations and compliance gaps across your live projects.</p>
         </div>
-    </section>
-
-    <section class="cta-section" id="cta">
-        <div class="container">
-            <h2>Ready to See Your Hidden Profit?</h2>
-            <p>Book your complimentary **Commercial Health Scan** and receive a personalised report detailing your potential recovery opportunities, guaranteed.</p>
-            <button class="cta-button">Unlock Your Recovery Plan Now</button>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Actionable Alerts</h3>
+          <p>Receive notices with evidence, contract clause, and quantified impact—ready to send.</p>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="logo">VARIX INTELLIGENCE</div>
-            <p>The Commercial Operating System for Construction | Precision. Control. Profit.</p>
-            <p style="margin-top: 2rem; opacity: 0.6;">© 2024 Varix Intelligence. All rights reserved.</p>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Recover & Retain</h3>
+          <p>Convert opportunities to secured revenue and build durable commercial memory.</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Script for smooth scrolling with fixed header offset correction
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20; // -20px extra buffer
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
-                }
-            });
-        });
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="container">
+      <div class="testimonial-content">
+        “Varix identified £1.2M in genuine, missed variations on a single project we thought was breaking even. It’s not just software; it’s a fundamental, profitable shift in commercial management.”
+      </div>
+      <div class="testimonial-author-block">
+        <div class="testimonial-avatar">CD</div>
+        <div>
+          <div class="testimonial-author">Commercial Director, UK Contractor</div>
+          <div class="testimonial-title">Project Value: £85M • Recovered in 6 Weeks</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // CTA button click handler (Replace URL as needed)
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function() {
-                window.open('https://calendly.com/varix-intelligence/discovery', '_blank');
-            });
-        });
-    </script>
+  <!-- TRACTION -->
+  <section class="traction" id="traction">
+    <div class="container">
+      <h2 class="section-title">Proven Commercial Impact</h2>
+      <div class="traction-grid">
+        <div class="traction-item">
+          <div class="traction-number">£4.2M+</div>
+          <p>Total Recovered</p>
+        </div>
+        <div class="traction-item">
+          <div class="traction-number">31%</div>
+          <p>Avg. Overrun Identified</p>
+        </div>
+        <div class="traction-item">
+          <div class="traction-number">11</div>
+          <p>Years Domain Expertise</p>
+        </div>
+        <div class="traction-item">
+          <div class="traction-number">100%</div>
+          <p>Client Success Rate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="pricing-header">
+        <span class="badge">Project-Based Pricing</span>
+        <h2 class="pricing-title">Start on One Job. Scale to Your Whole Company.</h2>
+        <p class="pricing-sub">Self-serve for individuals and teams. Full audit only required for Enterprise deployments.</p>
+
+        <div class="toggle" aria-label="Billing Toggle">
+          <span>Monthly</span>
+          <input type="checkbox" id="billingToggle" aria-label="Toggle annual billing"/>
+          <span>Annual <small style="opacity:.8">(2 months free)</small></span>
+        </div>
+      </div>
+
+      <div class="pricing-grid" aria-live="polite">
+        <!-- Starter -->
+        <div class="plan" data-plan="starter">
+          <h3>Starter</h3>
+          <div class="price" data-monthly="£49" data-annual="£490">£49</div>
+          <div class="per">per month</div>
+          <div class="projects">1 active project</div>
+          <ul class="features">
+            <li>2 free scans/day then unlimited on upgrade</li>
+            <li>Email & WhatsApp detection</li>
+            <li>Deadline alerts</li>
+            <li>Claim templates & PDF export</li>
+            <li>Secure cloud storage</li>
+          </ul>
+          <button class="btn btn-outline" data-plan-cta="starter">Start Free</button>
+          <div class="small-note">No audit required • No credit card for trial</div>
+        </div>
+
+        <!-- Professional -->
+        <div class="plan" data-plan="pro">
+          <span class="ribbon">Most Popular</span>
+          <h3>Professional</h3>
+          <div class="price" data-monthly="£99" data-annual="£990">£99</div>
+          <div class="per">per month</div>
+          <div class="projects">3 active projects</div>
+          <ul class="features">
+            <li>Everything in Starter</li>
+            <li>Priority scans & queueing</li>
+            <li>Project switching</li>
+            <li>Basic analytics</li>
+            <li>Email support</li>
+          </ul>
+          <button class="btn btn-primary" data-plan-cta="pro">Start Free</button>
+          <div class="small-note">Great for freelance QSs & small consultants</div>
+        </div>
+
+        <!-- Team -->
+        <div class="plan" data-plan="team">
+          <h3>Team</h3>
+          <div class="price" data-monthly="£599" data-annual="£5,990">£599</div>
+          <div class="per">per month</div>
+          <div class="projects">10 active projects</div>
+          <ul class="features">
+            <li>Shared workspace & evidence vault</li>
+            <li>Team analytics & reporting</li>
+            <li>Outlook/Asite/Procore integrations</li>
+            <li>Role-based access control</li>
+            <li>Onboarding session included</li>
+          </ul>
+          <button class="btn btn-primary" data-plan-cta="team">Book Demo</button>
+          <div class="small-note">Optional mini-audit add-on (£500)</div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="plan" data-plan="enterprise">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <div class="per">unlimited projects</div>
+          <div class="projects">Company-wide deployment</div>
+          <ul class="features">
+            <li>CIOS portfolio dashboard</li>
+            <li>Custom integrations & SSO</li>
+            <li>Commercial Health Audit required</li>
+            <li>Dedicated success lead</li>
+            <li>Security & compliance reviews</li>
+          </ul>
+          <button class="btn btn-outline" data-plan-cta="enterprise">Talk to Sales</button>
+          <div class="small-note">Audit fee £1,995 (credited to annual)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <h2>Ready to See Your Hidden Profit?</h2>
+      <p>Start free with 2 daily scans, or book a 20-minute walkthrough. Upgrade any time to unlock unlimited projects and automation.</p>
+      <div class="cta-row">
+        <button class="cta-button" data-track="cta-start">Start Free Trial</button>
+        <button class="cta-button cta-ghost" data-track="cta-demo">Book a Demo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="logo">VARIX INTELLIGENCE</div>
+      <p>The Commercial Operating System for Construction • Precision. Control. Profit.</p>
+      <p style="margin-top:1.2rem;opacity:.7;">© 2025 Varix Intelligence. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling with fixed header offset
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault();
+        const id=a.getAttribute('href');
+        const headerHeight=document.querySelector('header').offsetHeight;
+        const el=document.querySelector(id);
+        if(!el) return;
+        const y=el.getBoundingClientRect().top+window.pageYOffset-headerHeight-20;
+        window.scrollTo({top:y,behavior:'smooth'});
+      });
+    });
+
+    // CTA buttons
+    const openCalendly = () => window.open('https://calendly.com/varix-intelligence/discovery','_blank');
+    document.querySelectorAll('[data-track="hero-primary"]').forEach(b=>b.addEventListener('click',openCalendly));
+    document.querySelectorAll('[data-track="hero-secondary"]').forEach(b=>b.addEventListener('click',()=>document.querySelector('#pricing').scrollIntoView({behavior:'smooth'})));
+    document.querySelectorAll('[data-track="cta-start"]').forEach(b=>b.addEventListener('click',()=>window.open('https://app.varix.ai/signup','_blank')));
+    document.querySelectorAll('[data-track="cta-demo"]').forEach(b=>b.addEventListener('click',openCalendly));
+
+    // Pricing CTAs
+    document.querySelectorAll('[data-plan-cta="starter"]').forEach(b=>b.addEventListener('click',()=>window.open('https://app.varix.ai/signup?plan=starter','_blank')));
+    document.querySelectorAll('[data-plan-cta="pro"]').forEach(b=>b.addEventListener('click',()=>window.open('https://app.varix.ai/signup?plan=pro','_blank')));
+    document.querySelectorAll('[data-plan-cta="team"]').forEach(b=>b.addEventListener('click',openCalendly));
+    document.querySelectorAll('[data-plan-cta="enterprise"]').forEach(b=>b.addEventListener('click',openCalendly));
+
+    // Billing toggle (Monthly / Annual)
+    const toggle=document.getElementById('billingToggle');
+    const priceEls=document.querySelectorAll('.plan .price');
+    const perEls=document.querySelectorAll('.plan .per');
+    const setPrices=(annual)=>{
+      priceEls.forEach(el=>{
+        const a=el.getAttribute('data-annual');
+        const m=el.getAttribute('data-monthly');
+        if(!a||!m) return;
+        el.textContent=annual?a:m;
+      });
+      perEls.forEach(el=>el.textContent=annual?'per year':'per month');
+    };
+    if(toggle){
+      toggle.addEventListener('change',e=>setPrices(e.target.checked));
+    }
+
+    // Default to monthly on load
+    setPrices(false);
+  </script>
 </body>
 </html>
