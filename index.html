@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Varix Intelligence | Commercial Operating System for Construction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #1a365d;
-            --secondary: #2d3748;
-            --accent: #2b6cb0;
-            --light: #f7fafc;
-            --dark: #2d3748;
-            --success: #38a169;
-            --warning: #d69e2e;
-            --danger: #e53e3e;
+            --primary-green: #275A45;
+            --text-dark: #202020;
+            --background-light: #FFFFFF;
+            --accent-light: #f8f9fa;
+            --border-light: #eaeaea;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            color: var(--dark);
+            color: var(--text-dark);
             line-height: 1.6;
-            background-color: #f8f9fa;
+            background-color: var(--background-light);
+            font-weight: 400;
         }
         
         .container {
@@ -35,77 +34,211 @@
             padding: 0 20px;
         }
         
+        /* Premium Header */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
+            background-color: var(--background-light);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
-            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-varix {
+            color: var(--text-dark);
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
         }
         
-        .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
+        .logo-intelligence {
+            color: var(--text-dark);
+            font-weight: 300;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            margin-top: -2px;
         }
         
-        .hero {
-            padding: 4rem 0;
-            text-align: center;
-            background-color: white;
-            border-bottom: 1px solid #e2e8f0;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
         }
         
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
         }
         
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            color: var(--secondary);
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+        
+        .header-cta {
+            display: flex;
+            gap: 1rem;
         }
         
         .cta-button {
             display: inline-block;
-            background-color: var(--accent);
+            background-color: var(--primary-green);
             color: white;
-            padding: 12px 30px;
+            padding: 10px 24px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 1px solid var(--primary-green);
         }
         
         .cta-button:hover {
-            background-color: var(--primary);
+            background-color: #1e4635;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
-        section {
+        .cta-button-outline {
+            background-color: transparent;
+            color: var(--primary-green);
+        }
+        
+        .cta-button-outline:hover {
+            background-color: rgba(39, 90, 69, 0.05);
+        }
+        
+        /* Premium Hero Section */
+        .hero {
+            padding: 6rem 0 4rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(39, 90, 69, 0.03) 0%, rgba(39, 90, 69, 0) 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(39, 90, 69, 0.1);
+            color: var(--primary-green);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Stats Section */
+        .stats {
             padding: 4rem 0;
+            background-color: var(--background-light);
         }
         
-        .section-title {
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-card {
             text-align: center;
-            margin-bottom: 3rem;
-            color: var(--primary);
+            padding: 2rem 1rem;
         }
         
-        .section-title h2 {
-            font-size: 2rem;
+        .stat-value {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
             margin-bottom: 0.5rem;
         }
         
-        .section-title p {
-            color: var(--secondary);
+        .stat-label {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 5rem 0;
+            background-color: var(--accent-light);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
             max-width: 700px;
             margin: 0 auto;
         }
@@ -119,65 +252,104 @@
         .problem-card {
             background: white;
             border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--accent);
+            padding: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            border-top: 4px solid var(--primary-green);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         }
         
         .problem-card h3 {
-            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+            color: var(--text-dark);
         }
         
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 3rem 0;
+        .problem-card p {
+            color: #666;
+            line-height: 1.7;
         }
         
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            color: var(--secondary);
+        /* Solution Section */
+        .solution {
+            padding: 5rem 0;
+            background-color: var(--background-light);
         }
         
         .solution-container {
-            background-color: white;
-            border-radius: 8px;
-            padding: 3rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .solution-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .solution-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.7;
         }
         
         .solution-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
         
         .feature {
-            text-align: center;
-            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
         }
         
         .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(39, 90, 69, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .feature-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .feature-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        
+        .solution-visual {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-light);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 5rem 0;
+            background-color: var(--accent-light);
         }
         
         .pricing-tiers {
@@ -189,21 +361,27 @@
         
         .pricing-card {
             background: white;
-            border-radius: 8px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
             text-align: center;
             position: relative;
             transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-light);
         }
         
         .pricing-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
         }
         
         .pricing-card.popular {
-            border: 2px solid var(--accent);
+            border: 2px solid var(--primary-green);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-5px);
         }
         
         .popular-badge {
@@ -211,9 +389,9 @@
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--accent);
+            background-color: var(--primary-green);
             color: white;
-            padding: 5px 15px;
+            padding: 6px 20px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
@@ -221,93 +399,155 @@
         
         .plan-name {
             font-size: 1.5rem;
-            color: var(--primary);
+            font-weight: 600;
+            color: var(--text-dark);
             margin-bottom: 1rem;
         }
         
         .plan-price {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            color: var(--accent);
+            color: var(--primary-green);
             margin-bottom: 0.5rem;
+            line-height: 1;
         }
         
         .plan-period {
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
         }
         
         .plan-features {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             text-align: left;
         }
         
         .plan-features li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #e2e8f0;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .plan-features li:last-child {
             border-bottom: none;
         }
         
+        .plan-features li i {
+            color: var(--primary-green);
+            font-size: 0.9rem;
+        }
+        
+        /* Audit Section */
+        .audit {
+            padding: 5rem 0;
+            background-color: var(--background-light);
+        }
+        
         .audit-offer {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, var(--primary-green) 0%, #1e4635 100%);
             color: white;
-            padding: 3rem;
-            border-radius: 8px;
+            padding: 4rem;
+            border-radius: 12px;
             text-align: center;
-            margin: 4rem 0;
+            margin: 0 auto;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(39, 90, 69, 0.2);
         }
         
         .audit-offer h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
         
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 3rem 0;
+        .audit-offer p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .audit-highlight {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        /* Results Section */
+        .results {
+            padding: 5rem 0;
+            background-color: var(--accent-light);
+        }
+        
+        .results-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .results-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .results-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .results-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .metric {
             background: white;
             border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            text-align: center;
         }
         
-        .comparison-table th, .comparison-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
         }
         
-        .comparison-table th {
-            background-color: var(--primary);
-            color: white;
+        .metric-label {
+            color: #666;
+            font-size: 0.9rem;
         }
         
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .testimonial {
-            background-color: white;
-            border-radius: 8px;
+        .results-visual {
+            background: white;
+            border-radius: 12px;
             padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-light);
         }
         
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--primary);
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 0;
+            background-color: var(--background-light);
         }
         
         .faq-container {
@@ -317,103 +557,229 @@
         
         .faq-item {
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid var(--border-light);
             padding-bottom: 1.5rem;
         }
         
         .faq-question {
             font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
             font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
-        footer {
-            background-color: var(--primary);
-            color: white;
-            padding: 3rem 0;
+        .faq-question i {
+            color: var(--primary-green);
+            font-size: 0.9rem;
+        }
+        
+        .faq-answer {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             text-align: center;
         }
         
-        .footer-links {
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .footer-logo .logo {
+            justify-content: flex-start;
+        }
+        
+        .footer-logo p {
+            color: #aaa;
+            line-height: 1.7;
+            max-width: 300px;
+        }
+        
+        .footer-links h4 {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
         }
         
         .footer-links a {
-            color: white;
-            margin: 0 1rem;
+            color: #aaa;
             text-decoration: none;
+            transition: color 0.3s;
         }
         
         .footer-links a:hover {
-            text-decoration: underline;
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
             }
             
-            .pricing-tiers {
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .solution-container, .results-container {
                 grid-template-columns: 1fr;
             }
             
-            .stats {
-                flex-direction: column;
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+            
+            .pricing-card.popular:hover {
+                transform: translateY(-5px);
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">VARIX INTELLIGENCE</div>
-            <div class="tagline">The Commercial Operating System for Construction</div>
-            <a href="#pricing" class="cta-button">View Pricing Plans</a>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 21L21 0L42 21L21 42L0 21Z" fill="#275A45"/>
+                    <path d="M5 21L21 5L37 21L21 37L5 21Z" fill="#275A45"/>
+                </svg>
+                <div class="logo-text">
+                    <div class="logo-varix">VARIX</div>
+                    <div class="logo-intelligence">INTELLIGENCE</div>
+                </div>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#solution">Solution</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#results">Results</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            
+            <div class="header-cta">
+                <a href="#" class="cta-button-outline">Login</a>
+                <a href="#audit" class="cta-button">Book Audit</a>
+            </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>Stop Construction's £162B Annual Margin Leakage</h1>
-            <p>Varix Intelligence combines MRICS commercial expertise with UCL machine learning to create the industry's first Commercial Operating System—actively protecting your margins instead of passively storing your files.</p>
-            <a href="#audit" class="cta-button">Book Your Commercial Intelligence Audit</a>
+            <div class="hero-content">
+                <span class="hero-badge">MRICS-Guided Intelligence + UCL Machine Learning</span>
+                <h1>The Commercial Operating System Construction Needs</h1>
+                <p>Stop the £162B annual margin leakage with AI-powered commercial memory that never forgets a variation, deadline, or successful negotiation strategy.</p>
+                <div class="hero-cta">
+                    <a href="#pricing" class="cta-button">View Plans</a>
+                    <a href="#audit" class="cta-button-outline">Commercial Intelligence Audit</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="problem">
+    <section class="stats">
         <div class="container">
-            <div class="section-title">
-                <h2>The £162 Billion Commercial Memory Crisis</h2>
-                <p>Right now, in your business, money is slipping away. It's not in dramatic explosions of cost, but in silent trickles of missed opportunities.</p>
-            </div>
-            
-            <div class="stats">
-                <div class="stat-item">
+            <div class="stats-grid">
+                <div class="stat-card">
                     <div class="stat-value">5-15%</div>
                     <div class="stat-label">Project Value Lost to Leakage</div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-card">
                     <div class="stat-value">£142K</div>
-                    <div class="stat-label">Average Knowledge Loss When QS Leaves</div>
+                    <div class="stat-label">Knowledge Loss When QS Leaves</div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-card">
                     <div class="stat-value">67%</div>
-                    <div class="stat-label">Variations Submitted After Deadlines</div>
+                    <div class="stat-label">Late Variation Submissions</div>
                 </div>
+                <div class="stat-card">
+                    <div class="stat-value">£162B</div>
+                    <div class="stat-label">Annual Industry Productivity Loss</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem" id="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Commercial Memory Crisis</h2>
+                <p>Construction's £162B leakage problem isn't about bad people—it's about broken systems that fail to capture and retain commercial intelligence.</p>
             </div>
             
             <div class="problem-grid">
                 <div class="problem-card">
                     <h3>The Fragmentation Problem</h3>
-                    <p>Your commercial data lives in 12+ places: contracts in Asite, drawings in BIM 360, instructions in email, site changes in WhatsApp, photos on phones, variations in Excel. By the time you connect the dots, the notice period has passed.</p>
+                    <p>Your commercial data lives in 12+ different systems—contracts in Asite, drawings in BIM 360, instructions in email, site changes in WhatsApp. By the time you connect the dots, contractual deadlines have passed.</p>
                 </div>
                 <div class="problem-card">
                     <h3>The Knowledge Evaporation Problem</h3>
-                    <p>Construction runs on oral tradition. Senior QSs remember client quirks, successful arguments, and evidence standards—until they leave. Then you start from zero with each new hire.</p>
+                    <p>Construction runs on oral tradition. Senior QSs remember client behaviors, successful arguments, and evidentiary requirements—until they leave. Then you start from zero with each new hire.</p>
                 </div>
                 <div class="problem-card">
                     <h3>The Reactive Trap</h3>
@@ -423,133 +789,86 @@
         </div>
     </section>
 
-    <section id="solution" style="background-color: #f0f4f8;">
+    <section class="solution" id="solution">
         <div class="container">
-            <div class="section-title">
-                <h2>The Solution: Commercial Memory</h2>
-                <p>What if your business had a system that never forgets?</p>
-            </div>
-            
             <div class="solution-container">
-                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">Hybrid Intelligence: MRICS Logic × UCL Machine Learning</h3>
+                <div class="solution-content">
+                    <h2>Commercial Memory That Never Forgets</h2>
+                    <p>Varix Intelligence is the first Commercial Operating System for construction, combining MRICS expertise with UCL machine learning to actively protect your margins.</p>
+                    
+                    <div class="solution-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Active Monitoring</h4>
+                                <p>Watches emails, drawings, and WhatsApp for variation triggers automatically.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Proactive Alerts</h4>
+                                <p>Warns before notice periods expire with draft notices ready for review.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Permanent Memory</h4>
+                                <p>Preserves client behaviors and winning playbooks across your entire organization.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="solution-features">
-                    <div class="feature">
-                        <div class="feature-icon">🔍</div>
-                        <h4>Active Monitoring</h4>
-                        <p>Watches emails, drawings, and WhatsApp for variation triggers automatically</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">⚡</div>
-                        <h4>Intelligent Connection</h4>
-                        <p>Links drawing revisions to contracts and CVIs automatically</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">⏰</div>
-                        <h4>Proactive Alerts</h4>
-                        <p>Warns before notice periods expire with draft notices ready</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">💾</div>
-                        <h4>Permanent Memory</h4>
-                        <p>Preserves client behaviors and winning playbooks permanently</p>
+                <div class="solution-visual">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">How Varix Works</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 30px; height: 30px; background-color: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">1</div>
+                            <div>
+                                <div style="font-weight: 600;">Drawing Revision Detected</div>
+                                <div style="font-size: 0.9rem; color: #666;">AI compares revisions and flags scope changes</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 30px; height: 30px; background-color: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">2</div>
+                            <div>
+                                <div style="font-weight: 600;">Evidence Compilation</div>
+                                <div style="font-size: 0.9rem; color: #666;">Automatically gathers photos, emails, and cost data</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 30px; height: 30px; background-color: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">3</div>
+                            <div>
+                                <div style="font-weight: 600;">Deadline Management</div>
+                                <div style="font-size: 0.9rem; color: #666;">Tracks contractual notice periods and alerts team</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 30px; height: 30px; background-color: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem;">4</div>
+                            <div>
+                                <div style="font-weight: 600;">Commercial Memory</div>
+                                <div style="font-size: 0.9rem; color: #666;">Learns from outcomes to improve future success rates</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="solution-container">
-                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">How Varix Works in Practice</h3>
-                
-                <table class="comparison-table">
-                    <tr>
-                        <th>Situation</th>
-                        <th>Traditional Process</th>
-                        <th>With Varix Intelligence</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Drawing Revision</strong></td>
-                        <td>Email arrives with "Rev D drawings attached." Gets filed. Nobody compares to previous version. Scope changes silently absorbed.</td>
-                        <td>AI compares Rev D vs Rev C automatically. Flags added scope. Creates claim shell and starts evidence compilation.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>WhatsApp Change</strong></td>
-                        <td>PM WhatsApp: "Can we change block walls to stud?" Site Manager: "Sure." Work proceeds without formal instruction.</td>
-                        <td>Detects informal instruction. Drafts formal notice. Tracks if CVI issued. Escalates reminder if not.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Deadline Approaching</strong></td>
-                        <td>CVI received 25 days ago. 28-day deadline in 3 days. QS remembers by accident. Panic compilation of evidence.</td>
-                        <td>CVI logged on day 1. Evidence compilation started immediately. Alerts at T-7 and T-3 days with draft ready.</td>
-                    </tr>
-                </table>
-            </div>
         </div>
     </section>
 
-    <section id="results">
+    <section class="pricing" id="pricing">
         <div class="container">
-            <div class="section-title">
-                <h2>Transformation Metrics</h2>
-                <p>What changes when you implement Varix Intelligence</p>
-            </div>
-            
-            <table class="comparison-table">
-                <tr>
-                    <th>Metric</th>
-                    <th>Before Varix</th>
-                    <th>After 12 Months</th>
-                    <th>Impact</th>
-                </tr>
-                <tr>
-                    <td>Variation Capture Rate</td>
-                    <td>≈65%</td>
-                    <td>≈94%</td>
-                    <td>+29 points</td>
-                </tr>
-                <tr>
-                    <td>Submission Timeliness</td>
-                    <td>≈42%</td>
-                    <td>≈91%</td>
-                    <td>+49 points</td>
-                </tr>
-                <tr>
-                    <td>Evidence Quality Score</td>
-                    <td>5.8/10</td>
-                    <td>8.9/10</td>
-                    <td>+53%</td>
-                </tr>
-                <tr>
-                    <td>Recovery Rate</td>
-                    <td>£0.87 per £1 claimed</td>
-                    <td>£0.96 per £1 claimed</td>
-                    <td>+10%</td>
-                </tr>
-                <tr>
-                    <td>Commercial Admin Time</td>
-                    <td>22 hrs/week</td>
-                    <td>6 hrs/week</td>
-                    <td>-73%</td>
-                </tr>
-                <tr>
-                    <td>Project Profit Margin</td>
-                    <td>≈4.5%</td>
-                    <td>≈6.6%</td>
-                    <td>+2.1 percentage points</td>
-                </tr>
-            </table>
-            
-            <div class="testimonial">
-                <p class="testimonial-text">"The Varix Commercial Intelligence Audit identified £67K in missed variations from drawing revisions we would have completely written off. Their platform has become our commercial insurance policy."</p>
-                <p class="testimonial-author">— Commercial Director, M&E Subcontractor (£12M turnover)</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" style="background-color: #f0f4f8;">
-        <div class="container">
-            <div class="section-title">
+            <div class="section-header">
                 <h2>Simple, Project-Based Pricing</h2>
-                <p>Choose the plan that matches how you work</p>
+                <p>Choose the plan that matches how you work. All plans include our core commercial intelligence features.</p>
             </div>
             
             <div class="pricing-tiers">
@@ -558,14 +877,14 @@
                     <div class="plan-price">£49</div>
                     <div class="plan-period">per month</div>
                     <ul class="plan-features">
-                        <li>1 active project</li>
-                        <li>Variation detection</li>
-                        <li>Deadline alerts</li>
-                        <li>Basic evidence hub</li>
-                        <li>Email support</li>
+                        <li><i class="fas fa-check"></i> 1 active project</li>
+                        <li><i class="fas fa-check"></i> Variation detection</li>
+                        <li><i class="fas fa-check"></i> Deadline alerts</li>
+                        <li><i class="fas fa-check"></i> Basic evidence hub</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
                     </ul>
-                    <a href="#" class="cta-button">Get Started</a>
-                    <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--secondary);">£490/year (save 2 months)</div>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">£490/year (save 2 months)</div>
                 </div>
                 
                 <div class="pricing-card popular">
@@ -574,14 +893,14 @@
                     <div class="plan-price">£99</div>
                     <div class="plan-period">per month</div>
                     <ul class="plan-features">
-                        <li>3 active projects</li>
-                        <li>All Starter features</li>
-                        <li>Advanced reporting</li>
-                        <li>Priority support</li>
-                        <li>Basic integrations</li>
+                        <li><i class="fas fa-check"></i> 3 active projects</li>
+                        <li><i class="fas fa-check"></i> All Starter features</li>
+                        <li><i class="fas fa-check"></i> Advanced reporting</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Basic integrations</li>
                     </ul>
-                    <a href="#" class="cta-button">Get Started</a>
-                    <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--secondary);">£990/year (save 2 months)</div>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">£990/year (save 2 months)</div>
                 </div>
                 
                 <div class="pricing-card">
@@ -589,141 +908,187 @@
                     <div class="plan-price">£599</div>
                     <div class="plan-period">per month</div>
                     <ul class="plan-features">
-                        <li>10 active projects</li>
-                        <li>All Professional features</li>
-                        <li>Shared commercial memory</li>
-                        <li>Team dashboard</li>
-                        <li>Procore/Asite integration</li>
-                        <li>Dedicated onboarding</li>
+                        <li><i class="fas fa-check"></i> 10 active projects</li>
+                        <li><i class="fas fa-check"></i> All Professional features</li>
+                        <li><i class="fas fa-check"></i> Shared commercial memory</li>
+                        <li><i class="fas fa-check"></i> Team dashboard</li>
+                        <li><i class="fas fa-check"></i> Procore/Asite integration</li>
+                        <li><i class="fas fa-check"></i> Dedicated onboarding</li>
                     </ul>
-                    <a href="#" class="cta-button">Get Started</a>
-                    <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--secondary);">£5,990/year (save 2 months)</div>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">£5,990/year (save 2 months)</div>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 2rem;">
-                <p>Need a custom solution for larger organizations? <a href="#contact" style="color: var(--accent); font-weight: 600;">Contact us for Enterprise pricing</a></p>
+            <div style="text-align: center; margin-top: 3rem;">
+                <p>Need a custom solution for larger organizations? <a href="#" style="color: var(--primary-green); font-weight: 600;">Contact us for Enterprise pricing</a></p>
             </div>
         </div>
     </section>
 
-    <section id="audit">
+    <section class="audit" id="audit">
         <div class="container">
             <div class="audit-offer">
                 <h3>Start With Our Commercial Intelligence Audit</h3>
-                <p style="max-width: 700px; margin: 0 auto 2rem; opacity: 0.9;">
-                    For £1,500, we'll analyze your recent projects and deliver a precise report showing exactly where money is leaking and how to stop it.
-                </p>
-                <p style="font-weight: 600; margin-bottom: 2rem; font-size: 1.1rem;">
-                    Your £1,500 audit fee is 100% credited toward your annual subscription
-                </p>
-                <a href="#" class="cta-button" style="background-color: white; color: var(--accent);">Book Your Audit Now</a>
+                <p>For £1,500, we'll analyze your recent projects and deliver a precise report showing exactly where money is leaking and how to stop it.</p>
+                <div class="audit-highlight">Your £1,500 audit fee is 100% credited toward your annual subscription</div>
+                <a href="#" class="cta-button" style="background-color: white; color: var(--primary-green);">Book Your Audit Now</a>
             </div>
-            
-            <div class="section-title">
-                <h2>ROI Calculation</h2>
-                <p>How Varix pays for itself many times over</p>
-            </div>
-            
-            <div class="solution-container">
-                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">For a typical £8M turnover subcontractor</h3>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center; padding: 1.5rem;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--success);">£240,000</div>
-                        <div style="color: var(--secondary);">Variation recovery uplift (3% of turnover)</div>
+        </div>
+    </section>
+
+    <section class="results" id="results">
+        <div class="container">
+            <div class="results-container">
+                <div class="results-content">
+                    <h2>Proven Results for Subcontractors</h2>
+                    <p>Varix delivers measurable improvements in margin protection, efficiency, and commercial intelligence retention.</p>
+                    
+                    <div class="results-metrics">
+                        <div class="metric">
+                            <div class="metric-value">+29%</div>
+                            <div class="metric-label">Variation Capture Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">+49%</div>
+                            <div class="metric-label">Submission Timeliness</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">-73%</div>
+                            <div class="metric-label">Commercial Admin Time</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">+2.1pp</div>
+                            <div class="metric-label">Project Profit Margin</div>
+                        </div>
                     </div>
-                    <div style="text-align: center; padding: 1.5rem;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--success);">£11,250</div>
-                        <div style="color: var(--secondary);">Time saved (150 hrs @ £75/hr)</div>
-                    </div>
-                    <div style="text-align: center; padding: 1.5rem;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--success);">£142,000</div>
-                        <div style="color: var(--secondary);">Knowledge retention (avoiding re-ramp costs)</div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.5rem; background-color: rgba(39, 90, 69, 0.05); border-radius: 8px;">
+                        <p style="font-style: italic; margin-bottom: 0.5rem;">"The Varix Commercial Intelligence Audit identified £67K in missed variations from drawing revisions we would have completely written off. Their platform has become our commercial insurance policy."</p>
+                        <p style="font-weight: 600;">— Commercial Director, M&E Subcontractor (£12M turnover)</p>
                     </div>
                 </div>
                 
-                <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #f0f4f8; border-radius: 8px;">
-                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">
-                        Year 1 Value: £413,250+ vs Investment: £9,688
+                <div class="results-visual">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">ROI Calculation</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-light);">
+                            <div>Variation recovery uplift (3% of £8M turnover)</div>
+                            <div style="font-weight: 600; color: var(--primary-green);">£240,000</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-light);">
+                            <div>Time saved (150 hrs @ £75/hr)</div>
+                            <div style="font-weight: 600; color: var(--primary-green);">£11,250</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-light);">
+                            <div>Knowledge retention (avoiding re-ramp costs)</div>
+                            <div style="font-weight: 600; color: var(--primary-green);">£142,000</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-light);">
+                            <div>Dispute risk reduction</div>
+                            <div style="font-weight: 600; color: var(--primary-green);">£20,000+</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 1.5rem 0; border-top: 2px solid var(--primary-green);">
+                            <div style="font-weight: 700;">Total Value vs. £9,688 Investment</div>
+                            <div style="font-weight: 700; color: var(--primary-green);">42:1 ROI</div>
+                        </div>
                     </div>
-                    <div style="font-size: 1.2rem; margin-top: 0.5rem; color: var(--success); font-weight: 600;">
-                        ROI: 42:1
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background-color: #fff8e1; border-radius: 8px; border-left: 4px solid var(--warning);">
-                    <h4 style="color: var(--primary); margin-bottom: 1rem;">Our Performance Guarantee</h4>
-                    <p>If Varix doesn't identify at least £25,000 of recoverable value in your first 90 days, we refund your setup fee and first 3 months' subscription.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" style="background-color: #f0f4f8;">
+    <section class="faq" id="faq">
         <div class="container">
-            <div class="section-title">
+            <div class="section-header">
                 <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common questions about Varix Intelligence implementation and value.</p>
             </div>
             
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">We already use Procore/Asite. Why do we need Varix?</div>
-                    <p>Procore and Asite are excellent systems of record—they organize your documents beautifully. Varix is a system of intelligence that reads what those tools store and acts before value leaks. When a drawing revision gets uploaded to Procore, Varix compares it to the previous version and flags scope changes automatically.</p>
+                    <div class="faq-question"><i class="fas fa-question-circle"></i> We already use Procore/Asite. Why do we need Varix?</div>
+                    <div class="faq-answer">Procore and Asite are excellent systems of record—they organize your documents beautifully. Varix is a system of intelligence that reads what those tools store and acts before value leaks. When a drawing revision gets uploaded to Procore, Varix compares it to the previous version and flags scope changes automatically.</div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">Our team is stretched thin. Do we have time to implement this?</div>
-                    <p>This is the exact reason Varix exists. Implementation requires about 8-10 hours from your commercial team over 30 days. Within 60 days, Varix typically saves 15+ hours per week in manual admin work. The time investment pays back within 6 weeks.</p>
+                    <div class="faq-question"><i class="fas fa-question-circle"></i> Our team is stretched thin. Do we have time to implement this?</div>
+                    <div class="faq-answer">This is the exact reason Varix exists. Implementation requires about 8-10 hours from your commercial team over 30 days. Within 60 days, Varix typically saves 15+ hours per week in manual admin work. The time investment pays back within 6 weeks.</div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">What if our senior QS leaves during implementation?</div>
-                    <p>This is actually Varix's most powerful use case. Every interaction, successful argument, and client behavior pattern is captured in the system. When staff leave, their replacement inherits complete client intelligence, historical strategies, and evidence templates. Instead of a 6-month learning curve, new QSs are effective in 6 weeks.</p>
+                    <div class="faq-question"><i class="fas fa-question-circle"></i> What if our senior QS leaves during implementation?</div>
+                    <div class="faq-answer">This is actually Varix's most powerful use case. Every interaction, successful argument, and client behavior pattern is captured in the system. When staff leave, their replacement inherits complete client intelligence, historical strategies, and evidence templates. Instead of a 6-month learning curve, new QSs are effective in 6 weeks.</div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">How secure is our commercial data?</div>
-                    <p>Bank-grade encryption (AES-256) for data at rest and in transit. UK-based servers (AWS London). Your data never trains AI models accessible to others. We can provide detailed security documentation and facilitate InfoSec review with your IT team.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">What happens if we stop using Varix?</div>
-                    <p>You own your data, always. If you decide to leave, we provide complete data export in all formats, a 90-day transition period with no penalty, and optional knowledge transfer to your new system. No hostage scenarios. No data ransoms.</p>
+                    <div class="faq-question"><i class="fas fa-question-circle"></i> How secure is our commercial data?</div>
+                    <div class="faq-answer">Bank-grade encryption (AES-256) for data at rest and in transit. UK-based servers (AWS London). Your data never trains AI models accessible to others. We can provide detailed security documentation and facilitate InfoSec review with your IT team.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="cta">
+    <section class="cta-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Ready to Stop Margin Leakage?</h2>
-                <p>Book your Commercial Intelligence Audit today and discover exactly what you're missing</p>
-            </div>
-            
-            <div style="text-align: center;">
-                <a href="#" class="cta-button" style="font-size: 1.2rem; padding: 15px 40px;">Book Your 30-Minute Strategy Call</a>
-                <p style="margin-top: 1.5rem; color: var(--secondary);">Get a tailored leakage estimate and implementation roadmap</p>
-            </div>
+            <h2>Ready to Stop Margin Leakage?</h2>
+            <p>Book your Commercial Intelligence Audit today and discover exactly what you're missing.</p>
+            <a href="#" class="cta-button">Book Your 30-Minute Strategy Call</a>
+            <p style="margin-top: 1.5rem; color: #666; font-size: 0.9rem;">Get a tailored leakage estimate and implementation roadmap</p>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="logo" style="margin-bottom: 2rem;">VARIX INTELLIGENCE</div>
-            
-            <div class="footer-links">
-                <a href="#">Home</a>
-                <a href="#problem">The Problem</a>
-                <a href="#solution">The Solution</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <a href="#" class="logo">
+                        <svg class="logo-icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 21L21 0L42 21L21 42L0 21Z" fill="#FFFFFF"/>
+                            <path d="M5 21L21 5L37 21L21 37L5 21Z" fill="#FFFFFF"/>
+                        </svg>
+                        <div class="logo-text">
+                            <div class="logo-varix" style="color: white;">VARIX</div>
+                            <div class="logo-intelligence" style="color: white;">INTELLIGENCE</div>
+                        </div>
+                    </a>
+                    <p>Varix Intelligence is the first Commercial Operating System for construction, combining MRICS expertise with UCL machine learning to stop margin leakage.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#solution">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#results">Case Studies</a></li>
+                        <li><a href="#audit">Commercial Audit</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Webinars</a></li>
+                    </ul>
+                </div>
             </div>
             
-            <p style="margin-bottom: 1rem;">Email: hello@varix.ai • Web: www.varix.ai</p>
-            <p>© 2024 Varix Intelligence Ltd. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>© 2024 Varix Intelligence Ltd. All rights reserved. | Email: hello@varix.ai | Web: www.varix.ai</p>
+            </div>
         </div>
     </footer>
 </body>
