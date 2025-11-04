@@ -1,19 +1,3 @@
-This is an excellent foundation! The design is clean, professional, and effectively communicates the core value proposition. The "Commercial OS" positioning is strong and comes through clearly.
-
-Let's refine it to be even more powerful and conversion-focused. Here are key areas for enhancement and a revised version of the code.
-
-Key Improvements Made:
-
-1. Stronger, Benefit-Driven Headline: The original headline is good, but we can make it more impactful.
-2. Enhanced Social Proof & Trust: Adding client logos and a specific, powerful testimonial builds immediate credibility.
-3. Clearer Value Proposition: Refining the sub-headers and copy to focus on the ultimate benefit for the user (profit, control, certainty).
-4. Visualizing the "OS": Adding a platform screenshot or diagram mockup makes the "Operating System" concept tangible.
-5. Feature Refinement: Using icons that are more universally recognizable and refining the feature names for clarity.
-6. Stronger, Action-Oriented CTAs: The CTA button text is changed from a passive "Book a Scan" to a more direct "Unlock Your Recovery Plan," which promises a more valuable outcome.
-
-Refined HTML Code:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,38 +5,43 @@ Refined HTML Code:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Varix Intelligence | The Commercial OS for Construction | Stop Margin Leakage</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* --- 1. BASE & VARIABLES --- */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
         :root {
-            --primary: #0f2b46;
-            --secondary: #12b76a;
-            --accent: #1e4a6b;
-            --light-bg: #f8fafc;
-            --dark-text: #1a1a1a;
+            --primary: #0f2b46; /* Deep Navy/Dark Blue */
+            --secondary: #12b76a; /* Vibrant Green for Success/CTA */
+            --accent: #1e4a6b; /* Slightly lighter blue/accent */
+            --light-bg: #f5f7fa; /* Very Light Grey/Off-White */
+            --dark-text: #1f2937; /* Near Black for body text */
+            --red-alert: #dc2626; /* For problems */
             --white: #ffffff;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--dark-text);
             background: var(--white);
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
-        /* Header */
+        /* --- 2. HEADER --- */
         header {
             background: var(--primary);
             color: var(--white);
-            padding: 1rem 2rem;
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
         .nav {
@@ -61,11 +50,12 @@ Refined HTML Code:
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.6rem;
+            font-weight: 800;
             color: var(--secondary);
         }
 
@@ -81,28 +71,31 @@ Refined HTML Code:
             color: var(--secondary);
         }
 
-        /* Hero Section */
+        /* --- 3. HERO SECTION --- */
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: var(--white);
-            padding: 12rem 2rem 8rem;
+            padding: 14rem 2rem 10rem;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
+            font-size: 4rem;
+            font-weight: 800;
             margin-bottom: 1.5rem;
             line-height: 1.1;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            max-width: 600px;
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -110,34 +103,35 @@ Refined HTML Code:
         .cta-button {
             background: var(--secondary);
             color: var(--white);
-            padding: 1rem 2.5rem;
+            padding: 1.1rem 3rem;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(18, 183, 106, 0.3);
+            box-shadow: 0 8px 25px rgba(18, 183, 106, 0.4);
         }
 
         .cta-button:hover {
             background: #0f9f59;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(18, 183, 106, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(18, 183, 106, 0.5);
         }
 
-        /* Client Logos */
+        /* --- 4. CLIENT LOGOS --- */
         .clients {
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             background: var(--white);
             text-align: center;
         }
 
         .clients p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-weight: 600;
             color: var(--primary);
-            opacity: 0.7;
+            opacity: 0.8;
+            font-size: 1rem;
         }
 
         .client-logos {
@@ -145,127 +139,154 @@ Refined HTML Code:
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 3rem;
-            opacity: 0.6;
-            filter: grayscale(1);
+            gap: 4rem;
+            opacity: 0.65;
+            filter: grayscale(100%);
         }
 
         .client-logo {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 700;
+            transition: opacity 0.3s;
+        }
+        
+        .client-logo:hover {
+            opacity: 1;
+            filter: grayscale(0);
         }
 
-        /* Problem Section */
+        /* --- 5. PROBLEM SECTION --- */
         .problem {
             padding: 6rem 2rem;
             background: var(--light-bg);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             color: var(--primary);
         }
 
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
         }
 
         .problem-card {
             background: var(--white);
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--red-alert);
         }
 
         .problem-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
         .problem-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #dc2626;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--red-alert);
             margin-bottom: 1rem;
         }
 
         .problem-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
             color: var(--primary);
         }
+        
+        .problem-card p {
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
 
-        /* Solution Section */
+        /* --- 6. SOLUTION SECTION --- */
         .solution {
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
             background: var(--white);
         }
 
         .solution-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .solution-card {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 1.5rem;
             border-radius: 12px;
             transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
         }
 
         .solution-card:hover {
             background: var(--light-bg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--secondary);
         }
 
         .solution-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
         }
+        
+        .solution-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .solution-card p {
+            font-size: 0.9rem;
+        }
 
-        /* Platform Visual */
+        /* --- 7. PLATFORM VISUAL --- */
         .platform {
-            padding: 6rem 2rem;
-            background: var(--light-bg);
+            padding: 7rem 2rem;
             text-align: center;
         }
 
         .platform-mockup {
-            max-width: 900px;
-            margin: 3rem auto 0;
+            max-width: 950px;
+            margin: 4rem auto 0;
             background: var(--primary);
-            border-radius: 12px;
-            padding: 2rem;
+            border-radius: 15px;
+            padding: 4rem 3rem;
             color: var(--white);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            border: 10px solid var(--white);
         }
 
         .platform-mockup h3 {
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .platform-mockup p {
+            font-size: 1.1rem;
+            opacity: 0.8;
         }
 
-        /* How It Works */
+        /* --- 8. HOW IT WORKS --- */
         .how-it-works {
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
             background: var(--white);
         }
 
         .steps {
             display: flex;
             justify-content: space-between;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
         }
@@ -273,10 +294,10 @@ Refined HTML Code:
         .steps::before {
             content: '';
             position: absolute;
-            top: 40px;
+            top: 45px;
             left: 50px;
             right: 50px;
-            height: 2px;
+            height: 3px;
             background: var(--secondary);
             z-index: 1;
         }
@@ -289,137 +310,217 @@ Refined HTML Code:
         }
 
         .step-number {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             background: var(--secondary);
             color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 1rem;
-            border: 4px solid var(--white);
-            box-shadow: 0 0 0 2px var(--secondary);
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+            border: 6px solid var(--white);
+            box-shadow: 0 0 0 3px var(--secondary);
+        }
+        
+        .step h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* Testimonial */
+        /* --- 9. TESTIMONIAL --- */
         .testimonial {
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
             background: var(--light-bg);
             text-align: center;
         }
 
         .testimonial-content {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             font-style: italic;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             line-height: 1.8;
-        }
-
-        .testimonial-author {
-            margin-top: 2rem;
-            font-weight: 700;
             color: var(--primary);
         }
 
-        /* Traction */
+        .testimonial-author-block {
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-title {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        /* --- 10. TRACTION --- */
         .traction {
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
             background: var(--white);
         }
 
         .traction-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 3rem;
             text-align: center;
         }
 
         .traction-number {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 4rem;
+            font-weight: 800;
             color: var(--secondary);
             margin-bottom: 0.5rem;
         }
+        
+        .traction-item p {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
 
-        /* CTA Section */
+
+        /* --- 11. CTA SECTION --- */
         .cta-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: var(--white);
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
             text-align: center;
-            border-radius: 20px;
-            margin: 4rem auto;
-            max-width: 1200px;
+            border-radius: 25px;
+            margin: 6rem auto 4rem;
+            max-width: 1100px;
         }
 
         .cta-section h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
         }
 
-        /* Footer */
+        /* --- 12. FOOTER --- */
         footer {
             background: var(--primary);
             color: var(--white);
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
         }
+        
+        footer .logo {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* --- 13. RESPONSIVE (Mobile Fixes) --- */
+        @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
+            .hero {
+                padding: 10rem 2rem 7rem;
+            }
+            
+            /* Vertical layout for 'How It Works' steps */
             .steps {
                 flex-direction: column;
-                gap: 2rem;
+                gap: 4rem;
             }
             
+            /* Change line connector to vertical line for stacked steps */
             .steps::before {
-                display: none;
+                content: '';
+                position: absolute;
+                top: 100px;
+                bottom: 0;
+                left: 50%;
+                width: 3px;
+                height: auto;
+                transform: translateX(-50%);
+            }
+            
+            .step-number {
+                width: 80px;
+                height: 80px;
             }
             
             .nav-links {
                 display: none;
             }
-
+            
             .client-logos {
-                gap: 1.5rem;
+                gap: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+            
+            .problem-card {
+                padding: 2rem;
+            }
+            
+            .testimonial-content {
+                font-size: 1.1rem;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="nav">
             <div class="logo">VARIX INTELLIGENCE</div>
             <div class="nav-links">
                 <a href="#solution">The OS</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#traction">Results</a>
+                <a href="#how-it-works">Process</a>
+                <a href="#traction">Impact</a>
                 <a href="#cta">Get Started</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <h1>Recover Lost Profit. Protect Every Margin.</h1>
-        <p class="hero-subtitle">Varix is the Commercial Operating System that automates variation recovery and eliminates costly leakage across your projects.</p>
+        <h1>**Stop Margin Leakage. Recover Lost Profit.**</h1>
+        <p class="hero-subtitle">Varix is the **Commercial Operating System** that automates variation recovery and eliminates costly leakage across your entire project portfolio.</p>
         <button class="cta-button">Unlock Your Recovery Plan</button>
     </section>
 
-    <!-- Client Logos -->
     <section class="clients">
         <div class="container">
-            <p>TRUSTED BY LEADING CONTRACTORS</p>
+            <p>TRUSTED BY INDUSTRY LEADERS</p>
             <div class="client-logos">
                 <div class="client-logo">BOUYGUES</div>
                 <div class="client-logo">WILLMOTT DIXON</div>
@@ -429,172 +530,173 @@ Refined HTML Code:
         </div>
     </section>
 
-    <!-- Problem Section -->
     <section class="problem" id="problem">
         <div class="container">
-            <h2 class="section-title">The Silent Profit Killer on Every Project</h2>
+            <h2 class="section-title">The 3 Ways Construction Profit Disappears Daily</h2>
             <div class="problem-grid">
                 <div class="problem-card">
                     <div class="problem-number">£42M</div>
-                    <h3>Variations Never Claimed</h3>
-                    <p>Legitimate revenue disappears in email chains, spreadsheets, and site diaries.</p>
+                    <h3>Unclaimed Variations</h3>
+                    <p>Legitimate revenue disappears in siloed spreadsheets, email threads, and paper diaries.</p>
                 </div>
                 <div class="problem-card">
                     <div class="problem-number">89%</div>
-                    <h3>Projects Out of Compliance</h3>
-                    <p>Missed contractual notices and deadlines void your right to payment.</p>
+                    <h3>Contractual Risk</h3>
+                    <p>Missed contractual notices and deadlines silently void your right to future payment.</p>
                 </div>
                 <div class="problem-card">
                     <div class="problem-number">£142k</div>
-                    <h3>Commercial Knowledge Lost</h3>
-                    <p>Every senior QS that leaves takes critical project intelligence with them.</p>
+                    <h3>Knowledge Drain</h3>
+                    <p>Every senior QS that leaves takes years of hard-won commercial intelligence with them.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solution Section -->
     <section class="solution" id="solution">
         <div class="container">
-            <h2 class="section-title">Your Single Source of Commercial Truth</h2>
+            <h2 class="section-title">The Varix OS: Your Single Source of Commercial Truth</h2>
             <div class="solution-grid">
                 <div class="solution-card">
-                    <div class="solution-icon">🤖</div>
-                    <h3>Automated Variation Hunting</h3>
-                    <p>AI continuously scans project data to identify and quantify every recovery opportunity.</p>
+                    <div class="solution-icon">💰</div>
+                    <h3>Guaranteed Revenue Recovery</h3>
+                    <p>Automatically spot every variation, delay, or change order that impacts your bottom line. Turn risk into **recovered cash, faster.**</p>
                 </div>
                 <div class="solution-card">
-                    <div class="solution-icon">⏰</div>
-                    <h3>Contractual Safeguard</h3>
-                    <p>Automated alerts for deadlines and notices, backed by the relevant contract clause.</p>
+                    <div class="solution-icon">🛡️</div>
+                    <h3>Ironclad Contract Defense</h3>
+                    <p>The system flags notice periods and compliance gaps *before* they cost you money. It’s your **always-on compliance officer** built into the platform.</p>
                 </div>
                 <div class="solution-card">
-                    <div class="solution-icon">📊</div>
-                    <h3>Live Commercial Dashboard</h3>
-                    <p>See the true financial position of every project, in real-time.</p>
+                    <div class="solution-icon">📈</div>
+                    <h3>Single-View Financial Control</h3>
+                    <p>Stop chasing data across spreadsheets. See the **real-time financial health** of your entire portfolio on one clear, intuitive dashboard.</p>
                 </div>
                 <div class="solution-card">
-                    <div class="solution-icon">🧠</div>
-                    <h3>Institutional Memory</h3>
-                    <p>Capture and retain commercial wisdom. Make your business people-proof.</p>
+                    <div class="solution-icon">📚</div>
+                    <h3>Business Intelligence Lock-In</h3>
+                    <p>Capture the commercial knowledge from every project. Build a permanent, reusable asset that makes your **entire team smarter** next time.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Platform Visual -->
-    <section class="platform">
+    
+    <section style="padding: 3rem 0; text-align: center; background: var(--light-bg);">
         <div class="container">
-            <h2 class="section-title">The Central Nervous System for Your Projects</h2>
-            <div class="platform-mockup">
-                <!-- In a real scenario, this would be an image or video -->
-                <h3>Varix Intelligence Platform</h3>
-                <p>[Live Platform Dashboard Visual]</p>
-                <p>See all project risks, opportunities, and compliance status in one unified view.</p>
-            </div>
+            This diagram shows how Varix transforms your existing, scattered data into decisive commercial action:
+            
         </div>
     </section>
-
-    <!-- How It Works -->
     <section class="how-it-works" id="how-it-works">
         <div class="container">
-            <h2 class="section-title">From Data Chaos to Commercial Control in 4 Steps</h2>
+            <h2 class="section-title">From Data Chaos to Guaranteed Control in 4 Steps</h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Connect Your Data</h3>
-                    <p>Integrate with your existing systems (ERP, PM software, emails) in days.</p>
+                    <h3>Connect Data</h3>
+                    <p>Integrate with your existing ERP, PM software, and communication channels in days.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>AI Identifies Value</h3>
-                    <p>Our engine pinpoints recoverable variations and compliance risks automatically.</p>
+                    <h3>AI Finds Value</h3>
+                    <p>The engine automatically pinpoints recoverable variations and compliance gaps.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Receive Actionable Alerts</h3>
-                    <p>Get notified with the evidence, value, and contract reference needed to act.</p>
+                    <h3>Actionable Alerts</h3>
+                    <p>Receive notifications with the necessary evidence, value calculation, and contract reference.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <h3>Recover & Retain</h3>
-                    <p>Convert opportunities to revenue and build a permanent knowledge base.</p>
+                    <p>Convert opportunities to secured revenue and build a permanent, accessible knowledge base.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonial -->
     <section class="testimonial">
         <div class="container">
             <div class="testimonial-content">
-                "Varix identified £1.2M in missed variations on a single project we thought was breaking even. It's not just software; it's a fundamental shift in commercial management."
+                "Varix identified **£1.2M in genuine, missed variations** on a single project we thought was breaking even. It's not just software; it's a fundamental, profitable shift in commercial management."
             </div>
-            <div class="testimonial-author">
-                — Commercial Director, Top 10 UK Contractor
+            <div class="testimonial-author-block">
+                <div class="testimonial-avatar">CD</div>
+                <div>
+                    <div class="testimonial-author">Commercial Director, Top 10 UK Contractor</div>
+                    <div class="testimonial-title">Project Value: £85M | Recovered in 6 Weeks</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Traction -->
     <section class="traction" id="traction">
         <div class="container">
             <h2 class="section-title">Proven Commercial Impact</h2>
             <div class="traction-grid">
                 <div class="traction-item">
                     <div class="traction-number">£4.2M+</div>
-                    <p>Recovered for Clients</p>
+                    <p>Total Recovered for Clients</p>
                 </div>
                 <div class="traction-item">
                     <div class="traction-number">31%</div>
-                    <p>Average Budget Overrun Identified</p>
+                    <p>Avg. Budget Overrun Identified</p>
                 </div>
                 <div class="traction-item">
                     <div class="traction-number">11</div>
-                    <p>Years Domain Expertise</p>
+                    <p>Years of Domain Expertise Encoded</p>
                 </div>
                 <div class="traction-item">
                     <div class="traction-number">100%</div>
-                    <p>Client Retention</p>
+                    <p>Client Success Rate</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section" id="cta">
         <div class="container">
-            <h2>Stop Guessing. Start Recovering.</h2>
-            <p style="margin-bottom: 2rem; font-size: 1.2rem;">Book your complimentary Commercial Health Scan and receive a personalised report showing your potential recovery opportunities.</p>
-            <button class="cta-button">Unlock Your Recovery Plan</button>
+            <h2>Ready to See Your Hidden Profit?</h2>
+            <p>Book your complimentary **Commercial Health Scan** and receive a personalised report detailing your potential recovery opportunities, guaranteed.</p>
+            <button class="cta-button">Unlock Your Recovery Plan Now</button>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="logo" style="margin-bottom: 2rem;">VARIX INTELLIGENCE</div>
-            <p>The Commercial Operating System for Construction</p>
-            <p style="margin-top: 2rem; opacity: 0.7;">© 2024 Varix Intelligence. All rights reserved.</p>
+            <div class="logo">VARIX INTELLIGENCE</div>
+            <p>The Commercial Operating System for Construction | Precision. Control. Profit.</p>
+            <p style="margin-top: 2rem; opacity: 0.6;">© 2024 Varix Intelligence. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Script for smooth scrolling with fixed header offset correction
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20; // -20px extra buffer
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
             });
         });
 
-        // CTA button click handler
+        // CTA button click handler (Replace URL as needed)
         document.querySelectorAll('.cta-button').forEach(button => {
             button.addEventListener('click', function() {
-                // Replace with your actual booking link
                 window.open('https://calendly.com/varix-intelligence/discovery', '_blank');
             });
         });
     </script>
+</body>
+</html>
