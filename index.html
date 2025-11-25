@@ -1,468 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Varix Intelligence | Stop Missing Variations, Protect Your Margin</title>
-  <meta name="description" content="Varix automatically finds variations in drawing revisions, emails and site chats. Stop leaving 5-15% of project value unclaimed. Built for subcontractors.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --primary-green:#275A45;
-      --primary:#0f2b46;
-      --accent:#1e4a6b;
-      --light:#f8f9fa;
-      --bg:#ffffff;
-      --text:#202020;
-      --muted:#6b7280;
-      --border:#eaeaea;
-      --shadow:0 10px 30px rgba(0,0,0,.06);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    a{text-decoration:none;color:inherit}
-    /* Header */
-    header{position:sticky;top:0;z-index:1000;background:var(--bg);box-shadow:0 2px 12px rgba(0,0,0,.05)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand svg{height:40px;width:auto;display:block}
-    .brand .wordmark{display:flex;flex-direction:column;line-height:1}
-    .brand .wordmark .varix{font-weight:800;letter-spacing:.5px;font-size:1.5rem}
-    .brand .wordmark .intel{font-weight:500;font-size:.75rem;letter-spacing:2px;color:#2a2a2a;margin-top:-2px}
-    .links{display:flex;gap:2rem}
-    .links a{font-weight:600;font-size:.95rem;color:#111}
-    .links a:hover{color:var(--primary-green)}
-    .header-cta{display:flex;gap:.75rem;align-items:center}
-    .btn{display:inline-block;padding:.7rem 1.1rem;border-radius:10px;font-weight:800;border:2px solid transparent;cursor:pointer}
-    .btn-primary{background:var(--primary-green);color:#fff;border-color:var(--primary-green)}
-    .btn-primary:hover{background:#1e4635}
-    .btn-ghost{background:transparent;color:var(--primary-green);border-color:var(--primary-green)}
-    .btn-ghost:hover{background:rgba(39,90,69,.06)}
-    /* Hero */
-    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#f8f9fa 0%,#ffffff 60%)}
-    .hero-wrap{padding:96px 0 64px}
-    .hero-badge{display:inline-block;background:rgba(39,90,69,.1);color:var(--primary-green);padding:6px 12px;border-radius:999px;font-weight:800;font-size:.8rem;letter-spacing:.08em}
-    .hero h1{font-size:3rem;line-height:1.15;margin:.65rem 0 1rem}
-    .hero p{font-size:1.15rem;color:#424b57;max-width:720px;margin:0 0 1.4rem}
-    .hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.6rem}
-    .hero-note{margin-top:.6rem;color:#566173;font-size:.95rem}
-    /* Stats */
-    .stats{padding:48px 0;background:var(--bg)}
-    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
-    .stat{text-align:center;padding:24px;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:var(--shadow)}
-    .stat .val{font-size:2.2rem;font-weight:800;color:var(--primary-green);line-height:1;margin-bottom:.35rem}
-    .stat .lab{font-weight:600}
-    /* Problem */
-    .section{padding:72px 0}
-    .section-header{text-align:center;margin-bottom:40px}
-    .section-header h2{font-size:2.2rem;margin:0 0 .6rem}
-    .section-header p{max-width:760px;margin:0 auto;color:#566173}
-    .problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-    .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:28px;box-shadow:var(--shadow)}
-    .card h3{margin:.2rem 0 .7rem}
-    .card p{color:#4f5a66}
-    /* Solution */
-    .solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-    .feature{display:flex;gap:14px;align-items:flex-start;margin:14px 0}
-    .feature .icon{width:46px;height:46px;border-radius:50%;background:rgba(39,90,69,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--primary-green);font-weight:800}
-    .visual{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px;box-shadow:var(--shadow)}
-    .step{display:flex;gap:12px;align-items:center;margin:10px 0}
-    .step .n{width:28px;height:28px;border-radius:999px;background:var(--primary-green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800}
-    /* Pricing */
-    .pricing{background:#f7f9fb;padding:72px 0}
-    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:26px}
-    .plan{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;text-align:center;box-shadow:var(--shadow);position:relative}
-    .plan .name{font-weight:800;font-size:1.1rem;margin-bottom:.4rem}
-    .plan .price{font-size:2.4rem;font-weight:800;color:var(--primary-green);line-height:1}
-    .plan .per{color:#566173;margin-bottom:.9rem}
-    .plan .projects{font-weight:700;margin-bottom:1rem}
-    .features{list-style:none;padding:0;margin:0 0 1.2rem;text-align:left;border-top:1px solid var(--border)}
-    .features li{padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.95rem}
-    .ribbon{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary-green);color:#fff;font-weight:800;font-size:.78rem;padding:6px 14px;border-radius:999px}
-    .note{color:#566173;font-size:.92rem;margin-top:8px}
-    /* Audit CTA */
-    .audit{padding:72px 0;background:#fff}
-    .audit-box{max-width:980px;margin:0 auto;background:linear-gradient(135deg,var(--primary-green),#1e4635);color:#fff;border-radius:14px;padding:42px;text-align:center;box-shadow:0 20px 50px rgba(39,90,69,.25)}
-    .audit-box h3{margin:0 0 .6rem;font-size:1.8rem}
-    .audit-box p{opacity:.95;max-width:760px;margin:0 auto 1.1rem}
-    .credit{display:inline-block;margin-top:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);padding:.5rem .9rem;border-radius:8px;font-weight:700}
-    /* Results */
-    .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
-    .metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:10px}
-    .metric{background:#fff;border:1px solid var(--border);border-radius:10px;text-align:center;padding:18px;box-shadow:var(--shadow)}
-    .metric .v{font-size:1.6rem;font-weight:800;color:var(--primary-green);line-height:1;margin-bottom:6px}
-    .quote{margin-top:18px;background:rgba(39,90,69,.06);border-radius:10px;padding:16px}
-    .roi{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:var(--shadow)}
-    .roi-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)}
-    .roi-row:last-child{border-bottom:0}
-    /* FAQ */
-    .faq-item{border-bottom:1px solid var(--border);padding:16px 0}
-    .faq-q{font-weight:800}
-    .faq-a{color:#4f5a66;margin-top:8px}
-    /* Big CTA */
-    .big-cta{padding:72px 0;background:linear-gradient(135deg,#f8f9fa,#ffffff);text-align:center}
-    /* Footer */
-    footer{background:#111;color:#fff;padding:48px 0 28px}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:24px}
-    .footer p{color:#b8c0cc}
-    .foot-links ul{list-style:none;padding:0}
-    .foot-links li{margin:8px 0}
-    .foot-links a{color:#b8c0cc}
-    .foot-links a:hover{color:#fff}
-    .foot-bottom{border-top:1px solid #333;text-align:center;color:#b8c0cc;padding-top:16px;font-size:.92rem}
-    /* Responsive */
-    @media (max-width:980px){
-      .solution-grid,.results-grid,.footer-grid{grid-template-columns:1fr}
-      .brand .wordmark .varix{font-size:1.3rem}
-    }
-    @media (max-width:640px){
-      .links{display:none}
-      .hero h1{font-size:2.3rem}
-      .plan .price{font-size:2rem}
-      .stat .val{font-size:1.9rem}
-    }
-  </style>
-</head>
-<body>
+Looking at your pricing from both cost and market perspective, I have some concerns and recommendations:
 
-  <!-- HEADER -->
-  <header>
-    <div class="container nav">
-      <a href="#" class="brand" aria-label="Varix Intelligence">
-        <!-- Inline SVG LOGO: double chevrons flanking 'VARIX' (accelerator track motif) -->
-        <svg viewBox="0 0 480 60" role="img" aria-label="Varix Intelligence logo">
-          <!-- Left double chevrons -->
-          <path d="M40 30 L10 5 L18 5 L48 30 L18 55 L10 55 Z" fill="#275A45"/>
-          <path d="M70 30 L40 5 L48 5 L78 30 L48 55 L40 55 Z" fill="#275A45"/>
-          <!-- VARIX word -->
-          <g fill="#1a232b">
-            <text x="95" y="40" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="28">VARIX</text>
-            <text x="190" y="40" font-family="Inter,system-ui,sans-serif" font-weight="600" font-size="12" letter-spacing="4">INTELLIGENCE</text>
-          </g>
-          <!-- Right double chevrons -->
-          <path d="M430 30 L460 5 L452 5 L422 30 L452 55 L460 55 Z" fill="#275A45"/>
-          <path d="M400 30 L430 5 L422 5 L392 30 L422 55 L430 55 Z" fill="#275A45"/>
-        </svg>
-        <span class="wordmark" aria-hidden="true" style="display:none"></span>
-      </a>
+Current Pricing Analysis: £500/site/month
 
-      <nav class="links">
-        <a href="#solution">How It Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#results">Results</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+Potential Issues:
 
-      <div class="header-cta">
-        <a class="btn btn-ghost" href="https://app.varixintelligence.com/login" target="_blank" rel="noopener">Login</a>
-        <a class="btn btn-primary" href="#audit">Find Lost Variations</a>
+1. High barrier to entry - £6,000/year per site is significant for smaller subcontractors
+2. Competitive positioning - Higher than many construction tech solutions
+3. Adoption friction - Hard to get multiple sites without proven ROI
+
+Market Reality Check
+
+What the construction market typically pays:
+
+· Procore: £££ per user/month (but company-wide)
+· Autodesk Construction Cloud: Similar to Procore
+· Document management systems: £50-200/user/month
+· Niche variation tools: £150-400/project/month
+
+Subcontractor psychology:
+
+· Very price-sensitive
+· Need immediate, proven ROI
+· Prefer pay-as-you-go or success-based pricing
+· Start small, then scale
+
+Cost Considerations
+
+Based on your AI/ML costs (UCL models, data processing), I'd estimate:
+
+· Base infrastructure: £50-100/site/month
+· Support & operations: £50-100/site/month
+· AI processing costs: £50-150/site/month (depending on volume)
+· Profit margin: You'd want 40-60% gross margin
+
+Recommended Pricing Strategy
+
+```html
+<!-- REVISED PRICING SECTION -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <h2>Pay Only When We Find Your Missing Money</h2>
+      <p>No upfront costs. No long-term contracts. Proven ROI or no cost.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- TIER 1: Entry Point -->
+      <div class="plan">
+        <div class="ribbon">MOST POPULAR</div>
+        <div class="name">Project Discovery</div>
+        <div class="price">£997</div>
+        <div class="per">one-time per project</div>
+        <div class="projects">Find what you've already missed</div>
+        <ul class="features">
+          <li>90-day historical analysis</li>
+          <li>Comprehensive variation audit</li>
+          <li>Evidence pack for claims</li>
+          <li>ROI guarantee: 3x or money back</li>
+          <li>No subscription required</li>
+        </ul>
+        <a class="btn btn-primary" href="#audit">Start Project Audit</a>
+        <div class="note">Average recovery: £42,000 per project</div>
+      </div>
+
+      <!-- TIER 2: Monthly Option -->
+      <div class="plan">
+        <div class="name">Monthly Monitoring</div>
+        <div class="price">£295</div>
+        <div class="per">per month per site</div>
+        <div class="projects">Continuous protection</div>
+        <ul class="features">
+          <li>Real-time variation detection</li>
+          <li>Drawing revision monitoring</li>
+          <li>Notice period alerts</li>
+          <li>Email & chat monitoring</li>
+          <li>Monthly recovery reports</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://calendly.com/varix-intelligence/discovery" target="_blank" rel="noopener">Start Free Trial</a>
+        <div class="note">Cancel anytime • 30-day money back</div>
+      </div>
+
+      <!-- TIER 3: Committed -->
+      <div class="plan">
+        <div class="name">Annual Commitment</div>
+        <div class="price">£195</div>
+        <div class="per">per month per site</div>
+        <div class="projects">Best value</div>
+        <ul class="features">
+          <li>Everything in Monthly</li>
+          <li>Priority support</li>
+          <li>Custom AI training</li>
+          <li>Dedicated account manager</li>
+          <li>Advanced analytics</li>
+        </ul>
+        <a class="btn btn-primary" href="https://calendly.com/varix-intelligence/discovery" target="_blank" rel="noopener">Save 34% Annually</a>
+        <div class="note">£2,340/year (vs £3,540 monthly)</div>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="plan">
+        <div class="name">Enterprise</div>
+        <div class="price">Custom</div>
+        <div class="per">multiple sites</div>
+        <div class="projects">Company-wide deployment</div>
+        <ul class="features">
+          <li>Volume discounts (from £150/site)</li>
+          <li>API integrations</li>
+          <li>Custom workflows</li>
+          <li>White-label reporting</li>
+          <li>Success-based pricing available</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://calendly.com/varix-intelligence/discovery" target="_blank" rel="noopener">Talk to Sales</a>
+        <div class="note">Includes free commercial audit</div>
       </div>
     </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-wrap">
-      <span class="hero-badge">MRICS-Guided Intelligence + UCL Machine Learning</span>
-      <h1>Stop Missing Variations You've Already Earned</h1>
-      <p>Varix automatically finds variations in drawing revisions, emails and site chats that your team is missing. Recover 5-15% of project value currently lost to informal instructions and unnoticed changes.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="#audit">Find Your Missing Variations</a>
-        <a class="btn btn-ghost" href="#solution">See How It Works</a>
-      </div>
-      <div class="hero-note">Built for drylining, M&E, fit-out and civils subcontractors on JCT/NEC contracts</div>
+    <!-- SUCCESS-BASED OPTION -->
+    <div style="text-align:center; margin-top:40px; padding:30px; background:rgba(39,90,69,.05); border-radius:12px;">
+      <h3 style="margin-bottom:10px;">Success-Based Pricing Available</h3>
+      <p style="max-width:600px; margin:0 auto 20px;">For larger contractors, we can work on a percentage of recovered variations. You pay nothing unless we find money you've missed.</p>
+      <a class="btn btn-primary" href="https://calendly.com/varix-intelligence/discovery" target="_blank" rel="noopener">Learn About Success-Based Pricing</a>
     </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat"><div class="val">5–15%</div><div class="lab">Project value lost to missed variations</div></div>
-        <div class="stat"><div class="val">67%</div><div class="lab">Variations submitted after deadline</div></div>
-        <div class="stat"><div class="val">£184K</div><div class="lab">Average recovery per project audit</div></div>
-        <div class="stat"><div class="val">27</div><div class="lab">Missed variations found per project</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="section" id="problem" style="background:#f7f9fb">
-    <div class="container">
-      <div class="section-header">
-        <h2>The Variation Black Hole</h2>
-        <p>Informal instructions, drawing revisions, and site changes disappear into the daily chaos. By the time you notice, the notice period has expired.</p>
-      </div>
-      <div class="problem-grid">
-        <div class="card">
-          <h3>"While You're Here..." Requests</h3>
-          <p>Client instructions in corridors, WhatsApp messages, and casual emails never make it to formal variations. The work gets done but never claimed.</p>
-        </div>
-        <div class="card">
-          <h3>Drawing Revision Blindspots</h3>
-          <p>Rev C vs Rev D changes get buried in document management systems. Your team misses added walls, changed specs, and deleted elements.</p>
-        </div>
-        <div class="card">
-          <h3>Notice Period Nightmares</h3>
-          <p>7-day JCT windows close while you're focused on delivery. Entitlement vanishes before you even know there's a claim.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUTION -->
-  <section class="section" id="solution">
-    <div class="container">
-      <div class="solution-grid">
-        <div>
-          <div class="section-header" style="text-align:left;margin-bottom:18px">
-            <h2>Your 24/7 Variation Hunter</h2>
-            <p>Varix automatically scans your projects to find variations as they happen, track deadlines, and build evidence packs.</p>
-          </div>
-          <div class="feature">
-            <div class="icon">🔍</div>
-            <div><strong>Automated Drawing Analysis</strong><br><span style="color:#4f5a66">Compares drawing revisions to flag scope changes in stud walls, ceilings, M&E routes.</span></div>
-          </div>
-          <div class="feature">
-            <div class="icon">📧</div>
-            <div><strong>Email & Chat Monitoring</strong><br><span style="color:#4f5a66">Reads Outlook, WhatsApp and Procore for "while you're here" instructions and variation triggers.</span></div>
-          </div>
-          <div class="feature">
-            <div class="icon">⏰</div>
-            <div><strong>Notice Period Protection</strong><br><span style="color:#4f5a66">Tracks JCT/NEC deadlines and alerts you with pre-drafted notices before time bars hit.</span></div>
-          </div>
-        </div>
-        <div class="visual">
-          <h3 style="margin:0 0 10px">How Varix Finds Your Missing Money</h3>
-          <div class="step"><div class="n">1</div><div><strong>Drawing Revision Detected</strong><br><span style="color:#4f5a66">AI spots added partitions in Rev D that weren't in Rev C.</span></div></div>
-          <div class="step"><div class="n">2</div><div><strong>Email Evidence Linked</strong><br><span style="color:#4f5a66">Finds client instruction from 3 weeks ago authorizing the change.</span></div></div>
-          <div class="step"><div class="n">3</div><div><strong>Deadline Tracked</strong><br><span style="color:#4f5a66">Counts down 7-day notice period with daily reminders.</span></div></div>
-          <div class="step"><div class="n">4</div><div><strong>Evidence Pack Compiled</strong><br><span style="color:#4f5a66">Auto-generates variation claim with drawings, emails and costs.</span></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <h2>Stop Leaving Money on the Table</h2>
-        <p>Simple project-based pricing. Start with one job, prove the value, then scale across your business.</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="plan">
-          <div class="name">Starter</div>
-          <div class="price">£49</div>
-          <div class="per">per month</div>
-          <div class="projects">1 active project</div>
-          <ul class="features">
-            <li>Drawing revision analysis</li>
-            <li>Email monitoring</li>
-            <li>Notice period alerts</li>
-            <li>Basic evidence packs</li>
-          </ul>
-          <a class="btn btn-ghost" href="https://app.varixintelligence.com/signup?plan=starter" target="_blank" rel="noopener">Start Free</a>
-          <div class="note">£490/yr — save 2 months</div>
-        </div>
-
-        <div class="plan">
-          <div class="ribbon">MOST POPULAR</div>
-          <div class="name">Professional</div>
-          <div class="price">£99</div>
-          <div class="per">per month</div>
-          <div class="projects">3 active projects</div>
-          <ul class="features">
-            <li>Everything in Starter</li>
-            <li>WhatsApp/Procore monitoring</li>
-            <li>Advanced evidence compilation</li>
-            <li>Priority support</li>
-          </ul>
-          <a class="btn btn-primary" href="https://app.varixintelligence.com/signup?plan=pro" target="_blank" rel="noopener">Start Free</a>
-          <div class="note">£990/yr — save 2 months</div>
-        </div>
-
-        <div class="plan">
-          <div class="name">Team</div>
-          <div class="price">£599</div>
-          <div class="per">per month</div>
-          <div class="projects">10 active projects</div>
-          <ul class="features">
-            <li>Everything in Professional</li>
-            <li>Team workspace</li>
-            <li>Advanced analytics</li>
-            <li>Onboarding included</li>
-          </ul>
-          <a class="btn btn-primary" href="https://calendly.com/varix-intelligence/discovery" target="_blank" rel="noopener">Book Demo</a>
-          <div class="note">£5,990/yr — save 2 months</div>
-        </div>
-
-        <div class="plan">
-          <div class="name">Enterprise</div>
-          <div class="price">Custom</div>
-          <div class="per">unlimited projects</div>
-          <div class="projects">Company-wide deployment</div>
-          <ul class="features">
-            <li>Full platform customization</li>
-            <li>API integrations</li>
-            <li>Dedicated success manager</li>
-            <li>Custom AI training</li>
-          </ul>
-          <a class="btn btn-ghost" href="https://calendly.com/varix-intelligence/discovery" target="_blank" rel="noopener">Talk to Sales</a>
-          <div class="note">Includes Commercial Health Audit</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AUDIT CTA -->
-  <section class="audit" id="audit">
-    <div class="container">
-      <div class="audit-box">
-        <h3>Find Your Missing Variations in 48 Hours</h3>
-        <p>Our Commercial Intelligence Audit analyzes one of your projects and shows you exactly which variations you missed and how much revenue Varix would have recovered.</p>
-        <span class="credit">£1,995 — fully credited toward annual subscription</span><br><br>
-        <a class="btn btn-primary" href="https://calendly.com/varix-intelligence/discovery" target="_blank" rel="noopener">Book Your Free Variation Audit</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- RESULTS -->
-  <section class="section" id="results" style="background:#f7f9fb">
-    <div class="container">
-      <div class="results-grid">
-        <div>
-          <div class="section-header" style="text-align:left;margin-bottom:14px">
-            <h2>Proven Variation Recovery</h2>
-            <p>Subcontractors using Varix capture variations they previously missed and protect their entitlement.</p>
-          </div>
-          <div class="metrics">
-            <div class="metric"><div class="v">+29%</div><div>More variations captured</div></div>
-            <div class="metric"><div class="v">100%</div><div>Notices submitted on time</div></div>
-            <div class="metric"><div class="v">-15 hrs</div><div>Weekly admin saved</div></div>
-            <div class="metric"><div class="v">+2.1%</div><div>Project margin increase</div></div>
-          </div>
-          <div class="quote">
-            “Varix found £84,200 in variations we'd completely missed across three projects. The drawing revision analysis alone paid for the system 10x over.”<br>
-            <strong>— Commercial Director, Drylining Subcontractor (£18M turnover)</strong>
-          </div>
-        </div>
-        <div class="roi" aria-label="ROI illustration">
-          <h3 style="margin:0 0 8px">Typical First-Year ROI</h3>
-          <div class="roi-row"><span>Variation recovery (3.5% of £6M)</span><span style="font-weight:800;color:var(--primary-green)">£210,000</span></div>
-          <div class="roi-row"><span>Admin time saved (600 hrs @ £65/hr)</span><span style="font-weight:800;color:var(--primary-green)">£39,000</span></div>
-          <div class="roi-row"><span>Dispute reduction</span><span style="font-weight:800;color:var(--primary-green)">£25,000</span></div>
-          <div class="roi-row"><span>Knowledge retention</span><span style="font-weight:800;color:var(--primary-green)">£48,000</span></div>
-          <div class="roi-row" style="border-top:2px solid var(--primary-green);margin-top:6px;padding-top:12px"><span style="font-weight:800">Total Value vs. Investment</span><span style="font-weight:800;color:var(--primary-green)">32:1 ROI</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <h2>Frequently Asked Questions</h2>
-        <p>Everything you need to know about automating variation capture.</p>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How does Varix find variations we're missing?</div>
-        <div class="faq-a">We scan your drawing revisions, emails, WhatsApp chats, and project management systems. Our AI looks for scope changes, informal instructions, and variation triggers that typically get buried in daily operations.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">We use ChalkString/Procore/Asite. Do we need Varix?</div>
-        <div class="faq-a">Yes. Those are document management systems - they store what you already know about. Varix is a margin hunting system - it finds variations you don't know about and protects your entitlement automatically.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What drawing formats can you analyze?</div>
-        <div class="faq-a">We work with PDF, DWG, and all major BIM formats. The system compares revisions to flag additions, deletions, and modifications to your scope.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How secure is our project data?</div>
-        <div class="faq-a">Bank-grade encryption, UK/EU data hosting, and strict access controls. Your data never trains models accessible to other customers.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BIG CTA -->
-  <section class="big-cta" id="cta">
-    <div class="container">
-      <h2>Ready to Stop Missing Variations?</h2>
-      <p>Start with a free audit to see exactly what you're missing, or begin a trial to automate variation capture on your live projects.</p>
-      <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
-        <a class="btn btn-primary" href="#audit">Find My Missing Variations</a>
-        <a class="btn btn-ghost" href="https://app.varixintelligence.com/signup" target="_blank" rel="noopener">Start Free Trial</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <!-- Footer logo variant: smaller chevrons + wordmark -->
-          <div class="brand" style="margin-bottom:10px">
-            <svg viewBox="0 0 240 40" style="height:32px">
-              <path d="M30 20 L10 5 L14 5 L34 20 L14 35 L10 35 Z" fill="#ffffff"/>
-              <path d="M50 20 L30 5 L34 5 L54 20 L34 35 L30 35 Z" fill="#ffffff"/>
-              <text x="66" y="26" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="16" fill="#ffffff">VARIX</text>
-              <text x="120" y="26" font-family="Inter,system-ui,sans-serif" font-weight="600" font-size="8" letter-spacing="3" fill="#ffffff">INTELLIGENCE</text>
-              <path d="M210 20 L230 5 L226 5 L206 20 L226 35 L230 35 Z" fill="#ffffff"/>
-              <path d="M190 20 L210 5 L206 5 L186 20 L206 35 L210 35 Z" fill="#ffffff"/>
-            </svg>
-          </div>
-          <p>Varix Intelligence automatically finds missed variations in drawing revisions, emails and site communications. Stop leaving 5-15% of project value unclaimed.</p>
-        </div>
-        <div class="foot-links">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="#solution">Variation Capture</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#results">Case Studies</a></li>
-            <li><a href="#audit">Free Audit</a></li>
-          </ul>
-        </div>
-        <div class="foot-links">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="https://www.varixintelligence.com" target="_blank" rel="noopener">Website</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="mailto:hello@varixintelligence.com">Contact</a></li>
-            <li><a href="#">Security</a></li>
-          </ul>
-        </div>
-        <div class="foot-links">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Drawing Revision Guide</a></li>
-            <li><a href="#">JCT Notice Periods</a></li>
-            <li><a href="#">Variation Playbook</a></li>
-            <li><a href="#">Case Studies</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="foot-bottom">© 2025 Varix Intelligence Ltd. All rights reserved. • hello@varixintelligence.com • varixintelligence.com</div>
-    </div>
-  </footer>
-
-  <script>
-    // Smooth scroll accounting for sticky header
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id=a.getAttribute('href'); if(id==="#"||id.length<2) return;
-        e.preventDefault();
-        const h=document.querySelector('header').offsetHeight||70;
-        const el=document.querySelector(id);
-        if(!el) return;
-        const y=el.getBoundingClientRect().top+window.pageYOffset-h-10;
-        window.scrollTo({top:y,behavior:'smooth'});
-      });
-    });
-  </script>
-</body>
-</html>
+  </div>
+</section>
 ```
+
+Why This Approach Works Better:
+
+1. Lower Barrier to Entry (£295 vs £500)
+2. Multiple Entry Points (one-time, monthly, annual)
+3. ROI-Focused Messaging (prove value first)
+4. Success-Based Option (removes risk for customers)
+5. Clear Value Progression (start small, then commit)
+
+Financial Projections:
+
+At £295/month:
+
+· Break-even: ~5-7 sites (covering AI costs + operations)
+· Profitability: 10+ sites
+· Enterprise: 20+ sites at £150-200 each
+
+Compared to £500:
+
+· Higher conversion rate (3-5x more signups)
+· Faster market penetration
+· Better word-of-mouth from smaller contractors
+
+Additional Recommendation:
+
+Add a "Pay from Recoveries" option:
+
+· You cover the first £2,000 in fees
+· Customer pays 15% of recovered variations up to 2x the annual subscription
+· Complete risk reversal for them
+
+This approach would likely generate more overall revenue through higher adoption rates while still being profitable given your AI cost structure.
