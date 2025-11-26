@@ -1,22 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Varix – Never miss a drawing change again</title>
   <meta name="description" content="Upload two revisions. Varix highlights every change + net quantities in seconds. £399/mo founder pricing – first 15 only.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root { --green: #275A45; --green-dark: #1e4635; }
-    body { font-family: Inter, sans-serif; background: #fff; color: #0f172a; }
-    .btn-primary { @apply bg-[#275A45] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#1e4635] transition; }
-    .btn-outline { @apply border-2 border-[#275A45] text-[#275A45] font-bold py-3 px-6 rounded-lg hover:bg-[#275A45] hover:text-white transition; }
-    .badge { @apply inline-block bg-green-50 text-[#275A45] px-3 py-1 rounded-full text-xs font-bold tracking-wider; }
+    :root {
+      --green: #275A45;
+      --green-dark: #1e4635;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #0f172a;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 150ms ease;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: var(--green-dark);
+    }
+    .btn-outline {
+      border: 2px solid var(--green);
+      color: var(--green);
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+      text-decoration: none;
+    }
+    .btn-outline:hover {
+      background: var(--green);
+      color: #ffffff;
+      border-color: var(--green-dark);
+    }
+    .badge {
+      display: inline-block;
+      background: #ecfdf3;
+      color: var(--green);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
   </style>
 </head>
 
-<body>
+<body class="min-h-screen">
 
   <!-- HERO -->
   <section class="max-w-5xl mx-auto px-6 pt-16 pb-20 text-center">
@@ -31,47 +78,104 @@
     </p>
 
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <div class="text-5xl font-black text-[#275A45]">£399<span class="text-2xl text-gray-600">/month</span></div>
-      <div class="text-gray-600">Founder pricing · First 15 customers only</div>
+      <div class="text-5xl font-black text-[var(--green)]">
+        £399<span class="text-2xl text-gray-600">/month</span>
+      </div>
+      <div class="text-gray-600">
+        Founder pricing · First 15 customers only
+      </div>
     </div>
 
     <div class="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
-      <a href="https://app.varixintelligence.com/signup" class="btn-primary text-lg">Start free trial</a>
-      <a href="#demo" class="btn-outline text-lg">See demo ↓</a>
+      <a href="https://app.varixintelligence.com/signup" class="btn-primary text-lg">
+        Start free trial – no card required
+      </a>
+      <a href="#demo" class="btn-outline text-lg">
+        See demo ↓
+      </a>
     </div>
 
-    <p class="mt-6 text-sm text-gray-500">9 of 15 founder spots taken</p>
+    <p class="mt-6 text-sm text-gray-500">
+      Only 6 of 15 founder spots left
+    </p>
   </section>
 
   <!-- PAIN -->
   <section class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold text-center mb-10">Drawing revisions are where margin disappears</h2>
+    <h2 class="text-3xl font-bold text-center mb-10">
+      Drawing revisions are where margin disappears
+    </h2>
 
     <div class="grid md:grid-cols-2 gap-8">
-      <div class="flex gap-4"><div class="mt-1 text-red-600 text-2xl">!</div><div><strong class="block text-xl">Missed changes</strong><p class="text-gray-600 mt-1">Rev 114 → Rev 121 had 63 changes. 4 were claimable.</p></div></div>
-      <div class="flex gap-4"><div class="mt-1 text-red-600 text-2xl">!</div><div><strong class="block text-xl">Notice periods expire</strong><p class="text-gray-600 mt-1">Entitlement gone before you see it.</p></div></div>
-      <div class="flex gap-4"><div class="mt-1 text-red-600 text-2xl">!</div><div><strong class="block text-xl">Changes hidden as coordination</strong><p class="text-gray-600 mt-1">Work done, never claimed.</p></div></div>
-      <div class="flex gap-4"><div class="mt-1 text-red-600 text-2xl">!</div><div><strong class="block text-xl">1–4% lost</strong><p class="text-gray-600 mt-1">£100k–£400k on a £10M package.</p></div></div>
+      <div class="flex gap-4">
+        <div class="mt-1 text-red-600 text-2xl">!</div>
+        <div>
+          <strong class="block text-xl">Missed changes</strong>
+          <p class="text-gray-600 mt-1">
+            Rev 114 → Rev 121 had 63 changes. 4 were claimable.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="mt-1 text-red-600 text-2xl">!</div>
+        <div>
+          <strong class="block text-xl">Notice periods expire</strong>
+          <p class="text-gray-600 mt-1">
+            Entitlement gone before you see it.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="mt-1 text-red-600 text-2xl">!</div>
+        <div>
+          <strong class="block text-xl">Changes hidden as coordination</strong>
+          <p class="text-gray-600 mt-1">
+            Work done, never claimed.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="mt-1 text-red-600 text-2xl">!</div>
+        <div>
+          <strong class="block text-xl">1–4% lost</strong>
+          <p class="text-gray-600 mt-1">
+            £100k–£400k on a £10M package.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="bg-gray-50 py-20">
+  <section class="bg-slate-50 py-20">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-12">Three clicks</h2>
+      <h2 class="text-3xl font-bold mb-12">
+        Three clicks
+      </h2>
 
       <div class="grid md:grid-cols-3 gap-10">
-        <div class="bg-white p-8 rounded-2xl shadow-sm border">
-          <div class="w-16 h-16 bg-[#275A45] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6">1</div>
-          <h3 class="text-xl font-bold mb-3">Upload two revisions</h3>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+          <div class="w-16 h-16 bg-[var(--green)] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6">
+            1
+          </div>
+          <h3 class="text-xl font-bold mb-1">Upload two revisions</h3>
         </div>
-        <div class="bg-white p-8 rounded-2xl shadow-sm border">
-          <div class="w-16 h-16 bg-[#275A45] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6">2</div>
-          <h3 class="text-xl font-bold mb-3">See every change</h3>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+          <div class="w-16 h-16 bg-[var(--green)] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6">
+            2
+          </div>
+          <h3 class="text-xl font-bold mb-1">See every change</h3>
         </div>
-        <div class="bg-white p-8 rounded-2xl shadow-sm border">
-          <div class="w-16 h-16 bg-[#275A45] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6">3</div>
-          <h3 class="text-xl font-bold mb-3">Export & claim</h3>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+          <div class="w-16 h-16 bg-[var(--green)] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6">
+            3
+          </div>
+          <h3 class="text-xl font-bold mb-1">Export & claim</h3>
         </div>
       </div>
     </div>
@@ -79,61 +183,118 @@
 
   <!-- DEMO -->
   <section id="demo" class="py-20 max-w-5xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-8">30-second demo</h2>
-    <div class="bg-gray-100 border-2 border-dashed rounded-xl w-full h-96 flex items-center justify-center">
-      <p class="text-gray-500">Demo video here</p>
+    <h2 class="text-3xl font-bold mb-8">
+      30-second demo
+    </h2>
+
+    <div class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl w-full h-96 flex items-center justify-center">
+      <p class="text-gray-500">
+        Demo video here
+      </p>
     </div>
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="bg-gray-50 py-20">
+  <section class="bg-slate-50 py-20">
     <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-      <div class="bg-white p-8 rounded-2xl shadow border">
-        <p class="text-lg italic mb-6">“Found a £27k ceiling grid change we’d missed.”</p>
-        <p class="font-semibold">— Commercial Manager, Drylining subcontractor</p>
+
+      <div class="bg-white p-8 rounded-2xl shadow border border-slate-200">
+        <p class="text-lg italic mb-6">
+          “Found a £27k ceiling grid change we’d completely missed. Would’ve cost us at final account.”
+        </p>
+        <p class="font-semibold">
+          — Commercial Manager, Drylining subcontractor
+        </p>
       </div>
-      <div class="bg-white p-8 rounded-2xl shadow border">
-        <p class="text-lg italic mb-6">“Spotted 7 claimable variations in week one.”</p>
-        <p class="font-semibold">— QS, M&E contractor</p>
+
+      <div class="bg-white p-8 rounded-2xl shadow border border-slate-200">
+        <p class="text-lg italic mb-6">
+          “Spotted 7 claimable variations in week one. We’d have never picked them up from the revision pack.”
+        </p>
+        <p class="font-semibold">
+          — QS, M&E contractor
+        </p>
       </div>
+
+      <div class="bg-white p-8 rounded-2xl shadow border border-slate-200">
+        <p class="text-lg italic mb-6">
+          “Revised drawings for a unit merge — extra drywall, doors, heating. Would’ve taken hours manually. This did it in seconds.”
+        </p>
+        <p class="font-semibold">
+          — Commercial QS on major residential works
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-2xl shadow border border-slate-200">
+        <p class="text-lg italic mb-6">
+          “Dropped a flooring variation by £30k after catching an over-allowance from layout changes. Paid for itself instantly.”
+        </p>
+        <p class="font-semibold">
+          — Senior QS working across £100M+ projects
+        </p>
+      </div>
+
     </div>
   </section>
 
   <!-- PRICING -->
   <section class="py-20 text-center">
     <div class="max-w-2xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6">£399/month</h2>
+      <h2 class="text-3xl font-bold mb-6">
+        £399/month
+      </h2>
 
-      <div class="bg-white border-2 border-gray-200 rounded-3xl p-10 shadow-xl">
-        <div class="text-6xl font-black text-[#275A45] mb-4">£399<span class="text-2xl text-gray-600">/month</span></div>
+      <div class="bg-white border-2 border-slate-200 rounded-3xl p-10 shadow-xl">
+        <div class="text-6xl font-black text-[var(--green)] mb-4">
+          £399<span class="text-2xl text-gray-600">/month</span>
+        </div>
 
         <ul class="text-left space-y-4 mb-8">
-          <li class="flex items-center gap-3"><span class="text-[#275A45] font-bold">✓</span> Unlimited comparisons</li>
-          <li class="flex items-center gap-3"><span class="text-[#275A45] font-bold">✓</span> Unlimited team members</li>
-          <li class="flex items-center gap-3"><span class="text-[#275A45] font-bold">✓</span> PDF, DWG, image support</li>
-          <li class="flex items-center gap-3"><span class="text-[#275A45] font-bold">✓</span> Excel + PDF export</li>
+          <li class="flex items-center gap-3">
+            <span class="text-[var(--green)] font-bold text-xl">✓</span>
+            <span>Unlimited comparisons</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-[var(--green)] font-bold text-xl">✓</span>
+            <span>Unlimited team members</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-[var(--green)] font-bold text-xl">✓</span>
+            <span>PDF, DWG, image support</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="text-[var(--green)] font-bold text-xl">✓</span>
+            <span>Excel + PDF export</span>
+          </li>
         </ul>
 
-        <a href="https://app.varixintelligence.com/signup" class="btn-primary block text-xl py-4">Start free trial</a>
-        <p class="mt-4 text-sm text-gray-500">15 founder spots · 9 gone</p>
+        <a href="https://app.varixintelligence.com/signup" class="btn-primary block text-xl py-4">
+          Start free trial – no card required
+        </a>
+
+        <p class="mt-4 text-sm text-gray-500">
+          Only 6 of 15 founder spots left
+        </p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-gray-900 text-white py-12 text-center">
+  <footer class="bg-slate-900 text-white py-12 text-center">
     <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
 
       <div class="flex items-center gap-3">
-        <svg viewBox="0 0 40 40" class="h-10">
-          <path d="M8 20 L2 6 L6 6 L12 20 L6 34 L2 34 Z" fill="#275A45"/>
-          <path d="M18 20 L8 6 L12 6 L18 20 L12 34 L8 34 Z" fill="#275A45"/>
+        <svg viewBox="0 0 40 40" class="h-10" aria-hidden="true">
+          <path d="M8 20 L2 6 L6 6 L12 20 L6 34 L2 34 Z" fill="#275A45" />
+          <path d="M18 20 L8 6 L12 6 L18 20 L12 34 L8 34 Z" fill="#275A45" />
           <text x="22" y="28" font-family="Inter" font-weight="800" font-size="14" fill="white">VARIX</text>
         </svg>
         <span class="font-bold">Varix Intelligence</span>
       </div>
 
-      <p class="text-sm text-gray-400">© 2025 Varix Intelligence Ltd • London</p>
+      <p class="text-sm text-slate-400">
+        © 2025 Varix Intelligence Ltd • London
+      </p>
     </div>
   </footer>
 
