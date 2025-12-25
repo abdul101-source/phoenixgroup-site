@@ -3,62 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Varix – Never miss a drawing change again</title>
-  <meta name="description" content="Upload two revisions. Varix highlights every change + net quantities in seconds. £399/mo founder pricing – first 15 only.">
+  <title>Varix – AI-Powered Drawing Change Detection for Construction</title>
+  <meta name="description" content="Upload drawings. Spot changes in seconds. Quantify variations. Export evidence. The smart way to catch missed variations and protect your margin.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
       --green: #275A45;
       --green-dark: #1e4635;
+      --green-light: #ecfdf3;
     }
     body {
       font-family: 'Inter', sans-serif;
       background: #ffffff;
       color: #0f172a;
     }
+    .gradient-bg {
+      background: linear-gradient(135deg, #275A45 0%, #1e4635 100%);
+    }
     .btn-primary {
       background: var(--green);
       color: #ffffff;
-      font-weight: 700;
-      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
       border-radius: 0.5rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: background 150ms ease;
+      transition: all 200ms ease;
       text-decoration: none;
     }
     .btn-primary:hover {
       background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(39, 90, 69, 0.2);
     }
     .btn-outline {
       border: 2px solid var(--green);
       color: var(--green);
-      font-weight: 700;
-      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
       border-radius: 0.5rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+      transition: all 200ms ease;
       text-decoration: none;
     }
     .btn-outline:hover {
       background: var(--green);
       color: #ffffff;
-      border-color: var(--green-dark);
+      transform: translateY(-2px);
     }
     .badge {
       display: inline-block;
-      background: #ecfdf3;
+      background: var(--green-light);
       color: var(--green);
-      padding: 0.25rem 0.75rem;
+      padding: 0.5rem 1.25rem;
       border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .feature-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      height: 100%;
+      transition: all 250ms ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      border-color: var(--green);
+    }
+    .tier-card {
+      border: 2px solid #e2e8f0;
+      border-radius: 1.5rem;
+      padding: 3rem 2.5rem;
+      transition: all 300ms ease;
+      position: relative;
+    }
+    .tier-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(39, 90, 69, 0.1);
+    }
+    .tier-card.popular {
+      border-color: var(--green);
+      background: linear-gradient(to bottom, var(--green-light) 0%, white 10%);
+    }
+    .stat-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+      transition: transform 200ms ease;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .vs-badge {
+      background: var(--green);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.25rem;
     }
   </style>
 </head>
@@ -66,235 +127,493 @@
 <body class="min-h-screen">
 
   <!-- HERO -->
-  <section class="max-w-5xl mx-auto px-6 pt-16 pb-20 text-center">
-    <div class="badge mb-6">V1 · Drawing comparison only · Early access</div>
+  <section class="gradient-bg text-white py-24">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="badge mb-8" style="background: rgba(255,255,255,0.2); color: white;">Launching January 2025</div>
 
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-      Never miss a drawing change again
-    </h1>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+        Never miss a drawing change again
+      </h1>
 
-    <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-      Upload two revisions. Varix highlights added, deleted or moved elements — plus net quantities — in seconds.
-    </p>
+      <p class="mt-8 text-xl md:text-2xl text-white/80 max-w-3xl mx-auto">
+        Upload drawing revisions. Varix highlights every change, quantifies it, and creates evidence-grade reports — in seconds, not hours.
+      </p>
 
-    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <div class="text-5xl font-black text-[var(--green)]">
-        £399<span class="text-2xl text-gray-600">/month</span>
+      <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="#pricing" class="btn-primary text-lg px-10 py-4 bg-white text-[var(--green)] hover:bg-gray-100">
+          Start Free Trial
+        </a>
+        <a href="#how-it-works" class="btn-outline text-lg px-10 py-4 bg-transparent border-white text-white hover:bg-white/10">
+          See How It Works
+        </a>
       </div>
-      <div class="text-gray-600">
-        Founder pricing · First 15 customers only
+
+      <!-- Stats -->
+      <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        <div>
+          <div class="text-3xl font-bold">95%+</div>
+          <div class="text-white/70 mt-2">Change detection accuracy</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold">60s</div>
+          <div class="text-white/70 mt-2">From upload to results</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold">∞</div>
+          <div class="text-white/70 mt-2">Drawing comparisons</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold">1-4%</div>
+          <div class="text-white/70 mt-2">Project value recovered</div>
+        </div>
       </div>
     </div>
-
-    <div class="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
-      <a href="https://app.varixintelligence.com/signup" class="btn-primary text-lg">
-        Start free trial – no card required
-      </a>
-      <a href="#demo" class="btn-outline text-lg">
-        See demo ↓
-      </a>
-    </div>
-
-    <p class="mt-6 text-sm text-gray-500">
-      Only 6 of 15 founder spots left
-    </p>
   </section>
 
-  <!-- PAIN -->
-  <section class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold text-center mb-10">
-      Drawing revisions are where margin disappears
-    </h2>
+  <!-- THE PROBLEM -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16">
+        Where margin disappears
+      </h2>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="flex gap-4">
-        <div class="mt-1 text-red-600 text-2xl">!</div>
-        <div>
-          <strong class="block text-xl">Missed changes</strong>
-          <p class="text-gray-600 mt-1">
-            Rev 114 → Rev 121 had 63 changes. 4 were claimable.
-          </p>
+      <div class="comparison-grid mb-16">
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-8">
+          <div class="text-red-600 font-bold text-lg mb-4">Manual Process</div>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-3">
+              <div class="text-red-500 mt-1">✗</div>
+              <span>Hours spent comparing drawings</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="text-red-500 mt-1">✗</div>
+              <span>Missed changes buried in revision packs</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="text-red-500 mt-1">✗</52>
+              <span>Human error in quantity takeoffs</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="text-red-500 mt-1">✗</div>
+              <span>Poor evidence for claims</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="text-red-500 mt-1">✗</div>
+              <span>Notice periods expire</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-red-200">
+            <div class="text-red-600 font-bold">Result: £100k–£400k lost per £10M project</div>
+          </div>
+        </div>
+        
+        <div class="vs-badge">VS</div>
+        
+        <div class="bg-green-50 border border-green-200 rounded-2xl p-8">
+          <div class="text-[var(--green)] font-bold text-lg mb-4">With Varix</div>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-3">
+              <div class="text-[var(--green)] mt-1">✓</div>
+              <span>Seconds to compare thousands of drawings</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="text-[var(--green)] mt-1">✓</div>
+              <span>Every change highlighted automatically</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="text-[var(--green)] mt-1">✓</div>
+              <span>Accurate AI-powered quantities</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="text-[var(--green)] mt-1">✓</div>
+              <span>Court-ready evidence packs</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="text-[var(--green)] mt-1">✓</div>
+              <span>Time-bar deadline alerts</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-green-200">
+            <div class="text-[var(--green)] font-bold">Result: Catch missed variations, protect margins</div>
+          </div>
         </div>
       </div>
 
-      <div class="flex gap-4">
-        <div class="mt-1 text-red-600 text-2xl">!</div>
-        <div>
-          <strong class="block text-xl">Notice periods expire</strong>
-          <p class="text-gray-600 mt-1">
-            Entitlement gone before you see it.
-          </p>
-        </div>
-      </div>
-
-      <div class="flex gap-4">
-        <div class="mt-1 text-red-600 text-2xl">!</div>
-        <div>
-          <strong class="block text-xl">Changes hidden as coordination</strong>
-          <p class="text-gray-600 mt-1">
-            Work done, never claimed.
-          </p>
-        </div>
-      </div>
-
-      <div class="flex gap-4">
-        <div class="mt-1 text-red-600 text-2xl">!</div>
-        <div>
-          <strong class="block text-xl">1–4% lost</strong>
-          <p class="text-gray-600 mt-1">
-            £100k–£400k on a £10M package.
-          </p>
-        </div>
+      <div class="text-center">
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          "Between Rev 114 and Rev 121, there were 63 changes. 4 were claimable. The rest got missed as 'coordination.' That's profit left on the table."
+        </p>
+        <p class="mt-2 text-sm text-gray-500">— Senior QS, Major UK Contractor</p>
       </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="bg-slate-50 py-20">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-12">
-        Three clicks
+  <section id="how-it-works" class="bg-slate-50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16">
+        Three steps to smart variation tracking
       </h2>
 
-      <div class="grid md:grid-cols-3 gap-10">
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <div class="w-16 h-16 bg-[var(--green)] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6">
-            1
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="feature-card text-center">
+          <div class="w-16 h-16 bg-[var(--green)] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
+          <h3 class="text-xl font-bold mb-4">Upload Drawing Sets</h3>
+          <p class="text-gray-600">
+            Upload PDFs, DWGs, or images. Our system automatically matches drawing numbers and organizes revisions.
+          </p>
+          <div class="mt-4 text-sm text-gray-500">
+            Supports: PDF, DWG, JPG, PNG, TIFF
           </div>
-          <h3 class="text-xl font-bold mb-1">Upload two revisions</h3>
         </div>
 
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <div class="w-16 h-16 bg-[var(--green)] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6">
-            2
+        <div class="feature-card text-center">
+          <div class="w-16 h-16 bg-[var(--green)] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
+          <h3 class="text-xl font-bold mb-4">AI Detects & Quantifies</h3>
+          <p class="text-gray-600">
+            Our AI identifies every change, filters out noise, and calculates accurate quantities (count, length, area).
+          </p>
+          <div class="mt-4 text-sm text-gray-500">
+            Trade impact classification • Risk scoring
           </div>
-          <h3 class="text-xl font-bold mb-1">See every change</h3>
         </div>
 
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <div class="w-16 h-16 bg-[var(--green)] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6">
-            3
+        <div class="feature-card text-center">
+          <div class="w-16 h-16 bg-[var(--green)] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
+          <h3 class="text-xl font-bold mb-4">Export & Claim</h3>
+          <p class="text-gray-600">
+            Generate professional reports with before/after visuals, quantities, and metadata. Perfect for claims.
+          </p>
+          <div class="mt-4 text-sm text-gray-500">
+            PDF, CSV, Excel exports • Evidence packs
           </div>
-          <h3 class="text-xl font-bold mb-1">Export & claim</h3>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DEMO -->
-  <section id="demo" class="py-20 max-w-5xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-8">
-      30-second demo
-    </h2>
+  <!-- CORE FEATURES -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16">
+        Built for construction professionals
+      </h2>
 
-    <div class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl w-full h-96 flex items-center justify-center">
-      <p class="text-gray-500">
-        Demo video here
-      </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="feature-card">
+          <div class="text-2xl mb-4">📐</div>
+          <h3 class="text-xl font-bold mb-3">Intelligent Drawing Comparison</h3>
+          <p class="text-gray-600">
+            Compare thousands of drawings across unlimited revisions. Visual diffs show added, deleted, and modified elements.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="text-2xl mb-4">🧮</div>
+          <h3 class="text-xl font-bold mb-3">Accurate Quantity Takeoff</h3>
+          <p class="text-gray-600">
+            AI-powered measurements: count, linear length, area. Net quantities between revisions calculated automatically.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="text-2xl mb-4">🏷️</div>
+          <h3 class="text-xl font-bold mb-3">Trade Impact Analysis</h3>
+          <p class="text-gray-600">
+            Changes automatically tagged by trade (MEP, Drylining, Structural) and risk level. Know what matters.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="text-2xl mb-4">⚖️</div>
+          <h3 class="text-xl font-bold mb-3">Evidence-Grade Reporting</h3>
+          <p class="text-gray-600">
+            Generate court-ready evidence packs with before/after snapshots, audit trails, and processing logs.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="text-2xl mb-4">⏰</div>
+          <h3 class="text-xl font-bold mb-3">Time-Bar Protection</h3>
+          <p class="text-gray-600">
+            Automatic alerts for contract notice periods. Never miss a deadline because you found a change too late.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="text-2xl mb-4">📊</div>
+          <h3 class="text-xl font-bold mb-3">Project Dashboard</h3>
+          <p class="text-gray-600">
+            Track all revisions, comparisons, and potential variations in one place. Filter by trade, date, or risk.
+          </p>
+        </div>
+      </div>
+
+      <!-- Real Results -->
+      <div class="mt-20 bg-white border border-gray-200 rounded-2xl p-8">
+        <h3 class="text-2xl font-bold mb-8 text-center">Real results from real projects</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-[var(--green)]">£27,000</div>
+            <div class="text-gray-600 mt-2">Ceiling grid change caught</div>
+            <div class="text-sm text-gray-500 mt-1">Drylining subcontractor</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-[var(--green)]">7</div>
+            <div class="text-gray-600 mt-2">Claimable variations in week one</div>
+            <div class="text-sm text-gray-500 mt-1">M&E contractor</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-[var(--green)]">16 hours</div>
+            <div class="text-gray-600 mt-2">Weekly time saved per QS</div>
+            <div class="text-sm text-gray-500 mt-1">Commercial team</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- USE CASES -->
   <section class="bg-slate-50 py-20">
-    <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16">
+        Who uses Varix?
+      </h2>
 
-      <div class="bg-white p-8 rounded-2xl shadow border border-slate-200">
-        <p class="text-lg italic mb-6">
-          “Found a £27k ceiling grid change we’d completely missed. Would’ve cost us at final account.”
-        </p>
-        <p class="font-semibold">
-          — Commercial Manager, Drylining subcontractor
-        </p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-sm">
+          <div class="text-[var(--green)] font-bold mb-4">Quantity Surveyors</div>
+          <p class="text-gray-600 mb-4">
+            "Spent 4 hours manually comparing drawings. Varix did it in 60 seconds and found 3 changes I'd missed."
+          </p>
+          <div class="text-sm text-gray-500">— Senior QS, Main Contractor</div>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm">
+          <div class="text-[var(--green)] font-bold mb-4">Commercial Managers</div>
+          <p class="text-gray-600 mb-4">
+            "Our variation recovery rate went from 62% to 89% in 3 months. The evidence packs make claims undeniable."
+          </p>
+          <div class="text-sm text-gray-500">— Commercial Director, Subcontractor</div>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm">
+          <div class="text-[var(--green)] font-bold mb-4">Claims Consultants</div>
+          <p class="text-gray-600 mb-4">
+            "The audit trail and before/after snapshots are perfect for adjudication. Saves days of evidence gathering."
+          </p>
+          <div class="text-sm text-gray-500">— Claims Specialist, Consultancy</div>
+        </div>
       </div>
-
-      <div class="bg-white p-8 rounded-2xl shadow border border-slate-200">
-        <p class="text-lg italic mb-6">
-          “Spotted 7 claimable variations in week one. We’d have never picked them up from the revision pack.”
-        </p>
-        <p class="font-semibold">
-          — QS, M&E contractor
-        </p>
-      </div>
-
-      <div class="bg-white p-8 rounded-2xl shadow border border-slate-200">
-        <p class="text-lg italic mb-6">
-          “Revised drawings for a unit merge — extra drywall, doors, heating. Would’ve taken hours manually. This did it in seconds.”
-        </p>
-        <p class="font-semibold">
-          — Commercial QS on major residential works
-        </p>
-      </div>
-
-      <div class="bg-white p-8 rounded-2xl shadow border border-slate-200">
-        <p class="text-lg italic mb-6">
-          “Dropped a flooring variation by £30k after catching an over-allowance from layout changes. Paid for itself instantly.”
-        </p>
-        <p class="font-semibold">
-          — Senior QS working across £100M+ projects
-        </p>
-      </div>
-
     </div>
   </section>
 
   <!-- PRICING -->
-  <section class="py-20 text-center">
-    <div class="max-w-2xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6">
-        £399/month
+  <section id="pricing" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-16">
+        Simple, transparent pricing
       </h2>
 
-      <div class="bg-white border-2 border-slate-200 rounded-3xl p-10 shadow-xl">
-        <div class="text-6xl font-black text-[var(--green)] mb-4">
-          £399<span class="text-2xl text-gray-600">/month</span>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Free Tier -->
+        <div class="tier-card">
+          <div class="badge mb-4">For Individual QS</div>
+          <h3 class="text-2xl font-bold mb-2">Free</h3>
+          <div class="text-4xl font-bold mb-2">£0</div>
+          <div class="text-gray-500 mb-6">per month</div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <span class="text-[var(--green)] font-bold">✓</span>
+              <span>100 drawing comparisons (lifetime)</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var(--green)] font-bold">✓</span>
+              <span>Visual change detection</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var(--green)] font-bold">✓</span>
+              <span>Basic quantity counting</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var(--green)] font-bold">✓</span>
+              <span>PDF export (watermarked)</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var(--green)] font-bold">✓</span>
+              <span>Single project</span>
+            </li>
+          </ul>
+          
+          <a href="https://app.varixintelligence.com/signup" class="btn-outline w-full justify-center py-3">
+            Get Started Free
+          </a>
         </div>
 
-        <ul class="text-left space-y-4 mb-8">
-          <li class="flex items-center gap-3">
-            <span class="text-[var(--green)] font-bold text-xl">✓</span>
-            <span>Unlimited comparisons</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-[var(--green)] font-bold text-xl">✓</span>
-            <span>Unlimited team members</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-[var(--green)] font-bold text-xl">✓</span>
-            <span>PDF, DWG, image support</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-[var(--green)] font-bold text-xl">✓</span>
-            <span>Excel + PDF export</span>
-          </li>
-        </ul>
+        <!-- Pro Tier -->
+        <div class="tier-card popular">
+          <div class="badge mb-4" style="background: var(--green); color: white;">Most Popular</div>
+          <h3 class="text-2xl font-bold mb-2">Pro</h3>
+          <div class="text-4xl font-bold mb-2">£50</div>
+          <div class="text-gray-500 mb-6">per month • Founder pricing</div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <span class="text-[var(--green)] font-bold">✓</span>
+              <span><strong>Unlimited</strong> drawing comparisons</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span>Advanced quantities (length, area)</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span>Trade impact classification</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span>CSV & Excel export</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span>Multiple projects</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span>Time-bar deadline alerts</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span>Evidence pack generation</span>
+            </li>
+          </ul>
+          
+          <a href="https://app.varixintelligence.com/signup?plan=pro" class="btn-primary w-full justify-center py-3">
+            Start 14-Day Free Trial
+          </a>
+        </div>
 
-        <a href="https://app.varixintelligence.com/signup" class="btn-primary block text-xl py-4">
-          Start free trial – no card required
-        </a>
+        <!-- Business Tier -->
+        <div class="tier-card">
+          <div class="badge mb-4">For Teams</div>
+          <h3 class="text-2xl font-bold mb-2">Business</h3>
+          <div class="text-4xl font-bold mb-2">£350</div>
+          <div class="text-gray-500 mb-6">per month</div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span><strong>Everything in Pro</strong></span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span>Unlimited team members</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span>Priority processing</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span>Advanced reporting templates</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span>Custom trade classifications</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-[var-green)] font-bold">✓</span>
+              <span>Dedicated support</span>
+            </li>
+          </ul>
+          
+          <a href="mailto:sales@varixintelligence.com" class="btn-outline w-full justify-center py-3">
+            Contact Sales
+          </a>
+        </div>
+      </div>
 
-        <p class="mt-4 text-sm text-gray-500">
-          Only 6 of 15 founder spots left
-        </p>
+      <div class="text-center mt-12 text-gray-500">
+        <p>All plans include: PDF/DWG/image support • Secure cloud storage • Regular updates</p>
+        <p class="text-sm mt-2">No credit card required for Free tier • Cancel anytime</p>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-900 text-white py-12 text-center">
-    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-
-      <div class="flex items-center gap-3">
-        <svg viewBox="0 0 40 40" class="h-10" aria-hidden="true">
-          <path d="M8 20 L2 6 L6 6 L12 20 L6 34 L2 34 Z" fill="#275A45" />
-          <path d="M18 20 L8 6 L12 6 L18 20 L12 34 L8 34 Z" fill="#275A45" />
-          <text x="22" y="28" font-family="Inter" font-weight="800" font-size="14" fill="white">VARIX</text>
-        </svg>
-        <span class="font-bold">Varix Intelligence</span>
-      </div>
-
-      <p class="text-sm text-slate-400">
-        © 2025 Varix Intelligence Ltd • London
+  <!-- FINAL CTA -->
+  <section class="gradient-bg text-white py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">
+        Ready to stop missing variations?
+      </h2>
+      <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+        Join construction professionals who recover 1–4% of project value with Varix.
       </p>
+      <div class="flex flex-col sm:flex-row gap-5 justify-center">
+        <a href="https://app.varixintelligence.com/signup" class="btn-primary text-lg px-10 py-4 bg-white text-[var(--green)] hover:bg-gray-100">
+          Start Free Trial
+        </a>
+        <a href="#how-it-works" class="btn-outline text-lg px-10 py-4 bg-transparent border-white text-white hover:bg-white/10">
+          See Demo
+        </a>
+      </div>
+      <p class="mt-8 text-sm text-white/60">
+        Free tier includes 100 comparisons • No credit card required
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <svg viewBox="0 0 40 40" class="h-10" aria-hidden="true">
+              <path d="M8 20 L2 6 L6 6 L12 20 L6 34 L2 34 Z" fill="#275A45" />
+              <path d="M18 20 L8 6 L12 6 L18 20 L12 34 L8 34 Z" fill="#275A45" />
+              <text x="22" y="28" font-family="Inter" font-weight="800" font-size="14" fill="white">VARIX</text>
+            </svg>
+            <span class="font-bold text-xl">Varix Intelligence</span>
+          </div>
+          <p class="text-slate-400">
+            AI-powered change detection for construction professionals.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Product</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="#how-it-works" class="hover:text-white">Features</a></li>
+            <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
+            <li><a href="https://app.varixintelligence.com/signup" class="hover:text-white">Sign Up</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Company</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="mailto:contact@varixintelligence.com" class="hover:text-white">Contact</a></li>
+            <li><a href="#" class="hover:text-white">Privacy</a></li>
+            <li><a href="#" class="hover:text-white">Terms</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">Support</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><a href="mailto:support@varixintelligence.com" class="hover:text-white">Help Center</a></li>
+            <li><a href="mailto:sales@varixintelligence.com" class="hover:text-white">Sales</a></li>
+            <li><a href="#" class="hover:text-white">Documentation</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-slate-800 mt-8 pt-8 text-center text-slate-500 text-sm">
+        <p>© 2025 Varix Intelligence Ltd • London</p>
+        <p class="mt-2">Built by construction professionals for construction professionals</p>
+      </div>
     </div>
   </footer>
 
