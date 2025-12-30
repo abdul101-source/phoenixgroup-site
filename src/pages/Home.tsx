@@ -32,11 +32,11 @@ export default function Home() {
         <div className="badge mb-6">V1 · Drawing comparison only · Early access</div>
 
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          Never miss a drawing change again
+          Compare drawing revisions. Capture every change.
         </h1>
 
         <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-          Upload two revisions. Varix highlights added, deleted or moved elements — plus net quantities — in seconds.
+          Upload your drawings and instantly see what changed across revisions.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -50,7 +50,7 @@ export default function Home() {
 
         <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
           <Link to="/signup" className="btn-primary text-lg">
-            Start free trial – no card required
+            Upload drawings
           </Link>
           <a href="#demo" className="btn-outline text-lg">
             See demo ↓
@@ -123,7 +123,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-[var(--green)] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6">
                 1
               </div>
-              <h3 className="text-xl font-bold mb-1">Upload two revisions</h3>
+              <h3 className="text-xl font-bold mb-1">Upload your revisions</h3>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
@@ -231,6 +231,10 @@ export default function Home() {
             <Link to="/signup" className="btn-primary block text-xl py-4">
               Start free trial – no card required
             </Link>
+
+            <p className="mt-2 text-sm text-gray-600">
+              Founder access includes higher limits and early features.
+            </p>
 
             <p className="mt-4 text-sm text-gray-500">
               Only 6 of 15 founder spots left

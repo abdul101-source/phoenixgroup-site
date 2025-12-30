@@ -68,19 +68,19 @@ export default function ProtectedApp() {
       </header>
 
       <main className="max-w-5xl mx-auto px-6 py-16 text-center">
-        <h1 className="text-4xl font-bold mb-6">Welcome to Varix</h1>
+        <h1 className="text-4xl font-bold mb-6">Welcome to VariX. Never miss a drawing change again</h1>
         <p className="text-xl text-gray-600 mb-10">
           You're now logged in and ready to start comparing drawings.
         </p>
 
         <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-12">
           <div className="text-6xl mb-6">📐</div>
-          <h2 className="text-2xl font-bold mb-4">Start Comparing</h2>
+          <h2 className="text-2xl font-bold mb-4">Create a comparison set</h2>
           <p className="text-gray-600 mb-8">
-            Upload two drawing revisions to see every change highlighted.
+            Upload one or more drawing revisions and let VariX highlight every change across versions.
           </p>
           <button className="btn-primary text-lg">
-            Upload Drawings
+            Upload drawings
           </button>
         </div>
       </main>
